@@ -112,7 +112,24 @@ def main(filename, output_dir):
   payload = Payload(payload_file)
   payload.Init()
 
+  blacklist_partitions = ["boot",
+                          "dtbo",
+                          "persist",
+                          "product",
+                          "recovery",
+                          "system",
+                          "system_ext",
+                          "userdata",
+                          "vbmeta",
+                          "vbmeta_system",
+                          "vbmeta_vendor",
+                          "vendor",
+                          "vendor_boot",
+                          "vendor_dlkm"]
+
   for p in payload.manifest.partitions:
+    if p.partition_name in blacklist_partitions:
+      continue
     name = p.partition_name + '.img'
     print("Extracting '%s'" % name)
     fname = os.path.join(output_dir, name)
