@@ -174,7 +174,6 @@ filters:
       - system_ext/priv-app/OsloFeedback/
       - product/app/VoiceAccessPrebuilt/
       - product/app/Chrome/
-      - product/app/PixelCameraServices
       - product/app/PixelWallpapers
       - product/app/SSRestartDetector
       - product/app/TrichromeLibrary

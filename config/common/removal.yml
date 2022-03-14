@@ -29,8 +29,6 @@ filters:
       - ro.atrace.core.services
       - ro.com.google.clientidbase
       - ro.error.receiver.system.apps
-      # unused camera2 extensions
-      - ro.vendor.camera.extensions
       # unused ssrestart debug prop
       - vendor.debug.ssrdump.type
       # irrelevant keyguard prop
