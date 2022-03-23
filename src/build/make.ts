@@ -220,6 +220,9 @@ export function serializeDeviceMakefile(mk: DeviceMakefile) {
 
   if (mk.fingerprint != undefined) {
     blocks.push(`PRODUCT_OVERRIDE_FINGERPRINT := ${mk.fingerprint}`)
+
+    blocks.push(`ADDITIONAL_SYSTEM_PROPERTIES += \
+ro.build.stock_fingerprint=$(PRODUCT_OVERRIDE_FINGERPRINT)`)
   }
 
   if (mk.enforceRros != undefined) {
