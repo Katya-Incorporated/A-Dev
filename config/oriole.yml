@@ -6,9 +6,3 @@ platform:
 
 includes:
   - common/gen6pixel.yml
-
-filters:
-  overlay_files:
-    match:
-      # Workaround for aapt2 output parsing bug
-      - HbmSVManager__auto_generated_rro_product.apk

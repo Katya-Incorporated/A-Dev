@@ -1,6 +1,6 @@
 platform:
   sepolicy_dirs:
-    - device/google/gs101-sepolicy
+    - device/google/sunfish-sepolicy
 
 includes:
   - pixel.yml
