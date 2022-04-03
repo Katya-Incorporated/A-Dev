@@ -3,10 +3,16 @@ filters:
     match:
       # Google stuff we dont want/need/cant use
       - system/etc/permissions/privapp-permissions-google.xml
+      - product/etc/permissions/privapp-permissions-google-p.xml
+      - product/etc/permissions/split-permissions-google.xml
       - product/etc/sysconfig/adaptivecharging.xml
       - product/etc/sysconfig/dreamliner.xml
       - product/etc/sysconfig/game_overlay.xml
       - product/etc/sysconfig/quick_tap.xml
+      - product/etc/sysconfig/google-hiddenapi-package-whitelist.xml
+      - product/etc/sysconfig/google-staged-installer-whitelist.xml
+      - product/etc/sysconfig/GoogleCamera_6gb_or_more_ram.xml
+      - system_ext/etc/permissions/privapp-permissions-google-se.xml
       # Boot animation
       - product/media/bootanimation.zip
       - product/media/bootanimation-dark.zip
@@ -27,17 +33,21 @@ filters:
       # Unused RadioConfigLib.jar
       - system_ext/etc/permissions/com.android.omadm.radioconfig.xml
       - system_ext/framework/RadioConfigLib.jar
-      # Unwanted OMA-DM permissions
+      # Unwanted OMA-DM and carrier trash
       - product/etc/permissions/com.android.omadm.service.xml
       - product/etc/permissions/com.google.omadm.trigger.xml
       - product/etc/sysconfig/allowlist_com.android.omadm.service.xml
-      #  verizon carrier trash
       - product/etc/permissions/com.verizon.apn.xml
       - product/etc/permissions/com.verizon.services.xml
       - product/etc/permissions/com.customermobile.preload.vzw.xml
       - system_ext/etc/permissions/com.verizon.llkagent.xml
       - system_ext/etc/permissions/vzw_mvs_permissions.xml
       - product/etc/permissions/com.android.sdm.plugins.usccdm.xml
+      - product/etc/permissions/com.android.sdm.plugins.connmo.xml
+      - product/etc/permissions/com.android.sdm.plugins.dcmo.xml
+      - product/etc/permissions/com.android.sdm.plugins.diagmon.xml
+      - product/etc/permissions/com.android.sdm.plugins.sprintdm.xml
+      - product/etc/permissions/com.google.android.odad.xml
       # Unused Google RIL
       - system_ext/etc/permissions/google-ril.xml
       - system_ext/framework/google-ril.jar
@@ -78,6 +88,7 @@ filters:
       # Irrelevant charging animations
       - product/etc/res/images/charger
       - product/etc/res/values/charger
+      - vendor/res/images/charger
       # Irrelevant AVB keys
       - product/etc/security/avb/
       # Irrelevant wallpaper stuff
@@ -218,3 +229,12 @@ filters:
       - product/priv-app/BetaFeedback
       - product/priv-app/USCCDM
       - system_ext/priv-app/YadaYada
+      - product/app/GoogleCamera
+      - product/priv-app/SprintDM
+      - product/priv-app/SprintHM
+      - product/app/NexusWallpapers
+      - product/app/Ornament
+      - product/app/Wallpapers
+      - system_ext/priv-app/OBDM_Permissions
+      - system_ext/priv-app/obdm_stub
+      - product/app/MotionSenseBridgePrebuilt

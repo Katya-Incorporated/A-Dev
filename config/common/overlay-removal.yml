@@ -169,3 +169,7 @@ filters:
       - com.android.systemui:string/config_cameraProtectionExcludedPackages
       - android:bool/config_pinnerCameraApp
       - android:bool/config_pinnerHomeApp
+      - com.android.settings:drawable/$aware_assist_static__0
+      - com.android.settings:drawable/$aware_assist_static__1
+      - com.android.settings:drawable/aware_assist_static
+      - com.android.systemui:integer/config_keyguardRefreshRate
