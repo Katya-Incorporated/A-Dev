@@ -4,3 +4,10 @@ platform:
 
 includes:
   - pixel.yml
+
+filters:
+  dep_files:
+    match:
+      # system/chre/Android.mk: error: "chre (EXECUTABLES android-arm64) missing libsdsprpc (SHARED_LIBRARIES android-arm64)"
+      - vendor/lib/libsdsprpc.so
+      - vendor/lib64/libsdsprpc.so
