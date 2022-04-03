@@ -47,6 +47,12 @@ filters:
       - ro.com.android.prov_mobiledata
       # privapps
       - ro.control_privapp_permissions
+      # we dont ship system_other
+      - ro.cp_system_other_odex
+      # aware is not part of AOSP
+      - ro.vendor.aware_available
+      # we dont want this debug trash on sf
+      - debug.sf.enable_egl_image_tracker
 
   sepolicy_dirs:
     match:
