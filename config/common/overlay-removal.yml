@@ -166,3 +166,6 @@ filters:
       - com.android.systemui:string/config_dockComponent
       - com.android.systemui:string/config_screenshotEditor
       - com.android.systemui:string/branded_monitoring_description_app_personal
+      - com.android.systemui:string/config_cameraProtectionExcludedPackages
+      - android:bool/config_pinnerCameraApp
+      - android:bool/config_pinnerHomeApp
