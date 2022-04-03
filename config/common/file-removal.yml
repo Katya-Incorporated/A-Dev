@@ -78,8 +78,6 @@ filters:
       # Irrelevant charging animations
       - product/etc/res/images/charger
       - product/etc/res/values/charger
-      # CarrierSettings
-      - product/etc/CarrierSettings/
       # Irrelevant AVB keys
       - product/etc/security/avb/
       # Irrelevant wallpaper stuff
