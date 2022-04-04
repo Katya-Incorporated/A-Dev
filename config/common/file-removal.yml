@@ -36,15 +36,9 @@ filters:
       # Irrelevant OTA updater
       - system_ext/etc/init/init.sota.rc
       - system_ext/etc/permissions/com.google.android.factoryota.xml
-      # Unused Google Dialer jar
-      - product/etc/permissions/com.google.android.dialer.support.xml
-      - product/framework/com.google.android.dialer.support.jar
       # Unused hardware info jar
       - product/etc/permissions/com.google.android.hardwareinfo.xml
       - product/framework/libhwinfo.jar
-      # Unused ok google jar
-      - system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
-      - system_ext/framework/com.android.hotwordenrollment.common.util.jar
       # Unused RadioConfigLib.jar
       - system_ext/etc/permissions/com.android.omadm.radioconfig.xml
       - system_ext/framework/RadioConfigLib.jar
@@ -63,6 +57,7 @@ filters:
       - product/etc/permissions/com.android.sdm.plugins.diagmon.xml
       - product/etc/permissions/com.android.sdm.plugins.sprintdm.xml
       - product/etc/permissions/com.google.android.odad.xml
+      - system_ext/etc/permissions/obdm_permissions.xml
       # Unused Google RIL
       - system_ext/etc/permissions/google-ril.xml
       - system_ext/framework/google-ril.jar
