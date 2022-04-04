@@ -16,3 +16,5 @@ filters:
       # Remove Google screw-up with USB hardware debugging
       - vendor/bin/uci_daemon
       - vendor/etc/init/usb-cdc.rc
+      # Remove fstab FIPS variant which we have disabled fully
+      - vendor/etc/fstab.gs101-fips
