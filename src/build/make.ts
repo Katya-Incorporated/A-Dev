@@ -102,17 +102,6 @@ export function serializeModulesMakefile(mk: ModulesMakefile) {
 $(foreach f, $(notdir $(RADIO_FILES)),$(call add-radio-file,firmware/$(f)))`)
   }
 
-  // Temporary hack for OTA firmware on Pixel 6 and 6 Pro
-  blocks.push(`$(call add-radio-file,firmware/bl1.img)
-$(call add-radio-file,firmware/pbl.img)
-$(call add-radio-file,firmware/bl2.img)
-$(call add-radio-file,firmware/abl.img)
-$(call add-radio-file,firmware/bl31.img)
-$(call add-radio-file,firmware/tzsw.img)
-$(call add-radio-file,firmware/gsa.img)
-$(call add-radio-file,firmware/ldfw.img)
-$(call add-radio-file,firmware/modem.img)`)
-
   if (mk.symlinks.length > 0) {
     let mkdirCmds = new Set<string>()
     let linkCmds = []
