@@ -98,7 +98,8 @@ export function serializeModulesMakefile(mk: ModulesMakefile) {
   blocks.push('LOCAL_PATH := $(call my-dir)', `ifeq ($(TARGET_DEVICE),${mk.device})`)
 
   if (mk.radioFiles != undefined) {
-    blocks.push(mk.radioFiles.map(img => `$(call add-radio-file,${img})`).join('\n'))
+  blocks.push(`RADIO_FILES := $(wildcard $(LOCAL_PATH)/firmware/*.img)
+$(foreach f, $(notdir $(RADIO_FILES)),$(call add-radio-file,firmware/$(f)))`)
   }
 
   // Temporary hack for OTA firmware on Pixel 6 and 6 Pro
