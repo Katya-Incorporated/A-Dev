@@ -16,3 +16,8 @@ filters:
     match:
       # aapt2 parsing bug encountered within adevtool
       - HbmSVManager__auto_generated_rro_vendor.apk
+
+  files:
+    prefix:
+      # APEX
+      - vendor/apex/com.android.vibrator.sunfish.apex
