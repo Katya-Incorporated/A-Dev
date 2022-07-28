@@ -1,0 +1,5 @@
+device:
+  name: bluejay
+
+platform:
+  product_makefile: device/google/bluejay/aosp_bluejay.mk
