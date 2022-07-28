@@ -27,6 +27,7 @@ filters:
       - product/etc/sysconfig/pixel_experience_2020.xml
       - product/etc/sysconfig/pixel_experience_2021_midyear.xml
       - product/etc/sysconfig/pixel_experience_2021.xml
+      - product/etc/sysconfig/pixel_experience_2022_midyear.xml
       - product/etc/sysconfig/preinstalled-packages-product-pixel-2017-and-newer.xml
       - product/etc/permissions/com.google.android.apps.diagnosticstool.xml
       - product/etc/permissions/com.google.android.dialer.support.xml
@@ -72,6 +73,10 @@ filters:
       # ssrestart files
       - vendor/etc/init/init.sscoredump.rc
       - vendor/bin/sscoredump
+      # odm useless
+      - vendor/odm/etc/NOTICE.xml.gz
+      - vendor/odm_dlkm/etc/build.prop
+      - vendor/odm_dlkm/etc/NOTICE.xml.gz
     suffix:
       # Precompiled content
       - .art
