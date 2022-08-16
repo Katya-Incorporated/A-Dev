@@ -65,6 +65,10 @@ filters:
       - product/etc/permissions/com.android.sdm.plugins.sprintdm.xml
       - product/etc/permissions/com.google.android.odad.xml
       - system_ext/etc/permissions/obdm_permissions.xml
+      # GMS Game service
+      - product/etc/sysconfig/game_service.xml
+      # we dont ship exo
+      - system_ext/etc/default-permissions/default-exo-permissions.xml
       # Unused Google RIL
       - system_ext/etc/permissions/google-ril.xml
       - system_ext/framework/google-ril.jar
@@ -260,3 +264,8 @@ filters:
       - system_ext/priv-app/obdm_stub
       - product/app/MotionSenseBridgePrebuilt
       - product/priv-app/DiagnosticsToolPrebuilt
+      - product/app/PrebuiltGoogleAdservicesTvp
+      - product/priv-app/AmbientStreaming
+      - product/priv-app/BetterBugStub
+      - product/priv-app/KidsSupervisionStub
+      - system/app/BluetoothMigrationForBeta3User/BluetoothMigrationForBeta3User.apk
