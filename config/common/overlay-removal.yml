@@ -24,8 +24,15 @@ filters:
       - com.google.android.cellbroadcastreceiver/CellBroadcastCustomization
       - com.google.android.cellbroadcastservice/CellBroadcastServiceCustomization
       - com.google.android.documentsui/DocumentsUICustomization
+      # unused oma-dm stuff
+      - com.android.omadm.service
+      # unused flipendo
+      - com.google.android.flipendo
       # scone
       - com.google.android.apps.scone
+      # google media apexs
+      - com.google.android.providers.media.module
+      - com.google.android.storagemanager
     regex:
       - branded_vpn
     match:
@@ -173,3 +180,21 @@ filters:
       - com.android.settings:drawable/$aware_assist_static__1
       - com.android.settings:drawable/aware_assist_static
       - com.android.systemui:integer/config_keyguardRefreshRate
+      - android:string/config_defaultCaptivePortalLoginPackageName
+      - android:string/config_defaultNearbyFastPairSettingsDevicesComponent
+      - android:string/config_defaultQrCodeComponent
+      - android:string/config_defaultSearchSelectorPackageName
+      - android:string/config_devicePolicyManagement
+      - android:string/config_devicePolicyManagementUpdater
+      - android:string/config_loggable_dream_prefix
+      - android:string/config_systemGameService
+      - android:string/config_systemSettingsIntelligence
+      - android:string-array/config_defaultCloudSearchServices
+      - android:string/config_defaultAmbientContextConsentComponent
+      - android:string/config_defaultAmbientContextDetectionService
+      - android:string/config_defaultWallpaperEffectsGenerationService
+      - android:string/config_systemAppProtectionService
+      - android:string/config_systemSupervision
+      - com.android.systemui:string/config_remoteCopyPackage
+      - android:drawable/ic_safety_protection
+      - android:string/config_dreamsDefaultComponent
