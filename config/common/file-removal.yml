@@ -96,6 +96,7 @@ filters:
       - product/etc/security/fsverity
       # APEX
       - system/apex/
+      - system_ext/apex/
       # Fonts
       - system/fonts/
       - system_ext/fonts/
