@@ -1,0 +1,12 @@
+type: device-list
+
+devices:
+  - bluejay.yml
+  - raven.yml
+  - oriole.yml
+  - barbet.yml
+  - redfin.yml
+  - bramble.yml
+  - sunfish.yml
+  - coral.yml
+  - flame.yml
