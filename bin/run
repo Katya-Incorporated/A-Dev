@@ -2,8 +2,8 @@
 
 const NODE_MAJOR_VERSION = process.versions.node.split('.')[0];
 
-if (NODE_MAJOR_VERSION < 17) {
-  throw new Error('This tool requires NodeJS 17 or later');
+if (NODE_MAJOR_VERSION < 18) {
+  throw new Error('This tool requires NodeJS 18 or later');
 }
 
 require('@oclif/command').run()
