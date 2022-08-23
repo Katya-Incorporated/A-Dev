@@ -6,6 +6,10 @@ includes:
   - pixel.yml
 
 filters:
+  files:
+    match:
+      - vendor/etc/vintf/manifest/manifest_wifi_ext.xml
+
   dep_files:
     match:
       # system/chre/Android.mk: error: "chre (EXECUTABLES android-arm64) missing libsdsprpc (SHARED_LIBRARIES android-arm64)"

@@ -18,6 +18,9 @@ filters:
       - HbmSVManager__auto_generated_rro_vendor.apk
 
   files:
+    match:
+      - vendor/etc/vintf/manifest/manifest_wifi_ext.xml
+
     prefix:
       # APEX
       - vendor/apex/com.android.vibrator.sunfish.apex
