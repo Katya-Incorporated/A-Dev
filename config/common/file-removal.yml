@@ -2,7 +2,6 @@ filters:
   files:
     match:
       # Google stuff we dont want/need/cant use
-      - vendor/etc/vintf/manifest/manifest_wifi_ext.xml
       - system/etc/permissions/privapp-permissions-google.xml
       - product/etc/permissions/privapp-permissions-google-p.xml
       - product/etc/permissions/split-permissions-google.xml
