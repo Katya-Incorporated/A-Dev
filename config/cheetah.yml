@@ -1,0 +1,8 @@
+device:
+  name: cheetah
+
+platform:
+  product_makefile: device/google/pantah/aosp_cheetah.mk
+
+includes:
+  - common/gen7pixel.yml

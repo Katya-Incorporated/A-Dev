@@ -1,0 +1,6 @@
+platform:
+  sepolicy_dirs:
+    - device/google/gs201-sepolicy
+
+includes:
+  - pixel.yml
