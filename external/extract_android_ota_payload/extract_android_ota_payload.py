@@ -114,10 +114,12 @@ def main(filename, output_dir):
 
   blacklist_partitions = ["boot",
                           "dtbo",
+                          "init_boot",
                           "persist",
                           "product",
                           "recovery",
                           "system",
+                          "system_dlkm",
                           "system_ext",
                           "userdata",
                           "vbmeta",
@@ -125,7 +127,8 @@ def main(filename, output_dir):
                           "vbmeta_vendor",
                           "vendor",
                           "vendor_boot",
-                          "vendor_dlkm"]
+                          "vendor_dlkm",
+                          "vendor_kernel_boot"]
 
   for p in payload.manifest.partitions:
     if p.partition_name in blacklist_partitions:
