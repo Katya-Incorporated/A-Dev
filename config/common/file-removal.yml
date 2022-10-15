@@ -142,6 +142,7 @@ filters:
       - product/app/MicropaperPrebuilt/
       - product/app/NgaResources/
       - product/app/PixelThemesStub/
+      - product/app/PixelThemesStub2022_and_newer/
       - product/app/PrebuiltGoogleTelemetryTvp/
       - product/app/SafetyRegulatoryInfo/
       - product/app/SoundAmplifierPrebuilt/
@@ -274,7 +275,6 @@ filters:
       - product/priv-app/BetterBugStub
       - product/priv-app/KidsSupervisionStub
       - system/app/BluetoothMigrationForBeta3User
-      - product/app/PixelThemesStub
       - product/priv-app/AdaptiveVPNPrebuilt
       - product/priv-app/RetailDemoGooglePrebuilt
       - system_ext/priv-app/SettingsGoogleFutureFaceEnroll
