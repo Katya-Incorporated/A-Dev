@@ -117,6 +117,7 @@ def main(filename, output_dir):
                           "init_boot",
                           "persist",
                           "product",
+                          "pvmfw",
                           "recovery",
                           "system",
                           "system_dlkm",
