@@ -198,3 +198,4 @@ filters:
       - com.android.systemui:string/config_remoteCopyPackage
       - android:drawable/ic_safety_protection
       - android:string/config_dreamsDefaultComponent
+      - com.android.systemui:string/quick_settings_tiles_default
