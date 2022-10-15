@@ -1,6 +1,8 @@
 type: device-list
 
 devices:
+  - cheetah.yml
+  - panther.yml
   - bluejay.yml
   - raven.yml
   - oriole.yml
