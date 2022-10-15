@@ -28,6 +28,7 @@ filters:
       - product/etc/sysconfig/pixel_experience_2021_midyear.xml
       - product/etc/sysconfig/pixel_experience_2021.xml
       - product/etc/sysconfig/pixel_experience_2022_midyear.xml
+      - product/etc/sysconfig/pixel_experience_2022.xml
       - product/etc/sysconfig/preinstalled-packages-product-pixel-2017-and-newer.xml
       - product/etc/permissions/com.google.android.apps.diagnosticstool.xml
       - product/etc/permissions/com.google.android.dialer.support.xml
@@ -65,6 +66,7 @@ filters:
       - product/etc/permissions/com.android.sdm.plugins.sprintdm.xml
       - product/etc/permissions/com.google.android.odad.xml
       - system_ext/etc/permissions/obdm_permissions.xml
+      - product/etc/default-permissions/default-permissions_diagnostictool.xml
       # GMS Game service
       - product/etc/sysconfig/game_service.xml
       # we dont ship exo
@@ -115,6 +117,8 @@ filters:
       - product/etc/res/images/charger
       - product/etc/res/values/charger
       - vendor/res/images/charger
+      - vendor/etc/res/images/charger
+      - vendor/etc/res/values/charger
       # Irrelevant AVB keys
       - product/etc/security/avb/
       # Irrelevant wallpaper stuff
@@ -269,4 +273,8 @@ filters:
       - product/priv-app/AmbientStreaming
       - product/priv-app/BetterBugStub
       - product/priv-app/KidsSupervisionStub
-      - system/app/BluetoothMigrationForBeta3User/BluetoothMigrationForBeta3User.apk
+      - system/app/BluetoothMigrationForBeta3User
+      - product/app/PixelThemesStub
+      - product/priv-app/AdaptiveVPNPrebuilt
+      - product/priv-app/RetailDemoGooglePrebuilt
+      - system_ext/priv-app/SettingsGoogleFutureFaceEnroll
