@@ -122,7 +122,7 @@ filters:
       - product/app/Photos/
       - product/app/PixelCameraServices
       - product/app/PixelThemesStub
-      - product/app/PixelThemesStub/
+      - product/app/PixelThemesStub2022_and_newer/
       - product/app/PixelWallpapers
       - product/app/PlayAutoInstallConfig/
       - product/app/PrebuiltDeskClockGoogle/
