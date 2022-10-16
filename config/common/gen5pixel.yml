@@ -12,15 +12,15 @@ filters:
 
   dep_files:
     match:
-      # system/chre/Android.mk: error: "chre (EXECUTABLES android-arm64) missing libadsprpc (SHARED_LIBRARIES android-arm64)"
-      - vendor/lib/libadsprpc.so
-      - vendor/lib64/libadsprpc.so
       # checkvintf pass
       - vendor/etc/vintf/manifest/android.hardware.graphics.mapper-impl-qti-display.xml
       - vendor/etc/vintf/manifest/c2_manifest_vendor.xml
       - vendor/etc/vintf/manifest/pixel-display-default.xml
       - vendor/etc/vintf/manifest/vendor.qti.hardware.display.allocator-service.xml
       - vendor/etc/vintf/manifest/vendor.qti.hardware.display.composer-service.xml
+      # system/chre/Android.mk: error: "chre (EXECUTABLES android-arm64) missing libadsprpc (SHARED_LIBRARIES android-arm64)"
+      - vendor/lib/libadsprpc.so
+      - vendor/lib64/libadsprpc.so
 
   overlay_files:
     match:

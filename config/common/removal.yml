@@ -10,53 +10,53 @@ filters:
       # Debug
       - ro.adb.secure
     prefix:
-      # SetupWizard
-      - ro.setupwizard.
-      - setupwizard.
       # APEX
       - ro.apex.updatable
       # Debug
       - log.tag.
-      # Google IME
-      - ro.com.google.ime
-      # Theme
-      - ro.boot.vendor.overlay.theme
       # Default alarm
       - ro.config.alarm_alert
+      # Google Assistant
+      - ro.opa.eligible_device
+      # Google IME
+      - ro.com.google.ime
+      # SetupWizard
+      - ro.setupwizard.
+      - setupwizard.
+      # Storage manager
+      - ro.storage_manager.
+      # Theme
+      - ro.boot.vendor.overlay.theme
+      # aware is not part of AOSP
+      - ro.vendor.aware_available
+      # disable llkd
+      - ro.llkd.enable
+      # irrelevant build region
+      - ro.vendor.config.build_carrier
+      # irrelevant keyguard prop
+      - keyguard.no_require_sim
+      # mobile data
+      - ro.com.android.prov_mobiledata
+      # privapps
+      - ro.control_privapp_permissions
+      # unused camera2 extensions
+      - ro.vendor.camera.extensions
       # unused carrier setup page
       - ro.carriersetup.vzw_consent_page
       # unused gms props
       - ro.atrace.core.services
       - ro.com.google.clientidbase
       - ro.error.receiver.system.apps
-      # unused camera2 extensions
-      - ro.vendor.camera.extensions
       # unused ssrestart debug prop
       - vendor.debug.ssrdump.type
-      # irrelevant keyguard prop
-      - keyguard.no_require_sim
-      # irrelevant build region
-      - ro.vendor.config.build_carrier
-      # disable llkd
-      - ro.llkd.enable
-      # Google Assistant
-      - ro.opa.eligible_device
-      # Storage manager
-      - ro.storage_manager.
-      # mobile data
-      - ro.com.android.prov_mobiledata
-      # privapps
-      - ro.control_privapp_permissions
       # we dont ship system_other
       - ro.cp_system_other_odex
-      # aware is not part of AOSP
-      - ro.vendor.aware_available
       # we dont want this debug trash on sf
       - debug.sf.enable_egl_image_tracker
 
   sepolicy_dirs:
     match:
       - hardware/google/pixel-sepolicy/flipendo
-      - hardware/google/pixel-sepolicy/sota_app/system_ext
       - hardware/google/pixel-sepolicy/ramdump
+      - hardware/google/pixel-sepolicy/sota_app/system_ext
       - hardware/google/pixel-sepolicy/turbo_adapter
