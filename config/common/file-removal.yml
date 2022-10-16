@@ -94,164 +94,164 @@ filters:
 
     prefix:
       # APEX
-      - system/apex/
-      - system_ext/apex/
+      - system/apex
+      - system_ext/apex
       # Apps
-      - product/app/CalculatorGooglePrebuilt/
-      - product/app/CalendarGooglePrebuilt/
-      - product/app/Chrome-Stub/
-      - product/app/Chrome/
-      - product/app/DevicePolicyPrebuilt/
-      - product/app/DeviceStatisticsService/
-      - product/app/DiagnosticsToolPrebuilt/
-      - product/app/Drive/
+      - product/app/CalculatorGooglePrebuilt
+      - product/app/CalendarGooglePrebuilt
+      - product/app/Chrome-Stub
+      - product/app/Chrome
+      - product/app/DevicePolicyPrebuilt
+      - product/app/DeviceStatisticsService
+      - product/app/DiagnosticsToolPrebuilt
+      - product/app/Drive
       - product/app/GoogleCamera
-      - product/app/GoogleContacts/
-      - product/app/GoogleContactsSyncAdapter/
-      - product/app/GoogleTTS/
-      - product/app/LatinIMEGooglePrebuilt/
-      - product/app/LocationHistoryPrebuilt/
-      - product/app/Maps/
-      - product/app/MarkupGoogle/
-      - product/app/MicropaperPrebuilt/
-      - product/app/ModuleMetadataGoogle/
+      - product/app/GoogleContacts
+      - product/app/GoogleContactsSyncAdapter
+      - product/app/GoogleTTS
+      - product/app/LatinIMEGooglePrebuilt
+      - product/app/LocationHistoryPrebuilt
+      - product/app/Maps
+      - product/app/MarkupGoogle
+      - product/app/MicropaperPrebuilt
+      - product/app/ModuleMetadataGoogle
       - product/app/MotionSenseBridgePrebuilt
       - product/app/NexusWallpapers
-      - product/app/NgaResources/
+      - product/app/NgaResources
       - product/app/Ornament
-      - product/app/Photos/
+      - product/app/Photos
       - product/app/PixelCameraServices
       - product/app/PixelThemesStub
-      - product/app/PixelThemesStub2022_and_newer/
+      - product/app/PixelThemesStub2022_and_newer
       - product/app/PixelWallpapers
-      - product/app/PlayAutoInstallConfig/
-      - product/app/PrebuiltDeskClockGoogle/
-      - product/app/PrebuiltGmail/
+      - product/app/PlayAutoInstallConfig
+      - product/app/PrebuiltDeskClockGoogle
+      - product/app/PrebuiltGmail
       - product/app/PrebuiltGoogleAdservicesTvp
-      - product/app/PrebuiltGoogleTelemetryTvp/
+      - product/app/PrebuiltGoogleTelemetryTvp
       - product/app/SSRestartDetector
-      - product/app/SafetyRegulatoryInfo/
-      - product/app/SoundAmplifierPrebuilt/
-      - product/app/SoundPickerPrebuilt/
+      - product/app/SafetyRegulatoryInfo
+      - product/app/SoundAmplifierPrebuilt
+      - product/app/SoundPickerPrebuilt
       - product/app/TrichromeLibrary
-      - product/app/TrichromeLibrary-Stub/
-      - product/app/Tycho/
+      - product/app/TrichromeLibrary-Stub
+      - product/app/Tycho
       - product/app/VZWAPNLib
-      - product/app/Videos/
-      - product/app/VoiceAccessPrebuilt/
+      - product/app/Videos
+      - product/app/VoiceAccessPrebuilt
       - product/app/Wallpapers
       - product/app/WebViewGoogle
-      - product/app/WebViewGoogle-Stub/
-      - product/app/YouTube/
-      - product/app/YouTubeMusicPrebuilt/
-      - product/app/arcore/
-      - product/app/talkback/
+      - product/app/WebViewGoogle-Stub
+      - product/app/YouTube
+      - product/app/YouTubeMusicPrebuilt
+      - product/app/arcore
+      - product/app/talkback
       - product/priv-app/AdaptiveVPNPrebuilt
-      - product/priv-app/AmbientSensePrebuilt/
+      - product/priv-app/AmbientSensePrebuilt
       - product/priv-app/AmbientStreaming
-      - product/priv-app/AndroidAutoStubPrebuilt/
+      - product/priv-app/AndroidAutoStubPrebuilt
       - product/priv-app/AppDirectedSMSService
       - product/priv-app/BetaFeedback
-      - product/priv-app/BetterBug/
+      - product/priv-app/BetterBug
       - product/priv-app/BetterBugStub
       - product/priv-app/CarrierLocation
-      - product/priv-app/CarrierMetrics/
+      - product/priv-app/CarrierMetrics
       - product/priv-app/CarrierServices
       - product/priv-app/CarrierSettings
       - product/priv-app/CarrierWifi
-      - product/priv-app/CbrsNetworkMonitor/
-      - product/priv-app/ConfigUpdater/
-      - product/priv-app/ConnMO/
-      - product/priv-app/DCMO/
-      - product/priv-app/DMService/
-      - product/priv-app/DeviceIntelligenceNetworkPrebuilt/
+      - product/priv-app/CbrsNetworkMonitor
+      - product/priv-app/ConfigUpdater
+      - product/priv-app/ConnMO
+      - product/priv-app/DCMO
+      - product/priv-app/DMService
+      - product/priv-app/DeviceIntelligenceNetworkPrebuilt
       - product/priv-app/DevicePersonalizationPrebuiltPixel
-      - product/priv-app/DiagMon/
+      - product/priv-app/DiagMon
       - product/priv-app/DiagnosticsToolPrebuilt
       - product/priv-app/Dreamliner
-      - product/priv-app/FilesPrebuilt/
-      - product/priv-app/GCS/
-      - product/priv-app/GoogleCamera/
-      - product/priv-app/GoogleDialer/
-      - product/priv-app/GoogleOneTimeInitializer/
-      - product/priv-app/GoogleRestorePrebuilt/
-      - product/priv-app/HardwareInfo/
-      - product/priv-app/HelpRtcPrebuilt/
+      - product/priv-app/FilesPrebuilt
+      - product/priv-app/GCS
+      - product/priv-app/GoogleCamera
+      - product/priv-app/GoogleDialer
+      - product/priv-app/GoogleOneTimeInitializer
+      - product/priv-app/GoogleRestorePrebuilt
+      - product/priv-app/HardwareInfo
+      - product/priv-app/HelpRtcPrebuilt
       - product/priv-app/HotwordEnrollment
       - product/priv-app/KidsSupervisionStub
-      - product/priv-app/MaestroPrebuilt/
-      - product/priv-app/OTAConfigNoZeroTouchPrebuilt/
-      - product/priv-app/OdadPrebuilt/
-      - product/priv-app/OemDmTrigger/
-      - product/priv-app/PartnerSetupPrebuilt/
-      - product/priv-app/Phonesky/
-      - product/priv-app/PixelLiveWallpaperPrebuilt/
-      - product/priv-app/PrebuiltBugle/
+      - product/priv-app/MaestroPrebuilt
+      - product/priv-app/OTAConfigNoZeroTouchPrebuilt
+      - product/priv-app/OdadPrebuilt
+      - product/priv-app/OemDmTrigger
+      - product/priv-app/PartnerSetupPrebuilt
+      - product/priv-app/Phonesky
+      - product/priv-app/PixelLiveWallpaperPrebuilt
+      - product/priv-app/PrebuiltBugle
       - product/priv-app/PrebuiltGmsCore
-      - product/priv-app/RecorderPrebuilt/
+      - product/priv-app/RecorderPrebuilt
       - product/priv-app/RetailDemoGooglePrebuilt
-      - product/priv-app/SCONE/
-      - product/priv-app/SafetyHubPrebuilt/
-      - product/priv-app/ScribePrebuilt/
-      - product/priv-app/SecurityHubPrebuilt/
-      - product/priv-app/SettingsIntelligenceGooglePrebuilt/
-      - product/priv-app/SetupWizardPrebuilt/
-      - product/priv-app/Showcase/
+      - product/priv-app/SCONE
+      - product/priv-app/SafetyHubPrebuilt
+      - product/priv-app/ScribePrebuilt
+      - product/priv-app/SecurityHubPrebuilt
+      - product/priv-app/SettingsIntelligenceGooglePrebuilt
+      - product/priv-app/SetupWizardPrebuilt
+      - product/priv-app/Showcase
       - product/priv-app/SprintDM
       - product/priv-app/SprintHM
-      - product/priv-app/TetheringEntitlement/
-      - product/priv-app/TipsPrebuilt/
-      - product/priv-app/TurboPrebuilt/
+      - product/priv-app/TetheringEntitlement
+      - product/priv-app/TipsPrebuilt
+      - product/priv-app/TurboPrebuilt
       - product/priv-app/USCCDM
-      - product/priv-app/Velvet/
-      - product/priv-app/WellbeingPrebuilt/
-      - product/priv-app/WfcActivation/
+      - product/priv-app/Velvet
+      - product/priv-app/WellbeingPrebuilt
+      - product/priv-app/WfcActivation
       - system/app/BluetoothMigrationForBeta3User
-      - system/app/CaptivePortalLoginGoogle/
-      - system/app/GoogleExtShared/
-      - system/app/GooglePrintRecommendationService/
-      - system/priv-app/DocumentsUIGoogle/
-      - system/priv-app/GooglePackageInstaller/
-      - system/priv-app/NetworkPermissionConfigGoogle/
-      - system/priv-app/NetworkStackGoogle/
-      - system/priv-app/TagGoogle/
-      - system_ext/app/EmergencyInfoGoogleNoUi/
-      - system_ext/app/Flipendo/
+      - system/app/CaptivePortalLoginGoogle
+      - system/app/GoogleExtShared
+      - system/app/GooglePrintRecommendationService
+      - system/priv-app/DocumentsUIGoogle
+      - system/priv-app/GooglePackageInstaller
+      - system/priv-app/NetworkPermissionConfigGoogle
+      - system/priv-app/NetworkStackGoogle
+      - system/priv-app/TagGoogle
+      - system_ext/app/EmergencyInfoGoogleNoUi
+      - system_ext/app/Flipendo
       - system_ext/priv-app/CarrierSetup
       - system_ext/priv-app/ConnectivityThermalPowerManager
       - system_ext/priv-app/FactoryOta
-      - system_ext/priv-app/GoogleFeedback/
-      - system_ext/priv-app/GoogleServicesFramework/
+      - system_ext/priv-app/GoogleFeedback
+      - system_ext/priv-app/GoogleServicesFramework
       - system_ext/priv-app/HbmSVManager
       - system_ext/priv-app/LLKAgent
       - system_ext/priv-app/MyVerizonServices
-      - system_ext/priv-app/NexusLauncherRelease/
+      - system_ext/priv-app/NexusLauncherRelease
       - system_ext/priv-app/OBDM_Permissions
-      - system_ext/priv-app/OsloFeedback/
-      - system_ext/priv-app/PixelSetupWizard/
-      - system_ext/priv-app/QuickAccessWallet/
-      - system_ext/priv-app/RilConfigService/
-      - system_ext/priv-app/SettingsGoogle/
+      - system_ext/priv-app/OsloFeedback
+      - system_ext/priv-app/PixelSetupWizard
+      - system_ext/priv-app/QuickAccessWallet
+      - system_ext/priv-app/RilConfigService
+      - system_ext/priv-app/SettingsGoogle
       - system_ext/priv-app/SettingsGoogleFutureFaceEnroll
-      - system_ext/priv-app/StorageManagerGoogle/
-      - system_ext/priv-app/SystemUIGoogle/
+      - system_ext/priv-app/StorageManagerGoogle
+      - system_ext/priv-app/SystemUIGoogle
       - system_ext/priv-app/TurboAdapter
-      - system_ext/priv-app/UvExposureReporter/
-      - system_ext/priv-app/WallpaperPickerGoogleRelease/
+      - system_ext/priv-app/UvExposureReporter
+      - system_ext/priv-app/WallpaperPickerGoogleRelease
       - system_ext/priv-app/YadaYada
       - system_ext/priv-app/grilservice
       - system_ext/priv-app/obdm_stub
       # Fonts
-      - product/fonts/
-      - system/fonts/
-      - system_ext/fonts/
-      - vendor/fonts/
+      - product/fonts
+      - system/fonts
+      - system_ext/fonts
+      - vendor/fonts
       # Irrelevant AVB keys
-      - product/etc/security/avb/
+      - product/etc/security/avb
       # Irrelevant Google Assistant stuff // on-device AI
       - product/etc/ambient
       - product/etc/firmware/music_detector
-      - product/usr/srec/
+      - product/usr/srec
       # Irrelevant Google keyboard localization
       - product/usr/share/ime/google/d3_lms
       # Irrelevant charging animations
@@ -261,20 +261,20 @@ filters:
       - vendor/etc/res/images/charger
       - vendor/etc/res/values/charger
       # Irrelevant wallpaper stuff
-      - product/wallpaper/image/
+      - product/wallpaper/image
       # Kernel modules
       - odm/lib/modules
-      - odm_dlkm/
+      - odm_dlkm
       - vendor/lib/modules
-      - vendor_dlkm/
+      - vendor_dlkm
       # Overlay apps
-      - product/overlay/
-      - system/overlay/
-      - system_ext/overlay/
-      - vendor/overlay/
+      - product/overlay
+      - system/overlay
+      - system_ext/overlay
+      - vendor/overlay
       # Pixel NFC
-      - system_ext/priv-app/PixelNfc/
+      - system_ext/priv-app/PixelNfc
       # Preferred apps
-      - product/etc/preferred-apps/
+      - product/etc/preferred-apps
       # fs-verity certs for play store
       - product/etc/security/fsverity
