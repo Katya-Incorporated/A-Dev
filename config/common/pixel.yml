@@ -2,9 +2,9 @@ device:
   vendor: google_devices
 
 includes:
-  - removal.yml
   - file-removal.yml
   - overlay-removal.yml
+  - removal.yml
 
 platform:
   sepolicy_dirs:

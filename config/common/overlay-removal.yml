@@ -1,14 +1,6 @@
 filters:
   overlay_keys:
     prefix:
-      # Pixel SetupWizard
-      - com.google.android.pixel.setupwizard
-      # Unused SIM app stuff
-      - com.android.simappdialog
-      # Unwanted Permissions link
-      - com.android.permissioncontroller
-      # Unwanted icons
-      - android:drawable/ic_doc_
       # Fonts
       - android:string/config_bodyFont
       - android:string/config_headlineFont
@@ -16,186 +8,193 @@ filters:
       - android:string/config_feedbackIntent
       - android:string/config_helpIntent
       - android:string/config_helpPackage
-      # Useless provisioning items
-      - com.android.managedprovisioning
-      # Useless defaults
-      - com.android.providers.settings
+      # Pixel SetupWizard
+      - com.google.android.pixel.setupwizard
       # Unused
       - com.google.android.cellbroadcastreceiver/CellBroadcastCustomization
       - com.google.android.cellbroadcastservice/CellBroadcastServiceCustomization
       - com.google.android.documentsui/DocumentsUICustomization
-      # unused oma-dm stuff
-      - com.android.omadm.service
-      # unused flipendo
-      - com.google.android.flipendo
-      # scone
-      - com.google.android.apps.scone
+      # Unused SIM app stuff
+      - com.android.simappdialog
+      # Unwanted Permissions link
+      - com.android.permissioncontroller
+      # Unwanted icons
+      - android:drawable/ic_doc_
+      # Useless defaults
+      - com.android.providers.settings
+      # Useless provisioning items
+      - com.android.managedprovisioning
       # google media apexs
       - com.google.android.providers.media.module
       - com.google.android.storagemanager
+      # scone
+      - com.google.android.apps.scone
+      # unused flipendo
+      - com.google.android.flipendo
+      # unused oma-dm stuff
+      - com.android.omadm.service
     regex:
       - branded_vpn
     match:
+      - android:bool/config_adaptive_sleep_available
+      - android:bool/config_assistLongPressHomeEnabledDefault
+      - android:bool/config_assistTouchGestureEnabledDefault
+      - android:bool/config_bugReportHandlerEnabled
+      - android:bool/config_defaultRingtonePickerEnabled
+      - android:bool/config_enableFusedLocationOverlay
+      - android:bool/config_enableGeocoderOverlay
+      - android:bool/config_enableGeofenceOverlay
+      - android:bool/config_enableGeolocationTimeZoneDetection
+      - android:bool/config_enableNetworkLocationOverlay
+      - android:bool/config_enablePrimaryLocationTimeZoneProvider
+      - android:bool/config_enableSecondaryLocationTimeZoneProvider
+      - android:bool/config_pinnerCameraApp
+      - android:bool/config_pinnerHomeApp
+      - android:bool/config_profcollectReportUploaderEnabled
+      - android:bool/config_sendPackageName
+      - android:bool/config_showGesturalNavigationHints
+      - android:bool/config_smart_battery_available
+      - android:bool/config_volumeAdjustmentForRemoteGroupSessions
+      - android:bool/config_volumeHushGestureEnabled
+      - android:drawable/ic_safety_protection
+      - android:integer/config_defaultNightMode
+      - android:integer/config_keyChordPowerVolumeUp
+      - android:integer/config_longPressOnPowerBehavior
+      - android:integer/config_storageManagerDaystoRetainDefault
       - android:string-array/config_accessibility_allowed_install_source
+      - android:string-array/config_allowedSecureInstantAppSettings
+      - android:string-array/config_batteryPackageTypeService
+      - android:string-array/config_companionDeviceCerts
+      - android:string-array/config_companionDevicePackages
+      - android:string-array/config_companionDevicePackages
+      - android:string-array/config_defaultCloudSearchServices
+      - android:string-array/config_defaultFirstUserRestrictions
+      - android:string-array/config_disabledUntilUsedPreinstalledImes
+      - android:string-array/config_disabledUntilUsedPreinstalledImes
+      - android:string-array/config_ephemeralResolverPackage
       - android:string-array/config_forceQueryablePackages
       - android:string-array/config_integrityRuleProviderPackages
+      - android:string-array/config_keep_warming_services
+      - android:string-array/config_locationExtraPackageNames
+      - android:string-array/config_locationProviderPackageNames
+      - android:string-array/config_nonBlockableNotificationPackages
+      - android:string-array/config_nonBlockableNotificationPackages
+      - android:string-array/config_packagesExemptFromSuspension
+      - android:string-array/config_priorityOnlyDndExemptPackages
+      - android:string-array/config_priorityOnlyDndExemptPackages
+      - android:string-array/vendor_cross_profile_apps
+      - android:string-array/vendor_cross_profile_apps
       - android:string-array/vendor_required_apps_managed_device
       - android:string-array/vendor_required_apps_managed_profile
       - android:string-array/vendor_required_apps_managed_user
       - android:string/config_appsAuthorizedForSharedAccounts
-      - android:string-array/config_packagesExemptFromSuspension
-      - android:string/config_defaultAssistantAccessComponent
-      - android:string/config_defaultListenerAccessPackages
-      - android:string/config_defaultAttentionService
-      - android:string/config_defaultRotationResolverService
+      - android:string/config_batterySaverScheduleProvider
+      - android:string/config_defaultAccessibilityService
+      - android:string/config_defaultAmbientContextConsentComponent
+      - android:string/config_defaultAmbientContextDetectionService
       - android:string/config_defaultAppPredictionService
+      - android:string/config_defaultAssistant
+      - android:string/config_defaultAssistantAccessComponent
+      - android:string/config_defaultAttentionService
       - android:string/config_defaultAugmentedAutofillService
+      - android:string/config_defaultAutofillService
+      - android:string/config_defaultBugReportHandlerApp
+      - android:string/config_defaultCaptivePortalLoginPackageName
       - android:string/config_defaultContentCaptureService
       - android:string/config_defaultContentSuggestionsService
+      - android:string/config_defaultDialer
+      - android:string/config_defaultDndAccessPackages
+      - android:string/config_defaultGallery
+      - android:string/config_defaultListenerAccessPackages
+      - android:string/config_defaultModuleMetadataProvider
+      - android:string/config_defaultMusic
+      - android:string/config_defaultMusicRecognitionService
+      - android:string/config_defaultNearbyFastPairSettingsDevicesComponent
+      - android:string/config_defaultNearbySharingComponent
+      - android:string/config_defaultNetworkRecommendationProviderPackage
       - android:string/config_defaultOnDeviceSpeechRecognitionService
+      - android:string/config_defaultProfcollectReportUploaderAction
+      - android:string/config_defaultProfcollectReportUploaderApp
+      - android:string/config_defaultQrCodeComponent
+      - android:string/config_defaultRotationResolverService
+      - android:string/config_defaultSearchSelectorPackageName
       - android:string/config_defaultSearchUiService
       - android:string/config_defaultSmartspaceService
+      - android:string/config_defaultSms
+      - android:string/config_defaultSupervisionProfileOwnerComponent
       - android:string/config_defaultSystemCaptionsManagerService
       - android:string/config_defaultSystemCaptionsService
       - android:string/config_defaultTextClassifierPackage
       - android:string/config_defaultTranslationService
+      - android:string/config_defaultWallpaperEffectsGenerationService
+      - android:string/config_defaultWellbeingPackage
+      - android:string/config_deviceConfiguratorPackageName
+      - android:string/config_devicePolicyManagement
+      - android:string/config_devicePolicyManagementUpdater
+      - android:string/config_deviceProvisioningPackage
+      - android:string/config_dreamsDefaultComponent
+      - android:string/config_emergency_dialer_package
+      - android:string/config_helpPackageNameValue
+      - android:string/config_incidentReportApproverPackage
+      - android:string/config_loggable_dream_prefix
+      - android:string/config_persistentDataPackageName
+      - android:string/config_powerSaveModeChangedListenerPackage
+      - android:string/config_primaryLocationTimeZoneProviderPackageName
+      - android:string/config_recentsComponentName
+      - android:string/config_retailDemoPackage
+      - android:string/config_retailDemoPackageSignature
+      - android:string/config_secondaryHomePackage
+      - android:string/config_secondaryLocationTimeZoneProviderPackageName
+      - android:string/config_servicesExtensionPackage
+      - android:string/config_systemActivityRecognizer
       - android:string/config_systemAmbientAudioIntelligence
+      - android:string/config_systemAppProtectionService
       - android:string/config_systemAudioIntelligence
+      - android:string/config_systemAutomotiveProjection
+      - android:string/config_systemCompanionDeviceProvider
+      - android:string/config_systemContacts
+      - android:string/config_systemGallery
+      - android:string/config_systemGameService
+      - android:string/config_systemImageEditor
       - android:string/config_systemNotificationIntelligence
+      - android:string/config_systemSettingsIntelligence
+      - android:string/config_systemSpeechRecognizer
+      - android:string/config_systemSupervision
       - android:string/config_systemTextIntelligence
       - android:string/config_systemUiIntelligence
       - android:string/config_systemVisualIntelligence
-      - android:string-array/config_ephemeralResolverPackage
-      - android:string-array/config_locationProviderPackageNames
-      - android:string/config_defaultAutofillService
-      - android:string/config_defaultNearbySharingComponent
-      - android:string/config_defaultNetworkRecommendationProviderPackage
-      - android:string/config_deviceConfiguratorPackageName
-      - android:string/config_persistentDataPackageName
-      - android:string/config_primaryLocationTimeZoneProviderPackageName
-      - android:string/config_systemActivityRecognizer
-      - android:string/config_systemCompanionDeviceProvider
-      - android:string/config_defaultDndAccessPackages
-      - android:string-array/config_batteryPackageTypeService
-      - android:string/config_defaultSupervisionProfileOwnerComponent
-      - android:string-array/config_locationExtraPackageNames
-      - android:string-array/config_allowedSecureInstantAppSettings
-      - android:string-array/config_companionDeviceCerts
-      - android:string-array/config_companionDevicePackages
-      - android:string-array/config_disabledUntilUsedPreinstalledImes
-      - android:string-array/vendor_cross_profile_apps
-      - android:string-array/config_nonBlockableNotificationPackages
-      - android:string-array/config_priorityOnlyDndExemptPackages
-      - android:string-array/config_defaultFirstUserRestrictions
-      - android:string-array/config_keep_warming_services
-      - android:string-array/config_companionDevicePackages 
-      - android:string-array/config_disabledUntilUsedPreinstalledImes 
-      - android:string-array/vendor_cross_profile_apps 
-      - android:string/config_defaultAccessibilityService 
-      - android:string/config_defaultAssistant 
-      - android:string/config_defaultDialer 
-      - android:string/config_defaultGallery 
-      - android:string/config_defaultMusic 
-      - android:string/config_defaultSms 
-      - android:string/config_servicesExtensionPackage 
-      - android:string/config_systemAutomotiveProjection 
-      - android:string/config_systemContacts 
-      - android:string/config_systemGallery 
-      - android:string/config_systemSpeechRecognizer 
-      - android:string/config_systemWellbeing 
-      - android:string/widget_default_package_name 
-      - android:string-array/config_nonBlockableNotificationPackages 
-      - android:string-array/config_priorityOnlyDndExemptPackages 
-      - android:string/config_batterySaverScheduleProvider 
-      - android:string/config_defaultBugReportHandlerApp 
-      - android:string/config_defaultModuleMetadataProvider 
-      - android:string/config_defaultMusicRecognitionService 
-      - android:string/config_defaultProfcollectReportUploaderAction 
-      - android:string/config_defaultProfcollectReportUploaderApp 
-      - android:string/config_defaultWellbeingPackage 
-      - android:string/config_emergency_dialer_package 
-      - android:string/config_helpPackageNameValue 
-      - android:string/config_incidentReportApproverPackage 
-      - android:string/config_powerSaveModeChangedListenerPackage 
-      - android:string/config_recentsComponentName 
-      - android:string/config_retailDemoPackage 
-      - android:string/config_secondaryHomePackage 
-      - android:string/config_systemImageEditor 
-      - android:string/widget_default_class_name
-      - android:string/harmful_app_warning_title
-      - android:string/config_retailDemoPackageSignature
-      - android:string/config_deviceProvisioningPackage
+      - android:string/config_systemWellbeing
       - android:string/config_wallpaperCropperPackage
       - android:string/default_wallpaper_component
-      - android:string/config_deviceProvisioningPackage
-      - android:bool/config_enableGeolocationTimeZoneDetection
-      - android:bool/config_enablePrimaryLocationTimeZoneProvider
-      - android:bool/config_enableSecondaryLocationTimeZoneProvider
-      - android:bool/config_adaptive_sleep_available
-      - android:bool/config_showGesturalNavigationHints
-      - android:bool/config_assistLongPressHomeEnabledDefault
-      - android:bool/config_assistTouchGestureEnabledDefault
-      - android:bool/config_volumeHushGestureEnabled
-      - android:bool/config_bugReportHandlerEnabled
-      - android:bool/config_defaultRingtonePickerEnabled
-      - android:bool/config_profcollectReportUploaderEnabled
-      - android:bool/config_sendPackageName
-      - android:bool/config_smart_battery_available
-      - android:bool/config_volumeAdjustmentForRemoteGroupSessions
-      - android:bool/config_enableFusedLocationOverlay
-      - android:bool/config_enableGeocoderOverlay
-      - android:bool/config_enableGeofenceOverlay
-      - android:bool/config_enableNetworkLocationOverlay
-      - android:string/config_secondaryLocationTimeZoneProviderPackageName
-      - android:integer/config_longPressOnPowerBehavior
-      - android:integer/config_storageManagerDaystoRetainDefault
-      - android:integer/config_defaultNightMode
-      - android:integer/config_keyChordPowerVolumeUp
+      - android:string/harmful_app_warning_title
+      - android:string/widget_default_class_name
+      - android:string/widget_default_package_name
       - com.android.networkstack/NetworkStackConfig:bool/config_dhcp_client_hostname
       - com.android.phone:string-array/thermal_mitigation_allowlisted_packages
       - com.android.phone:string/dialer_default_class
       - com.android.phone:string/platform_carrier_config_package
       - com.android.phone:string/platform_number_verification_package
-      - com.android.providers.telephony:string/apn_source_service
       - com.android.providers.contacts:string/metadata_sync_pacakge
+      - com.android.providers.telephony:string/apn_source_service
       - com.android.server.telecom:string/call_diagnostic_service_package_name
       - com.android.server.telecom:string/dialer_default_class
       - com.android.settings:bool/config_nfc_detection_point
       - com.android.settings:bool/config_show_reverse_charging
       - com.android.settings:bool/config_show_touch_sensitivity
       - com.android.settings:bool/config_suc_use_partner_resource
-      - com.android.settings:string-array/slice_allowlist_package_names
-      - com.android.settings:string-array/config_settings_slices_accessibility_components
-      - com.android.systemui:bool/config_touch_context_enabled
-      - com.android.systemui:bool/config_wlc_support_enabled
-      - com.android.systemui:string-array/config_controlsPreferredPackages
-      - com.android.systemui:string-array/config_pluginWhitelist
-      - com.android.systemui:string/config_dockComponent
-      - com.android.systemui:string/config_screenshotEditor
-      - com.android.systemui:string/branded_monitoring_description_app_personal
-      - com.android.systemui:string/config_cameraProtectionExcludedPackages
-      - android:bool/config_pinnerCameraApp
-      - android:bool/config_pinnerHomeApp
       - com.android.settings:drawable/$aware_assist_static__0
       - com.android.settings:drawable/$aware_assist_static__1
       - com.android.settings:drawable/aware_assist_static
+      - com.android.settings:string-array/config_settings_slices_accessibility_components
+      - com.android.settings:string-array/slice_allowlist_package_names
+      - com.android.systemui:bool/config_touch_context_enabled
+      - com.android.systemui:bool/config_wlc_support_enabled
       - com.android.systemui:integer/config_keyguardRefreshRate
-      - android:string/config_defaultCaptivePortalLoginPackageName
-      - android:string/config_defaultNearbyFastPairSettingsDevicesComponent
-      - android:string/config_defaultQrCodeComponent
-      - android:string/config_defaultSearchSelectorPackageName
-      - android:string/config_devicePolicyManagement
-      - android:string/config_devicePolicyManagementUpdater
-      - android:string/config_loggable_dream_prefix
-      - android:string/config_systemGameService
-      - android:string/config_systemSettingsIntelligence
-      - android:string-array/config_defaultCloudSearchServices
-      - android:string/config_defaultAmbientContextConsentComponent
-      - android:string/config_defaultAmbientContextDetectionService
-      - android:string/config_defaultWallpaperEffectsGenerationService
-      - android:string/config_systemAppProtectionService
-      - android:string/config_systemSupervision
+      - com.android.systemui:string-array/config_controlsPreferredPackages
+      - com.android.systemui:string-array/config_pluginWhitelist
+      - com.android.systemui:string/branded_monitoring_description_app_personal
+      - com.android.systemui:string/config_cameraProtectionExcludedPackages
+      - com.android.systemui:string/config_dockComponent
       - com.android.systemui:string/config_remoteCopyPackage
-      - android:drawable/ic_safety_protection
-      - android:string/config_dreamsDefaultComponent
+      - com.android.systemui:string/config_screenshotEditor
       - com.android.systemui:string/quick_settings_tiles_default
