@@ -254,12 +254,6 @@ filters:
       - product/usr/srec
       # Irrelevant Google keyboard localization
       - product/usr/share/ime/google/d3_lms
-      # Irrelevant charging animations
-      - product/etc/res/images/charger
-      - product/etc/res/values/charger
-      - vendor/res/images/charger
-      - vendor/etc/res/images/charger
-      - vendor/etc/res/values/charger
       # Irrelevant wallpaper stuff
       - product/wallpaper/image
       # Kernel modules
