@@ -270,5 +270,3 @@ filters:
       - system_ext/priv-app/PixelNfc
       # Preferred apps
       - product/etc/preferred-apps
-      # fs-verity certs for play store
-      - product/etc/security/fsverity
