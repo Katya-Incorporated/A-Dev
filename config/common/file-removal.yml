@@ -48,6 +48,35 @@ filters:
       # Irrelevant OTA updater
       - system_ext/etc/init/init.sota.rc
       - system_ext/etc/permissions/com.google.android.factoryota.xml
+      # Unused Face Unlock stuff
+      - product/etc/permissions/android.hardware.biometrics.face.xml
+      - vendor/bin/hw/android.hardware.biometrics.face-service.22.pixel
+      - vendor/etc/faceauth_pipeline_input_pixel_22
+      - vendor/etc/init/android.hardware.biometrics.face-service.22.pixel.rc
+      - vendor/etc/init/init.faceauth.rc
+      - vendor/firmware/faceauth_p22.app
+      - vendor/lib64/com.google.face.debug-V1-ndk.so
+      - vendor/lib64/com.google.face.debug-V2-ndk.so
+      - vendor/lib64/libface_tuscany_sensor_trusty.so
+      - vendor/lib64/libface_common_thread.so
+      - vendor/lib64/libface_common_util.so
+      - vendor/lib64/libface_common_camera.so
+      - vendor/lib64/libface_hal_trusty_tuscany.so
+      - vendor/lib64/libface_tuscany_trusty_debug_host.so
+      - vendor/lib64/libface_common_capture.so
+      - vendor/lib64/libface_common_log.so
+      - vendor/lib64/libface_tuscany_cache_manager.so
+      - vendor/lib64/libface_common_user.so
+      - vendor/lib64/libface_common_trustzone.so
+      - vendor/lib64/libface_common_perf.so
+      - vendor/lib64/libface_common_fake_camera.so
+      - vendor/lib64/libface_common_debug.so
+      - vendor/lib64/libface_tuscany_cache_proto.so
+      - vendor/lib64/libface_tuscany_proxy_util_trusty.so
+      - vendor/lib64/libface_common_user_proto.so
+      - vendor/lib64/libface_common_task.so
+      - vendor/lib64/libface_common_frame.so
+      - vendor/etc/vintf/manifest/android.hardware.biometrics.face-service.22.pixel.xml
       # Unused Google RIL
       - system_ext/etc/permissions/google-ril.xml
       - system_ext/framework/google-ril.jar

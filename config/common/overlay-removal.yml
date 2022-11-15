@@ -1,6 +1,8 @@
 filters:
   overlay_keys:
     prefix:
+      # Face Unlock
+      - com.google.android.settings.future.biometrics.faceenroll
       # Fonts
       - android:string/config_bodyFont
       - android:string/config_headlineFont
