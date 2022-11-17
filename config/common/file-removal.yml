@@ -77,9 +77,6 @@ filters:
       - vendor/lib64/libface_common_task.so
       - vendor/lib64/libface_common_frame.so
       - vendor/etc/vintf/manifest/android.hardware.biometrics.face-service.22.pixel.xml
-      # Unused Google RIL
-      - system_ext/etc/permissions/google-ril.xml
-      - system_ext/framework/google-ril.jar
       # Unused RadioConfigLib.jar
       - system_ext/etc/permissions/com.android.omadm.radioconfig.xml
       - system_ext/framework/RadioConfigLib.jar
