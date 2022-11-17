@@ -63,9 +63,16 @@ export async function writeFirmwareImages(images: FirmwareImages, fwDir: string)
 }
 
 export function generateAndroidInfo(device: string, blVersion: string, radioVersion: string) {
-  return `require board=${device}
+  let android_info = `require board=${device}
 
 require version-bootloader=${blVersion}
 require version-baseband=${radioVersion}
 `
+
+  const vendor_kernel_boot_devices = ['cheetah', 'panther']
+  if (vendor_kernel_boot_devices.includes(device)) {
+    android_info += 'require partition-exists=vendor_kernel_boot\n'
+  }
+
+  return android_info
 }
