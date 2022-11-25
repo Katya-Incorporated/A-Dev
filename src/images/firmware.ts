@@ -71,7 +71,7 @@ require version-baseband=${radioVersion}
 
   const vendor_kernel_boot_devices = ['cheetah', 'panther']
   if (vendor_kernel_boot_devices.includes(device)) {
-    android_info = android_info + 'require partition-exists=vendor_kernel_boot\n'
+    android_info += 'require partition-exists=vendor_kernel_boot\n'
   }
 
   return android_info
