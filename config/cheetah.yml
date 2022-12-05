@@ -3,6 +3,8 @@ device:
 
 platform:
   product_makefile: device/google/pantah/aosp_cheetah.mk
+  sepolicy_dirs:
+    - device/google/pantah-sepolicy
 
 includes:
   - common/gen7pixel.yml
