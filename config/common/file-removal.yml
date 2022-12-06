@@ -230,6 +230,7 @@ filters:
       - product/priv-app/TurboPrebuilt
       - product/priv-app/USCCDM
       - product/priv-app/Velvet
+      - product/priv-app/WallpaperEffect
       - product/priv-app/WellbeingPrebuilt
       - product/priv-app/WfcActivation
       - system/app/BluetoothMigrationForBeta3User
