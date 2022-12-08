@@ -9,6 +9,8 @@ filters:
   files:
     match:
       - vendor/etc/vintf/manifest/manifest_wifi_ext.xml
+      - vendor/bin/hw/android.hardware.nfc@1.2-service.st
+      - vendor/etc/init/android.hardware.nfc@1.2-service.st.rc
 
   dep_files:
     match:
