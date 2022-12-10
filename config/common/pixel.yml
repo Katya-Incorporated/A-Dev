@@ -9,3 +9,9 @@ includes:
 platform:
   sepolicy_dirs:
     - hardware/google/pixel-sepolicy
+
+filters:
+  dep_files:
+    prefix:
+      # Protobufs for inline carrier extraction
+      - product/etc/CarrierSettings
