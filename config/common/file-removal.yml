@@ -122,6 +122,8 @@ filters:
       # APEX
       - system/apex
       - system_ext/apex
+      # Root CAs
+      - system/etc/security/cacerts
       # Apps
       - product/app/CalculatorGooglePrebuilt
       - product/app/CalendarGooglePrebuilt
