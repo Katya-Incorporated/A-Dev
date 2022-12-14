@@ -18,3 +18,14 @@ filters:
       - vendor/etc/init/usb-cdc.rc
       # Remove fstab FIPS variant which we have disabled fully
       - vendor/etc/fstab.gs101-fips
+      # Temporarily exclude Mali GPU files
+      - vendor/lib/egl/libGLES_mali.so
+      - vendor/lib64/egl/libGLES_mali.so
+      - vendor/lib/hw/vulkan.mali.so
+      - vendor/lib64/hw/vulkan.mali.so
+      - vendor/lib/libgpudataproducer.so
+      - vendor/lib64/libgpudataproducer.so
+      - vendor/lib/libOpenCL-pixel.so
+      - vendor/lib64/libOpenCL-pixel.so
+      - vendor/lib/libOpenCL.so
+      - vendor/lib64/libOpenCL.so
