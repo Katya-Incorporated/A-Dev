@@ -45,6 +45,7 @@ filters:
       - system_ext/etc/permissions/privapp-permissions-google-se.xml
       - system_ext/framework/com.android.hotwordenrollment.common.util.jar
       - vendor/etc/default-permissions/default-permissions_talkback.xml
+      - product/etc/sysconfig/google-install-constraints-package-allowlist.xml
       # Irrelevant OTA updater
       - system_ext/etc/init/init.sota.rc
       - system_ext/etc/permissions/com.google.android.factoryota.xml
