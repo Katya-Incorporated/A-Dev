@@ -206,6 +206,7 @@ filters:
       - product/priv-app/GoogleRestorePrebuilt
       - product/priv-app/HardwareInfo
       - product/priv-app/HelpRtcPrebuilt
+      - product/priv-app/HealthConnectPrebuilt
       - product/priv-app/HotwordEnrollment
       - product/priv-app/KidsSupervisionStub
       - product/priv-app/MaestroPrebuilt
