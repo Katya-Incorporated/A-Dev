@@ -228,6 +228,7 @@ filters:
       - product/priv-app/Showcase
       - product/priv-app/SprintDM
       - product/priv-app/SprintHM
+      - product/priv-app/SSRestartDetector
       - product/priv-app/TetheringEntitlement
       - product/priv-app/TipsPrebuilt
       - product/priv-app/TurboPrebuilt
