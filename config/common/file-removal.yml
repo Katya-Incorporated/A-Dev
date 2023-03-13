@@ -240,6 +240,7 @@ filters:
       - product/priv-app/WfcActivation
       - system/app/BluetoothMigrationForBeta3User
       - system/app/CaptivePortalLoginGoogle
+      - system/app/GoogleBluetoothLegacyMigration
       - system/app/GoogleExtShared
       - system/app/GooglePrintRecommendationService
       - system/priv-app/DocumentsUIGoogle
