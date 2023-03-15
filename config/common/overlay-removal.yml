@@ -153,6 +153,7 @@ filters:
       - android:string/config_systemAppProtectionService
       - android:string/config_systemAudioIntelligence
       - android:string/config_systemAutomotiveProjection
+      - android:string/config_systemBluetoothStack
       - android:string/config_systemCompanionDeviceProvider
       - android:string/config_systemContacts
       - android:string/config_systemGallery
