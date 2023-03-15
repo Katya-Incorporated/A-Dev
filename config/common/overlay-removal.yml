@@ -79,6 +79,7 @@ filters:
       - android:string-array/config_keep_warming_services
       - android:string-array/config_locationExtraPackageNames
       - android:string-array/config_locationProviderPackageNames
+      - android:string-array/config_loggable_dream_prefixes
       - android:string-array/config_nonBlockableNotificationPackages
       - android:string-array/config_nonBlockableNotificationPackages
       - android:string-array/config_packagesExemptFromSuspension
@@ -86,6 +87,9 @@ filters:
       - android:string-array/config_priorityOnlyDndExemptPackages
       - android:string-array/vendor_cross_profile_apps
       - android:string-array/vendor_cross_profile_apps
+      - android:string-array/vendor_disallowed_apps_managed_device
+      - android:string-array/vendor_disallowed_apps_managed_profile
+      - android:string-array/vendor_disallowed_apps_managed_user
       - android:string-array/vendor_required_apps_managed_device
       - android:string-array/vendor_required_apps_managed_profile
       - android:string-array/vendor_required_apps_managed_user
@@ -106,6 +110,7 @@ filters:
       - android:string/config_defaultContentSuggestionsService
       - android:string/config_defaultDialer
       - android:string/config_defaultDndAccessPackages
+      - android:string/config_defaultDockManagerPackageName
       - android:string/config_defaultGallery
       - android:string/config_defaultListenerAccessPackages
       - android:string/config_defaultModuleMetadataProvider
