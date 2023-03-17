@@ -161,7 +161,7 @@ export async function generateBuild(
       namespace: true,
     },
     proprietaryBlueprint: {
-      modules: namedModules.values(),
+      modules: Array.from(namedModules.values()),
     },
     modulesMakefile: {
       device,
