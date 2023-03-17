@@ -162,11 +162,8 @@ export async function extractProps(config: DeviceConfig, customState: SystemStat
   let fingerprint = stockProps.get('system')!.get('ro.system.build.fingerprint')!
 
   // Diff
-  let missingProps: PartitionProps | undefined
-  if (customProps != null) {
-    let propChanges = diffPartitionProps(stockProps, customProps)
-    missingProps = new Map(Array.from(propChanges.entries()).map(([part, props]) => [part, props.removed]))
-  }
+  let propChanges = diffPartitionProps(stockProps, customProps)
+  let missingProps: PartitionProps = new Map(Array.from(propChanges.entries()).map(([part, props]) => [part, props.removed]))
 
   // A/B OTA partitions
   let stockOtaParts = stockProps.get('product')!.get('ro.product.ab_ota_partitions')!.split(',')
