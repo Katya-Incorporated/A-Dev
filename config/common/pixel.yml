@@ -15,3 +15,6 @@ filters:
     prefix:
       # Protobufs for inline carrier extraction
       - product/etc/CarrierSettings
+  deprivileged_apks:
+    prefix:
+      - system_ext/priv-app/PixelNfc/
