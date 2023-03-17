@@ -54,6 +54,7 @@ export interface DeviceConfig {
     sepolicy_dirs: Filters
     dep_files: Filters
     files: Filters
+    deprivileged_apks: Filters
   }
 }
 
@@ -109,6 +110,7 @@ const DEFAULT_CONFIG_BASE = {
     sepolicy_dirs: structuredClone(EMPTY_FILTERS),
     dep_files: structuredClone(EMPTY_INCLUDE_FILTERS),
     files: structuredClone(EMPTY_FILTERS),
+    deprivileged_apks: structuredClone(EMPTY_INCLUDE_FILTERS),
   },
 }
 

@@ -27,6 +27,8 @@ import {
 import { generateFileContexts } from '../selinux/labels'
 import { exists, readFile, TempState } from '../util/fs'
 import { ALL_SYS_PARTITIONS } from '../util/partitions'
+import {ApkModule, TYPE_APK} from "../build/soong"
+import assert from "assert"
 
 export interface PropResults {
   stockProps: PartitionProps
@@ -356,6 +358,17 @@ export async function generateBuildFiles(
   if (entries.length > 0) {
     let fileList = serializeBlobList(entries)
     await fs.writeFile(`${dirs.out}/proprietary-files.txt`, `${fileList}\n`)
+  }
+
+  // Handle deprivileging of APKs
+  for (let m of build.proprietaryBlueprint?.modules ?? []) {
+    if (m._type == TYPE_APK) {
+      let apkModule = m as ApkModule
+      if (filterValue(config.filters.deprivileged_apks, apkModule.apk)) {
+        assert(apkModule.privileged, apkModule.apk + " is already unprivileged")
+        apkModule.privileged = false
+      }
+    }
   }
 
   await writeBuildFiles(build, dirs)

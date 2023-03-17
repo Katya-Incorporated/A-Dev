@@ -6,6 +6,7 @@ import { SOONG_HEADER } from '../util/headers'
 export const SPECIAL_FILE_EXTENSIONS = new Set(['.so', '.apk', '.jar', '.xml', '.apex'])
 
 export const TYPE_SHARED_LIBRARY = 'cc_prebuilt_library_shared'
+export const TYPE_APK = 'android_app_import'
 
 export interface TargetSrcs {
   srcs: Array<string>
@@ -120,7 +121,7 @@ export type SoongModule = {
 export interface SoongBlueprint {
   namespace?: boolean
 
-  modules?: Iterable<SoongModule>
+  modules?: SoongModule[]
 }
 
 function getRelativeInstallPath(entry: BlobEntry, pathParts: Array<string>, installDir: string) {
@@ -263,7 +264,7 @@ export function blobToSoongModule(
     }
   } else if (ext == '.apk') {
     moduleSpecific = {
-      _type: 'android_app_import',
+      _type: TYPE_APK,
       apk: entry.srcPath,
       ...((entry.isPresigned && { presigned: true }) || { certificate: 'platform' }),
       ...(entry.path.startsWith('priv-app/') && { privileged: true }),
