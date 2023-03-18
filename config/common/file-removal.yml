@@ -121,186 +121,242 @@ filters:
       - .ogg
 
     prefix:
-      # APEX
-      - system/apex
-      - system_ext/apex
+      - system/apex/
+      - system_ext/apex/
       # Root CAs
-      - system/etc/security/cacerts
-      # Apps
-      - product/app/CalculatorGooglePrebuilt
-      - product/app/CalendarGooglePrebuilt
-      - product/app/Chrome-Stub
-      - product/app/Chrome
-      - product/app/DevicePolicyPrebuilt
-      - product/app/DeviceStatisticsService
-      - product/app/DiagnosticsToolPrebuilt
-      - product/app/Drive
-      - product/app/GoogleCamera
-      - product/app/GoogleContacts
-      - product/app/GoogleContactsSyncAdapter
-      - product/app/GoogleTTS
-      - product/app/LatinIMEGooglePrebuilt
-      - product/app/LocationHistoryPrebuilt
-      - product/app/Maps
-      - product/app/MarkupGoogle
-      - product/app/MicropaperPrebuilt
-      - product/app/ModuleMetadataGoogle
-      - product/app/MotionSenseBridgePrebuilt
+      - system/etc/security/cacerts/
+      - product/app/CalculatorGooglePrebuilt/
+      - product/app/CalendarGooglePrebuilt/
+      - product/app/Chrome-Stub/
+      - product/app/Chrome/
+      - product/app/DevicePolicyPrebuilt/
+      # com.qualcomm.qti.devicestatisticsservice found on 5th gen Pixels
+      - product/app/DeviceStatisticsService/
+      # com.google.android.apps.diagnosticstool
+      - product/app/DiagnosticsToolPrebuilt/
+      - product/app/Drive/
+      - product/app/GoogleCamera/
+      - product/app/GoogleContacts/
+      - product/app/GoogleContactsSyncAdapter/
+      - product/app/GoogleTTS/
+      # Gboard
+      - product/app/LatinIMEGooglePrebuilt/
+      - product/app/LocationHistoryPrebuilt/
+      - product/app/Maps/
+      # com.google.android.markup is a screenshot/image editor
+      - product/app/MarkupGoogle/
+      - product/app/MicropaperPrebuilt/
+      - product/app/ModuleMetadataGoogle/
+      - product/app/MotionSenseBridgePrebuilt/
+      # NexusWallpapersStubPrebuilt{2019,2020_midyear}
       - product/app/NexusWallpapers
-      - product/app/NgaResources
-      - product/app/Ornament
-      - product/app/Photos
+      # NGA is "Next generation Assistant"
+      - product/app/NgaResources/
+      # com.google.vr.apps.ornament, found on 4th gen Pixels
+      - product/app/Ornament/
+      - product/app/Photos/
+      # PixelCameraServices{B3,P10,Oriole,Raven,Sunfish} etc
       - product/app/PixelCameraServices
+      # PixelThemesStub{,2022_and_newer}
       - product/app/PixelThemesStub
-      - product/app/PixelThemesStub2022_and_newer
+      # PixelWallpapers{2021,2021a,2022}
       - product/app/PixelWallpapers
-      - product/app/PlayAutoInstallConfig
-      - product/app/PrebuiltDeskClockGoogle
-      - product/app/PrebuiltGmail
-      - product/app/PrebuiltGoogleAdservicesTvp
-      - product/app/PrebuiltGoogleTelemetryTvp
-      - product/app/SSRestartDetector
-      - product/app/SafetyRegulatoryInfo
-      - product/app/SoundAmplifierPrebuilt
-      - product/app/SoundPickerPrebuilt
-      - product/app/TrichromeLibrary
-      - product/app/TrichromeLibrary-Stub
-      - product/app/Tycho
-      - product/app/VZWAPNLib
-      - product/app/Videos
-      - product/app/VoiceAccessPrebuilt
+      - product/app/PlayAutoInstallConfig/
+      - product/app/PrebuiltDeskClockGoogle/
+      - product/app/PrebuiltGmail/
+      - product/app/PrebuiltGoogleAdservicesTvp/
+      - product/app/PrebuiltGoogleTelemetryTvp/
+      - product/app/SSRestartDetector/
+      - product/app/SafetyRegulatoryInfo/
+      # com.google.android.accessibility.soundamplifier
+      - product/app/SoundAmplifierPrebuilt/
+      - product/app/SoundPickerPrebuilt/
+      - product/app/TrichromeLibrary/
+      - product/app/TrichromeLibrary-Stub/
+      # Google Fi app, com.google.android.apps.tycho
+      - product/app/Tycho/
+      - product/app/VZWAPNLib/
+      # Google TV app, com.google.android.videos
+      - product/app/Videos/
+      # com.google.android.apps.accessibility.voiceaccess
+      - product/app/VoiceAccessPrebuilt/
+      # WallpapersBReel{2019,2020,2020aBramble etc}
       - product/app/Wallpapers
-      - product/app/WebViewGoogle
-      - product/app/WebViewGoogle-Stub
-      - product/app/YouTube
-      - product/app/YouTubeMusicPrebuilt
-      - product/app/arcore
-      - product/app/talkback
-      - product/priv-app/AdaptiveVPNPrebuilt
-      - product/priv-app/AmbientSensePrebuilt
-      - product/priv-app/AmbientStreaming
-      - product/priv-app/AndroidAutoStubPrebuilt
-      - product/priv-app/AppDirectedSMSService
-      - product/priv-app/BetaFeedback
-      - product/priv-app/BetterBug
-      - product/priv-app/BetterBugStub
-      - product/priv-app/CarrierLocation
-      - product/priv-app/CarrierMetrics
-      - product/priv-app/CarrierServices
-      - product/priv-app/CarrierSettings
-      - product/priv-app/CarrierWifi
-      - product/priv-app/CbrsNetworkMonitor
-      - product/priv-app/ConfigUpdater
-      - product/priv-app/ConnMO
-      - product/priv-app/DCMO
-      - product/priv-app/DMService
-      - product/priv-app/DeviceIntelligenceNetworkPrebuilt
+      - product/app/WebViewGoogle/
+      - product/app/WebViewGoogle-Stub/
+      - product/app/YouTube/
+      - product/app/YouTubeMusicPrebuilt/
+      # "Google Play Services for AR", com.google.ar.core
+      - product/app/arcore/
+      - product/app/talkback/
+      - product/priv-app/AdaptiveVPNPrebuilt/
+      # "Pixel Ambient Services", com.google.intelligence.sense, found on 4th and 5th gen
+      - product/priv-app/AmbientSensePrebuilt/
+      # "Cross-Device Services", com.google.ambient.streaming, used for integration with ChromeOS
+      - product/priv-app/AmbientStreaming/
+      - product/priv-app/AndroidAutoStubPrebuilt/
+      # com.verizon.services
+      - product/priv-app/AppDirectedSMSService/
+      - product/priv-app/BetaFeedback/
+      - product/priv-app/BetterBug/
+      - product/priv-app/BetterBugStub/
+      - product/priv-app/CarrierLocation/
+      - product/priv-app/CarrierMetrics/
+      - product/priv-app/CarrierServices/
+      - product/priv-app/CarrierSettings/
+      - product/priv-app/CarrierWifi/
+      # com.google.android.apps.cbrsnetworkmonitor
+      - product/priv-app/CbrsNetworkMonitor/
+      # com.google.android.configupdater
+      - product/priv-app/ConfigUpdater/
+      - product/priv-app/ConnMO/
+      # com.android.sdm.plugins.dcmo, "Carrier OMA Device Management"
+      - product/priv-app/DCMO/
+      - product/priv-app/DMService/
+      # "Private Compute Services", https://play.google.com/store/apps/details?id=com.google.android.as.oss
+      - product/priv-app/DeviceIntelligenceNetworkPrebuilt/
+      # DevicePersonalizationPrebuiltPixel{4,2021,2022}
       - product/priv-app/DevicePersonalizationPrebuiltPixel
-      - product/priv-app/DiagMon
-      - product/priv-app/DiagnosticsToolPrebuilt
+      # com.android.sdm.plugins.diagmon, but included on Tensor Pixels too
+      - product/priv-app/DiagMon/
+      - product/priv-app/DiagnosticsToolPrebuilt/
+      # DreamlinerPrebuilt is the Pixel Stand app, DreamlinerUpdater is firmware updater for Pixel Stand
       - product/priv-app/Dreamliner
-      - product/priv-app/FilesPrebuilt
-      - product/priv-app/GCS
-      - product/priv-app/GoogleCamera
-      - product/priv-app/GoogleDialer
-      - product/priv-app/GoogleOneTimeInitializer
-      - product/priv-app/GoogleRestorePrebuilt
-      - product/priv-app/HardwareInfo
-      - product/priv-app/HelpRtcPrebuilt
-      - product/priv-app/HealthConnectPrebuilt
+      - product/priv-app/FilesPrebuilt/
+      # "Google Connectivity Services", https://play.google.com/store/apps/details?id=com.google.android.apps.gcs
+      - product/priv-app/GCS/
+      - product/priv-app/GoogleCamera/
+      - product/priv-app/GoogleDialer/
+      # com.google.android.onetimeinitializer, runs once each time OS build ID changes
+      - product/priv-app/GoogleOneTimeInitializer/
+      - product/priv-app/GoogleRestorePrebuilt/
+      # com.google.android.hardwareinfo collects detailed info about hardware components and their health and uploads
+      # them to Google. Runs each time device finishes booting.
+      - product/priv-app/HardwareInfo/
+      - product/priv-app/HealthConnectPrebuilt/
+      # "Google Support Services", https://play.google.com/store/apps/details?id=com.google.android.apps.helprtc
+      - product/priv-app/HelpRtcPrebuilt/
+      # HotwordEnrollment{OKGoogleFUSION,OKGoogleHEMIDELTA,XGoogleFUSION etc}
       - product/priv-app/HotwordEnrollment
-      - product/priv-app/KidsSupervisionStub
-      - product/priv-app/MaestroPrebuilt
-      - product/priv-app/OTAConfigNoZeroTouchPrebuilt
-      - product/priv-app/OdadPrebuilt
-      - product/priv-app/OemDmTrigger
-      - product/priv-app/PartnerSetupPrebuilt
-      - product/priv-app/Phonesky
-      - product/priv-app/PixelLiveWallpaperPrebuilt
-      - product/priv-app/PrebuiltBugle
-      - product/priv-app/PrebuiltGmsCore
-      - product/priv-app/RecorderPrebuilt
-      - product/priv-app/RetailDemoGooglePrebuilt
-      - product/priv-app/SCONE
-      - product/priv-app/SafetyHubPrebuilt
-      - product/priv-app/ScribePrebuilt
-      - product/priv-app/SecurityHubPrebuilt
-      - product/priv-app/SettingsIntelligenceGooglePrebuilt
-      - product/priv-app/SetupWizardPrebuilt
-      - product/priv-app/Showcase
-      - product/priv-app/SprintDM
-      - product/priv-app/SprintHM
-      - product/priv-app/SSRestartDetector
-      - product/priv-app/TetheringEntitlement
-      - product/priv-app/TipsPrebuilt
-      - product/priv-app/TurboPrebuilt
-      - product/priv-app/USCCDM
-      - product/priv-app/Velvet
-      - product/priv-app/WallpaperEffect
-      - product/priv-app/WellbeingPrebuilt
-      - product/priv-app/WfcActivation
-      - system/app/BluetoothMigrationForBeta3User
-      - system/app/CaptivePortalLoginGoogle
-      - system/app/GoogleBluetoothLegacyMigration
-      - system/app/GoogleExtShared
-      - system/app/GooglePrintRecommendationService
-      - system/priv-app/DocumentsUIGoogle
-      - system/priv-app/GooglePackageInstaller
-      - system/priv-app/NetworkPermissionConfigGoogle
-      - system/priv-app/NetworkStackGoogle
-      - system/priv-app/TagGoogle
-      - system_ext/app/EmergencyInfoGoogleNoUi
-      - system_ext/app/Flipendo
-      - system_ext/priv-app/CarrierSetup
-      - system_ext/priv-app/ConnectivityThermalPowerManager
-      - system_ext/priv-app/FactoryOta
-      - system_ext/priv-app/GoogleFeedback
-      - system_ext/priv-app/GoogleServicesFramework
-      - system_ext/priv-app/HbmSVManager
-      - system_ext/priv-app/LLKAgent
-      - system_ext/priv-app/MyVerizonServices
-      - system_ext/priv-app/NexusLauncherRelease
-      - system_ext/priv-app/OBDM_Permissions
-      - system_ext/priv-app/OsloFeedback
-      - system_ext/priv-app/PixelSetupWizard
-      - system_ext/priv-app/QuickAccessWallet
-      - system_ext/priv-app/RilConfigService
-      - system_ext/priv-app/SettingsGoogle
-      - system_ext/priv-app/SettingsGoogleFutureFaceEnroll
-      - system_ext/priv-app/StorageManagerGoogle
-      - system_ext/priv-app/SystemUIGoogle
-      - system_ext/priv-app/TurboAdapter
-      - system_ext/priv-app/UvExposureReporter
-      - system_ext/priv-app/WallpaperPickerGoogleRelease
-      - system_ext/priv-app/YadaYada
-      - system_ext/priv-app/grilservice
-      - system_ext/priv-app/obdm_stub
+      - product/priv-app/KidsSupervisionStub/
+      # "Google Pixel Buds" app, com.google.android.apps.wearables.maestro.companion
+      - product/priv-app/MaestroPrebuilt/
+      - product/priv-app/OTAConfigNoZeroTouchPrebuilt/
+      # "Google Play Protect Service", https://play.google.com/store/apps/details?id=com.google.android.odad
+      - product/priv-app/OdadPrebuilt/
+      - product/priv-app/OemDmTrigger/
+      - product/priv-app/PartnerSetupPrebuilt/
+      # Play Store app (com.android.vending)
+      - product/priv-app/Phonesky/
+      - product/priv-app/PixelLiveWallpaperPrebuilt/
+      # "Messages by Google", com.google.android.apps.messaging
+      - product/priv-app/PrebuiltBugle/
+      - product/priv-app/PrebuiltGmsCore/
+      - product/priv-app/RecorderPrebuilt/
+      - product/priv-app/RetailDemoGooglePrebuilt/
+      # com.google.android.apps.scone is "Adaptive Connectivity Services", see https://support.google.com/product-documentation/answer/12321563
+      - product/priv-app/SCONE/
+      - product/priv-app/SSRestartDetector/
+      - product/priv-app/SafetyHubPrebuilt/
+      # "Live Transcribe & Notification", com.google.audio.hearing.visualization.accessibility.scribe
+      - product/priv-app/ScribePrebuilt/
+      # https://play.google.com/store/apps/details?id=com.google.android.apps.security.securityhub
+      - product/priv-app/SecurityHubPrebuilt/
+      # https://play.google.com/store/apps/details?id=com.google.android.settings.intelligence
+      - product/priv-app/SettingsIntelligenceGooglePrebuilt/
+      - product/priv-app/SetupWizardPrebuilt/
+      # com.customermobile.preload.vzw, found on 6th and 7th gen Pixels
+      - product/priv-app/Showcase/
+      # com.android.sdm.plugins.sprintdm
+      - product/priv-app/SprintDM/
+      - product/priv-app/SprintHM/
+      # com.google.android.tetheringentitlement
+      - product/priv-app/TetheringEntitlement/
+      # Pixel Tips, com.google.android.apps.tips
+      - product/priv-app/TipsPrebuilt/
+      # Device Health Services, https://play.google.com/store/apps/details?id=com.google.android.apps.turbo
+      - product/priv-app/TurboPrebuilt/
+      # com.android.sdm.plugins.usccdm
+      - product/priv-app/USCCDM/
+      # Google search app (GSA), com.google.android.googlequicksearchbox
+      - product/priv-app/Velvet/
+      - product/priv-app/WallpaperEffect/
+      # Digital Wellbeing, https://play.google.com/store/apps/details?id=com.google.android.apps.wellbeing
+      - product/priv-app/WellbeingPrebuilt/
+      # Wi-Fi Calling setup, com.google.android.apps.wfcactivation
+      - product/priv-app/WfcActivation/
+      - system/app/BluetoothMigrationForBeta3User/
+      - system/app/CaptivePortalLoginGoogle/
+      - system/app/GoogleBluetoothLegacyMigration/
+      - system/app/GoogleExtShared/
+      - system/app/GooglePrintRecommendationService/
+      - system/priv-app/DocumentsUIGoogle/
+      - system/priv-app/GooglePackageInstaller/
+      - system/priv-app/NetworkPermissionConfigGoogle/
+      - system/priv-app/NetworkStackGoogle/
+      - system/priv-app/TagGoogle/
+      - system_ext/app/EmergencyInfoGoogleNoUi/
+      # "Extreme Battery Saver", com.google.android.flipendo
+      - system_ext/app/Flipendo/
+      - system_ext/priv-app/CarrierSetup/
+      # Manages thermal throttling of cellular and Wi-Fi connectivity, com.google.android.connectivitythermalpowermanager
+      - system_ext/priv-app/ConnectivityThermalPowerManager/
+      - system_ext/priv-app/FactoryOtaPrebuilt/
+      - system_ext/priv-app/GoogleFeedback/
+      - system_ext/priv-app/GoogleServicesFramework/
+      # High Brightness Mode manager
+      - system_ext/priv-app/HbmSVManager/
+      # com.verizon.llkagent provides StoreDemoModeService
+      - system_ext/priv-app/LLKAgent/
+      - system_ext/priv-app/MyVerizonServices/
+      - system_ext/priv-app/NexusLauncherRelease/
+      - system_ext/priv-app/OBDM_Permissions/
+      # "Motion Sense" app on 4th gen Pixels, com.google.oslo
+      - system_ext/priv-app/OsloFeedback/
+      - system_ext/priv-app/PixelSetupWizard/
+      - system_ext/priv-app/QuickAccessWallet/
+      - system_ext/priv-app/RilConfigService/
+      - system_ext/priv-app/SettingsGoogle/
+      - system_ext/priv-app/SettingsGoogleFutureFaceEnroll/
+      - system_ext/priv-app/StorageManagerGoogle/
+      - system_ext/priv-app/SystemUIGoogle/
+      # com.google.android.turboadapter, see TurboPrebuilt above
+      - system_ext/priv-app/TurboAdapter/
+      # com.google.android.uvexposurereporter talks to the uv_exposure context hub nanoapp
+      - system_ext/priv-app/UvExposureReporter/
+      - system_ext/priv-app/WallpaperPickerGoogleRelease/
+      # Shows disclaimer screen on beta builds
+      - system_ext/priv-app/YadaYada/
+      - system_ext/priv-app/grilservice/
+      # com.verizon.obdm
+      - system_ext/priv-app/obdm_stub/
       # Fonts
-      - product/fonts
-      - system/fonts
-      - system_ext/fonts
-      - vendor/fonts
+      - product/fonts/
+      - system/fonts/
+      - system_ext/fonts/
+      - vendor/fonts/
       # Irrelevant AVB keys
-      - product/etc/security/avb
+      - product/etc/security/avb/
       # Irrelevant Google Assistant stuff // on-device AI
-      - product/etc/ambient
+      - product/etc/ambient/
+      # there's music_detector.{descriptor,sound_model,sound_model_2}
       - product/etc/firmware/music_detector
-      - product/usr/srec
+      - product/usr/srec/
       # Irrelevant Google keyboard localization
-      - product/usr/share/ime/google/d3_lms
+      - product/usr/share/ime/google/d3_lms/
       # Irrelevant wallpaper stuff
-      - product/wallpaper/image
+      - product/wallpaper/image/
       # Kernel modules
-      - odm/lib/modules
-      - odm_dlkm
-      - vendor/lib/modules
-      - vendor_dlkm
+      - odm/lib/modules/
+      - odm_dlkm/
+      - vendor/lib/modules/
+      - vendor_dlkm/
       # Overlay apps
-      - product/overlay
-      - system/overlay
-      - system_ext/overlay
-      - vendor/overlay
-      # Preferred apps
-      - product/etc/preferred-apps
-      # fs-verity certs for play store
-      - product/etc/security/fsverity
+      - product/overlay/
+      - system/overlay/
+      - system_ext/overlay/
+      - vendor/overlay/
+      # used to make proprietary Google apps default handlers of various intents
+      - product/etc/preferred-apps/
+      # fs-verity certificates for GmsCore and Play Store
+      - product/etc/security/fsverity/
