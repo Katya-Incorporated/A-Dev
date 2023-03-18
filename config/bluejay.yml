@@ -12,6 +12,3 @@ filters:
     match:
       # aapt2 parsing bug encountered within adevtool
       - HbmSVManager__auto_generated_rro_product.apk
-  files:
-    match:
-      - vendor/etc/sysconfig/component-overrides.xml
