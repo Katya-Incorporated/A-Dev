@@ -35,6 +35,8 @@ filters:
       - com.google.android.flipendo
       # unused oma-dm stuff
       - com.android.omadm.service
+      # EuiccPixel (used for car unlocking, which doesn't work anyway)
+      - com.google.euiccpixel
     regex:
       - branded_vpn
     match:
