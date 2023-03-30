@@ -39,8 +39,6 @@ filters:
       - ro.com.android.prov_mobiledata
       # privapps
       - ro.control_privapp_permissions
-      # unused camera2 extensions
-      - ro.vendor.camera.extensions
       # unused carrier setup page
       - ro.carriersetup.vzw_consent_page
       # unused gms props
