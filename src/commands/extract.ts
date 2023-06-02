@@ -26,10 +26,10 @@ export default class Extract extends Command {
   async run() {
     let {
       args: { listPath },
-      flags: { vendor, device, skipCopy, stockSrc, buildId, useTemp },
+      flags: { vendor, device, skipCopy, stockSrc, buildId, useTemp, useMount },
     } = this.parse(Extract)
 
-    await withWrappedSrc(stockSrc, device, buildId, useTemp, async stockSrc => {
+    await withWrappedSrc(stockSrc, device, buildId, useTemp, useMount, async stockSrc => {
       // Parse list
       this.log(chalk.bold(chalk.greenBright('Parsing list')))
       let list = await readFile(listPath)

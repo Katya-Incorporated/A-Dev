@@ -29,10 +29,10 @@ export default class FixCerts extends Command {
 
   async run() {
     let {
-      flags: { sepolicy: sepolicyDirs, device, buildId, stockSrc, useTemp },
+      flags: { sepolicy: sepolicyDirs, device, buildId, stockSrc, useTemp, useMount },
     } = this.parse(FixCerts)
 
-    await withWrappedSrc(stockSrc, device, buildId, useTemp, async stockSrc => {
+    await withWrappedSrc(stockSrc, device, buildId, useTemp, useMount, async stockSrc => {
       let srcSigners: Array<MacSigner> = []
       let srcKeys: Array<KeyInfo> = []
       for (let dir of sepolicyDirs) {

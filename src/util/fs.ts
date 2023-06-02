@@ -76,3 +76,7 @@ export async function readFile(path: string) {
 export async function mount(imgPath: string, mountpoint: string) {
   await run(`mount -o ro ${imgPath} ${mountpoint}`)
 }
+
+export async function dump(imgPath: string, destination: string) {
+  await run(`debugfs -R 'rdump / ${destination}' ${imgPath}`)
+}

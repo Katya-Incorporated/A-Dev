@@ -34,12 +34,13 @@ const doDevice = (
   factoryPath: string | undefined,
   skipCopy: boolean,
   useTemp: boolean,
+  useMount: boolean,
 ) =>
   withTempDir(async tmp => {
     // Prepare stock system source
     let wrapBuildId = buildId == undefined ? null : buildId
     let wrapped = await withSpinner('Extracting stock system source', spinner =>
-      wrapSystemSrc(stockSrc, config.device.name, wrapBuildId, useTemp, tmp, spinner),
+      wrapSystemSrc(stockSrc, config.device.name, wrapBuildId, useTemp, useMount, tmp, spinner),
     )
     stockSrc = wrapped.src!
     if (wrapped.factoryPath != null && factoryPath == undefined) {
@@ -81,7 +82,7 @@ const doDevice = (
     // 4. Flatten APEX modules
     if (config.generate.flat_apex) {
       entries = await withSpinner('Flattening APEX modules', spinner =>
-        flattenApexs(spinner, entries, dirs, tmp, stockSrc),
+        flattenApexs(spinner, entries, dirs, useMount, tmp, stockSrc),
       )
     }
 
@@ -189,7 +190,7 @@ export default class GenerateFull extends Command {
 
   async run() {
     let {
-      flags: { aapt2: aapt2Path, buildId, stockSrc, customSrc, factoryPath, skipCopy, useTemp, parallel },
+      flags: { aapt2: aapt2Path, buildId, stockSrc, customSrc, factoryPath, skipCopy, useTemp, useMount, parallel },
       args: { config: configPath },
     } = this.parse(GenerateFull)
 
@@ -199,7 +200,7 @@ export default class GenerateFull extends Command {
       devices,
       parallel,
       async config => {
-        await doDevice(config, stockSrc, customSrc, aapt2Path, buildId, factoryPath, skipCopy, useTemp)
+        await doDevice(config, stockSrc, customSrc, aapt2Path, buildId, factoryPath, skipCopy, useTemp, useMount)
       },
       config => config.device.name,
     )

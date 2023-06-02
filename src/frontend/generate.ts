@@ -134,10 +134,11 @@ export async function flattenApexs(
   spinner: ora.Ora,
   entries: BlobEntry[],
   dirs: VendorDirectories,
+  useMount: boolean,
   tmp: TempState,
   stockSrc: string,
 ) {
-  let apex = await flattenAllApexs(entries, stockSrc, tmp, progress => {
+  let apex = await flattenAllApexs(entries, stockSrc, useMount, tmp, progress => {
     spinner.text = progress
   })
 

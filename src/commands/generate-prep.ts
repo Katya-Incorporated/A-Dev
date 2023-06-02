@@ -16,12 +16,13 @@ const doDevice = (
   buildId: string | undefined,
   skipCopy: boolean,
   useTemp: boolean,
+  useMount: boolean,
 ) =>
   withTempDir(async tmp => {
     // Prepare stock system source
     let wrapBuildId = buildId == undefined ? null : buildId
     let wrapped = await withSpinner('Extracting stock system source', spinner =>
-      wrapSystemSrc(stockSrc, config.device.name, wrapBuildId, useTemp, tmp, spinner),
+      wrapSystemSrc(stockSrc, config.device.name, wrapBuildId, useTemp, useMount, tmp, spinner),
     )
     stockSrc = wrapped.src!
 
@@ -82,7 +83,7 @@ export default class GeneratePrep extends Command {
 
   async run() {
     let {
-      flags: { buildId, stockSrc, skipCopy, useTemp, parallel },
+      flags: { buildId, stockSrc, skipCopy, useTemp, useMount, parallel },
       args: { config: configPath },
     } = this.parse(GeneratePrep)
 
@@ -92,7 +93,7 @@ export default class GeneratePrep extends Command {
       devices,
       parallel,
       async config => {
-        await doDevice(config, stockSrc, buildId, skipCopy, useTemp)
+        await doDevice(config, stockSrc, buildId, skipCopy, useTemp, useMount)
       },
       config => config.device.name,
     )

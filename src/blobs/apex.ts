@@ -4,7 +4,7 @@ import * as unzipit from 'unzipit'
 
 import { enumerateSelinuxLabels, SelinuxFileLabels } from '../selinux/labels'
 import { ProgressCallback } from '../util/cli'
-import { createSubTmp, listFilesRecursive, mount, TempState } from '../util/fs'
+import { createSubTmp, dump, listFilesRecursive, mount, TempState } from '../util/fs'
 import { NodeFileReader } from '../util/zip'
 import { BlobEntry } from './entry'
 import { combinedPartPathToEntry } from './file-list'
@@ -22,6 +22,7 @@ async function listPayload(
   partition: string,
   apexName: string,
   img: ArrayBuffer,
+  useMount: boolean,
   tmp: TempState,
   progressCallback?: ProgressCallback,
 ) {
@@ -30,20 +31,24 @@ async function listPayload(
   await fs.writeFile(imgPath, new DataView(img))
 
   // Mount
-  let mountpoint = `${tmp.dir}/payload`
-  await fs.mkdir(mountpoint)
-  await mount(imgPath, mountpoint)
-  tmp.mounts.push(mountpoint)
+  let imgDir = `${tmp.dir}/payload`
+  await fs.mkdir(imgDir)
+  if (useMount) {
+    await mount(imgPath, imgDir)
+    tmp.mounts.push(imgDir)
+  } else {
+    await dump(imgPath, imgDir)
+  }
 
   // Extract files, including apex_metadata.pb
   let apexRoot = `${partition}/apex/${apexName}`
   let entries: Array<BlobEntry> = []
-  for await (let file of listFilesRecursive(mountpoint)) {
+  for await (let file of listFilesRecursive(imgDir)) {
     if (progressCallback != undefined) {
       progressCallback(file)
     }
 
-    let partPath = path.relative(mountpoint, file)
+    let partPath = path.relative(imgDir, file)
     let entry = combinedPartPathToEntry(partition, `${apexRoot}/${partPath}`)
     // I don't know of a way to make Soong copy files to a non-standard path ($part/apex/*)
     entry.disableSoong = true
@@ -54,10 +59,10 @@ async function listPayload(
   }
 
   // Get SELinux labels
-  let labels = await enumerateSelinuxLabels(mountpoint)
+  let labels = await enumerateSelinuxLabels(imgDir)
   // Fix paths
   labels = new Map(
-    Array.from(labels.entries()).map(([file, context]) => [`/${apexRoot}/${path.relative(mountpoint, file)}`, context]),
+    Array.from(labels.entries()).map(([file, context]) => [`/${apexRoot}/${path.relative(imgDir, file)}`, context]),
   )
 
   return {
@@ -69,6 +74,7 @@ async function listPayload(
 export async function flattenApex(
   partition: string,
   zipPath: string,
+  useMount: boolean,
   tmp: TempState,
   progressCallback?: ProgressCallback,
 ) {
@@ -93,7 +99,7 @@ export async function flattenApex(
       } else if (name == 'apex_payload.img') {
         // Mount and add payload files as entries
         let img = await zipEntry.arrayBuffer()
-        let payload = await listPayload(partition, apexName, img, tmp, progressCallback)
+        let payload = await listPayload(partition, apexName, img, useMount, tmp, progressCallback)
         entries.push(...payload.entries)
         labels = payload.labels
       }
@@ -111,6 +117,7 @@ export async function flattenApex(
 export async function flattenAllApexs(
   rawEntries: Array<BlobEntry>,
   srcDir: string,
+  useMount: boolean,
   tmp: TempState,
   progressCallback?: ProgressCallback,
 ) {
@@ -125,7 +132,7 @@ export async function flattenAllApexs(
     let subTmp = await createSubTmp(tmp, `flat_apex/${entry.srcPath}`)
 
     // Flatten and add new entries
-    let apex = await flattenApex(entry.partition, apexPath, subTmp, progressCallback)
+    let apex = await flattenApex(entry.partition, apexPath, useMount, subTmp, progressCallback)
     apex.entries.forEach(e => entries.add(e))
     Array.from(apex.labels.entries()).forEach(([path, context]) => labels.set(path, context))
 

@@ -21,11 +21,11 @@ export default class ListFiles extends Command {
 
   async run() {
     let {
-      flags: { device, stockSrc, buildId, useTemp },
+      flags: { device, stockSrc, buildId, useTemp, useMount },
       args: { out },
     } = this.parse(ListFiles)
 
-    await withWrappedSrc(stockSrc, device, buildId, useTemp, async stockSrc => {
+    await withWrappedSrc(stockSrc, device, buildId, useTemp, useMount, async stockSrc => {
       await fs.mkdir(out, {recursive: true})
 
       for (let partition of ALL_SYS_PARTITIONS) {

@@ -3,7 +3,7 @@ import ora from 'ora'
 import path from 'path'
 import { flags } from '@oclif/command'
 
-import { createSubTmp, exists, mount, TempState, withTempDir } from '../util/fs'
+import { createSubTmp, dump, exists, mount, TempState, withTempDir } from '../util/fs'
 import { ALL_SYS_PARTITIONS } from '../util/partitions'
 import { run } from '../util/process'
 import { isSparseImage } from '../util/sparse'
@@ -24,6 +24,11 @@ export const WRAPPED_SOURCE_FLAGS = {
   useTemp: flags.boolean({
     char: 't',
     description: 'use a temporary directory for all extraction (prevents reusing extracted files across runs)',
+    default: false,
+  }),
+  useMount: flags.boolean({
+    char: 'm',
+    description: 'mount file system images instead of dumping them (requires root)',
     default: false,
   }),
 }
@@ -54,6 +59,7 @@ class SourceResolver {
     readonly device: string,
     readonly buildId: string | null,
     readonly useTemp: boolean,
+    readonly useMount: boolean,
     readonly tmp: TempState,
     readonly spinner: ora.Ora,
   ) {}
@@ -74,32 +80,46 @@ class SourceResolver {
     return this.createStaticTmp(absPath)
   }
 
-  private async mountImg(img: string, dest: string) {
-    // Convert sparse image to raw
-    if (await isSparseImage(img)) {
-      this.spinner.text = `converting sparse image: ${img}`
-      let sparseTmp = await this.createDynamicTmp(`sparse_img/${path.basename(path.dirname(img))}`, path.dirname(img))
-
-      let rawImg = `${sparseTmp.dir}/${path.basename(img)}.raw`
-      await run(`simg2img ${img} ${rawImg}`)
-      await fs.rm(img)
-      img = rawImg
+  private async tryConvertSparseToRawImg(img: string) {
+    if (!await isSparseImage(img)) {
+      return img
     }
 
+    // Convert sparse image to raw
+    this.spinner.text = `converting sparse image: ${img}`
+    let sparseTmp = await this.createDynamicTmp(`sparse_img/${path.basename(path.dirname(img))}`, path.dirname(img))
+
+    let rawImg = `${sparseTmp.dir}/${path.basename(img)}.raw`
+    await run(`simg2img ${img} ${rawImg}`)
+    await fs.rm(img)
+    return rawImg
+  }
+
+  private async mountImg(img: string, dest: string) {
     this.spinner.text = `mounting: ${img}`
     await mount(img, dest)
     this.tmp.mounts.push(dest)
   }
 
-  private async mountParts(src: string, mountTmp: TempState, suffix = '.img') {
-    let mountRoot = mountTmp.dir
+  private async dumpImg(img: string, dest: string) {
+    this.spinner.text = `dumping: ${img}`
+    await dump(img, dest)
+  }
+
+  private async handleParts(src: string, useMount: boolean, tmp: TempState, suffix = '.img') {
+    let root = tmp.dir
 
     for (let part of ALL_SYS_PARTITIONS) {
       let img = `${src}/${part}${suffix}`
       if (await exists(img)) {
-        let partPath = `${mountRoot}/${part}`
+        let partPath = `${root}/${part}`
+        img = await this.tryConvertSparseToRawImg(img)
         await fs.mkdir(partPath)
-        await this.mountImg(img, partPath)
+        if (useMount) {
+          await this.mountImg(img, partPath)
+        } else {
+          await this.dumpImg(img, partPath)
+        }
       }
     }
   }
@@ -171,17 +191,17 @@ class SourceResolver {
       // Mount raw images: <images>.img.raw
 
       // Mount the images
-      let mountTmp = await createSubTmp(this.tmp, `sysroot/${path.basename(src)}`)
-      await this.mountParts(src, mountTmp, '.img.raw')
-      return { src: mountTmp.dir, factoryPath: factoryPath || src }
+      let tmp = await createSubTmp(this.tmp, `sysroot/${path.basename(src)}`)
+      await this.handleParts(src, this.useMount, tmp, '.img.raw')
+      return { src: tmp.dir, factoryPath: factoryPath || src }
     }
     if (await containsParts(src, '.img')) {
       // Mount potentially-sparse images: <images>.img
 
       // Mount the images
-      let mountTmp = await createSubTmp(this.tmp, `sysroot/${path.basename(src)}`)
-      await this.mountParts(src, mountTmp)
-      return { src: mountTmp.dir, factoryPath: factoryPath || src }
+      let tmp = await createSubTmp(this.tmp, `sysroot/${path.basename(src)}`)
+      await this.handleParts(src, this.useMount, tmp)
+      return { src: tmp.dir, factoryPath: factoryPath || src }
     }
     if (this.device != null && this.buildId != null) {
       let imagesZip = `${src}/image-${this.device}-${this.buildId}.zip`
@@ -253,10 +273,11 @@ export async function wrapSystemSrc(
   device: string,
   buildId: string | null,
   useTemp: boolean,
+  useMount: boolean,
   tmp: TempState,
   spinner: ora.Ora,
 ): Promise<WrappedSource> {
-  let resolver = new SourceResolver(device, buildId, useTemp, tmp, spinner)
+  let resolver = new SourceResolver(device, buildId, useTemp, useMount, tmp, spinner)
   return await resolver.wrapSystemSrc(src)
 }
 
@@ -265,13 +286,14 @@ export async function withWrappedSrc<Return>(
   device: string,
   buildId: string | undefined,
   useTemp: boolean,
+  useMount: boolean,
   callback: (stockSrc: string) => Promise<Return>,
 ) {
   return await withTempDir(async tmp => {
     // Prepare stock system source
     let wrapBuildId = buildId == undefined ? null : buildId
     let wrapped = await withSpinner('Extracting stock system source', spinner =>
-      wrapSystemSrc(stockSrc, device, wrapBuildId, useTemp, tmp, spinner),
+      wrapSystemSrc(stockSrc, device, wrapBuildId, useTemp, useMount, tmp, spinner),
     )
     let wrappedSrc = wrapped.src!
 

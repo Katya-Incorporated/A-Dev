@@ -35,7 +35,7 @@ export default class CheckPresigned extends Command {
 
   async run() {
     let {
-      flags: { aapt2: aapt2Path, sepolicy: sepolicyDirs, outList: outPath, device, stockSrc, buildId, useTemp },
+      flags: { aapt2: aapt2Path, sepolicy: sepolicyDirs, outList: outPath, device, stockSrc, buildId, useTemp, useMount },
       args: { listPath },
     } = this.parse(CheckPresigned)
 
@@ -47,7 +47,7 @@ export default class CheckPresigned extends Command {
     // Find and parse sepolicy seapp_contexts
     let presignedPkgs = await parsePresignedRecursive(sepolicyDirs)
 
-    await withWrappedSrc(stockSrc, device, buildId, useTemp, async stockSrc => {
+    await withWrappedSrc(stockSrc, device, buildId, useTemp, useMount, async stockSrc => {
       if (entries != null) {
         // Get APKs from blob entries
         let presignedEntries = await updatePresignedBlobs(aapt2Path, stockSrc, presignedPkgs, entries)
