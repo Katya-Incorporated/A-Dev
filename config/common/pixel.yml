@@ -22,3 +22,13 @@ filters:
 apk_max_version_requirements:
   # EuiccSupportPixel (updater of secure element firmware)
   com.google.euiccpixel: 17515
+
+blob_hash_requirements:
+  # This binary is hooked in a version-dependent way in bionic
+  vendor/bin/xtra-daemon:
+    # XTRA Client 2.0 android-build@Tue Feb 22 11:25:25 PST 2022
+    - 9317c3f8d827e335188b5b3b4b30acded3c155c9330566e2390667e84652d29c
+    # XTRA Client 2.0 android-build@Tue Feb 22 11:28:27 PST 2022
+    - 037fbcdf3d480717a306285a4cecea74cdff6fde7a383e9c3d936bfe871dd6ea
+    # XTRA Client 2.0 san-w175-ma2-3-01@Tue Mar 29 01:14:27 PDT 2022
+    - bf2378b1f7a5e701df3ee32109482d0bf67da8483ca5bd4ddb8d0de2738df72a
