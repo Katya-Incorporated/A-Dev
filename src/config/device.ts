@@ -60,6 +60,9 @@ export interface DeviceConfig {
   // Integration of some APKs depends on OS changes, and new APK versions might break those changes.
   // Vendor module generation is aborted if any of APK version requirements aren't satisfied.
   apk_max_version_requirements: Map<string, number> // key is package name, value is max supported version
+
+  // Same as apk_max_version_requirements, but for an arbitrary blob
+  blob_hash_requirements: Map<string, string[]> // key is relative blob path, value is array of known sha256 hashes
 }
 
 interface DeviceListConfig {
@@ -118,6 +121,8 @@ const DEFAULT_CONFIG_BASE = {
   },
 
   apk_max_version_requirements: new Map<string, number>(),
+
+  blob_hash_requirements: new Map<string, string[]>(),
 }
 
 function mergeConfigs(base: any, overlay: any) {
@@ -126,9 +131,9 @@ function mergeConfigs(base: any, overlay: any) {
       return a.concat(b)
     }
 
-    if (key == 'apk_max_version_requirements') {
+    if (['apk_max_version_requirements', 'blob_hash_requirements'].includes(key)) {
       for (let [k, v] of Object.entries(b)) {
-        a.set(k, v as number)
+        (a as Map<string, any>).set(k, v)
       }
     }
   })
