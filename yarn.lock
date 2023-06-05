@@ -2143,12 +2143,24 @@ nock@^13.0.0:
     lodash.set "^4.3.2"
     propagate "^2.0.0"
 
+node-apk@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/node-apk/-/node-apk-1.2.1.tgz#b18f40e6fa02ed53e24fce44493c5ae205ab3bc2"
+  integrity sha512-I0TY1x5m1pkFzjYdaGrrAu/Mh9qnnk2/BoMAU6bvBxTTD/oNQyTWbu3LTdONgV2rnLHf23jJ00Y/VV4BzZ6YXQ==
+  dependencies:
+    node-forge "^1.3.1"
+
 node-fetch@2:
   version "2.6.6"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.6.tgz#1751a7c01834e8e1697758732e9efb6eeadfaf89"
   integrity sha512-Z8/6vRlTUChSdIgMa51jxQ4lrw/Jy5SOW10ObaA47/RElsAN2c5Pn8bTgFGWn/ibwzXTE8qwr1Yzx28vsecXEA==
   dependencies:
     whatwg-url "^5.0.0"
+
+node-forge@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-1.3.1.tgz#be8da2af243b2417d5f646a770663a92b7e9ded3"
+  integrity sha512-dPEtOeMvF9VMcYV/1Wb8CPoVAXtp6MKMlcbAt4ddqmGqUJ6fQZFXkNZNkNlfevtNkGtaSoXf/vNNNSvgrdXwtA==
 
 normalize-package-data@^2.3.2:
   version "2.5.0"

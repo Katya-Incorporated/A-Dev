@@ -56,6 +56,10 @@ export interface DeviceConfig {
     files: Filters
     deprivileged_apks: Filters
   }
+
+  // Integration of some APKs depends on OS changes, and new APK versions might break those changes.
+  // Vendor module generation is aborted if any of APK version requirements aren't satisfied.
+  apk_max_version_requirements: Map<string, number> // key is package name, value is max supported version
 }
 
 interface DeviceListConfig {
@@ -112,12 +116,20 @@ const DEFAULT_CONFIG_BASE = {
     files: structuredClone(EMPTY_FILTERS),
     deprivileged_apks: structuredClone(EMPTY_INCLUDE_FILTERS),
   },
+
+  apk_max_version_requirements: new Map<string, number>(),
 }
 
 function mergeConfigs(base: any, overlay: any) {
-  return _.mergeWith(base, overlay, (a, b) => {
+  return _.mergeWith(base, overlay, (a, b, key: string) => {
     if (_.isArray(a)) {
       return a.concat(b)
+    }
+
+    if (key == 'apk_max_version_requirements') {
+      for (let [k, v] of Object.entries(b)) {
+        a.set(k, v as number)
+      }
     }
   })
 }
