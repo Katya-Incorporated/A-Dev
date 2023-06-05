@@ -204,5 +204,7 @@ filters:
       - com.android.systemui:string/config_cameraProtectionExcludedPackages
       - com.android.systemui:string/config_dockComponent
       - com.android.systemui:string/config_remoteCopyPackage
+      # set to Google Files app, "sceenshot" typo is upstream
+      - com.android.systemui:string/config_sceenshotWorkProfileFilesApp
       - com.android.systemui:string/config_screenshotEditor
       - com.android.systemui:string/quick_settings_tiles_default
