@@ -18,3 +18,7 @@ filters:
   deprivileged_apks:
     prefix:
       - system_ext/priv-app/PixelNfc/
+
+apk_max_version_requirements:
+  # EuiccSupportPixel (updater of secure element firmware)
+  com.google.euiccpixel: 17515
