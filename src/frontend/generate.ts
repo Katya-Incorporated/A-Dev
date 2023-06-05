@@ -168,8 +168,8 @@ export async function extractProps(config: DeviceConfig, customState: SystemStat
   let missingProps: PartitionProps = new Map(Array.from(propChanges.entries()).map(([part, props]) => [part, props.removed]))
 
   // A/B OTA partitions
-  let stockOtaParts = stockProps.get('product')!.get('ro.product.ab_ota_partitions')!.split(',')
-  let customOtaParts = new Set(customProps.get('product')?.get('ro.product.ab_ota_partitions')?.split(',') ?? [])
+  let stockOtaParts = getAbOtaPartitionsProps(stockProps)!!
+  let customOtaParts = new Set(getAbOtaPartitionsProps(customProps) ?? [])
   let missingOtaParts = stockOtaParts.filter(p => !customOtaParts.has(p) && filterValue(config.filters.partitions, p))
 
   return {
@@ -179,6 +179,10 @@ export async function extractProps(config: DeviceConfig, customState: SystemStat
     fingerprint,
     missingOtaParts,
   } as PropResults
+}
+
+function getAbOtaPartitionsProps(props: PartitionProps): string[] | undefined {
+  return props.get('product')?.get('ro.product.ab_ota_partitions')?.split(',')
 }
 
 export async function resolveSepolicyDirs(
