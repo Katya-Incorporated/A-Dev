@@ -25,6 +25,7 @@ filters:
       - product/etc/sysconfig/google-staged-installer-whitelist.xml
       - product/etc/sysconfig/google.xml
       - product/etc/sysconfig/google_build.xml
+      - product/etc/sysconfig/google_fi.xml
       - product/etc/sysconfig/nexus.xml
       - product/etc/sysconfig/nga.xml
       - product/etc/sysconfig/pixel_2019_exclusive.xml
