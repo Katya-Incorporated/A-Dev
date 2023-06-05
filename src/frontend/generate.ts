@@ -280,6 +280,7 @@ export async function extractFirmware(
     config.device.name,
     stockProps.get('vendor')!.get('ro.build.expect.bootloader')!,
     stockProps.get('vendor')!.get('ro.build.expect.baseband')!,
+    getAbOtaPartitionsProps(stockProps)!!
   )
   await fs.writeFile(`${dirs.firmware}/${ANDROID_INFO}`, androidInfo)
 
