@@ -1,10 +1,13 @@
 import { flags } from "@oclif/command"
 import chalk from "chalk"
 
+const JSON_INDENT = 2
+
 export enum DiffTypes {
     ALL = 'all',
     ADDED = 'added',
     REMOVED = 'removed',
+    JSON = 'json',
 }
 
 export interface DiffList {
@@ -30,11 +33,24 @@ export const DIFF_FLAGS = {
     }),
 }
 
+function stringify(object: object) {
+    return JSON.stringify(
+        object,
+        (_key, value) => value instanceof Map ? Object.fromEntries(value) : value,
+        JSON_INDENT,
+    )
+}
+
 export function printDiffList(
     diffs: DiffList[],
     type: DiffTypes,
     callback: (message?: string) => void,
 ) {
+    if (type === DiffTypes.JSON) {
+        callback(stringify(diffs))
+        return
+    }
+
     let showAdded = [DiffTypes.ALL, DiffTypes.ADDED].includes(type)
     let showRemoved = [DiffTypes.ALL, DiffTypes.REMOVED].includes(type)
 
@@ -57,6 +73,11 @@ export function printDiffMap(
     type: DiffTypes,
     callback: (message?: string) => void,
 ) {
+    if (type === DiffTypes.JSON) {
+        callback(stringify(diffs))
+        return
+    }
+
     let showAddedAndModified = [DiffTypes.ALL, DiffTypes.ADDED].includes(type)
     let showRemoved = [DiffTypes.ALL, DiffTypes.REMOVED].includes(type)
 
