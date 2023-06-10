@@ -34,17 +34,24 @@ unpack_factory_zip() {
     IMAGE_ZIP_DIR_NAME=$(dirname $IMAGE_ZIP_PATH)
     IMAGE_ZIP_FILE_NAME=$(basename $IMAGE_ZIP_PATH)
 
-    echo "$IMAGE_ZIP_PATH"
-
     OUT_DIR="unpacked"
     [[ -d $OUT_DIR ]] || {
         mkdir $OUT_DIR
         chown $SUDO_UID:$SUDO_GID $OUT_DIR
     }
 
+    IMAGE_ZIP_DIR="$OUT_DIR/$IMAGE_ZIP_DIR_NAME"
+
+    [[ -e $IMAGE_ZIP_DIR ]] && {
+        echo "\"$IMAGE_ZIP_DIR\" exists, skipping unpack of \"$1\"."
+        exit
+    }
+
+    echo $IMAGE_ZIP_PATH
+
     unzip -d $OUT_DIR $OUTER_ZIP_FILE $IMAGE_ZIP_PATH > /dev/null
 
-    cd "$OUT_DIR/$IMAGE_ZIP_DIR_NAME"
+    cd $IMAGE_ZIP_DIR
 
     zipinfo -l -1 $IMAGE_ZIP_FILE_NAME | grep -E '^(system|system_ext|product|vendor|odm).img$|dlkm.img$' | \
         parallel -u unpack_image $IMAGE_ZIP_FILE_NAME
