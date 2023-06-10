@@ -34,12 +34,6 @@ unpack_factory_zip() {
     IMAGE_ZIP_DIR_NAME=$(dirname $IMAGE_ZIP_PATH)
     IMAGE_ZIP_FILE_NAME=$(basename $IMAGE_ZIP_PATH)
 
-    OUT_DIR="unpacked"
-    [[ -d $OUT_DIR ]] || {
-        mkdir $OUT_DIR
-        chown $SUDO_UID:$SUDO_GID $OUT_DIR
-    }
-
     IMAGE_ZIP_DIR="$OUT_DIR/$IMAGE_ZIP_DIR_NAME"
 
     [[ -e $IMAGE_ZIP_DIR ]] && {
@@ -72,6 +66,12 @@ export -f unpack_factory_zip
 [[ $UID -eq 0 && -n $SUDO_UID && -n $SUDO_GID ]] || {
     echo "This script needs to be started through sudo to mount file system images and correctly set ownership of unpacked files."
     exit 1
+}
+
+export OUT_DIR="unpacked"
+[[ -d $OUT_DIR ]] || {
+    mkdir $OUT_DIR
+    chown $SUDO_UID:$SUDO_GID $OUT_DIR
 }
 
 parallel -u unpack_factory_zip ::: "$@"
