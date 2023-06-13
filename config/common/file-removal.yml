@@ -181,8 +181,8 @@ filters:
       - product/app/Videos/
       # com.google.android.apps.accessibility.voiceaccess
       - product/app/VoiceAccessPrebuilt/
-      # WallpapersBReel{2019,2020,2020aBramble etc}
-      - product/app/Wallpapers
+      # WallpapersBReel{2019,2020,2020aBramble etc}, WallpaperEmojiPrebuilt etc
+      - product/app/Wallpaper
       - product/app/WebViewGoogle/
       - product/app/WebViewGoogle-Stub/
       - product/app/YouTube/
