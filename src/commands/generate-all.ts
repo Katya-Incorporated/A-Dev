@@ -24,6 +24,8 @@ import { SelinuxPartResolutions } from '../selinux/contexts'
 import { withSpinner } from '../util/cli'
 import { withTempDir } from '../util/fs'
 import { writeReadme } from '../frontend/readme'
+import { enforceApkMaxVersionRequirements } from '../blobs/apk'
+import { enforceBlobHashRequirements } from '../blobs/check-hash'
 
 const doDevice = (
   config: DeviceConfig,
@@ -70,6 +72,18 @@ const doDevice = (
     }
     // After this point, we only need entry objects
     let entries = Array.from(namedEntries.values())
+
+    if (config.blob_hash_requirements.size > 0) {
+      await withSpinner('Checking blob hash requirements', spinner =>
+        enforceBlobHashRequirements(spinner, stockSrc, entries, config.blob_hash_requirements)
+      )
+    }
+
+    if (config.apk_max_version_requirements.size > 0) {
+      await withSpinner('Checking APK max version requirements', spinner =>
+        enforceApkMaxVersionRequirements(spinner, stockSrc, entries, config.apk_max_version_requirements)
+      )
+    }
 
     // 3. Presigned
     if (config.generate.presigned) {

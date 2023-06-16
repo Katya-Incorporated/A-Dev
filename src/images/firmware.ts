@@ -62,15 +62,16 @@ export async function writeFirmwareImages(images: FirmwareImages, fwDir: string)
   return paths
 }
 
-export function generateAndroidInfo(device: string, blVersion: string, radioVersion: string) {
+export function generateAndroidInfo(device: string, blVersion: string, radioVersion: string, stockAbOtaPartitions: string[]) {
   let android_info = `require board=${device}
 
 require version-bootloader=${blVersion}
 require version-baseband=${radioVersion}
 `
 
-  const vendor_kernel_boot_devices = ['cheetah', 'panther']
-  if (vendor_kernel_boot_devices.includes(device)) {
+  if (stockAbOtaPartitions.includes('vendor_kernel_boot')) {
+    // Needed to show an informative error when an outdated version of fastboot is used.
+    // See https://android.googlesource.com/platform/system/core/+/refs/tags/android-13.0.0_r49/fastboot/fastboot.cpp#767
     android_info += 'require partition-exists=vendor_kernel_boot\n'
   }
 

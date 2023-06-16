@@ -56,6 +56,13 @@ export interface DeviceConfig {
     files: Filters
     deprivileged_apks: Filters
   }
+
+  // Integration of some APKs depends on OS changes, and new APK versions might break those changes.
+  // Vendor module generation is aborted if any of APK version requirements aren't satisfied.
+  apk_max_version_requirements: Map<string, number> // key is package name, value is max supported version
+
+  // Same as apk_max_version_requirements, but for an arbitrary blob
+  blob_hash_requirements: Map<string, string[]> // key is relative blob path, value is array of known sha256 hashes
 }
 
 interface DeviceListConfig {
@@ -112,12 +119,22 @@ const DEFAULT_CONFIG_BASE = {
     files: structuredClone(EMPTY_FILTERS),
     deprivileged_apks: structuredClone(EMPTY_INCLUDE_FILTERS),
   },
+
+  apk_max_version_requirements: new Map<string, number>(),
+
+  blob_hash_requirements: new Map<string, string[]>(),
 }
 
 function mergeConfigs(base: any, overlay: any) {
-  return _.mergeWith(base, overlay, (a, b) => {
+  return _.mergeWith(base, overlay, (a, b, key: string) => {
     if (_.isArray(a)) {
       return a.concat(b)
+    }
+
+    if (['apk_max_version_requirements', 'blob_hash_requirements'].includes(key)) {
+      for (let [k, v] of Object.entries(b)) {
+        (a as Map<string, any>).set(k, v)
+      }
     }
   })
 }
