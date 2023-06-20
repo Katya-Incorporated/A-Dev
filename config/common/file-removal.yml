@@ -19,6 +19,7 @@ filters:
       - product/etc/permissions/split-permissions-google.xml
       - product/etc/sysconfig/GoogleCamera_6gb_or_more_ram.xml
       - product/etc/sysconfig/adaptivecharging.xml
+      - product/etc/sysconfig/communal.xml
       - product/etc/sysconfig/dreamliner.xml
       - product/etc/sysconfig/game_overlay.xml
       - product/etc/sysconfig/google-hiddenapi-package-whitelist.xml
@@ -26,9 +27,11 @@ filters:
       - product/etc/sysconfig/google.xml
       - product/etc/sysconfig/google_build.xml
       - product/etc/sysconfig/google_fi.xml
+      - product/etc/sysconfig/kids_home_experience.xml
       - product/etc/sysconfig/nexus.xml
       - product/etc/sysconfig/nga.xml
       - product/etc/sysconfig/pixel_2019_exclusive.xml
+      - product/etc/sysconfig/pixel_docking_experience_2022.xml
       - product/etc/sysconfig/pixel_experience_2017.xml
       - product/etc/sysconfig/pixel_experience_2018.xml
       - product/etc/sysconfig/pixel_experience_2019.xml
@@ -39,11 +42,13 @@ filters:
       - product/etc/sysconfig/pixel_experience_2021_midyear.xml
       - product/etc/sysconfig/pixel_experience_2022.xml
       - product/etc/sysconfig/pixel_experience_2022_midyear.xml
+      - product/etc/sysconfig/pixel_tablet_experience_2023.xml
       - product/etc/sysconfig/preinstalled-packages-product-pixel-2017-and-newer.xml
       - product/etc/sysconfig/quick_tap.xml
       - product/framework/com.google.android.dialer.support.jar
       - system/etc/permissions/privapp-permissions-google.xml
       - system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
+      - system_ext/etc/permissions/com.google.android.apps.nest.dockmanager.app.xml
       - system_ext/etc/permissions/privapp-permissions-google-se.xml
       - system_ext/framework/com.android.hotwordenrollment.common.util.jar
       - vendor/etc/default-permissions/default-permissions_talkback.xml
@@ -88,6 +93,7 @@ filters:
       - product/framework/libhwinfo.jar
       # Unwanted OMA-DM and carrier trash
       - product/etc/default-permissions/default-permissions_diagnostictool.xml
+      - product/etc/default-permissions/default-permissions_SmartDisplayPrebuilt.xml
       - product/etc/permissions/com.android.omadm.service.xml
       - product/etc/permissions/com.android.sdm.plugins.connmo.xml
       - product/etc/permissions/com.android.sdm.plugins.dcmo.xml
@@ -141,7 +147,8 @@ filters:
       - product/app/GoogleContactsSyncAdapter/
       - product/app/GoogleTTS/
       # Gboard
-      - product/app/LatinIMEGooglePrebuilt/
+      - product/app/HealthConnectHideApps/
+      - product/app/LatinIMEGooglePrebuilt
       - product/app/LocationHistoryPrebuilt/
       - product/app/Maps/
       # com.google.android.markup is a screenshot/image editor
@@ -163,11 +170,13 @@ filters:
       # PixelWallpapers{2021,2021a,2022}
       - product/app/PixelWallpapers
       - product/app/PlayAutoInstallConfig/
+      - product/app/PlayBooksPrebuilt/
       - product/app/PrebuiltDeskClockGoogle/
       - product/app/PrebuiltGmail/
       - product/app/PrebuiltGoogleAdservicesTvp/
       - product/app/PrebuiltGoogleTelemetryTvp/
       - product/app/SSRestartDetector/
+      - product/app/SafetyHubHideApps/
       - product/app/SafetyRegulatoryInfo/
       # com.google.android.accessibility.soundamplifier
       - product/app/SoundAmplifierPrebuilt/
@@ -185,8 +194,7 @@ filters:
       - product/app/Wallpaper
       - product/app/WebViewGoogle/
       - product/app/WebViewGoogle-Stub/
-      - product/app/YouTube/
-      - product/app/YouTubeMusicPrebuilt/
+      - product/app/YouTube
       # "Google Play Services for AR", com.google.ar.core
       - product/app/arcore/
       - product/app/talkback/
@@ -196,6 +204,7 @@ filters:
       # "Cross-Device Services", com.google.ambient.streaming, used for integration with ChromeOS
       - product/priv-app/AmbientStreaming/
       - product/priv-app/AndroidAutoStubPrebuilt/
+      - product/priv-app/AndroidMediaShell/
       # com.verizon.services
       - product/priv-app/AppDirectedSMSService/
       - product/priv-app/BetaFeedback/
@@ -228,6 +237,7 @@ filters:
       - product/priv-app/GCS/
       - product/priv-app/GoogleCamera/
       - product/priv-app/GoogleDialer/
+      - product/priv-app/GoogleHomePrebuilt/
       # com.google.android.onetimeinitializer, runs once each time OS build ID changes
       - product/priv-app/GoogleOneTimeInitializer/
       - product/priv-app/GoogleRestorePrebuilt/
@@ -239,6 +249,7 @@ filters:
       - product/priv-app/HelpRtcPrebuilt/
       # HotwordEnrollment{OKGoogleFUSION,OKGoogleHEMIDELTA,XGoogleFUSION etc}
       - product/priv-app/HotwordEnrollment
+      - product/priv-app/KidsHomePrebuilt/
       - product/priv-app/KidsSupervisionStub/
       # "Google Pixel Buds" app, com.google.android.apps.wearables.maestro.companion
       - product/priv-app/MaestroPrebuilt/
@@ -268,6 +279,7 @@ filters:
       - product/priv-app/SetupWizardPrebuilt/
       # com.customermobile.preload.vzw, found on 6th and 7th gen Pixels
       - product/priv-app/Showcase/
+      - product/priv-app/SmartDisplayPrebuilt/
       # com.android.sdm.plugins.sprintdm
       - product/priv-app/SprintDM/
       - product/priv-app/SprintHM/
@@ -302,6 +314,8 @@ filters:
       - system_ext/priv-app/CarrierSetup/
       # Manages thermal throttling of cellular and Wi-Fi connectivity, com.google.android.connectivitythermalpowermanager
       - system_ext/priv-app/ConnectivityThermalPowerManager/
+      - system_ext/priv-app/DockManagerPrebuilt/
+      - system_ext/priv-app/DockSetup/
       - system_ext/priv-app/FactoryOtaPrebuilt/
       - system_ext/priv-app/GoogleFeedback/
       - system_ext/priv-app/GoogleServicesFramework/
@@ -321,6 +335,8 @@ filters:
       - system_ext/priv-app/SettingsGoogleFutureFaceEnroll/
       - system_ext/priv-app/StorageManagerGoogle/
       - system_ext/priv-app/SystemUIGoogle/
+      # Pixel Tablet
+      - system_ext/priv-app/SystemUITitan/
       # com.google.android.turboadapter, see TurboPrebuilt above
       - system_ext/priv-app/TurboAdapter/
       # com.google.android.uvexposurereporter talks to the uv_exposure context hub nanoapp
