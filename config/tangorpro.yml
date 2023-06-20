@@ -1,0 +1,8 @@
+device:
+  name: tangorpro
+
+platform:
+  product_makefile: device/google/tangorpro/aosp_tangorpro.mk
+
+includes:
+  - common/gen7pixel.yml
