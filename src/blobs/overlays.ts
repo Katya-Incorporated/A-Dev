@@ -186,8 +186,7 @@ function parseRsrcLines(rsrc: string, targetPkg: string, targetName: string | nu
       let value: ResValue
       let rawValue = valueLine![2]
       if (rawValue.startsWith('(file) ')) {
-        // Return @[path]
-        value = `@${rawValue.split(' ')[1]}`
+        continue
       } else if (curType == 'dimen') {
         // Keep dimensions as strings to preserve unit
         value = rawValue
