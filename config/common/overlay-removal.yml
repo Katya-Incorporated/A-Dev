@@ -220,4 +220,4 @@ filters:
       - com.android.systemui:string/config_screenshotEditor
       - com.android.systemui:string/quick_settings_tiles_default
       - com.android.systemui:string/config_lowLightDreamComponent
-      
+      - android:integer/config_multiuserMaximumUsers
