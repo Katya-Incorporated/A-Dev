@@ -59,6 +59,7 @@ filters:
       - android:bool/config_volumeAdjustmentForRemoteGroupSessions
       - android:bool/config_volumeHushGestureEnabled
       - android:drawable/ic_safety_protection
+      - android:drawable/ic_add_supervised_user
       - android:integer/config_defaultNightMode
       - android:integer/config_keyChordPowerVolumeUp
       - android:integer/config_longPressOnPowerBehavior
@@ -193,8 +194,11 @@ filters:
       - com.android.settings:drawable/$aware_assist_static__0
       - com.android.settings:drawable/$aware_assist_static__1
       - com.android.settings:drawable/aware_assist_static
+      - com.android.settings:drawable/ic_enhanced_connectivity
+      - com.android.settings:drawable/quickly_open_camera
       - com.android.settings:string-array/config_settings_slices_accessibility_components
       - com.android.settings:string-array/slice_allowlist_package_names
+      - com.android.settings:string/security_settings_fingerprint_v2_enroll_introduction_message_learn_more
       - com.android.systemui:bool/config_touch_context_enabled
       - com.android.systemui:bool/config_wlc_support_enabled
       - com.android.systemui:integer/config_keyguardRefreshRate
