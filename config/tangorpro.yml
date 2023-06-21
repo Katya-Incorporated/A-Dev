@@ -6,3 +6,14 @@ platform:
 
 includes:
   - common/gen7pixel.yml
+
+filters:
+  overlay_files:
+    match:
+      # aapt2 parsing bug encountered within adevtool
+      - DockSetup__auto_generated_rro_product.apk
+      - Flipendo__auto_generated_rro_product.apk
+      - SettingsGoogle__auto_generated_rro_product.apk
+      - StorageManagerGoogle__auto_generated_rro_product.apk
+      - SystemUITitan__auto_generated_rro_product.apk
+      - Traceur__auto_generated_rro_product.apk
