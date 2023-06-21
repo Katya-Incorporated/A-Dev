@@ -13,7 +13,10 @@ filters:
       # Google stuff we dont want/need/cant use
       - product/etc/permissions/com.google.android.apps.diagnosticstool.xml
       - product/etc/permissions/com.google.android.apps.dreamliner.xml
+      - product/etc/permissions/com.google.android.apps.mediashell.xml
+      - product/etc/permissions/com.google.android.apps.nest.castauth.xml
       - product/etc/permissions/com.google.android.dialer.support.xml
+      - product/etc/permissions/com.google.assistant.hubui.xml
       - product/etc/permissions/com.google.SSRestartDetector.xml
       - product/etc/permissions/privapp-permissions-google-p.xml
       - product/etc/permissions/split-permissions-google.xml
@@ -215,6 +218,7 @@ filters:
       - product/priv-app/CarrierServices/
       - product/priv-app/CarrierSettings/
       - product/priv-app/CarrierWifi/
+      - product/priv-app/CastAuthPrebuilt/
       # com.google.android.apps.cbrsnetworkmonitor
       - product/priv-app/CbrsNetworkMonitor/
       # com.google.android.configupdater
