@@ -26,10 +26,12 @@ filters:
       - com.android.providers.settings
       # Useless provisioning items
       - com.android.managedprovisioning
+      - com.android.systemui:string/config_dock_setup_
       # google media apexs
       - com.google.android.providers.media.module
       - com.google.android.storagemanager
       # scone
+      - com.google.android.apps.nexuslauncher
       - com.google.android.apps.scone
       # unused flipendo
       - com.google.android.flipendo
@@ -153,6 +155,8 @@ filters:
       - android:string/config_secondaryHomePackage
       - android:string/config_secondaryLocationTimeZoneProviderPackageName
       - android:string/config_servicesExtensionPackage
+      # set to Play services on tangorpro
+      - android:string/config_supervisedUserCreationPackage
       - android:string/config_systemActivityRecognizer
       - android:string/config_systemAmbientAudioIntelligence
       - android:string/config_systemAppProtectionService
@@ -193,15 +197,22 @@ filters:
       - com.android.settings:drawable/$aware_assist_static__0
       - com.android.settings:drawable/$aware_assist_static__1
       - com.android.settings:drawable/aware_assist_static
+      - com.android.settings:string-array/config_preinstalled_dream_components
       - com.android.settings:string-array/config_settings_slices_accessibility_components
       - com.android.settings:string-array/slice_allowlist_package_names
+      - com.android.settings:string/security_settings_fingerprint_v2_enroll_introduction_message_learn_more
       - com.android.systemui:bool/config_touch_context_enabled
       - com.android.systemui:bool/config_wlc_support_enabled
       - com.android.systemui:integer/config_keyguardRefreshRate
       - com.android.systemui:string-array/config_controlsPreferredPackages
+      - com.android.systemui:string-array/config_dock_setup_completed_packages
       - com.android.systemui:string-array/config_pluginWhitelist
       - com.android.systemui:string/branded_monitoring_description_app_personal
       - com.android.systemui:string/config_cameraProtectionExcludedPackages
+      - com.android.systemui:string/config_communalSourceComponent
+      - com.android.systemui:string/config_communalSourceConnector
+      - com.android.systemui:string/config_media_shell_service_component
+      - com.android.systemui:string/config_nest_dock_manager_service_component
       - com.android.systemui:string/config_dockComponent
       - com.android.systemui:string/config_remoteCopyPackage
       # set to Google Files app, "sceenshot" typo is upstream
