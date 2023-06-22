@@ -191,6 +191,7 @@ filters:
       - com.android.server.telecom:string/call_diagnostic_service_package_name
       - com.android.server.telecom:string/dialer_default_class
       - com.android.settings:bool/config_nfc_detection_point
+      - com.android.settings:bool/config_show_communal_settings
       - com.android.settings:bool/config_show_reverse_charging
       - com.android.settings:bool/config_show_touch_sensitivity
       - com.android.settings:bool/config_suc_use_partner_resource
