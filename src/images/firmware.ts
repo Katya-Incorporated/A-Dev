@@ -68,7 +68,7 @@ export function generateAndroidInfo(device: string, blVersion: string, radioVers
 require version-bootloader=${blVersion}
 `
   if (radioVersion != undefined) {
-    android_info += 'require version-baseband=${radioVersion}\n'
+    android_info += `require version-baseband=${radioVersion}\n`
   }
 
   if (stockAbOtaPartitions.includes('vendor_kernel_boot')) {
