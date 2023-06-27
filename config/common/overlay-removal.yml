@@ -143,7 +143,6 @@ filters:
       - android:string/config_devicePolicyManagement
       - android:string/config_devicePolicyManagementUpdater
       - android:string/config_deviceProvisioningPackage
-      - android:string/config_deviceSpecificDeviceStatePolicyProvider
       - android:string/config_dreamsDefaultComponent
       - android:string/config_emergency_dialer_package
       - android:string/config_helpPackageNameValue
