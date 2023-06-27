@@ -22,8 +22,6 @@ filters:
       - com.android.permissioncontroller
       # Unwanted icons
       - android:drawable/ic_doc_
-      # Useless defaults
-      - com.android.providers.settings
       # Useless provisioning items
       - com.android.managedprovisioning
       - com.android.systemui:string/config_dock_setup_
@@ -191,6 +189,12 @@ filters:
       - com.android.providers.telephony:string/apn_source_service
       - com.android.server.telecom:string/call_diagnostic_service_package_name
       - com.android.server.telecom:string/dialer_default_class
+
+      # Bluetooth should be always off by default
+      - com.android.providers.settings:bool/def_bluetooth_on
+      # set to GmsCore
+      - com.android.providers.settings:string/def_backup_transport
+
       - com.android.settings:bool/config_nfc_detection_point
       - com.android.settings:bool/config_show_communal_settings
       - com.android.settings:bool/config_show_reverse_charging
