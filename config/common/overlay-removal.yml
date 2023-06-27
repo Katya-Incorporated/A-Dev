@@ -27,6 +27,7 @@ filters:
       # Useless provisioning items
       - com.android.managedprovisioning
       - com.android.systemui:string/config_dock_setup_
+      - com.google.android.apps.tips
       # google media apexs
       - com.google.android.providers.media.module
       - com.google.android.storagemanager
@@ -142,6 +143,7 @@ filters:
       - android:string/config_devicePolicyManagement
       - android:string/config_devicePolicyManagementUpdater
       - android:string/config_deviceProvisioningPackage
+      - android:string/config_deviceSpecificDeviceStatePolicyProvider
       - android:string/config_dreamsDefaultComponent
       - android:string/config_emergency_dialer_package
       - android:string/config_helpPackageNameValue
@@ -202,6 +204,7 @@ filters:
       - com.android.settings:string-array/config_preinstalled_dream_components
       - com.android.settings:string-array/config_settings_slices_accessibility_components
       - com.android.settings:string-array/slice_allowlist_package_names
+      - com.android.settings:string/config_face_enroll_traffic_light_package
       - com.android.settings:string/security_settings_fingerprint_v2_enroll_introduction_message_learn_more
       - com.android.systemui:bool/config_touch_context_enabled
       - com.android.systemui:bool/config_wlc_support_enabled
