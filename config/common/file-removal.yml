@@ -46,6 +46,7 @@ filters:
       - product/etc/sysconfig/pixel_experience_2022.xml
       - product/etc/sysconfig/pixel_experience_2022_midyear.xml
       - product/etc/sysconfig/pixel_tablet_experience_2023.xml
+      - product/etc/sysconfig/pixel_experience_2023_midyear.xml
       - product/etc/sysconfig/preinstalled-packages-product-pixel-2017-and-newer.xml
       - product/etc/sysconfig/quick_tap.xml
       - product/framework/com.google.android.dialer.support.jar
@@ -130,6 +131,8 @@ filters:
       - .vdex
       # Sound files
       - .ogg
+      # fs-verity metadata
+      - .fsv_meta
 
     prefix:
       - system/apex/
