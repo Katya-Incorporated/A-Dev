@@ -352,7 +352,6 @@ filters:
       - system_ext/priv-app/WallpaperPickerGoogleRelease/
       # Shows disclaimer screen on beta builds
       - system_ext/priv-app/YadaYada/
-      - system_ext/priv-app/grilservice/
       # com.verizon.obdm
       - system_ext/priv-app/obdm_stub/
       # Fonts
