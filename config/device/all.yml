@@ -1,17 +1,7 @@
 type: device-list
 
-devices:
-  - felix.yml
-  - tangorpro.yml
-  - lynx.yml
-  - cheetah.yml
-  - panther.yml
-  - bluejay.yml
-  - raven.yml
-  - oriole.yml
-  - barbet.yml
-  - redfin.yml
-  - bramble.yml
-  - sunfish.yml
-  - coral.yml
-  - flame.yml
+includes:
+  - pixel-gen7.yml
+  - pixel-gen6.yml
+  - pixel-gen5.yml
+  - pixel-gen4.yml

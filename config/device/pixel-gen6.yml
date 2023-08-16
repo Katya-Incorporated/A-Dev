@@ -1,0 +1,6 @@
+type: device-list
+
+devices:
+  - bluejay.yml
+  - raven.yml
+  - oriole.yml

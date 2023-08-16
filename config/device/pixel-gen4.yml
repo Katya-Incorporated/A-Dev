@@ -1,0 +1,6 @@
+type: device-list
+
+devices:
+  - sunfish.yml
+  - coral.yml
+  - flame.yml
