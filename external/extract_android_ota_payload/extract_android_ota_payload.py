@@ -102,10 +102,12 @@ def parse_payload(payload_f, partition, out_f):
                          update_metadata_pb2.InstallOperation.Type.Name(operation.type)))
 
 def main(filename, output_dir):
+  is_tmp_payload_file = False
   if filename.endswith('.zip'):
     print("Extracting 'payload.bin' from OTA file...")
     ota_zf = zipfile.ZipFile(filename)
     payload_file = open(ota_zf.extract('payload.bin', output_dir), 'rb')
+    is_tmp_payload_file = True
   else:
     payload_file = open(filename, 'rb')
 
@@ -144,6 +146,9 @@ def main(filename, output_dir):
       print('Failed: %s' % e)
       out_f.close()
       os.unlink(fname)
+
+  if is_tmp_payload_file:
+    os.unlink(os.path.join(output_dir, 'payload.bin'))
 
 if __name__ == '__main__':
   try:
