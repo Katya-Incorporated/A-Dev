@@ -2,12 +2,10 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 ///<reference path="../util/jstypes.d.ts" />
 
-import _ from 'lodash'
 import path from 'path'
-import YAML from 'yaml'
 
-import { readFile } from '../util/fs'
-import { FilterMode, Filters, parseFilters, SerializedFilters } from './filters'
+import { loadAndMergeConfig } from './config-loader'
+import { FilterMode, Filters, SerializedFilters } from './filters'
 
 export enum ConfigType {
   Device = 'device',
@@ -114,53 +112,12 @@ const DEFAULT_CONFIG_BASE = {
   },
 }
 
-function mergeConfigs(base: any, overlay: any) {
-  return _.mergeWith(base, overlay, (a, b) => {
-    if (_.isArray(a)) {
-      return a.concat(b)
-    }
-  })
-}
-
-async function loadOverlaysRecursive(overlays: any[], rootDir: string, root: any) {
-  if (_.isArray(root.includes)) {
-    for (let relPath of root.includes) {
-      let overlayPath = path.resolve(rootDir, relPath)
-      let overlayDir = path.dirname(overlayPath)
-
-      let overlay = YAML.parse(await readFile(overlayPath))
-      await loadOverlaysRecursive(overlays, overlayDir, overlay)
-    }
-  }
-
-  overlays.push(root)
-}
-
-// No dedicated parse function as this requires loading includes and overlaying
-// them in the correct order
-async function loadAndMergeConfig(configPath: string) {
-  let base = structuredClone(DEFAULT_CONFIG_BASE) // deep copy to avoid mutating base
-
-  let rootOverlay = YAML.parse(await readFile(configPath))
-  let rootPath = path.dirname(configPath)
-  let overlays: any[] = []
-  await loadOverlaysRecursive(overlays, rootPath, rootOverlay)
-
-  // Merge from base to final root
-  let merged = overlays.reduce((base, overlay) => mergeConfigs(base, overlay), base)
-
-  // Parse filters
-  merged.filters = Object.fromEntries(
-    Object.entries(merged.filters).map(([group, filters]) => [group, parseFilters(filters as SerializedFilters)]),
-  )
-
-  // Finally, cast it to the parsed config type
-  delete merged.includes
-  return merged
+async function loadAndMergeDeviceConfig(configPath: string) {
+  return await loadAndMergeConfig(configPath, DEFAULT_CONFIG_BASE)
 }
 
 export async function loadDeviceConfigs(configPath: string) {
-  let merged = await loadAndMergeConfig(configPath)
+  let merged = await loadAndMergeDeviceConfig(configPath)
   let { type } = merged
   delete merged.type
 
@@ -173,7 +130,7 @@ export async function loadDeviceConfigs(configPath: string) {
     let devices: DeviceConfig[] = []
     for (let devicePath of list.devices) {
       devicePath = path.resolve(path.dirname(configPath), devicePath)
-      devices.push(await loadAndMergeConfig(devicePath))
+      devices.push(await loadAndMergeDeviceConfig(devicePath))
     }
 
     return devices
