@@ -1,5 +1,8 @@
-import ora from 'ora'
+import assert from 'assert'
 import chalk from 'chalk'
+import child_proc from 'child_process'
+import ora from 'ora'
+import path from 'path'
 
 export type ProgressCallback = (progress: string) => void
 
@@ -24,4 +27,14 @@ export async function withSpinner<Return>(action: string, callback: (spinner: or
   stopActionSpinner(spinner)
 
   return ret
+}
+
+export function showGitDiff(repoPath: string, filePath?: string) {
+  let args = ['-C', repoPath, `diff`]
+  if (filePath !== undefined) {
+    args.push(path.relative(repoPath, filePath))
+  }
+
+  let ret = child_proc.spawnSync('git', args, { stdio: 'inherit' })
+  assert(ret.status === 0)
 }
