@@ -6,6 +6,25 @@ if (NODE_MAJOR_VERSION < 18) {
   throw new Error('This tool requires NodeJS 18 or later');
 }
 
+const expectedPathEnding = '/vendor/adevtool/bin/run'
+let cwd = process.cwd()
+let validCwd = false
+if (__filename.startsWith(cwd)) {
+  let ending = __filename.substring(cwd.length)
+  if (ending === expectedPathEnding) {
+      validCwd = true
+  }
+}
+
+if (!validCwd) {
+  if (__filename.endsWith(expectedPathEnding)) {
+    console.log('adevtool should be started from the root of OS tree')
+  } else {
+    console.log('adevtool should be placed in vendor/adevtool directory')
+  }
+  process.exit(1)
+}
+
 require('@oclif/command').run()
 .then(require('@oclif/command/flush'))
 .catch(require('@oclif/errors/handle'))
