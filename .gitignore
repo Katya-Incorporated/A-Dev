@@ -13,12 +13,8 @@ node_modules
 # Vendor output
 /vendor/
 
-# State
-*.json
-
 # Downloads and extracted files
 *.zip
-/dl/
+/dl
 *.img
-android-info.txt
 /mount/
