@@ -5,7 +5,9 @@ import path from 'path'
 import YAML from 'yaml'
 import { YAMLMap } from 'yaml/types'
 
+import { loadAndMergeConfig } from '../config/config-loader'
 import { DeviceBuildId, DeviceConfig, makeDeviceBuildId } from '../config/device'
+import { BUILD_INDEX_FILE } from '../config/paths'
 
 export type BuildIndex = Map<DeviceBuildId, BuildProps>
 export type BuildProps = Map<string, string>
@@ -53,6 +55,15 @@ const PAGE_TYPES: Record<string, PageTypeInfo> = {
     betaUrlSuffix: null,
     betaNameSeparator: null,
   },
+}
+
+export async function loadBuildIndex(filePath: string = BUILD_INDEX_FILE): Promise<BuildIndex> {
+  let obj: any = await loadAndMergeConfig(filePath, {})
+  let outerMap = new Map<string, any>(Object.entries(obj))
+  for (let k of outerMap.keys()) {
+    outerMap.set(k, new Map<string, string>(Object.entries(outerMap.get(k))))
+  }
+  return outerMap as BuildIndex
 }
 
 export async function fetchBuildIndex(deviceConfigs: DeviceConfig[]): Promise<YAMLMap> {
