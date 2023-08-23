@@ -5,6 +5,10 @@ platform:
 includes:
   - pixel.yml
 
+device:
+  build_id: TP1A.221005.002.B2
+  prev_build_id: TP1A.221005.002
+
 filters:
   files:
     match:
