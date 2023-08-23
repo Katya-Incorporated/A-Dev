@@ -20,6 +20,8 @@ export interface DeviceConfig {
   device: {
     name: string
     vendor: string
+    build_id: string
+    prev_build_id: string
   }
 
   platform: {
