@@ -2,6 +2,7 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 ///<reference path="../util/jstypes.d.ts" />
 
+import assert from 'assert'
 import path from 'path'
 
 import { loadAndMergeConfig } from './config-loader'
@@ -122,6 +123,9 @@ export async function loadDeviceConfigs(configPath: string) {
   delete merged.type
 
   if (type == ConfigType.Device) {
+    let configName = path.basename(configPath, '.yml')
+    let deviceName = merged.device.name
+    assert(configName === deviceName, `config name doesn't match device name (${deviceName}): ${configPath}`)
     return [merged as DeviceConfig]
   }
   if (type == ConfigType.DeviceList) {
