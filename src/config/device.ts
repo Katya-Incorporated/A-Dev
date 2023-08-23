@@ -2,11 +2,13 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 ///<reference path="../util/jstypes.d.ts" />
 
+import { flags } from '@oclif/command'
 import assert from 'assert'
 import path from 'path'
 
 import { loadAndMergeConfig } from './config-loader'
 import { FilterMode, Filters, SerializedFilters } from './filters'
+import { DEVICE_CONFIG_DIR } from './paths'
 
 export enum ConfigType {
   Device = 'device',
@@ -113,30 +115,85 @@ const DEFAULT_CONFIG_BASE = {
   },
 }
 
+export const DEVICE_CONFIG_FLAGS = {
+  devices: flags.string({
+    char: 'd',
+    description: `Device or DeviceList config paths or names`,
+    multiple: true,
+    default: ['all'],
+  }),
+}
+
+// Each string should refer to a Device or DeviceList config.
+// There's two supported string formats: config path and config name from config dir (without .yml suffix),
+// i.e. path/to/device_name.yml and device_name
+export async function loadDeviceConfigs(strings: string[]) {
+  const configFileSuffix = '.yml'
+
+  let promises: Promise<DeviceConfig>[] = []
+
+  for (let string of strings) {
+    let configPath: string
+    if (string.endsWith(configFileSuffix)) {
+      configPath = string
+    } else {
+      configPath = path.join(DEVICE_CONFIG_DIR, string + configFileSuffix)
+    }
+    promises.push(...(await loadDeviceConfigsFromPath(configPath)))
+  }
+
+  // Map is used to make sure there's at most one config per device
+  let map = new Map<string, DeviceConfig>()
+
+  for await (let config of promises) {
+    let key = config.device.name
+    if (map.get(key) !== undefined) {
+      console.warn(`loadDeviceConfigs: more than one config was passed for ${key}, only the last one will be used`)
+    }
+    map.set(key, config)
+  }
+
+  return Array.from(map.values())
+}
+
 async function loadAndMergeDeviceConfig(configPath: string) {
   return await loadAndMergeConfig(configPath, DEFAULT_CONFIG_BASE)
 }
 
-export async function loadDeviceConfigs(configPath: string) {
+async function loadDeviceConfigFromPath(configPath: string): Promise<DeviceConfig> {
   let merged = await loadAndMergeDeviceConfig(configPath)
-  let { type } = merged
+  let type = merged.type
+  delete merged.type
+  assert(type === ConfigType.Device)
+
+  let res = merged as DeviceConfig
+  checkConfigName(res, configPath)
+  return res
+}
+
+function checkConfigName(config: DeviceConfig, configPath: string) {
+  let configName = path.basename(configPath, '.yml')
+  let deviceName = config.device.name
+  assert(configName === deviceName, `config name doesn't match device name (${deviceName}): ${configPath}`)
+}
+
+async function loadDeviceConfigsFromPath(configPath: string): Promise<Promise<DeviceConfig>[]> {
+  let merged = await loadAndMergeDeviceConfig(configPath)
+  let type = merged.type
   delete merged.type
 
-  if (type == ConfigType.Device) {
-    let configName = path.basename(configPath, '.yml')
-    let deviceName = merged.device.name
-    assert(configName === deviceName, `config name doesn't match device name (${deviceName}): ${configPath}`)
-    return [merged as DeviceConfig]
-  }
-  if (type == ConfigType.DeviceList) {
+  if (type === ConfigType.Device) {
+    let res = merged as DeviceConfig
+    checkConfigName(res, configPath)
+    return [Promise.resolve(res)]
+  } else if (type === ConfigType.DeviceList) {
     // Load all the device configs
     let list = merged as DeviceListConfig
-    let devices: DeviceConfig[] = []
+    let devices: Promise<DeviceConfig>[] = []
     for (let devicePath of list.devices) {
       devicePath = path.resolve(path.dirname(configPath), devicePath)
-      devices.push(await loadAndMergeDeviceConfig(devicePath))
+      devices.push(loadDeviceConfigFromPath(devicePath))
     }
-
     return devices
   }
   throw new Error(`Unknown config type ${type}`)

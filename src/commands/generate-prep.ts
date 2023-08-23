@@ -86,7 +86,7 @@ export default class GeneratePrep extends Command {
       args: { config: configPath },
     } = this.parse(GeneratePrep)
 
-    let devices = await loadDeviceConfigs(configPath)
+    let devices = await loadDeviceConfigs([configPath])
 
     await forEachDevice(
       devices,

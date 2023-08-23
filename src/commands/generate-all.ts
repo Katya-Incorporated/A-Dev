@@ -193,7 +193,7 @@ export default class GenerateFull extends Command {
       args: { config: configPath },
     } = this.parse(GenerateFull)
 
-    let devices = await loadDeviceConfigs(configPath)
+    let devices = await loadDeviceConfigs([configPath])
 
     await forEachDevice(
       devices,
