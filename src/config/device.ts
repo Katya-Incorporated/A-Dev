@@ -117,6 +117,28 @@ const DEFAULT_CONFIG_BASE = {
   },
 }
 
+export type DeviceBuildId = string
+
+export function getDeviceBuildId(config: DeviceConfig, buildId: string = config.device.build_id) {
+  return makeDeviceBuildId(config.device.name, resolveBuildId(buildId, config))
+}
+
+export function makeDeviceBuildId(deviceName: string, buildId: string) {
+  return deviceName + ' ' + buildId
+}
+
+export function resolveBuildId(str: string, config: DeviceConfig) {
+  switch (str) {
+    case 'cur':
+      return config.device.build_id!
+    case 'prev':
+      return config.device.prev_build_id!
+    default: {
+      return str
+    }
+  }
+}
+
 export const DEVICE_CONFIG_FLAGS = {
   devices: flags.string({
     char: 'd',
