@@ -15,7 +15,7 @@
     "cli-progress": "^3.9.1",
     "jsdom": "^22.1.0",
     "lodash": "^4.17.21",
-    "node-fetch": "2",
+    "node-fetch": "^2.6.13",
     "ora": "5.4.1",
     "tslib": "^1",
     "unzipit": "^1.3.5",
