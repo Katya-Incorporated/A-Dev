@@ -1,0 +1,33 @@
+bramble UPB4.230623.007:
+  factory: d020e39fc0e305418515219decaff2df47c1569c915965a5218127be49f5f56e https://dl.google.com/developers/android/udc/images/factory/bramble_beta-upb4.230623.007-factory-d020e39f.zip
+  ota: c1f18796bc34e95f06e280e0fab4be1c0f2a6da907f269482a78df8547d27cee https://dl.google.com/developers/android/udc/images/ota/bramble_beta-ota-upb4.230623.007-c1f18796.zip
+redfin UPB4.230623.007:
+  factory: 1546e403d5d5b9773a7cc9bf502d290928c4a00188965304dfdffd76343673bc https://dl.google.com/developers/android/udc/images/factory/redfin_beta-upb4.230623.007-factory-1546e403.zip
+  ota: ed89a072ac96427df1bdeace38737761a67b28b4793f0013e836b6aaf2ec3eea https://dl.google.com/developers/android/udc/images/ota/redfin_beta-ota-upb4.230623.007-ed89a072.zip
+barbet UPB4.230623.007:
+  factory: 94bc11d8102f4376658c6929a720e476b4bbf6524dacee3f34ac0c253e8b45ab https://dl.google.com/developers/android/udc/images/factory/barbet_beta-upb4.230623.007-factory-94bc11d8.zip
+  ota: 4b34eab3868517315ba17ba5f5f2fd7ba74c0d6ae31ff74e5c84411fc3eabee7 https://dl.google.com/developers/android/udc/images/ota/barbet_beta-ota-upb4.230623.007-4b34eab3.zip
+oriole UPB4.230623.007:
+  factory: 9bc8b1bcc8092ffe329271a141b850b43e36a44c8abd9e950977f7e4ed0c0e3c https://dl.google.com/developers/android/udc/images/factory/oriole_beta-upb4.230623.007-factory-9bc8b1bc.zip
+  ota: be5afe599eb76dcfdc3068fbb2462a7398b1cec719e673c123b25ba40f2a107f https://dl.google.com/developers/android/udc/images/ota/oriole_beta-ota-upb4.230623.007-be5afe59.zip
+raven UPB4.230623.007:
+  factory: 7790550195398de929de3a8a99792f456f9cd3343b32195a4caa0253f17aed1a https://dl.google.com/developers/android/udc/images/factory/raven_beta-upb4.230623.007-factory-77905501.zip
+  ota: e57c9ac171dabd41a994938d08634844952d9324d2f3f390051316bdcf84ea44 https://dl.google.com/developers/android/udc/images/ota/raven_beta-ota-upb4.230623.007-e57c9ac1.zip
+bluejay UPB4.230623.007:
+  factory: 5a12863ec72b9c7e03f9ce5bc1f838a80c664d948e26dd56e9a80442747b6f8c https://dl.google.com/developers/android/udc/images/factory/bluejay_beta-upb4.230623.007-factory-5a12863e.zip
+  ota: 8ed02ada522ddcb7a60df8bc240f6972e64f1e456927e970fa50908a18b3a4f9 https://dl.google.com/developers/android/udc/images/ota/bluejay_beta-ota-upb4.230623.007-8ed02ada.zip
+panther UPB4.230623.007:
+  factory: 567c5838f78e68b0223e68cc2879d1dd9a99ac7fb671c4ed409350cf9ed7cd2c https://dl.google.com/developers/android/udc/images/factory/panther_beta-upb4.230623.007-factory-567c5838.zip
+  ota: bbc15115fdb72a931ad695e9450f0b2e78b372b3e82f8f34a94ae4c7b3f802f2 https://dl.google.com/developers/android/udc/images/ota/panther_beta-ota-upb4.230623.007-bbc15115.zip
+cheetah UPB4.230623.007:
+  factory: 57096130d6e42b4889031c7bd1ba62c4636afb101f0d4c668efeb77599f52cef https://dl.google.com/developers/android/udc/images/factory/cheetah_beta-upb4.230623.007-factory-57096130.zip
+  ota: 530e8c5c7b47904eb1a66212108402df6ae4df05be3947e9b63aafe1f5af1b59 https://dl.google.com/developers/android/udc/images/ota/cheetah_beta-ota-upb4.230623.007-530e8c5c.zip
+lynx UPB4.230623.007:
+  factory: e90161fc771d01acc0877d437c01788d6f9c150bd6b8631d18a8abec608aa64c https://dl.google.com/developers/android/udc/images/factory/lynx_beta-upb4.230623.007-factory-e90161fc.zip
+  ota: 49cb8f38f63e775dc4b2f0e35464eda5aed7af6f3f7100dff640961a134056dc https://dl.google.com/developers/android/udc/images/ota/lynx_beta-ota-upb4.230623.007-49cb8f38.zip
+felix UPB4.230623.007:
+  factory: cf4f4d37bb3e8b4fda7a96b2f6225924b90e3e9d9142ce034815a4c9fc6e1d7a https://dl.google.com/developers/android/udc/images/factory/felix_beta-upb4.230623.007-factory-cf4f4d37.zip
+  ota: a3aea3c1e7b7f61b235a740e36fdf23bbc64f40179d7f0325ad8de397ecce455 https://dl.google.com/developers/android/udc/images/ota/felix_beta-ota-upb4.230623.007-a3aea3c1.zip
+tangorpro UPB4.230623.007:
+  factory: 8308f7fe882c88f1141a6f760a0724d3e81047b39a783435fe9572b009a3dd2a https://dl.google.com/developers/android/udc/images/factory/tangorpro_beta-upb4.230623.007-factory-8308f7fe.zip
+  ota: 5cf90bba072d5a05960497bbce97d3c64f5380953109ac2be267fd7736bd7b9f https://dl.google.com/developers/android/udc/images/ota/tangorpro_beta-ota-upb4.230623.007-5cf90bba.zip
