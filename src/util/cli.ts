@@ -29,6 +29,12 @@ export async function withSpinner<Return>(action: string, callback: (spinner: or
   return ret
 }
 
+export function maybePlural<T>(arr: ArrayLike<T>, singleEnding = '', multiEnding = 's') {
+  let len = arr.length
+  assert(len > 0)
+  return len > 1 ? multiEnding : singleEnding
+}
+
 export function showGitDiff(repoPath: string, filePath?: string) {
   let args = ['-C', repoPath, `diff`]
   if (filePath !== undefined) {

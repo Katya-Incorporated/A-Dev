@@ -2,6 +2,7 @@ import assert from 'assert'
 import { promises as fs } from 'fs'
 import path from 'path'
 import { DeviceConfig, getDeviceBuildId } from '../config/device'
+import { IMAGE_DOWNLOAD_DIR } from '../config/paths'
 import { BuildIndex, DEFAULT_BASE_DOWNLOAD_URL, ImageType } from './build-index'
 
 export class DeviceImage {
@@ -13,6 +14,18 @@ export class DeviceImage {
     readonly sha256: string,
     readonly url: string,
   ) {
+  }
+
+  getPath() {
+    return path.join(IMAGE_DOWNLOAD_DIR, this.fileName)
+  }
+
+  async isPresent() {
+    try {
+      return (await fs.stat(this.getPath())).isFile()
+    } catch {
+      return false
+    }
   }
 
   static get(index: BuildIndex, deviceConfig: DeviceConfig, buildId: string, type: ImageType) {
@@ -42,6 +55,17 @@ export class DeviceImage {
       url = DEFAULT_BASE_DOWNLOAD_URL + fileName
     }
     return new DeviceImage(deviceConfig, type, buildId, fileName, sha256, url)
+  }
+
+  static async getMissing(arr: DeviceImage[]) {
+    let res: DeviceImage[] = []
+    let imagePresence = arr.map(i => ({image: i, isPresent: i.isPresent()}))
+    for (let e of imagePresence) {
+      if (!(await e.isPresent)) {
+        res.push(e.image)
+      }
+    }
+    return res
   }
 
   toString() {
