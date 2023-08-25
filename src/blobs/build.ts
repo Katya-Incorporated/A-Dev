@@ -25,6 +25,7 @@ import {
   SPECIAL_FILE_EXTENSIONS,
   TYPE_SHARED_LIBRARY,
 } from '../build/soong'
+import { DeviceConfig } from '../config/device'
 import { BlobEntry, blobNeedsSoong } from './entry'
 
 export interface BuildFiles {
@@ -206,7 +207,11 @@ export async function createVendorDirs(vendor: string, device: string) {
   } as VendorDirectories
 }
 
-export async function writeBuildFiles(build: BuildFiles, dirs: VendorDirectories) {
+export async function writeBuildFiles(
+  build: BuildFiles,
+  dirs: VendorDirectories,
+  config?: DeviceConfig
+) {
   if (build.rootBlueprint != undefined) {
     let bp = serializeBlueprint(build.rootBlueprint)
     await fs.writeFile(`${dirs.out}/Android.bp`, bp)
@@ -228,7 +233,7 @@ export async function writeBuildFiles(build: BuildFiles, dirs: VendorDirectories
   }
 
   if (build.boardMakefile != undefined) {
-    let mk = serializeBoardMakefile(build.boardMakefile)
+    let mk = serializeBoardMakefile(build.boardMakefile, config)
     await fs.writeFile(`${dirs.proprietary}/BoardConfigVendor.mk`, mk)
   }
 
