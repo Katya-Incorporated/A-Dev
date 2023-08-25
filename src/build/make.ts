@@ -1,6 +1,7 @@
 import { basename, dirname } from 'path'
 import { BlobEntry } from '../blobs/entry'
 import { PartitionProps } from '../blobs/props'
+import { DeviceConfig } from '../config/device'
 import { SelinuxPartResolutions } from '../selinux/contexts'
 import { MAKEFILE_HEADER } from '../util/headers'
 
@@ -137,26 +138,28 @@ function addContBlock(blocks: Array<string>, variable: string, items: Array<stri
   }
 }
 
-export function serializeBoardMakefile(mk: BoardMakefile) {
+export function serializeBoardMakefile(mk: BoardMakefile, config?: DeviceConfig) {
   let blocks = startBlocks()
 
   // TODO: remove this when all ELF prebuilts work with Soong
   blocks.push('BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true')
 
+  let systemFsType = config?.device?.system_fs_type ?? 'ext4'
+
   // Build vendor?
   if (mk.buildPartitions?.includes('vendor')) {
-    blocks.push('BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4')
+    blocks.push(`BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ${systemFsType}`)
   }
 
   // Build DLKM partitions?
   if (mk.buildPartitions?.includes('vendor_dlkm')) {
     blocks.push(`BOARD_USES_VENDOR_DLKMIMAGE := true
-BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := ${systemFsType}
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm`)
   }
   if (mk.buildPartitions?.includes('odm_dlkm')) {
     blocks.push(`BOARD_USES_ODM_DLKIMAGE := true
-BOARD_ODM_DLKIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_ODM_DLKIMAGE_FILE_SYSTEM_TYPE := ${systemFsType}
 TARGET_COPY_OUT_ODM_DLKM := odm_dlkm`)
   }
 

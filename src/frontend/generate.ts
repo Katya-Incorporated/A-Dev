@@ -376,5 +376,5 @@ export async function generateBuildFiles(
     }
   }
 
-  await writeBuildFiles(build, dirs)
+  await writeBuildFiles(build, dirs, config)
 }

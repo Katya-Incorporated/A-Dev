@@ -15,11 +15,18 @@ export enum ConfigType {
   DeviceList = 'device-list',
 }
 
+export enum FsType {
+  EXT4 = 'ext4',
+  EROFS = 'erofs',
+}
+
 export interface DeviceConfig {
   // Required
   device: {
     name: string
     vendor: string
+    // file system type of OS partitions
+    system_fs_type: FsType
     build_id: string
     prev_build_id: string
   }
