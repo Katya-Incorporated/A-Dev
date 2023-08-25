@@ -1,75 +1,61 @@
 import { Command, flags } from '@oclif/command'
-import { promises as fs } from 'fs'
-import chalk from 'chalk'
-import { downloadFile, ImageType, IndexCache } from '../images/download'
 
-const IMAGE_TYPE_MAP: { [type: string]: ImageType } = {
-  factory: ImageType.Factory,
-  ota: ImageType.Ota,
-  vendor: ImageType.Vendor,
-}
+import { DEVICE_CONFIG_FLAGS, loadDeviceConfigs, resolveBuildId } from '../config/device'
+import { IMAGE_DOWNLOAD_DIR } from '../config/paths'
+import { ImageType, loadBuildIndex } from '../images/build-index'
+import { DeviceImage } from '../images/device-image'
+import { downloadDeviceImages } from '../images/download'
 
 export default class Download extends Command {
-  static description = 'download device factory images, OTAs, and/or vendor packages'
+  static description = 'download device factory images, OTAs, and/or vendor packages. Default output location is ' +
+    IMAGE_DOWNLOAD_DIR + '. To override it, use ADEVTOOL_IMG_DOWNLOAD_DIR environment variable.'
 
   static flags = {
-    help: flags.help({ char: 'h' }),
     type: flags.string({
       char: 't',
-      options: ['factory', 'ota', 'vendor'],
-      description: 'type(s) of images to download',
+      description: 'type(s) of images to download: factory | ota | vendor/$NAME (e.g. vendor/qcom, vendor/google_devices)',
       default: ['factory'],
       multiple: true,
     }),
     buildId: flags.string({
       char: 'b',
-      description: 'build ID(s) of the images to download',
-      required: true,
-      multiple: true,
-      default: ['latest'],
-    }),
-    device: flags.string({
-      char: 'd',
-      description: 'device(s) to download images for',
-      required: true,
+      description: 'build ID(s) of images to download, defaults to the current build ID',
+      required: false,
       multiple: true,
     }),
+    ...DEVICE_CONFIG_FLAGS,
   }
 
-  static args = [{ name: 'out', description: 'directory to save downloaded files in', required: true }]
-
   async run() {
-    let {
-      flags,
-      args: { out },
-    } = this.parse(Download)
+    let { flags } = this.parse(Download)
 
-    await fs.mkdir(out, { recursive: true })
+    let index = loadBuildIndex()
+    let deviceConfigs = loadDeviceConfigs(flags.devices)
 
-    this.log(chalk.bold(chalk.yellowBright("By downloading images, you agree to Google's terms and conditions:")))
-    this.log(
-      chalk.yellow(`    - https://developers.google.com/android/images#legal
-    - https://developers.google.com/android/ota#legal
-    - https://policies.google.com/terms
-`),
-    )
+    let images: DeviceImage[] = []
 
-    let cache: IndexCache = {}
-    for (let device of flags.device) {
-      this.log(chalk.greenBright(`\n${device}`))
+    let types = flags.type.map(s => s as ImageType)
 
-      for (let type of flags.type) {
-        let typeEnum = IMAGE_TYPE_MAP[type]
-        if (typeEnum == undefined) {
-          throw new Error(`Unknown type ${type}`)
-        }
-        let prettyType = type == 'ota' ? 'OTA' : type.charAt(0).toUpperCase() + type.slice(1)
+    for (let config of await deviceConfigs) {
+      for (let type of types) {
+        let buildIds = flags.buildId ?? [config.device.build_id]
 
-        for (let buildId of flags.buildId) {
-          this.log(chalk.bold(chalk.blueBright(`  ${prettyType} - ${buildId.toUpperCase()}`)))
-          await downloadFile(typeEnum, buildId, device, out, cache)
+        for (let buildIdStr of buildIds) {
+          let buildId = resolveBuildId(buildIdStr, config)
+          let image = DeviceImage.get(await index, config, buildId, type)
+          images.push(image)
         }
       }
+    }
+
+    let missingImages = await DeviceImage.getMissing(images)
+
+    if (missingImages.length > 0) {
+      await downloadDeviceImages(missingImages)
+    }
+
+    for (let image of images) {
+      this.log(`${image.toString()}: '${image.getPath()}'`)
     }
   }
 }

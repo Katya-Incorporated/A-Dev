@@ -1,86 +1,48 @@
-import { createWriteStream } from 'fs'
+import assert from 'assert'
+import chalk from 'chalk'
 import cliProgress from 'cli-progress'
+import { createHash } from 'crypto'
+import { createWriteStream, existsSync, promises as fs } from 'fs'
 import fetch from 'node-fetch'
-import { promises as stream } from 'stream'
 import path from 'path'
-import _ from 'lodash'
+import { promises as stream } from 'stream'
+import { IMAGE_DOWNLOAD_DIR } from '../config/paths'
 
-const DEV_INDEX_URL = 'https://developers.google.com/android'
-const DEV_COOKIE = 'devsite_wall_acks=nexus-image-tos,nexus-ota-tos'
-const DL_URL_PREFIX = 'https://dl.google.com/dl/android/aosp/'
+import { maybePlural } from '../util/cli'
+import { ImageType } from './build-index'
+import { DeviceImage } from './device-image'
 
-interface ImageTypeInfo {
-  indexPath: string
-  filePattern: string
-}
-
-export enum ImageType {
-  Ota = 'ota',
-  Factory = 'factory',
-  Vendor = 'vendor',
-}
-
-export type IndexCache = { [type in ImageType]?: string }
-
-const IMAGE_TYPES: Record<ImageType, ImageTypeInfo> = {
-  [ImageType.Factory]: {
-    indexPath: 'images',
-    filePattern: 'DEVICE-BUILDID',
-  },
-  [ImageType.Ota]: {
-    indexPath: 'ota',
-    filePattern: 'DEVICE-ota-BUILDID',
-  },
-  [ImageType.Vendor]: {
-    indexPath: 'drivers',
-    filePattern: 'google_devices-DEVICE-BUILDID',
-  },
-}
-
-async function getUrl(type: ImageType, buildId: string, device: string, cache: IndexCache) {
-  let { indexPath, filePattern } = IMAGE_TYPES[type]
-
-  let index = cache[type]
-  if (index == undefined) {
-    let resp = await fetch(`${DEV_INDEX_URL}/${indexPath}`, {
-      headers: {
-        Cookie: DEV_COOKIE,
-      },
-    })
-
-    index = await resp.text()
-    cache[type] = index
+export async function downloadDeviceImages(images: DeviceImage[], showTncNotice = true) {
+  await fs.mkdir(IMAGE_DOWNLOAD_DIR, { recursive: true })
+  if (showTncNotice) {
+    logTermsAndConditionsNotice(images)
   }
 
-  let filePrefix = filePattern
-    .replace('DEVICE', device)
-    .replace('BUILDID', buildId == 'latest' ? '' : `${buildId.toLowerCase()}-`)
-  let urlPrefix = DL_URL_PREFIX + filePrefix
-
-  let pattern = new RegExp(`"(${_.escapeRegExp(urlPrefix)}.+?)"`, 'g')
-  let matches = Array.from(index.matchAll(pattern))
-  if (matches.length == 0) {
-    throw new Error(`Image not found: ${type}, ${buildId}, ${device}`)
+  for (let image of images) {
+    console.log(chalk.bold(chalk.blueBright(`\n${image.deviceConfig.device.name} ${image.buildId} ${image.type}`)))
+    await downloadImage(image, IMAGE_DOWNLOAD_DIR)
   }
-
-  if (buildId == 'latest') {
-    return matches[matches.length - 1][1]
-  }
-  return matches[0][1]
 }
 
-export async function downloadFile(
-  type: ImageType,
-  buildId: string,
-  device: string,
-  outDir: string,
-  cache: IndexCache = {},
-) {
-  let url = await getUrl(type, buildId, device, cache)
+export async function downloadMissingDeviceImages(images: DeviceImage[]) {
+  let missingImages = await DeviceImage.getMissing(images)
 
-  console.log(`    ${url}`)
-  let resp = await fetch(url)
-  let name = path.basename(url)
+  if (missingImages.length > 0) {
+    console.log(`Missing image${maybePlural(missingImages)}: ${DeviceImage.arrayToString(missingImages)}`)
+    await downloadDeviceImages(missingImages)
+  }
+}
+
+async function downloadImage(image: DeviceImage, outDir: string) {
+  let tmpOutFile = path.join(outDir, image.fileName + '.tmp')
+  await fs.rm(tmpOutFile, { force: true })
+
+  let completeOutFile = path.join(outDir, image.fileName)
+  assert(!existsSync(completeOutFile), completeOutFile + ' already exists')
+
+  console.log(`    ${image.url}`)
+
+  let resp = await fetch(image.url)
   if (!resp.ok) {
     throw new Error(`Error ${resp.status}: ${resp.statusText}`)
   }
@@ -94,11 +56,38 @@ export async function downloadFile(
   let progress = 0
   let totalSize = parseInt(resp.headers.get('content-length') ?? '0') / 1e6
   bar.start(Math.round(totalSize), 0)
+
+  let sha256 = createHash('sha256')
+
   resp.body!.on('data', chunk => {
+    sha256.update(chunk)
     progress += chunk.length / 1e6
     bar.update(Math.round(progress))
   })
 
-  await stream.pipeline(resp.body!, createWriteStream(`${outDir}/${name}`))
+  await stream.pipeline(resp.body!, createWriteStream(tmpOutFile))
   bar.stop()
+
+  let sha256Digest: string = sha256.digest('hex')
+  console.log('SHA-256: ' + sha256Digest)
+  assert(sha256Digest === image.sha256, 'SHA256 mismatch, expected ' + image.sha256)
+
+  await fs.rename(tmpOutFile, completeOutFile)
+}
+
+function logTermsAndConditionsNotice(images: DeviceImage[]) {
+  if (images.filter(i => i.type === ImageType.Factory || i.type === ImageType.Ota).length == 0) {
+    // vendor images show T&C notice themselves as part of unpacking
+    return
+  }
+
+  console.log(chalk.bold('\nBy downloading images, you agree to Google\'s terms and conditions:'))
+
+  let msg = '    - Factory images: https://developers.google.com/android/images#legal\n'
+  if (images.find(i => i.type === ImageType.Ota) !== undefined) {
+    msg += '    - OTA images: https://developers.google.com/android/ota#legal\n'
+  }
+  msg += '    - Beta factory/OTA images: https://developer.android.com/studio/terms\n'
+
+  console.log(msg)
 }
