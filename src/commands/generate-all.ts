@@ -1,10 +1,13 @@
 import { Command, flags } from '@oclif/command'
+import assert from 'assert'
+import chalk from 'chalk'
+import path from 'path'
 
-import { createVendorDirs } from '../blobs/build'
+import { createVendorDirs, VendorDirectories } from '../blobs/build'
 import { copyBlobs } from '../blobs/copy'
 import { BlobEntry } from '../blobs/entry'
-import { DeviceConfig, loadDeviceConfigs } from '../config/device'
-import { COLLECTED_SYSTEM_STATE_DIR } from '../config/paths'
+import { DEVICE_CONFIG_FLAGS, DeviceBuildId, DeviceConfig, getDeviceBuildId, loadDeviceConfigs } from '../config/device'
+import { ADEVTOOL_DIR, COLLECTED_SYSTEM_STATE_DIR } from '../config/paths'
 import { forEachDevice } from '../frontend/devices'
 import {
   enumerateFiles,
@@ -20,13 +23,16 @@ import {
   resolveSepolicyDirs,
   updatePresigned,
 } from '../frontend/generate'
-import { WRAPPED_SOURCE_FLAGS, wrapSystemSrc } from '../frontend/source'
+import { writeReadme } from '../frontend/readme'
+import { DeviceImages, prepareDeviceImages, WRAPPED_SOURCE_FLAGS, wrapSystemSrc } from '../frontend/source'
+import { BuildIndex, ImageType, loadBuildIndex } from '../images/build-index'
 import { SelinuxPartResolutions } from '../selinux/contexts'
 import { withSpinner } from '../util/cli'
 import { withTempDir } from '../util/fs'
-import { writeReadme } from '../frontend/readme'
+import { spawnAsync } from '../util/process'
 
 const doDevice = (
+  dirs: VendorDirectories,
   config: DeviceConfig,
   stockSrc: string,
   customSrc: string,
@@ -52,9 +58,6 @@ const doDevice = (
 
     // Each step will modify this. Key = combined part path
     let namedEntries = new Map<string, BlobEntry>()
-
-    // Prepare output directories
-    let dirs = await createVendorDirs(config.device.vendor, config.device.name)
 
     // 1. Diff files
     await withSpinner('Enumerating files', spinner =>
@@ -172,6 +175,10 @@ export default class GenerateFull extends Command {
       char: 'f',
       description: 'path to stock factory images zip (for extracting firmware if stockSrc is not factory images)',
     }),
+    otaPath: flags.string({
+      char: 'o',
+      description: 'path to OTA image, used only for extract_android_ota_payload.py',
+    }),
     skipCopy: flags.boolean({
       char: 'k',
       description: 'skip file copying and only generate build files',
@@ -183,24 +190,89 @@ export default class GenerateFull extends Command {
       default: false,
     }),
 
+    skipOtaExtraction: flags.boolean({
+      description:
+        'skip extract_android_ota_payload.py step. Allows to skip downloading OTA image when OTA generation is not needed',
+    }),
+
     ...WRAPPED_SOURCE_FLAGS,
+    ...DEVICE_CONFIG_FLAGS,
   }
 
-  static args = [{ name: 'config', description: 'path to device-specific YAML config', required: true }]
+  static {
+    GenerateFull.flags.stockSrc.required = false
+  }
 
   async run() {
-    let {
-      flags: { aapt2: aapt2Path, buildId, stockSrc, customSrc, factoryPath, skipCopy, useTemp, parallel },
-      args: { config: configPath },
-    } = this.parse(GenerateFull)
+    let { flags } = this.parse(GenerateFull)
 
-    let devices = await loadDeviceConfigs([configPath])
+    let devices = await loadDeviceConfigs(flags.devices)
+
+    let images: Map<DeviceBuildId, DeviceImages>
+
+    let useImagesFromConfig = flags.stockSrc === undefined
+
+    if (useImagesFromConfig) {
+      let requiredImageTypes = flags.skipOtaExtraction ? [ImageType.Factory] : [ImageType.Factory, ImageType.Ota]
+
+      let index: BuildIndex = await loadBuildIndex()
+      images = await prepareDeviceImages(index, requiredImageTypes, devices)
+      assert(flags.otaPath === undefined)
+      assert(flags.buildId === undefined)
+      assert(flags.factoryPath === undefined)
+      assert(!flags.useTemp)
+    } else {
+      if (!flags.skipOtaExtraction) {
+        assert(flags.otaPath !== undefined, '--otaPath is not specified and --skipOtaExtraction is not set')
+      }
+    }
 
     await forEachDevice(
       devices,
-      parallel,
+      flags.parallel,
       async config => {
-        await doDevice(config, stockSrc, customSrc, aapt2Path, buildId, factoryPath, skipCopy, useTemp)
+        let deviceBuildId: string | undefined
+        let otaPath: string | undefined
+        let stockSrc: string
+        let factoryPath: string | undefined
+        if (useImagesFromConfig) {
+          let deviceImages = images.get(getDeviceBuildId(config))!
+          stockSrc = deviceImages.unpackedFactoryImageDir
+          factoryPath = deviceImages.factoryImage.getPath()
+          let otaImage = deviceImages.otaImage
+          if (otaImage !== undefined) {
+            otaPath = otaImage.getPath()
+          } else {
+            assert(flags.skipOtaExtraction)
+          }
+        } else {
+          stockSrc = flags.stockSrc!
+          factoryPath = flags.factoryPath
+          deviceBuildId = flags.buildId
+          otaPath = flags.otaPath
+        }
+
+        // Prepare output directories
+        let vendorDirs = await createVendorDirs(config.device.vendor, config.device.name)
+
+        await doDevice(
+          vendorDirs,
+          config,
+          stockSrc,
+          flags.customSrc,
+          flags.aapt2,
+          deviceBuildId,
+          factoryPath,
+          flags.skipCopy,
+          flags.useTemp,
+        )
+
+        if (!flags.skipOtaExtraction) {
+          this.log(chalk.bold('Running extract_android_ota_payload.py'))
+          // TODO: extract these files from bootloader.img instead of from full OTA image
+          let cmd = path.join(ADEVTOOL_DIR, 'external/extract_android_ota_payload/extract_android_ota_payload.py')
+          await spawnAsync(cmd, [otaPath!, vendorDirs.firmware])
+        }
       },
       config => config.device.name,
     )
