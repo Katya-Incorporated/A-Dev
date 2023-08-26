@@ -222,7 +222,7 @@ export function serializeDeviceMakefile(mk: DeviceMakefile) {
   return finishBlocks(blocks)
 }
 
-export function serializeProductMakefile(mk: ProductMakefile) {
+export function serializeProductMakefile(mk: ProductMakefile, config?: DeviceConfig) {
   let blocks = startBlocks()
 
   blocks.push(`# Inherit AOSP product
@@ -236,6 +236,14 @@ PRODUCT_MANUFACTURER := ${mk.manufacturer}`)
 
   if (mk.enforceRros != undefined) {
     blocks.push(`PRODUCT_ENFORCE_RRO_TARGETS := ${mk.enforceRros}`)
+  }
+
+  let build_id = config?.device?.build_id
+
+  if (build_id !== undefined) {
+    blocks.push(`ifneq ($(BUILD_ID),${build_id})
+  $(error BUILD_ID: expected ${build_id}, got $(BUILD_ID))
+endif`)
   }
 
   return finishBlocks(blocks)
