@@ -17,3 +17,12 @@ export function setDifference<Value>(a: Set<Value>, b: Set<Value>) {
   }
   return set
 }
+
+export function updateMultiMap<K, V>(map: Map<K, V[]>, key: K, value: V) {
+  let cur = map.get(key)
+  if (cur === undefined) {
+    map.set(key, [value])
+  } else {
+    cur.push(value)
+  }
+}
