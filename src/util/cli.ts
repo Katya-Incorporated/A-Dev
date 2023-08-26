@@ -8,8 +8,7 @@ export type ProgressCallback = (progress: string) => void
 
 export function createActionSpinner(action: string) {
   return ora({
-    prefixText: chalk.bold(chalk.greenBright(action)),
-    color: 'green',
+    prefixText: chalk.bold(action),
   })
 }
 
