@@ -4,6 +4,7 @@ import { createVendorDirs } from '../blobs/build'
 import { copyBlobs } from '../blobs/copy'
 import { BlobEntry } from '../blobs/entry'
 import { DeviceConfig, loadDeviceConfigs } from '../config/device'
+import { COLLECTED_SYSTEM_STATE_DIR } from '../config/paths'
 import { forEachDevice } from '../frontend/devices'
 import {
   enumerateFiles,
@@ -165,7 +166,7 @@ export default class GenerateFull extends Command {
     customSrc: flags.string({
       char: 'c',
       description: 'path to AOSP build output directory (out/) or (directory containing) JSON state file',
-      default: 'out',
+      default: COLLECTED_SYSTEM_STATE_DIR,
     }),
     factoryPath: flags.string({
       char: 'f',
