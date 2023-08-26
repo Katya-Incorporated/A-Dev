@@ -189,8 +189,6 @@ export function serializeDeviceMakefile(mk: DeviceMakefile) {
   let blocks = startBlocks()
 
   addContBlock(blocks, 'PRODUCT_SOONG_NAMESPACES', mk.namespaces)
-  addContBlock(blocks, 'PRODUCT_COPY_FILES', mk.copyFiles)
-  addContBlock(blocks, 'PRODUCT_PACKAGES', mk.packages)
 
   if (mk.vintfManifestPaths != undefined) {
     for (let [partition, manifestPath] of mk.vintfManifestPaths.entries()) {
@@ -218,6 +216,9 @@ export function serializeDeviceMakefile(mk: DeviceMakefile) {
   if (mk.enforceRros != undefined) {
     blocks.push(`PRODUCT_ENFORCE_RRO_TARGETS := ${mk.enforceRros}`)
   }
+
+  addContBlock(blocks, 'PRODUCT_PACKAGES', mk.packages)
+  addContBlock(blocks, 'PRODUCT_COPY_FILES', mk.copyFiles)
 
   return finishBlocks(blocks)
 }
