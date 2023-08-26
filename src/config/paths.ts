@@ -21,3 +21,5 @@ export const BUILD_INDEX_FILE = path.join(BUILD_INDEX_DIR, 'build-index.yml')
 export const MAIN_BUILD_INDEX_PART = path.join(BUILD_INDEX_DIR, 'build-index-main.yml')
 
 export const IMAGE_DOWNLOAD_DIR = process.env['ADEVTOOL_IMG_DOWNLOAD_DIR'] ?? path.join(ADEVTOOL_DIR, 'dl')
+
+export const BUILD_ID_TO_TAG_FILE = path.join(BUILD_INDEX_DIR, 'build-id-to-tag.yml')
