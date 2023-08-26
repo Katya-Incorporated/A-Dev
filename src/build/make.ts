@@ -246,6 +246,13 @@ PRODUCT_MANUFACTURER := ${mk.manufacturer}`)
 endif`)
   }
 
+  let splOverride = config?.device?.platform_security_patch_level_override
+  if (splOverride !== undefined) {
+    blocks.push(`ifneq ($(PLATFORM_SECURITY_PATCH),${splOverride})
+  $(error PLATFORM_SECURITY_PATCH: expected ${splOverride}, got $(PLATFORM_SECURITY_PATCH))
+endif`)
+  }
+
   return finishBlocks(blocks)
 }
 

@@ -29,6 +29,8 @@ export interface DeviceConfig {
     system_fs_type: FsType
     build_id: string
     prev_build_id: string
+    // ignored when undefined
+    platform_security_patch_level_override?: string
   }
 
   platform: {
