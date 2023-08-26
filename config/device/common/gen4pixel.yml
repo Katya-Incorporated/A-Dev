@@ -8,6 +8,7 @@ includes:
 device:
   build_id: TP1A.221005.002.B2
   prev_build_id: TP1A.221005.002
+  platform_security_patch_level_override: 2022-11-01
 
 filters:
   files:
