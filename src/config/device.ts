@@ -231,3 +231,7 @@ async function loadDeviceConfigsFromPath(configPath: string): Promise<Promise<De
   }
   throw new Error(`Unknown config type ${type}`)
 }
+
+export function getDeviceNames(configs: DeviceConfig[]) {
+  return configs.map(c => c.device.name).join(' ')
+}
