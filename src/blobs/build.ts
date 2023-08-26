@@ -238,7 +238,7 @@ export async function writeBuildFiles(
   }
 
   if (build.productMakefile != undefined) {
-    let mk = serializeProductMakefile(build.productMakefile)
+    let mk = serializeProductMakefile(build.productMakefile, config)
     await fs.writeFile(`${dirs.out}/${build.productMakefile.name}.mk`, mk)
   }
 
