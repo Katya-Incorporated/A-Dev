@@ -1,12 +1,14 @@
 import { Command, flags } from '@oclif/command'
+import assert from 'assert'
 
 import { createVendorDirs } from '../blobs/build'
 import { copyBlobs } from '../blobs/copy'
 import { BlobEntry } from '../blobs/entry'
-import { DeviceConfig, loadDeviceConfigs } from '../config/device'
+import { DEVICE_CONFIG_FLAGS, DeviceBuildId, DeviceConfig, getDeviceBuildId, loadDeviceConfigs } from '../config/device'
 import { forEachDevice } from '../frontend/devices'
 import { enumerateFiles, extractProps, generateBuildFiles, PropResults } from '../frontend/generate'
-import { WRAPPED_SOURCE_FLAGS, wrapSystemSrc } from '../frontend/source'
+import { DeviceImages, prepareFactoryImages, WRAPPED_SOURCE_FLAGS, wrapSystemSrc } from '../frontend/source'
+import { loadBuildIndex } from '../images/build-index'
 import { withSpinner } from '../util/cli'
 import { withTempDir } from '../util/fs'
 
@@ -76,23 +78,44 @@ export default class GeneratePrep extends Command {
     }),
 
     ...WRAPPED_SOURCE_FLAGS,
+    ...DEVICE_CONFIG_FLAGS,
   }
 
-  static args = [{ name: 'config', description: 'path to device-specific YAML config', required: true }]
+  static {
+    GeneratePrep.flags.stockSrc.required = false
+  }
 
   async run() {
-    let {
-      flags: { buildId, stockSrc, skipCopy, useTemp, parallel },
-      args: { config: configPath },
-    } = this.parse(GeneratePrep)
+    let { flags } = this.parse(GeneratePrep)
+    let devices = await loadDeviceConfigs(flags.devices)
 
-    let devices = await loadDeviceConfigs([configPath])
+    let useImagesFromConfig = flags.stockSrc === undefined
+
+    let deviceImagesMap: Map<DeviceBuildId, DeviceImages>
+
+    if (useImagesFromConfig) {
+      assert(flags.stockSrc === undefined)
+      assert(flags.buildId === undefined)
+      assert(!flags.useTemp)
+      deviceImagesMap = await prepareFactoryImages(await loadBuildIndex(), devices)
+    }
 
     await forEachDevice(
       devices,
-      parallel,
+      flags.parallel,
       async config => {
-        await doDevice(config, stockSrc, buildId, skipCopy, useTemp)
+        let stockSrc: string
+        let buildId: string | undefined
+        if (useImagesFromConfig) {
+          let deviceImages = deviceImagesMap.get(getDeviceBuildId(config))!
+          stockSrc = deviceImages.unpackedFactoryImageDir
+          buildId = config.device.build_id
+        } else {
+          stockSrc = flags.stockSrc!
+          buildId = flags.buildId
+        }
+
+        await doDevice(config, stockSrc, buildId, flags.skipCopy, flags.useTemp)
       },
       config => config.device.name,
     )
