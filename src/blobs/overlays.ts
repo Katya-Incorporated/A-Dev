@@ -436,7 +436,11 @@ export async function serializePartOverlays(partValues: PartResValues, overlaysD
       })
 
       let valuesObj = { resources: {} as { [type: string]: Array<any> } }
-      for (let [{ type, key }, value] of values.entries()) {
+      let resEntries = Array.from(values.entries())
+      resEntries.sort(([k1], [k2]) => {
+        return k1.key.localeCompare(k2.key)
+      })
+      for (let [{ type, key }, value] of resEntries) {
         let entry = {
           $: {
             name: key,
