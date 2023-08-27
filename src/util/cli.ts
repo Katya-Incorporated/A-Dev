@@ -4,6 +4,8 @@ import child_proc from 'child_process'
 import ora from 'ora'
 import path from 'path'
 
+import { spawnAsync } from './process'
+
 export type ProgressCallback = (progress: string) => void
 
 export function createActionSpinner(action: string) {
@@ -32,6 +34,10 @@ export function maybePlural<T>(arr: ArrayLike<T>, singleEnding = '', multiEnding
   let len = arr.length
   assert(len > 0)
   return len > 1 ? multiEnding : singleEnding
+}
+
+export function gitDiff(path1: string, path2: string) {
+  return spawnAsync('git', ['diff', '--color=always', path1, path2], undefined, [0, 1])
 }
 
 export function showGitDiff(repoPath: string, filePath?: string) {

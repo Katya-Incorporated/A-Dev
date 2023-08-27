@@ -1,13 +1,14 @@
 import { Command, flags } from '@oclif/command'
 import assert from 'assert'
 import chalk from 'chalk'
+import { CopyOptions, promises as fs } from 'fs'
 import path from 'path'
 
 import { createVendorDirs, VendorDirectories } from '../blobs/build'
 import { copyBlobs } from '../blobs/copy'
 import { BlobEntry } from '../blobs/entry'
 import { DEVICE_CONFIG_FLAGS, DeviceBuildId, DeviceConfig, getDeviceBuildId, loadDeviceConfigs } from '../config/device'
-import { ADEVTOOL_DIR, COLLECTED_SYSTEM_STATE_DIR } from '../config/paths'
+import { ADEVTOOL_DIR, COLLECTED_SYSTEM_STATE_DIR, VENDOR_MODULE_SKELS_DIR, VENDOR_MODULE_SPECS_DIR } from '../config/paths'
 import { forEachDevice } from '../frontend/devices'
 import {
   enumerateFiles,
@@ -27,8 +28,16 @@ import { writeReadme } from '../frontend/readme'
 import { DeviceImages, prepareDeviceImages, WRAPPED_SOURCE_FLAGS, wrapSystemSrc } from '../frontend/source'
 import { BuildIndex, ImageType, loadBuildIndex } from '../images/build-index'
 import { SelinuxPartResolutions } from '../selinux/contexts'
-import { withSpinner } from '../util/cli'
-import { withTempDir } from '../util/fs'
+import { gitDiff, withSpinner } from '../util/cli'
+import {
+  DIR_SPEC_PLACEHOLDER,
+  FileTreeComparison,
+  FileTreeSpec,
+  fileTreeSpecToYaml,
+  getFileTreeSpec,
+  parseFileTreeSpecYaml,
+} from '../util/file-tree-spec'
+import { exists, listFilesRecursive, withTempDir } from '../util/fs'
 import { spawnAsync } from '../util/process'
 
 const doDevice = (
@@ -195,6 +204,11 @@ export default class GenerateFull extends Command {
         'skip extract_android_ota_payload.py step. Allows to skip downloading OTA image when OTA generation is not needed',
     }),
 
+    updateSpec: flags.boolean({
+      description:
+        'update vendor module FileTreeSpec in vendor-specs/ instead of requiring it to be equal to the reference (current) spec',
+    }),
+
     ...WRAPPED_SOURCE_FLAGS,
     ...DEVICE_CONFIG_FLAGS,
   }
@@ -273,8 +287,153 @@ export default class GenerateFull extends Command {
           let cmd = path.join(ADEVTOOL_DIR, 'external/extract_android_ota_payload/extract_android_ota_payload.py')
           await spawnAsync(cmd, [otaPath!, vendorDirs.firmware])
         }
+
+        if (flags.updateSpec) {
+          let cpSkelPromise = copyVendorSkel(vendorDirs, config)
+          await writeVendorFileTreeSpec(vendorDirs, config)
+          await cpSkelPromise
+        } else {
+          try {
+            await compareToReferenceFileTreeSpec(vendorDirs, config)
+          } catch (e) {
+            await fs.rm(vendorDirs.out, { recursive: true })
+            throw e
+          }
+        }
       },
       config => config.device.name,
     )
   }
 }
+
+async function compareToReferenceFileTreeSpec(vendorDirs: VendorDirectories, config: DeviceConfig) {
+  console.log(chalk.bold('Verifying FileTreeSpec'))
+
+  let specFile = getVendorModuleTreeSpecFile(config)
+  if (!(await exists(specFile))) {
+    throw new Error(
+      `Missing vendor module tree spec, use --${GenerateFull.flags.updateSpec.name} flag to generate it. Path: ` +
+        specFile,
+    )
+  }
+  let fileTreeSpec = getFileTreeSpec(vendorDirs.out)
+
+  let referenceFileTreeSpec: FileTreeSpec = parseFileTreeSpecYaml((await fs.readFile(specFile)).toString())
+
+  let cmp = await FileTreeComparison.get(referenceFileTreeSpec, await fileTreeSpec)
+
+  let gitDiffs: Promise<string>[] = []
+
+  let vendorSkelDir = getVendorModuleSkelDir(config)
+
+  for (let changedEntry of cmp.changedEntries) {
+    if (cmp.a.get(changedEntry) === DIR_SPEC_PLACEHOLDER || cmp.b.get(changedEntry) === DIR_SPEC_PLACEHOLDER) {
+      // directory became a regular file or vice versa
+      continue
+    }
+
+    let skelFile = path.join(vendorSkelDir, changedEntry)
+    if (OVERRIDDEN_SKEL_EXTS.has(path.extname(skelFile))) {
+      skelFile += SOONG_IGNORE_EXT
+    }
+    if (await exists(skelFile)) {
+      gitDiffs.push(gitDiff(skelFile, path.resolve(vendorDirs.out, changedEntry)))
+    }
+  }
+
+  for await (let diff of gitDiffs) {
+    console.log(diff)
+  }
+
+  if (cmp.changedEntries.length > 0) {
+    console.log(chalk.bold('\nChanged entries:'))
+    for (let e of cmp.changedEntries) {
+      console.log(e + ': ' + cmp.a.get(e) + ' -> ' + cmp.b.get(e))
+    }
+  }
+
+  if (cmp.newEntries.size > 0) {
+    console.log(chalk.bold(`\nNew entries:`))
+    for (let [k, v] of cmp.newEntries) {
+      console.log(k + ': ' + v)
+    }
+  }
+
+  if (cmp.missingEntries.size > 0) {
+    console.log(chalk.bold('\nMissing entries:'))
+    for (let [k, v] of cmp.missingEntries) {
+      console.log(k + ': ' + v)
+    }
+  }
+
+  if (cmp.numDiffs() != 0) {
+    console.log('\n')
+    throw new Error(`Vendor module for ${config.device.name} doesn't match its FileTreeSpec in ${getVendorModuleTreeSpecFile(config)}.
+To update it, use the --${GenerateFull.flags.updateSpec.name} flag.`)
+  }
+}
+
+async function writeVendorFileTreeSpec(dirs: VendorDirectories, config: DeviceConfig) {
+  let fileTreeSpec = getFileTreeSpec(dirs.out)
+
+  let dstFile = getVendorModuleTreeSpecFile(config)
+  await fs.mkdir(path.parse(dstFile).dir, { recursive: true })
+  await fs.writeFile(dstFile, fileTreeSpecToYaml(await fileTreeSpec))
+}
+
+// see readme in vendor-skels/ dir
+async function copyVendorSkel(dirs: VendorDirectories, config: DeviceConfig) {
+  let skelDir = getVendorModuleSkelDir(config)
+
+  let copyOptions = {
+    errorOnExist: true,
+    force: false,
+    preserveTimestamps: false,
+    recursive: true,
+    filter(source: string): boolean {
+      if (source.endsWith('.img')) {
+        return false
+      }
+
+      if (source.startsWith(dirs.proprietary)) {
+        if (source.includes('/', dirs.proprietary.length + 1)) {
+          // skip proprietary/*/* entries
+          return false
+        }
+
+        if (source.length > dirs.proprietary.length) {
+          if (path.extname(source) === '') {
+            // skip now-empty proprietary/* dirs
+            return false
+          }
+        }
+      }
+      return true
+    },
+  } as CopyOptions
+
+  await fs.rm(skelDir, { force: true, recursive: true })
+  await fs.cp(dirs.out, skelDir, copyOptions)
+
+  let renames: Promise<void>[] = []
+
+  for await (let file of listFilesRecursive(skelDir)) {
+    let ext = path.extname(file)
+    if (OVERRIDDEN_SKEL_EXTS.has(ext)) {
+      renames.push(fs.rename(file, file + SOONG_IGNORE_EXT))
+    }
+  }
+  await Promise.all(renames)
+}
+
+function getVendorModuleTreeSpecFile(config: DeviceConfig) {
+  return path.join(VENDOR_MODULE_SPECS_DIR, config.device.vendor, `${config.device.name}.yml`)
+}
+
+function getVendorModuleSkelDir(config: DeviceConfig) {
+  return path.join(VENDOR_MODULE_SKELS_DIR, config.device.vendor, config.device.name)
+}
+
+// soong detects .bp, .mk files everywhere in OS checkout dir, add '.skip' suffix to the ones in vendor-skels/ dir
+const OVERRIDDEN_SKEL_EXTS = new Set(['.bp', '.mk'])
+const SOONG_IGNORE_EXT = '.skip'

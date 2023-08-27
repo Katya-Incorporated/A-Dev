@@ -23,3 +23,6 @@ export const MAIN_BUILD_INDEX_PART = path.join(BUILD_INDEX_DIR, 'build-index-mai
 export const IMAGE_DOWNLOAD_DIR = process.env['ADEVTOOL_IMG_DOWNLOAD_DIR'] ?? path.join(ADEVTOOL_DIR, 'dl')
 
 export const BUILD_ID_TO_TAG_FILE = path.join(BUILD_INDEX_DIR, 'build-id-to-tag.yml')
+
+export const VENDOR_MODULE_SPECS_DIR = path.join(ADEVTOOL_DIR, 'vendor-specs')
+export const VENDOR_MODULE_SKELS_DIR = path.join(ADEVTOOL_DIR, 'vendor-skels')
