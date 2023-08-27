@@ -1,0 +1,4 @@
+require board=sunfish
+
+require version-bootloader=s5-0.5-9825683
+require version-baseband=g7150-00112-230505-B-10075601
