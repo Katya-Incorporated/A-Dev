@@ -151,9 +151,9 @@ PRODUCT_PACKAGES += \
     com.google.android.camera.experimental2022_system \
     com.google.android.camera.extensions \
     com.google.edgetpu_app_service-V2-ndk \
-    com.google.edgetpu_app_service-V2-ndk__2 \
+    com.google.edgetpu_app_service-V2-ndk__system_ext \
     com.google.edgetpu_vendor_service-V2-ndk \
-    com.google.edgetpu_vendor_service-V2-ndk__2 \
+    com.google.edgetpu_vendor_service-V2-ndk__system_ext \
     com.google.euiccpixel.auto_generated_rro_product_adevtool__ \
     com.google.hardware.biometrics.fingerprint.fingerprint-ext-V1-ndk \
     com.google.hardware.pixel.display-V4-ndk.vendor:64 \
@@ -218,8 +218,8 @@ PRODUCT_PACKAGES += \
     libdeccfg \
     libdeeptouch \
     libdisplaycolor \
-    libdmengine \
-    libdmjavaplugin \
+    libdmengine__product \
+    libdmjavaplugin__product \
     libdrm.vendor:32 \
     libedgetpu_client.google \
     libedgetpu_tflite_compiler \
@@ -253,7 +253,7 @@ PRODUCT_PACKAGES += \
     libGralloc4Wrapper \
     libgril_oem-google \
     libgxp \
-    libhbmsvmanager_jni \
+    libhbmsvmanager_jni__system_ext \
     libhidltransport.vendor:32 \
     libhidparser \
     libhwbinder.vendor \
@@ -262,7 +262,7 @@ PRODUCT_PACKAGES += \
     libkeymint_support.vendor:64 \
     libmahalcontroller \
     libmedia_ecoservice.vendor \
-    libmediaadaptor \
+    libmediaadaptor__system_ext \
     libmetrics_logger \
     libmodem_svc_proto \
     libnos_citadeld_proxy \
@@ -277,7 +277,7 @@ PRODUCT_PACKAGES += \
     liboffloadeffect \
     libOpenCL \
     libOpenCL-pixel \
-    libpowerstatshaldataprovider \
+    libpowerstatshaldataprovider__system_ext \
     libproxy_trusty \
     libril_gfeature \
     libril_sitril \
@@ -369,7 +369,9 @@ PRODUCT_PACKAGES += \
     vendor.google.wireless_charger@1.3-service-vendor \
     vendor.google.wireless_charger@1.3-service-vendor__2 \
     vendor.samsung_slsi.telephony.hardware.oemservice@1.0 \
+    vendor.samsung_slsi.telephony.hardware.oemservice@1.0__system_ext \
     vendor.samsung_slsi.telephony.hardware.radioExternal@1.0 \
+    vendor.samsung_slsi.telephony.hardware.radioExternal@1.0__system_ext \
     vendor.samsung_slsi.telephony.hardware.radioExternal@1.1 \
     vulkan.mali \
     wfc-pkt-router
@@ -1517,10 +1519,6 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/panther/proprietary/vendor/firmware/st54j_conf_PROTO1.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/st54j_conf_PROTO1.bin \
     vendor/google_devices/panther/proprietary/vendor/firmware/st54j_conf.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/st54j_conf.bin \
     vendor/google_devices/panther/proprietary/vendor/firmware/st54j_fw.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/st54j_fw.bin \
-    vendor/google_devices/panther/proprietary/vendor/lib/vendor.samsung_slsi.telephony.hardware.oemservice@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.samsung_slsi.telephony.hardware.oemservice@1.0.so \
-    vendor/google_devices/panther/proprietary/vendor/lib/vendor.samsung_slsi.telephony.hardware.radioExternal@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.samsung_slsi.telephony.hardware.radioExternal@1.0.so \
-    vendor/google_devices/panther/proprietary/vendor/lib64/vendor.samsung_slsi.telephony.hardware.oemservice@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung_slsi.telephony.hardware.oemservice@1.0.so \
-    vendor/google_devices/panther/proprietary/vendor/lib64/vendor.samsung_slsi.telephony.hardware.radioExternal@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung_slsi.telephony.hardware.radioExternal@1.0.so \
     vendor/google_devices/panther/proprietary/product/etc/permissions/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml \
     vendor/google_devices/panther/proprietary/product/etc/permissions/features-verizon.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/features-verizon.xml \
     vendor/google_devices/panther/proprietary/product/etc/sysconfig/allowlist_com.shannon.imsservice.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/allowlist_com.shannon.imsservice.xml \

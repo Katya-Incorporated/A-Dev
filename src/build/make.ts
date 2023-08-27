@@ -141,9 +141,6 @@ function addContBlock(blocks: Array<string>, variable: string, items: Array<stri
 export function serializeBoardMakefile(mk: BoardMakefile, config?: DeviceConfig) {
   let blocks = startBlocks()
 
-  // TODO: remove this when all ELF prebuilts work with Soong
-  blocks.push('BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true')
-
   let systemFsType = config?.device?.system_fs_type ?? 'ext4'
 
   // Build vendor?

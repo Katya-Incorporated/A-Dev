@@ -222,36 +222,42 @@ PRODUCT_PACKAGES += \
     com.qtistatic.stats.af \
     com.qtistatic.stats.awb \
     com.qtistatic.stats.pdlib \
-    com.qualcomm.qti.bluetooth_audio@1.0 \
+    com.qualcomm.qti.bluetooth_audio@1.0__system_ext \
     com.qualcomm.qti.imscmservice-V2.0-java \
     com.qualcomm.qti.imscmservice-V2.1-java \
     com.qualcomm.qti.imscmservice-V2.2-java \
     com.qualcomm.qti.imscmservice@1.0 \
+    com.qualcomm.qti.imscmservice@1.0__system_ext \
     com.qualcomm.qti.imscmservice@2.0 \
+    com.qualcomm.qti.imscmservice@2.0__system_ext \
     com.qualcomm.qti.imscmservice@2.1 \
+    com.qualcomm.qti.imscmservice@2.1__system_ext \
     com.qualcomm.qti.imscmservice@2.2 \
+    com.qualcomm.qti.imscmservice@2.2__system_ext \
     com.qualcomm.qti.services.secureui \
     com.qualcomm.qti.uceservice-V2.0-java \
     com.qualcomm.qti.uceservice-V2.1-java \
     com.qualcomm.qti.uceservice@2.0 \
+    com.qualcomm.qti.uceservice@2.0__system_ext \
     com.qualcomm.qti.uceservice@2.1 \
+    com.qualcomm.qti.uceservice@2.1__system_ext \
     com.qualcomm.qti.uceservice@2.2 \
     com.qualcomm.qti.uceservice@2.3 \
-    com.qualcomm.qti.wifidisplayhal@1.0 \
+    com.qualcomm.qti.wifidisplayhal@1.0__system_ext \
     com.quicinc.cne.api-V1.0-java \
     com.quicinc.cne.api-V1.1-java \
-    com.quicinc.cne.api@1.0 \
-    com.quicinc.cne.api@1.1 \
+    com.quicinc.cne.api@1.0__system_ext \
+    com.quicinc.cne.api@1.1__system_ext \
     com.quicinc.cne.constants-V1.0-java \
     com.quicinc.cne.constants-V2.0-java \
     com.quicinc.cne.constants-V2.1-java \
-    com.quicinc.cne.constants@1.0 \
-    com.quicinc.cne.constants@2.0 \
-    com.quicinc.cne.constants@2.1 \
-    com.quicinc.cne.server@1.0 \
-    com.quicinc.cne.server@2.0 \
-    com.quicinc.cne.server@2.1 \
-    com.quicinc.cne.server@2.2 \
+    com.quicinc.cne.constants@1.0__system_ext \
+    com.quicinc.cne.constants@2.0__system_ext \
+    com.quicinc.cne.constants@2.1__system_ext \
+    com.quicinc.cne.server@1.0__system_ext \
+    com.quicinc.cne.server@2.0__system_ext \
+    com.quicinc.cne.server@2.1__system_ext \
+    com.quicinc.cne.server@2.2__system_ext \
     datastatusnotification \
     device_symlinks \
     deviceInfoServiceModule \
@@ -301,11 +307,11 @@ PRODUCT_PACKAGES += \
     lib-imsqimf \
     lib-imsrcs-v2 \
     lib-imsrcsbaseimpl \
-    lib-imsvideocodec \
-    lib-imsvt \
+    lib-imsvideocodec__system_ext \
+    lib-imsvt__system_ext \
     lib-imsvtcore \
-    lib-imsvtextutils \
-    lib-imsvtutils \
+    lib-imsvtextutils__system_ext \
+    lib-imsvtutils__system_ext \
     lib-imsxml \
     lib-rcsconfig \
     lib-rtpcommon \
@@ -317,22 +323,22 @@ PRODUCT_PACKAGES += \
     libacdb-fts \
     libacdbloader \
     libacdbrtac \
-    libAdaptiveEQ_recpp \
+    libAdaptiveEQ_recpp__system_ext \
     libadiertac \
     libadm \
     libadpcmdec \
     libadreno_utils \
     libadsp_default_listener \
     libadsprpc \
-    libAGC_recpp \
+    libAGC_recpp__system_ext \
     libairbrush-pixel \
     libAlacSwDec \
-    libANS_recpp \
+    libANS_recpp__system_ext \
     libaoa \
     libApeSwDec \
     libapps_mem_heap \
-    libaptX_encoder \
-    libaptXHD_encoder \
+    libaptX_encoder__system_ext \
+    libaptXHD_encoder__system_ext \
     libarbitrarybytes \
     libash \
     libasn1cper \
@@ -349,9 +355,9 @@ PRODUCT_PACKAGES += \
     libavservices_minijail.vendor:64 \
     libbase64 \
     libbatterylistener \
-    libbeluga \
+    libbeluga__system_ext \
     libbenchmark_skel \
-    libbinauralrenderer_wrapper.qti \
+    libbinauralrenderer_wrapper.qti__system_ext \
     libbluetooth_audio_session_qti \
     libbtnv \
     libC2D2 \
@@ -386,9 +392,9 @@ PRODUCT_PACKAGES += \
     libcodec2_hidl@1.0.vendor \
     libcodec2_vndk.vendor \
     libcom.qti.chinodeutils \
-    libcomposerextn.qti \
+    libcomposerextn.qti__system_ext \
     libcomprcapture \
-    libCompressor_recpp \
+    libCompressor_recpp__system_ext \
     libconfigdb \
     libcpion \
     libcppbor_external.vendor:64 \
@@ -408,15 +414,15 @@ PRODUCT_PACKAGES += \
     libdepthgenerator \
     libdepthmapwrapper \
     libdiag \
-    libdiag_system \
+    libdiag_system__system_ext \
     libdiagjni \
     libdisp-aba \
     libdisplayconfig.qti \
     libdisplaydebug \
     libdisplayqos \
-    libdmengine \
-    libdmjavaplugin \
-    libdolphin \
+    libdmengine__product \
+    libdmjavaplugin__product \
+    libdolphin__system_ext \
     libdpps \
     libdrc \
     libdrm.vendor \
@@ -458,7 +464,7 @@ PRODUCT_PACKAGES += \
     libgcs-ipc \
     libgcs-osal \
     libgdtap \
-    libgdx \
+    libgdx__product \
     libGLESv1_CM_adreno \
     libGLESv2_adreno \
     libgnsspps \
@@ -490,42 +496,42 @@ PRODUCT_PACKAGES += \
     libhdcpsrm \
     libhdmiedid \
     libhdmipassthru \
-    libHDR_recpp \
+    libHDR_recpp__system_ext \
     libhdr_tm \
     libhexagon_nn_skel \
     libhexagon_nn_stub \
     libhfp \
     libhidltransport.vendor \
-    libHPFilter_recpp \
+    libHPFilter_recpp__system_ext \
     libhta_dsp_skel \
     libhta_hexagon_runtime \
     libhwbinder.vendor \
     libI420colorconvert \
     libidl \
     libimmotion_skel \
-    libimscamera_jni \
-    libimsmedia_jni \
+    libimscamera_jni__system_ext \
+    libimsmedia_jni__system_ext \
     libirlaserstats \
     libizat_core \
     libjnihelper \
-    libjnihelpers \
+    libjnihelpers__system_ext \
     libjson \
     libkeymaster_messages.vendor:64 \
     libkeymaster_portable.vendor:64 \
     libkeymasterdeviceutils \
     libkeymasterprovision \
     libkeymasterutils \
-    liblayerext.qti \
+    liblayerext.qti__system_ext \
     liblbs_core \
-    libLimiter_recpp \
+    libLimiter_recpp__system_ext \
     liblistensoundmodel2 \
-    liblistensoundmodel2.qti \
+    liblistensoundmodel2.qti__system_ext \
     libllvm-glnext \
     libllvm-qcom \
     libllvm-qgl \
     liblm36011 \
     libloc_api_v02 \
-    libloc2jnibridge \
+    libloc2jnibridge__system_ext \
     liblowi_client \
     liblowi_wifihal \
     liblqe \
@@ -534,23 +540,24 @@ PRODUCT_PACKAGES += \
     libmdmdetect \
     libmdsprpc \
     libmedia_ecoservice.vendor \
-    libmink-sock-native-api \
+    libmink-sock-native-api__system_ext \
     libminkdescriptor \
     libminksocket \
-    libminksocket_system \
+    libminksocket_system__system_ext \
     libmm-color-convertor \
     libmm-hdcpmgr \
     libmm-omxcore \
     libmmosal \
-    libmmparser_lite \
-    libmmrtpdecoder \
+    libmmosal__system_ext \
+    libmmparser_lite__system_ext \
+    libmmrtpdecoder__system_ext \
     libmmrtpdecoder_proprietary \
-    libmmrtpencoder \
+    libmmrtpencoder__system_ext \
     libmmrtpencoder_proprietary \
     libmotion_ae \
     libMpeg4SwEncoder \
     libmulawdec \
-    libmwqemiptablemgr \
+    libmwqemiptablemgr__system_ext \
     libnative-api \
     libnetmgr \
     libnetmgr_common \
@@ -583,7 +590,7 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libOmxWmaDec \
     libOpenCL \
-    libOpenCL_system \
+    libOpenCL_system__system_ext \
     libOpenCL-pixel \
     libopenvx \
     libops \
@@ -592,19 +599,19 @@ PRODUCT_PACKAGES += \
     libperipheral_client \
     libplatformconfig \
     libpower_anomaly_data \
-    libpowerstatshaldataprovider \
+    libpowerstatshaldataprovider__system_ext \
     libprotobuf-cpp-full-vendorcompat \
     libproxsensor \
     libpuresoftkeymasterdevice.vendor:64 \
     libpvr \
     libq3dtools_adreno \
     libq3dtools_esx \
-    libqape.qti \
+    libqape.qti__system_ext \
     libqcbassboost \
     libqcbor \
     libqcc_file_agent \
-    libqcc_netstats \
-    libqccAuthMgr \
+    libqcc_netstats__system_ext \
+    libqccAuthMgr__system_ext \
     libqcci_legacy \
     libqcmaputils \
     libqcodec2 \
@@ -622,33 +629,33 @@ PRODUCT_PACKAGES += \
     libqisl \
     libqmi \
     libqmi_cci \
-    libqmi_cci_system \
+    libqmi_cci_system__system_ext \
     libqmi_client_helper \
     libqmi_client_qmux \
     libqmi_common_so \
     libqmi_csi \
     libqmi_encdec \
-    libqmi_encdec_system \
+    libqmi_encdec_system__system_ext \
     libqmi_legacy \
     libqmi_modem_svc \
     libqmi_thermal-google-1 \
     libqmi_vs-google-1 \
     libqmiservices \
-    libQOC.qti \
+    libQOC.qti__system_ext \
     libqrtr \
     libQSEEComAPI \
-    libQSEEComAPI_system \
+    libQSEEComAPI_system__system_ext \
     libqseed3 \
     libqservice \
     libqsocket \
-    libqspmsvc \
+    libqspmsvc__system_ext \
     libQTEEConnector_vendor \
     libqti_vndfwk_detect \
     libqti-utils \
     libqtigef \
     libqtikeymaster4 \
     librcc \
-    librecpp_intf \
+    librecpp_intf__system_ext \
     libril-qc-hal-qmi \
     libril-qc-logger \
     libril-qc-ltedirectdisc \
@@ -671,7 +678,7 @@ PRODUCT_PACKAGES += \
     libsdm-color \
     libsdm-colormgr-algo \
     libsdm-diag \
-    libsdm-disp-apis.qti \
+    libsdm-disp-apis.qti__system_ext \
     libsdm-disp-vndapis \
     libsdmcore \
     libsdmextension \
@@ -679,19 +686,19 @@ PRODUCT_PACKAGES += \
     libsdsprpc \
     libsecureui \
     libsecureui_svcsock \
-    libsecureui_svcsock_system \
+    libsecureui_svcsock_system__system_ext \
     libSecureUILib \
-    libsecureuisvc_jni \
+    libsecureuisvc_jni__system_ext \
     libsensorndkbridge:32 \
     libsensorslog \
     libsensorsuez \
     libsettings \
     libshoebox \
     libsi \
-    libskewknob_system \
+    libskewknob_system__system_ext \
     libsmemlog \
-    libsmomo.qti \
-    libsmomoconfig.qti \
+    libsmomo.qti__system_ext \
+    libsmomoconfig.qti__system_ext \
     libsmwrapper \
     libsndmonitor \
     libsns_device_mode_skel \
@@ -734,15 +741,15 @@ PRODUCT_PACKAGES += \
     libsystem_health_mon \
     libteeui_hal_support.vendor:64 \
     libtextclassifier_hash.vendor:64 \
-    libthermalclient.qti \
+    libthermalclient.qti__system_ext \
     libtime_genoff \
     libtinycompress \
     libtinyxml2_1 \
-    libtrigger-handler \
+    libtrigger-handler__system_ext \
     libtrustedapploader \
     libtzdrmgenprov \
     libultradepth_api \
-    libupdateprof.qti \
+    libupdateprof.qti__system_ext \
     libVC1Dec \
     libVC1DecDsp_skel \
     libvd6281 \
@@ -759,18 +766,18 @@ PRODUCT_PACKAGES += \
     libvpphcp \
     libvpphvx \
     libvppimmotion \
-    libvr_amb_engine \
-    libvr_object_engine \
-    libvr_sam_wrapper \
-    libvraudio \
-    libvraudio_client.qti \
+    libvr_amb_engine__system_ext \
+    libvr_object_engine__system_ext \
+    libvr_sam_wrapper__system_ext \
+    libvraudio__system_ext \
+    libvraudio_client.qti__system_ext \
     libvsc \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
     libwlcproto_13 \
     libwms \
-    libWNR \
-    libWNR_intf \
+    libWNR__system_ext \
+    libWNR_intf__system_ext \
     libwqe \
     libwvaidl \
     libxml \
@@ -845,22 +852,33 @@ PRODUCT_PACKAGES += \
     uv_exposure \
     vendor-pixelatoms-cpp \
     vendor.display.color@1.0 \
+    vendor.display.color@1.0__system_ext \
     vendor.display.color@1.1 \
     vendor.display.color@1.2 \
     vendor.display.config@1.0 \
+    vendor.display.config@1.0__system_ext \
     vendor.display.config@1.1 \
+    vendor.display.config@1.1__system_ext \
     vendor.display.config@1.10 \
     vendor.display.config@1.11 \
     vendor.display.config@1.2 \
+    vendor.display.config@1.2__system_ext \
     vendor.display.config@1.3 \
+    vendor.display.config@1.3__system_ext \
     vendor.display.config@1.4 \
+    vendor.display.config@1.4__system_ext \
     vendor.display.config@1.5 \
+    vendor.display.config@1.5__system_ext \
     vendor.display.config@1.6 \
+    vendor.display.config@1.6__system_ext \
     vendor.display.config@1.7 \
+    vendor.display.config@1.7__system_ext \
     vendor.display.config@1.8 \
+    vendor.display.config@1.8__system_ext \
     vendor.display.config@1.9 \
     vendor.display.config@2.0 \
     vendor.display.postproc@1.0 \
+    vendor.display.postproc@1.0__system_ext \
     vendor.google.airbrush.manager@1.0 \
     vendor.google.airbrush@1.0-service \
     vendor.google.darwinn.service@1.0 \
@@ -874,6 +892,7 @@ PRODUCT_PACKAGES += \
     vendor.google.radioext@1.2 \
     vendor.google.radioext@1.3 \
     vendor.google.wifi_ext@1.0 \
+    vendor.google.wifi_ext@1.0__system_ext \
     vendor.google.wifi_ext@1.0-service-vendor \
     vendor.google.wifi_ext@1.1 \
     vendor.google.wifi_ext@1.2 \
@@ -891,48 +910,62 @@ PRODUCT_PACKAGES += \
     vendor.qti.data.factory-V2.3-java \
     vendor.qti.data.factory-V2.4-java \
     vendor.qti.data.factory-V2.5-java \
-    vendor.qti.data.factory@1.0 \
+    vendor.qti.data.factory@1.0__system_ext \
     vendor.qti.data.factory@2.0 \
+    vendor.qti.data.factory@2.0__system_ext \
     vendor.qti.data.factory@2.1 \
+    vendor.qti.data.factory@2.1__system_ext \
     vendor.qti.data.factory@2.2 \
+    vendor.qti.data.factory@2.2__system_ext \
     vendor.qti.data.factory@2.3 \
-    vendor.qti.data.factory@2.4 \
-    vendor.qti.data.factory@2.5 \
+    vendor.qti.data.factory@2.3__system_ext \
+    vendor.qti.data.factory@2.4__system_ext \
+    vendor.qti.data.factory@2.5__system_ext \
     vendor.qti.data.mwqem@1.0 \
+    vendor.qti.data.mwqem@1.0__system_ext \
     vendor.qti.data.slm@1.0 \
-    vendor.qti.diaghal@1.0 \
+    vendor.qti.data.slm@1.0__system_ext \
+    vendor.qti.diaghal@1.0__system_ext \
     vendor.qti.googleext.imsext@1.0 \
     vendor.qti.googleext.imsext@2.0 \
     vendor.qti.googleext.imsext@3.0 \
     vendor.qti.googleext.imsext@4.0 \
     vendor.qti.hardware.alarm-V1.0-java \
-    vendor.qti.hardware.alarm@1.0 \
+    vendor.qti.hardware.alarm@1.0__system_ext \
     vendor.qti.hardware.bluetooth_audio@2.0 \
     vendor.qti.hardware.cacert@1.0 \
     vendor.qti.hardware.capabilityconfigstore@1.0 \
     vendor.qti.hardware.cryptfshw@1.0 \
+    vendor.qti.hardware.cryptfshw@1.0__system_ext \
     vendor.qti.hardware.cvp@1.0 \
     vendor.qti.hardware.data.cne.internal.api-V1.0-java \
     vendor.qti.hardware.data.cne.internal.api@1.0 \
+    vendor.qti.hardware.data.cne.internal.api@1.0__system_ext \
     vendor.qti.hardware.data.cne.internal.constants-V1.0-java \
     vendor.qti.hardware.data.cne.internal.constants@1.0 \
+    vendor.qti.hardware.data.cne.internal.constants@1.0__system_ext \
     vendor.qti.hardware.data.cne.internal.server-V1.0-java \
     vendor.qti.hardware.data.cne.internal.server-V1.1-java \
     vendor.qti.hardware.data.cne.internal.server@1.0 \
-    vendor.qti.hardware.data.cne.internal.server@1.1 \
-    vendor.qti.hardware.data.cne.internal.server@1.2 \
+    vendor.qti.hardware.data.cne.internal.server@1.0__system_ext \
+    vendor.qti.hardware.data.cne.internal.server@1.1__system_ext \
+    vendor.qti.hardware.data.cne.internal.server@1.2__system_ext \
     vendor.qti.hardware.data.connection@1.0 \
     vendor.qti.hardware.data.connection@1.1 \
     vendor.qti.hardware.data.dynamicdds-V1.0-java \
     vendor.qti.hardware.data.dynamicdds@1.0 \
-    vendor.qti.hardware.data.flow@1.0 \
+    vendor.qti.hardware.data.dynamicdds@1.0__system_ext \
+    vendor.qti.hardware.data.flow@1.0__system_ext \
     vendor.qti.hardware.data.iwlan-V1.0-java \
     vendor.qti.hardware.data.iwlan@1.0 \
     vendor.qti.hardware.data.latency-V1.0-java \
     vendor.qti.hardware.data.latency@1.0 \
+    vendor.qti.hardware.data.latency@1.0__system_ext \
     vendor.qti.hardware.data.lce@1.0 \
+    vendor.qti.hardware.data.lce@1.0__system_ext \
     vendor.qti.hardware.data.qmi-V1.0-java \
     vendor.qti.hardware.data.qmi@1.0 \
+    vendor.qti.hardware.data.qmi@1.0__system_ext \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.allocator@3.0 \
     vendor.qti.hardware.display.allocator@4.0 \
@@ -945,28 +978,32 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapperextensions@1.1 \
     vendor.qti.hardware.dpmservice-V1.0-java \
     vendor.qti.hardware.dpmservice-V1.1-java \
-    vendor.qti.hardware.dpmservice@1.0 \
-    vendor.qti.hardware.dpmservice@1.1 \
+    vendor.qti.hardware.dpmservice@1.0__system_ext \
+    vendor.qti.hardware.dpmservice@1.1__system_ext \
     vendor.qti.hardware.dsp@1.0 \
     vendor.qti.hardware.fingerprint@1.0 \
     vendor.qti.hardware.iop@1.0 \
-    vendor.qti.hardware.limits@1.0 \
-    vendor.qti.hardware.limits@1.1 \
+    vendor.qti.hardware.limits@1.0__system_ext \
+    vendor.qti.hardware.limits@1.1__system_ext \
     vendor.qti.hardware.mwqemadapter-V1.0-java \
     vendor.qti.hardware.mwqemadapter@1.0 \
+    vendor.qti.hardware.mwqemadapter@1.0__system_ext \
     vendor.qti.hardware.perf@1.0 \
     vendor.qti.hardware.perf@2.0 \
     vendor.qti.hardware.qccsyshal@1.0 \
-    vendor.qti.hardware.qccsyshal@1.0-impl \
-    vendor.qti.hardware.qccsyshal@1.1-impl \
+    vendor.qti.hardware.qccsyshal@1.0-impl__system_ext \
+    vendor.qti.hardware.qccsyshal@1.1-impl__system_ext \
     vendor.qti.hardware.qdutils_disp@1.0 \
     vendor.qti.hardware.qseecom@1.0 \
+    vendor.qti.hardware.qseecom@1.0__system_ext \
     vendor.qti.hardware.qseecom@1.0-impl \
     vendor.qti.hardware.qseecom@1.0-service \
     vendor.qti.hardware.qteeconnector@1.0 \
+    vendor.qti.hardware.qteeconnector@1.0__system_ext \
     vendor.qti.hardware.qteeconnector@1.0-impl \
     vendor.qti.hardware.qteeconnector@1.0-service \
     vendor.qti.hardware.radio.am@1.0 \
+    vendor.qti.hardware.radio.am@1.0__system_ext \
     vendor.qti.hardware.radio.atcmdfwd@1.0 \
     vendor.qti.hardware.radio.atcmdfwd@1.0__2 \
     vendor.qti.hardware.radio.ims@1.0 \
@@ -996,54 +1033,66 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.radio.uim@1.0 \
     vendor.qti.hardware.radio.uim@1.1 \
     vendor.qti.hardware.radio.uim@1.2 \
-    vendor.qti.hardware.seccam@1.0 \
-    vendor.qti.hardware.sigma_miracast@1.0 \
-    vendor.qti.hardware.sigma_miracast@1.0-impl \
+    vendor.qti.hardware.seccam@1.0__system_ext \
+    vendor.qti.hardware.sigma_miracast@1.0__system_ext \
+    vendor.qti.hardware.sigma_miracast@1.0-impl__system_ext \
     vendor.qti.hardware.slmadapter-V1.0-java \
     vendor.qti.hardware.slmadapter@1.0 \
+    vendor.qti.hardware.slmadapter@1.0__system_ext \
     vendor.qti.hardware.tui_comm@1.0 \
+    vendor.qti.hardware.tui_comm@1.0__system_ext \
     vendor.qti.hardware.tui_comm@1.0-service-qti \
     vendor.qti.hardware.vpp@1.1 \
     vendor.qti.hardware.vpp@1.2 \
     vendor.qti.hardware.wifidisplaysession@1.0 \
     vendor.qti.hardware.wigig.netperftuner@1.0 \
     vendor.qti.ims.callcapability@1.0 \
+    vendor.qti.ims.callcapability@1.0__system_ext \
     vendor.qti.ims.callinfo-V1.0-java \
     vendor.qti.ims.callinfo@1.0 \
-    vendor.qti.ims.configservice@1.0 \
-    vendor.qti.ims.configservice@1.1 \
+    vendor.qti.ims.callinfo@1.0__system_ext \
+    vendor.qti.ims.configservice@1.0__system_ext \
+    vendor.qti.ims.configservice@1.1__system_ext \
     vendor.qti.ims.connection-V1.0-java \
-    vendor.qti.ims.connection@1.0 \
+    vendor.qti.ims.connection@1.0__system_ext \
     vendor.qti.ims.factory-V1.0-java \
     vendor.qti.ims.factory-V1.1-java \
     vendor.qti.ims.factory-V2.0-java \
     vendor.qti.ims.factory-V2.1-java \
     vendor.qti.ims.factory@1.0 \
+    vendor.qti.ims.factory@1.0__system_ext \
     vendor.qti.ims.factory@1.1 \
-    vendor.qti.ims.factory@2.0 \
-    vendor.qti.ims.factory@2.1 \
+    vendor.qti.ims.factory@1.1__system_ext \
+    vendor.qti.ims.factory@2.0__system_ext \
+    vendor.qti.ims.factory@2.1__system_ext \
     vendor.qti.ims.rcsconfig-V1.0-java \
     vendor.qti.ims.rcsconfig@1.0 \
+    vendor.qti.ims.rcsconfig@1.0__system_ext \
     vendor.qti.ims.rcsconfig@1.1 \
+    vendor.qti.ims.rcsconfig@1.1__system_ext \
     vendor.qti.ims.rcsconfig@2.0 \
+    vendor.qti.ims.rcsconfig@2.0__system_ext \
     vendor.qti.ims.rcsconfig@2.1 \
+    vendor.qti.ims.rcsconfig@2.1__system_ext \
     vendor.qti.ims.rcssip-V1.0-java \
     vendor.qti.ims.rcssip-V1.1-java \
-    vendor.qti.ims.rcssip@1.0 \
-    vendor.qti.ims.rcssip@1.1 \
+    vendor.qti.ims.rcssip@1.0__system_ext \
+    vendor.qti.ims.rcssip@1.1__system_ext \
     vendor.qti.ims.rcsuce-V1.0-java \
     vendor.qti.ims.rcsuce-V1.1-java \
-    vendor.qti.ims.rcsuce@1.0 \
-    vendor.qti.ims.rcsuce@1.1 \
+    vendor.qti.ims.rcsuce@1.0__system_ext \
+    vendor.qti.ims.rcsuce@1.1__system_ext \
     vendor.qti.imsrtpservice@3.0 \
+    vendor.qti.imsrtpservice@3.0__system_ext \
     vendor.qti.imsrtpservice@3.0-service-Impl \
     vendor.qti.latency-V2.0-java \
     vendor.qti.latency@2.0 \
+    vendor.qti.latency@2.0__system_ext \
     vendor.qti.latency@2.1 \
     vendor.qti.media.c2@1.0-service \
-    vendor.qti.mstatservice@1.0 \
+    vendor.qti.mstatservice@1.0__system_ext \
     vendor.qti.power.pasrmanager@1.0 \
-    vendor.qti.qspmhal@1.0 \
+    vendor.qti.qspmhal@1.0__system_ext \
     vendor.qti.voiceprint-V1.0-java \
     vendor.qti.voiceprint@1.0 \
     vulkan.adreno \
@@ -1673,54 +1722,6 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/flame/proprietary/vendor/firmware/widevine.b07:$(TARGET_COPY_OUT_VENDOR)/firmware/widevine.b07 \
     vendor/google_devices/flame/proprietary/vendor/firmware/widevine.mdt:$(TARGET_COPY_OUT_VENDOR)/firmware/widevine.mdt \
     vendor/google_devices/flame/proprietary/vendor/firmware/wlanmdsp.mbn:$(TARGET_COPY_OUT_VENDOR)/firmware/wlanmdsp.mbn \
-    vendor/google_devices/flame/proprietary/vendor/lib/com.qualcomm.qti.imscmservice@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/com.qualcomm.qti.imscmservice@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/com.qualcomm.qti.imscmservice@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/com.qualcomm.qti.imscmservice@2.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/com.qualcomm.qti.imscmservice@2.1.so:$(TARGET_COPY_OUT_VENDOR)/lib/com.qualcomm.qti.imscmservice@2.1.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/com.qualcomm.qti.imscmservice@2.2.so:$(TARGET_COPY_OUT_VENDOR)/lib/com.qualcomm.qti.imscmservice@2.2.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/com.qualcomm.qti.uceservice@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/com.qualcomm.qti.uceservice@2.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/com.qualcomm.qti.uceservice@2.1.so:$(TARGET_COPY_OUT_VENDOR)/lib/com.qualcomm.qti.uceservice@2.1.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/libmmosal.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmosal.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.display.color@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.display.color@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.display.config@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.display.config@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.display.config@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.display.config@1.1.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.display.config@1.2.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.display.config@1.2.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.display.config@1.3.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.display.config@1.3.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.display.config@1.4.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.display.config@1.4.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.display.config@1.5.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.display.config@1.5.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.display.config@1.6.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.display.config@1.6.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.display.config@1.7.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.display.config@1.7.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.display.config@1.8.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.display.config@1.8.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.display.postproc@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.display.postproc@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.data.factory@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.data.factory@2.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.data.factory@2.1.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.data.factory@2.1.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.data.factory@2.2.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.data.factory@2.2.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.data.factory@2.3.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.data.factory@2.3.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.data.mwqem@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.data.mwqem@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.data.slm@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.data.slm@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.hardware.cryptfshw@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.cryptfshw@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.hardware.data.cne.internal.api@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.data.cne.internal.api@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.hardware.data.cne.internal.constants@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.data.cne.internal.constants@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.hardware.data.cne.internal.server@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.data.cne.internal.server@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.hardware.data.dynamicdds@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.data.dynamicdds@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.hardware.data.latency@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.data.latency@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.hardware.data.lce@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.data.lce@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.hardware.data.qmi@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.data.qmi@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.hardware.mwqemadapter@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.mwqemadapter@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.hardware.qseecom@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.qseecom@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.hardware.qteeconnector@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.qteeconnector@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.hardware.radio.am@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.radio.am@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.hardware.slmadapter@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.slmadapter@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.hardware.tui_comm@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.hardware.tui_comm@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.ims.callcapability@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.ims.callcapability@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.ims.callinfo@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.ims.callinfo@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.ims.factory@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.ims.factory@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.ims.factory@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.ims.factory@1.1.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.ims.rcsconfig@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.ims.rcsconfig@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.ims.rcsconfig@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.ims.rcsconfig@1.1.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.ims.rcsconfig@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.ims.rcsconfig@2.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.ims.rcsconfig@2.1.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.ims.rcsconfig@2.1.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.imsrtpservice@3.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.imsrtpservice@3.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib/vendor.qti.latency@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib/vendor.qti.latency@2.0.so \
     vendor/google_devices/flame/proprietary/vendor/lib64/camera/com.google.tuned.pixel4_imx363_wide.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/com.google.tuned.pixel4_imx363_wide.bin \
     vendor/google_devices/flame/proprietary/vendor/lib64/camera/com.google.tuned.pixel4_imx481_tele.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/com.google.tuned.pixel4_imx481_tele.bin \
     vendor/google_devices/flame/proprietary/vendor/lib64/camera/com.google.tuned.pixel4_imx520_front.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/com.google.tuned.pixel4_imx520_front.bin \
@@ -1739,54 +1740,6 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/flame/proprietary/vendor/lib64/camera/ghawb_para_lut_imx481.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/ghawb_para_lut_imx481.bin \
     vendor/google_devices/flame/proprietary/vendor/lib64/camera/ghawb_para_lut_imx520.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/ghawb_para_lut_imx520.bin \
     vendor/google_devices/flame/proprietary/vendor/lib64/camera/ghawb_para_lut.bin:$(TARGET_COPY_OUT_VENDOR)/lib64/camera/ghawb_para_lut.bin \
-    vendor/google_devices/flame/proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.qualcomm.qti.imscmservice@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.qualcomm.qti.imscmservice@2.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.qualcomm.qti.imscmservice@2.1.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/com.qualcomm.qti.imscmservice@2.2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.qualcomm.qti.imscmservice@2.2.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/com.qualcomm.qti.uceservice@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.qualcomm.qti.uceservice@2.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/com.qualcomm.qti.uceservice@2.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.qualcomm.qti.uceservice@2.1.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.display.color@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.display.color@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.display.config@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.display.config@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.display.config@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.display.config@1.1.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.display.config@1.2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.display.config@1.2.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.display.config@1.3.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.display.config@1.3.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.display.config@1.4.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.display.config@1.4.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.display.config@1.5.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.display.config@1.5.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.display.config@1.6.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.display.config@1.6.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.display.config@1.7.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.display.config@1.7.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.display.config@1.8.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.display.config@1.8.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.display.postproc@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.display.postproc@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.google.wifi_ext@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.google.wifi_ext@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.data.factory@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.data.factory@2.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.data.factory@2.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.data.factory@2.1.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.data.factory@2.2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.data.factory@2.2.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.data.factory@2.3.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.data.factory@2.3.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.data.mwqem@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.data.mwqem@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.data.slm@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.data.slm@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.hardware.cryptfshw@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.cryptfshw@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.hardware.data.cne.internal.server@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.data.cne.internal.server@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.hardware.data.latency@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.data.latency@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.hardware.data.lce@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.data.lce@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.data.qmi@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.hardware.mwqemadapter@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.mwqemadapter@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.hardware.qseecom@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.qseecom@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.qteeconnector@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.hardware.radio.am@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.radio.am@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.slmadapter@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.hardware.tui_comm@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.ims.callcapability@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.ims.callcapability@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.ims.callinfo@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.ims.callinfo@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.ims.factory@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.ims.factory@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.ims.factory@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.ims.factory@1.1.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.ims.rcsconfig@1.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.ims.rcsconfig@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.ims.rcsconfig@1.1.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.ims.rcsconfig@2.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.ims.rcsconfig@2.1.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.imsrtpservice@3.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.imsrtpservice@3.0.so \
-    vendor/google_devices/flame/proprietary/vendor/lib64/vendor.qti.latency@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.qti.latency@2.0.so \
     vendor/google_devices/flame/proprietary/vendor/media/ensemble_fd_model.emd:$(TARGET_COPY_OUT_VENDOR)/media/ensemble_fd_model.emd \
     vendor/google_devices/flame/proprietary/vendor/media/refiner_patches_right_driver.tflite:$(TARGET_COPY_OUT_VENDOR)/media/refiner_patches_right_driver.tflite \
     vendor/google_devices/flame/proprietary/vendor/radio/qcril_database/qcril.db:$(TARGET_COPY_OUT_VENDOR)/radio/qcril_database/qcril.db \

@@ -27,8 +27,9 @@ dex_import {
 }
 
 cc_prebuilt_library_shared {
-    name: "com.google.edgetpu_app_service-V2-ndk",
+    name: "com.google.edgetpu_app_service-V2-ndk__system_ext",
     owner: "google_devices",
+    stem: "com.google.edgetpu_app_service-V2-ndk",
     target: {
         android_arm64: { srcs: [ "system_ext/lib64/com.google.edgetpu_app_service-V2-ndk.so" ] }
     },
@@ -40,8 +41,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "com.google.edgetpu_vendor_service-V2-ndk",
+    name: "com.google.edgetpu_vendor_service-V2-ndk__system_ext",
     owner: "google_devices",
+    stem: "com.google.edgetpu_vendor_service-V2-ndk",
     target: {
         android_arm64: { srcs: [ "system_ext/lib64/com.google.edgetpu_vendor_service-V2-ndk.so" ] }
     },
@@ -53,8 +55,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libhbmsvmanager_jni",
+    name: "libhbmsvmanager_jni__system_ext",
     owner: "google_devices",
+    stem: "libhbmsvmanager_jni",
     target: { android_arm64: { srcs: [ "system_ext/lib64/libhbmsvmanager_jni.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
@@ -64,8 +67,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libpowerstatshaldataprovider",
+    name: "libpowerstatshaldataprovider__system_ext",
     owner: "google_devices",
+    stem: "libpowerstatshaldataprovider",
     target: { android_arm64: { srcs: [ "system_ext/lib64/libpowerstatshaldataprovider.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
@@ -1609,9 +1613,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "com.google.edgetpu_app_service-V2-ndk__2",
+    name: "com.google.edgetpu_app_service-V2-ndk",
     owner: "google_devices",
-    stem: "com.google.edgetpu_app_service-V2-ndk",
     target: { android_arm64: { srcs: [ "vendor/lib64/com.google.edgetpu_app_service-V2-ndk.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
@@ -1621,9 +1624,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "com.google.edgetpu_vendor_service-V2-ndk__2",
+    name: "com.google.edgetpu_vendor_service-V2-ndk",
     owner: "google_devices",
-    stem: "com.google.edgetpu_vendor_service-V2-ndk",
     target: {
         android_arm64: { srcs: [ "vendor/lib64/com.google.edgetpu_vendor_service-V2-ndk.so" ] }
     },

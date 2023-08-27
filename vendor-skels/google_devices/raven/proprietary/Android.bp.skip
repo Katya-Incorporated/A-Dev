@@ -2,8 +2,9 @@
 // For more info, see https://github.com/GrapheneOS/adevtool
 
 cc_prebuilt_library_shared {
-    name: "libdmengine",
+    name: "libdmengine__product",
     owner: "google_devices",
+    stem: "libdmengine",
     target: {
         android_arm: { srcs: [ "product/lib/libdmengine.so" ] },
         android_arm64: { srcs: [ "product/lib64/libdmengine.so" ] }
@@ -16,8 +17,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libdmjavaplugin",
+    name: "libdmjavaplugin__product",
     owner: "google_devices",
+    stem: "libdmjavaplugin",
     target: {
         android_arm: { srcs: [ "product/lib/libdmjavaplugin.so" ] },
         android_arm64: { srcs: [ "product/lib64/libdmjavaplugin.so" ] }
@@ -95,8 +97,9 @@ dex_import {
 }
 
 cc_prebuilt_library_shared {
-    name: "libmediaadaptor",
+    name: "libmediaadaptor__system_ext",
     owner: "google_devices",
+    stem: "libmediaadaptor",
     target: {
         android_arm: { srcs: [ "system_ext/lib/libmediaadaptor.so" ] },
         android_arm64: { srcs: [ "system_ext/lib64/libmediaadaptor.so" ] }
@@ -109,8 +112,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.samsung_slsi.telephony.hardware.oemservice@1.0",
+    name: "vendor.samsung_slsi.telephony.hardware.oemservice@1.0__system_ext",
     owner: "google_devices",
+    stem: "vendor.samsung_slsi.telephony.hardware.oemservice@1.0",
     target: {
         android_arm: { srcs: [ "system_ext/lib/vendor.samsung_slsi.telephony.hardware.oemservice@1.0.so" ] },
         android_arm64: {
@@ -125,8 +129,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.samsung_slsi.telephony.hardware.radioExternal@1.0",
+    name: "vendor.samsung_slsi.telephony.hardware.radioExternal@1.0__system_ext",
     owner: "google_devices",
+    stem: "vendor.samsung_slsi.telephony.hardware.radioExternal@1.0",
     target: {
         android_arm: {
             srcs: [ "system_ext/lib/vendor.samsung_slsi.telephony.hardware.radioExternal@1.0.so" ]
@@ -143,8 +148,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "com.google.edgetpu_app_service-V2-ndk",
+    name: "com.google.edgetpu_app_service-V2-ndk__system_ext",
     owner: "google_devices",
+    stem: "com.google.edgetpu_app_service-V2-ndk",
     target: {
         android_arm64: { srcs: [ "system_ext/lib64/com.google.edgetpu_app_service-V2-ndk.so" ] }
     },
@@ -156,8 +162,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "com.google.edgetpu_vendor_service-V2-ndk",
+    name: "com.google.edgetpu_vendor_service-V2-ndk__system_ext",
     owner: "google_devices",
+    stem: "com.google.edgetpu_vendor_service-V2-ndk",
     target: {
         android_arm64: { srcs: [ "system_ext/lib64/com.google.edgetpu_vendor_service-V2-ndk.so" ] }
     },
@@ -169,8 +176,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libhbmsvmanager_jni",
+    name: "libhbmsvmanager_jni__system_ext",
     owner: "google_devices",
+    stem: "libhbmsvmanager_jni",
     target: { android_arm64: { srcs: [ "system_ext/lib64/libhbmsvmanager_jni.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
@@ -180,8 +188,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libpowerstatshaldataprovider",
+    name: "libpowerstatshaldataprovider__system_ext",
     owner: "google_devices",
+    stem: "libpowerstatshaldataprovider",
     target: { android_arm64: { srcs: [ "system_ext/lib64/libpowerstatshaldataprovider.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
@@ -1977,6 +1986,36 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.samsung_slsi.telephony.hardware.oemservice@1.0",
+    owner: "google_devices",
+    target: {
+        android_arm: { srcs: [ "vendor/lib/vendor.samsung_slsi.telephony.hardware.oemservice@1.0.so" ] },
+        android_arm64: { srcs: [ "vendor/lib64/vendor.samsung_slsi.telephony.hardware.oemservice@1.0.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.samsung_slsi.telephony.hardware.radioExternal@1.0",
+    owner: "google_devices",
+    target: {
+        android_arm: { srcs: [ "vendor/lib/vendor.samsung_slsi.telephony.hardware.radioExternal@1.0.so" ] },
+        android_arm64: {
+            srcs: [ "vendor/lib64/vendor.samsung_slsi.telephony.hardware.radioExternal@1.0.so" ]
+        }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.samsung_slsi.telephony.hardware.radioExternal@1.1",
     owner: "google_devices",
     target: {
@@ -2089,9 +2128,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "com.google.edgetpu_app_service-V2-ndk__2",
+    name: "com.google.edgetpu_app_service-V2-ndk",
     owner: "google_devices",
-    stem: "com.google.edgetpu_app_service-V2-ndk",
     target: { android_arm64: { srcs: [ "vendor/lib64/com.google.edgetpu_app_service-V2-ndk.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
@@ -2101,9 +2139,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "com.google.edgetpu_vendor_service-V2-ndk__2",
+    name: "com.google.edgetpu_vendor_service-V2-ndk",
     owner: "google_devices",
-    stem: "com.google.edgetpu_vendor_service-V2-ndk",
     target: {
         android_arm64: { srcs: [ "vendor/lib64/com.google.edgetpu_vendor_service-V2-ndk.so" ] }
     },
