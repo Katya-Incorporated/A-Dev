@@ -1,31 +1,30 @@
-import path from 'path'
 import { promises as fs } from 'fs'
+import path from 'path'
 
 import {
   blobToFileCopy,
   BoardMakefile,
-  ModulesMakefile,
   DeviceMakefile,
+  ModulesMakefile,
+  ProductMakefile,
+  ProductsMakefile,
   sanitizeBasename,
   serializeBoardMakefile,
-  serializeModulesMakefile,
   serializeDeviceMakefile,
-  Symlink,
-  ProductsMakefile,
-  ProductMakefile,
+  serializeModulesMakefile,
   serializeProductMakefile,
   serializeProductsMakefile,
+  Symlink,
 } from '../build/make'
 import {
   blobToSoongModule,
-  serializeBlueprint,
-  SharedLibraryModule,
+  serializeBlueprint, SharedLibraryModule,
   SoongBlueprint,
   SoongModule,
-  SPECIAL_FILE_EXTENSIONS,
-  TYPE_SHARED_LIBRARY,
+  SPECIAL_FILE_EXTENSIONS, TYPE_SHARED_LIBRARY,
 } from '../build/soong'
 import { DeviceConfig } from '../config/device'
+import { Partition } from '../util/partitions'
 import { BlobEntry, blobNeedsSoong } from './entry'
 
 export interface BuildFiles {
@@ -105,12 +104,16 @@ export async function generateBuild(
       // Module name = file name, excluding extension if it was used
       let baseExt = SPECIAL_FILE_EXTENSIONS.has(ext) ? ext : undefined
       let name = path.basename(entry.path, baseExt)
+      if (baseExt === '.so' && entry.partition !== Partition.Vendor) {
+        // same-name libraries can be present on more than one partition, suffix module name of non-vendor/ libraries
+        // with partition name to avoid duplicate module definitions
+        name = `${name}__${entry.partition}`
+      }
       let resolvedName = name
 
       // If already exists: skip if it's the other arch variant of a library in
       // the same partition AND has the same name (incl. ext), otherwise rename the
       // module to avoid conflict
-      let needsMakeFallback = false
       if (namedModules.has(name)) {
         for (let conflictModule of conflictModules.get(name)!) {
           if (
@@ -121,10 +124,6 @@ export async function generateBuild(
             // Same partition = skip arch variant
             if (conflictModule._entry?.partition == entry.partition) {
               continue entryLoop
-            } else {
-              // Fall back to PRODUCT_COPY_FILES for cross-partition conflicts.
-              // TODO: resolve cross-platform conflicts without overrides
-              needsMakeFallback = true
             }
           }
         }
@@ -135,18 +134,15 @@ export async function generateBuild(
         resolvedName += `__${conflictNum}`
       }
 
-      if (!needsMakeFallback) {
-        let module = blobToSoongModule(resolvedName, ext, vendor, entry, entrySrcPaths)
-        namedModules.set(resolvedName, module)
+      let module = blobToSoongModule(resolvedName, ext, vendor, entry, entrySrcPaths)
+      namedModules.set(resolvedName, module)
 
-        // Save all conflicting modules for conflict resolution
-        conflictModules.get(name)?.push(module) ??
-          conflictModules.set(name, [module])
-        continue
-      }
+      // Save all conflicting modules for conflict resolution
+      conflictModules.get(name)?.push(module) ?? conflictModules.set(name, [module])
+      continue
     }
 
-    // Other files (and failed Soong files) -> Kati Makefile
+    // Other files -> Kati Makefile
 
     // Simple PRODUCT_COPY_FILES line
     copyFiles.push(blobToFileCopy(entry, dirs.proprietary))

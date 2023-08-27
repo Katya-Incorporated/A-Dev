@@ -128,9 +128,9 @@ PRODUCT_PACKAGES += \
     com.google.android.camera.extensions \
     com.google.android.grilservice__GrilRadioCustomizable.auto_generated_rro_product_adevtool__ \
     com.google.edgetpu_app_service-V2-ndk \
-    com.google.edgetpu_app_service-V2-ndk__2 \
+    com.google.edgetpu_app_service-V2-ndk__system_ext \
     com.google.edgetpu_vendor_service-V2-ndk \
-    com.google.edgetpu_vendor_service-V2-ndk__2 \
+    com.google.edgetpu_vendor_service-V2-ndk__system_ext \
     com.google.euiccpixel.auto_generated_rro_product_adevtool__ \
     com.google.hardware.biometrics.sidefps.fingerprint-ext-V1-ndk \
     com.google.hardware.pixel.display-V6-ndk.vendor \
@@ -207,7 +207,7 @@ PRODUCT_PACKAGES += \
     libGralloc4Wrapper \
     libgril_oem-google \
     libgxp \
-    libhbmsvmanager_jni \
+    libhbmsvmanager_jni__system_ext \
     libhidltransport.vendor:32 \
     libhidparser \
     libhwbinder.vendor \
@@ -228,7 +228,7 @@ PRODUCT_PACKAGES += \
     liboffloadeffect \
     libOpenCL \
     libOpenCL-pixel \
-    libpowerstatshaldataprovider \
+    libpowerstatshaldataprovider__system_ext \
     libqorvo_uwb_params_nfcc \
     librtxproto \
     libsensorndkbridge:32 \
