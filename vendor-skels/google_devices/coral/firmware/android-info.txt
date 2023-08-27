@@ -1,0 +1,4 @@
+require board=coral
+
+require version-bootloader=c2f2-0.5-8906123
+require version-baseband=g8150-00123-220708-B-8810441
