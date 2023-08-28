@@ -1,10 +1,3 @@
-android:integer-array/config_face_acquire_biometricprompt_ignorelist = 1,2,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19
-android:integer-array/config_face_acquire_enroll_ignorelist = 13
-android:array/config_face_acquire_keyguard_ignorelist = 
-android:array/config_face_acquire_vendor_biometricprompt_ignorelist = 
-android:array/config_face_acquire_vendor_enroll_ignorelist = 
-android:array/config_face_acquire_vendor_keyguard_ignorelist = 
-android:array/face_acquired_vendor = 
 android:string-array/face_error_vendor = Certificate expired,Sensor temporarily disabled,Calibration error,Face unlock unavailable. Phone is too hot.,Face unlock needs to be set up again
 android:bool/config_enableAutoPowerModes = true
 android:bool/config_settingsHelpLinksEnabled = true
@@ -27,13 +20,13 @@ android:bool/config_supportsCamToggle = true
 android:bool/config_supportsMicToggle = true
 android:bool/config_systemCaptionsServiceCallsEnabled = true
 android:bool/config_useRoundIcon = true
-android:dimen/config_bottomDialogCornerRadius = 16.000000dp
-android:dimen/config_buttonCornerRadius = 4.000000dp
-android:dimen/config_dialogCornerRadius = 28.000000dp
+android:dimen/config_bottomDialogCornerRadius = 16dp
+android:dimen/config_buttonCornerRadius = 4dp
+android:dimen/config_dialogCornerRadius = 28dp
 android:dimen/config_highResTaskSnapshotScale = 0.8
-android:dimen/config_progressBarCornerRadius = 1000.000000dp
-android:dimen/system_app_widget_background_radius = 28.000000dp
-android:dimen/system_app_widget_inner_radius = 20.000000dp
+android:dimen/config_progressBarCornerRadius = 1000dp
+android:dimen/system_app_widget_background_radius = 28dp
+android:dimen/system_app_widget_inner_radius = 20dp
 android:string/android_start_title = Pixel is starting…
 android:string/android_upgrading_title = Pixel is updating…
 android:string/config_ambientContextEventArrayExtraKey = EVENT_ARRAY
@@ -57,7 +50,11 @@ com.android.settings:string/lock_settings_picker_fingerprint_message = Choose a 
 com.android.settings:string/security_settings_fingerprint_enroll_consent_introduction_title = Allow Pixel Imprint
 com.android.settings:string/security_settings_fingerprint_enroll_introduction_footer_message_1 = The data recorded by Pixel Imprint is stored securely and never leaves your phone. You can delete your data anytime in Settings.
 com.android.settings:string/security_settings_fingerprint_enroll_introduction_message = Use your fingerprint to unlock your phone or verify it’s you, like when you sign in to apps or approve a purchase.
-com.android.settings:string/security_settings_fingerprint_enroll_introduction_message_unlock_disabled = With Pixel Imprint, you can use your fingerprint to authorize purchases or sign in to apps
+com.android.settings:string/security_settings_fingerprint_enroll_introduction_message_unlock_disabled = With Pixel Imprint, you can use your fingerprint to authorize purchases or sign in to apps.
+
+Be careful whose fingerprints you add. Any fingerprints added will be able to do these things.
+
+Note: You can’t use your fingerprint to unlock this device. For more information, contact your organization’s admin.
 com.android.settings:string/security_settings_fingerprint_enroll_introduction_title = Set up Pixel Imprint
 com.android.settings:string/security_settings_fingerprint_enroll_introduction_title_unlock_disabled = Pixel Imprint
 com.android.settings:string/security_settings_fingerprint_preference_title = Pixel Imprint
@@ -70,7 +67,7 @@ com.android.systemui:bool/config_hspa_data_distinguishable = true
 com.android.systemui:bool/config_nfc_conflict_with_usb_audio = true
 com.android.systemui:bool/config_nfc_conflict_with_wlc = true
 com.android.systemui:bool/config_vibrateOnIconAnimation = true
-com.android.systemui:dimen/qs_brightness_margin_top = 0.000000dp
+com.android.systemui:dimen/qs_brightness_margin_top = 0dp
 com.android.systemui:integer/config_showTemperatureWarning = 1
 com.android.systemui:integer/config_showUsbPortAlarm = 1
 com.android.phone:string-array/config_countries_to_enable_shortcut_view = ca,us,de,fr,es,gb,au,in,jp,sg,tw,it,ie,ar,be,bg,br,cn,co,cz,dk,do,ge,gr,hr,hu,id,jo,mx,my,nl,no,ph,pl,pr,pt,ro,ru,se,th,uy,vn,za

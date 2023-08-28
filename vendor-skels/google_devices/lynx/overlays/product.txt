@@ -3,13 +3,6 @@ com.google.euiccpixel:string-array/config_state_busy_intent_list = intent:#Inten
 com.google.euiccpixel:string-array/config_state_ready_intent_list = intent:#Intent;action=com.google.android.gms.dck.action.SE_STATE_CHANGED;i.com.google.android.gms.dck.extra.SE_STATE=0;end,intent:#Intent;action=com.qorvo.uwb.action.SE_STATE_CHANGED;i.com.qorvo.uwb.extra.SE_STATE=0;end
 com.google.euiccpixel:string-array/config_state_request_intent_list = intent:#Intent;action=com.google.android.gms.dck.action.SE_STATE_REQUEST;end,intent:#Intent;action=com.qorvo.uwb.action.SE_STATE_REQUEST;end
 com.google.euiccpixel:string-array/config_state_request_permission_list = com.google.android.gms.dck.permission.DIGITAL_KEY_PRIVILEGED,com.qorvo.uwb.permission.SE_STATE_REQUEST
-android:integer-array/config_face_acquire_biometricprompt_ignorelist = 1,2,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19
-android:integer-array/config_face_acquire_enroll_ignorelist = 13
-android:array/config_face_acquire_keyguard_ignorelist = 
-android:array/config_face_acquire_vendor_biometricprompt_ignorelist = 
-android:array/config_face_acquire_vendor_enroll_ignorelist = 
-android:array/config_face_acquire_vendor_keyguard_ignorelist = 
-android:array/face_acquired_vendor = 
 android:string-array/face_error_vendor = Certificate expired,Sensor temporarily disabled,Calibration error,Face unlock unavailable. Phone is too hot.,Face unlock needs to be set up again
 android:bool/config_enableAutoPowerModes = true
 android:bool/config_settingsHelpLinksEnabled = true
@@ -32,13 +25,13 @@ android:bool/config_supportsCamToggle = true
 android:bool/config_supportsMicToggle = true
 android:bool/config_systemCaptionsServiceCallsEnabled = true
 android:bool/config_useRoundIcon = true
-android:dimen/config_bottomDialogCornerRadius = 16.000000dp
-android:dimen/config_buttonCornerRadius = 4.000000dp
-android:dimen/config_dialogCornerRadius = 28.000000dp
+android:dimen/config_bottomDialogCornerRadius = 16dp
+android:dimen/config_buttonCornerRadius = 4dp
+android:dimen/config_dialogCornerRadius = 28dp
 android:dimen/config_highResTaskSnapshotScale = 0.8
-android:dimen/config_progressBarCornerRadius = 1000.000000dp
-android:dimen/system_app_widget_background_radius = 28.000000dp
-android:dimen/system_app_widget_inner_radius = 20.000000dp
+android:dimen/config_progressBarCornerRadius = 1000dp
+android:dimen/system_app_widget_background_radius = 28dp
+android:dimen/system_app_widget_inner_radius = 20dp
 android:string/android_start_title = Pixel is starting…
 android:string/android_upgrading_title = Pixel is updating…
 android:string/config_ambientContextEventArrayExtraKey = EVENT_ARRAY
@@ -47,11 +40,10 @@ android:string/config_clockFontFamily = google-sans-clock
 android:string/config_icon_mask = M50 0C77.6 0 100 22.4 100 50C100 77.6 77.6 100 50 100C22.4 100 0 77.6 0 50C0 22.4 22.4 0 50 0Z
 com.android.settings:bool/config_adaptive_alert_vibration_enabled = true
 com.android.settings:bool/config_limited_warranty_enabled = true
-com.android.settings:dimen/udfps_lottie_translate_y = 16776716.000000dp
+com.android.settings:dimen/udfps_lottie_translate_y = -500dp
 com.android.settings:integer/config_vibration_supported_intensity_levels = 3
 com.android.settings:string-array/enabled_networks_except_gsm_values = 10,0
 com.android.settings:string-array/enabled_networks_values = 10,0,1
-com.android.settings:bool/config_face_settings_should_manage_preview = false
 com.android.settings:bool/config_hspa_data_distinguishable = true
 com.android.settings:string/display_white_balance_summary = Dynamically adjusts the display based on surrounding light levels
 com.android.settings:string/display_white_balance_title = Ambient EQ
@@ -64,13 +56,16 @@ com.android.settings:string/lock_settings_picker_fingerprint_message = Choose a 
 com.android.settings:string/security_settings_fingerprint_enroll_consent_introduction_title = Allow Fingerprint Unlock
 com.android.settings:string/security_settings_fingerprint_enroll_introduction_footer_message_1 = The data recorded by Pixel Imprint is stored securely and never leaves your phone. You can delete your data anytime in Settings.
 com.android.settings:string/security_settings_fingerprint_enroll_introduction_message = Use your fingerprint to unlock your phone or verify it’s you, like when you sign in to apps or approve a purchase.
-com.android.settings:string/security_settings_fingerprint_enroll_introduction_message_unlock_disabled = With Pixel Imprint, you can use your fingerprint to authorize purchases or sign in to apps
+com.android.settings:string/security_settings_fingerprint_enroll_introduction_message_unlock_disabled = With Pixel Imprint, you can use your fingerprint to authorize purchases or sign in to apps.
+
+Be careful whose fingerprints you add. Any fingerprints added will be able to do these things.
+
+Note: You can’t use your fingerprint to unlock this device. For more information, contact your organization’s admin.
 com.android.settings:string/security_settings_fingerprint_enroll_introduction_title = Set up Fingerprint Unlock
 com.android.settings:string/security_settings_fingerprint_enroll_introduction_title_unlock_disabled = Pixel Imprint
 com.android.settings:string/security_settings_fingerprint_preference_title = Fingerprint Unlock
 com.android.settings:string/setup_fingerprint_enroll_finish_message = Just touch the Pixel Imprint sensor to wake and unlock your phone.
 com.android.settings:string/suggested_fingerprint_lock_settings_summary = Use Pixel Imprint to unlock your phone
-com.android.systemui:integer-array/config_face_auth_props = 540,68,34
 com.android.systemui:integer-array/config_nfc_conflict_with_usb_audio_productid = 20532
 com.android.systemui:integer-array/config_nfc_conflict_with_usb_audio_vendorid = 6353
 com.android.systemui:string-array/config_pluginAllowlist = com.android.systemui,com.android.systemui.plugin.globalactions.wallet,com.android.systemui.falcon,com.android.systemui.falcon.debug,com.android.systemui.falcon.one,com.android.systemui.falcon.two,com.android.systemui.falcon.three,com.android.systemui.falcon.four,com.android.systemui.falcon.five,com.android.systemui.falcon.six,com.android.systemui.falcon.seven,com.android.systemui.falcon.eight,com.android.systemui.falcon.nine
@@ -89,21 +84,6 @@ com.android.phone:bool/hac_enabled = true
 com.android.phone:bool/vvm3_enabled = true
 com.android.server.telecom:bool/grant_location_permission_enabled = true
 com.android.traceur:bool/config_hspa_data_distinguishable = true
-com.android.settings:integer-array/face_enroll_primary_buckets = 2,7,12,17
-com.android.settings:bool/config_face_education_use_lottie = true
-com.android.settings:bool/config_face_enroll_use_traffic_light = true
-com.android.settings:bool/config_face_intro_show_less_secure = true
-com.android.settings:bool/config_face_intro_show_require_eyes = false
-com.android.settings:string/security_settings_face_enroll_education_message = On the next screen, hold your phone at eye level
-com.android.settings:string/security_settings_face_enroll_education_title_accessibility = How to set up Face Unlock
-com.android.settings:string/security_settings_face_enroll_finish_description = Now you can pick up your phone and use your face to unlock it
-com.android.settings:string/security_settings_face_enroll_improve_face_alert_body = Delete your current face model to set up Face Unlock again
-com.android.settings:string/security_settings_face_enroll_improve_face_alert_body_fingerprint = Delete your current face model to set up Face Unlock again
-com.android.settings:string/security_settings_face_enroll_introduction_info_glasses = If you normally wear eyeglasses, you can wear them during setup.
-com.android.settings:string/security_settings_face_enroll_introduction_message = Use your face to unlock your phone
-com.android.settings:string/security_settings_face_settings_footer = Use your face to unlock your phone
-com.android.settings:string/security_settings_face_settings_footer_attention_not_supported = Use your face to unlock your phone
-com.android.settings:string/security_settings_face_settings_require_attention_details = To unlock the phone, your eyes must be open. For best results, take off sunglasses when unlocking the phone.
 com.android.settings:string/security_settings_fingerprint_bad_calibration = Can’t use fingerprint sensor. Visit a repair provider or g.co/pixel/fingerprintunlock
 com.android.settings:string/security_settings_fingerprint_enroll_finish_message = Fingerprint Unlock improves the more you use it to unlock your phone or verify it’s you in apps
 com.android.settings:string/security_settings_fingerprint_v2_enroll_introduction_footer_message_2 = Fingerprint Unlock creates a unique model of your fingerprint to verify it’s you. To create this fingerprint model during setup, you will take images of your fingerprint from different positions.
@@ -114,14 +94,30 @@ com.android.settings:string/security_settings_fingerprint_v2_enroll_introduction
 com.android.settings:string/security_settings_fingerprint_v2_enroll_introduction_footer_message_consent_4 = You and your child can delete their fingerprint images and model, or turn off Fingerprint Unlock at any time in Settings. Fingerprint images and models are stored on the phone until they’re deleted.
 com.android.settings:string/security_settings_work_fingerprint_preference_title = Fingerprint Unlock for work
 com.android.settings:string/suggested_fingerprint_lock_settings_title = Use Fingerprint Unlock
-com.android.settings:string/unlock_disable_frp_warning_content_password_face_fingerprint = A password protects your phone if it’s lost or stolen
-com.android.settings:string/unlock_disable_frp_warning_content_password_fingerprint = A password protects your phone if it’s lost or stolen
-com.android.settings:string/unlock_disable_frp_warning_content_pattern_face_fingerprint = A pattern protects your phone if it’s lost or stolen
-com.android.settings:string/unlock_disable_frp_warning_content_pattern_fingerprint = A pattern protects your phone if it’s lost or stolen
-com.android.settings:string/unlock_disable_frp_warning_content_pin_face_fingerprint = A PIN protects your phone if it’s lost or stolen
-com.android.settings:string/unlock_disable_frp_warning_content_pin_fingerprint = A PIN protects your phone if it’s lost or stolen
-com.android.settings:string/unlock_disable_frp_warning_content_unknown_face_fingerprint = Device protection features will not work without your screen lock
-com.android.settings:string/unlock_disable_frp_warning_content_unknown_fingerprint = Device protection features will not work without your screen lock
+com.android.settings:string/unlock_disable_frp_warning_content_password_face_fingerprint = A password protects your phone if it’s lost or stolen.
+
+This deletes the fingerprint images and model stored on your device. Your face model will also be permanently and securely deleted. You won’t be able to use your face or fingerprint for authentication in apps.
+com.android.settings:string/unlock_disable_frp_warning_content_password_fingerprint = A password protects your phone if it’s lost or stolen.
+
+This also deletes the fingerprint images and model stored on your device. You won’t be able to use your fingerprint for authentication in apps.
+com.android.settings:string/unlock_disable_frp_warning_content_pattern_face_fingerprint = A pattern protects your phone if it’s lost or stolen.
+
+This deletes the fingerprint images and model stored on your device. Your face model will also be permanently and securely deleted. You won’t be able to use your face or fingerprint for authentication in apps.
+com.android.settings:string/unlock_disable_frp_warning_content_pattern_fingerprint = A pattern protects your phone if it’s lost or stolen.
+
+This also deletes the fingerprint images and model stored on your device. You won’t be able to use your fingerprint for authentication in apps.
+com.android.settings:string/unlock_disable_frp_warning_content_pin_face_fingerprint = A PIN protects your phone if it’s lost or stolen.
+
+This deletes the fingerprint images and model stored on your device. Your face model will also be permanently and securely deleted. You won’t be able to use your face or fingerprint for authentication in apps.
+com.android.settings:string/unlock_disable_frp_warning_content_pin_fingerprint = A PIN protects your phone if it’s lost or stolen.
+
+This also deletes the fingerprint images and model stored on your device. You won’t be able to use your fingerprint for authentication in apps.
+com.android.settings:string/unlock_disable_frp_warning_content_unknown_face_fingerprint = Device protection features will not work without your screen lock.
+
+This deletes the fingerprint images and model stored on your device. Your face model will also be permanently and securely deleted. You won’t be able to use your face or fingerprint for authentication in apps.
+com.android.settings:string/unlock_disable_frp_warning_content_unknown_fingerprint = Device protection features will not work without your screen lock.
+
+This also deletes the fingerprint images and model stored on your device. You won’t be able to use your fingerprint for authentication in apps.
 android:string-array/config_highRefreshRateBlacklist = com.activision.callofduty.shooter,com.garena.game.codm,com.nianticlabs.pokemongo,jp.konami.epjCastlevania2
 android:string-array/config_nightDisplayColorTemperatureCoefficients = 0.0,0.0,1.0,-0.000000014365268757,0.000255092801250106,-0.064156942434907716,-0.000000000910931179,0.000207598323269139,-0.349361641294833436
 android:string-array/config_udfps_enroll_stage_thresholds = 0.065,0.48,0.584,0.792

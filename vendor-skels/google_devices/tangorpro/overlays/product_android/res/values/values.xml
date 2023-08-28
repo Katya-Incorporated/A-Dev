@@ -20,7 +20,7 @@
   <string name="fingerprint_acquired_power_press">To continue setup, lightly touch the sensor</string>
   <string name="fingerprint_acquired_too_fast">Keep your finger on the sensor a little longer</string>
   <string name="fingerprint_error_power_pressed">Verification ended. Try touching lightly next time.</string>
-  <string name="safety_protection_display_text">&lt;font face="google-sans"&gt;Protected by &lt;/font&gt;&lt;font face="google-sans-medium"&gt;Android&lt;/font&gt;</string>
+  <string name="safety_protection_display_text">"&lt;font face=\"google-sans"&gt;Protected by &lt;/font&gt;&lt;font face="google-sans-medium"&gt;Android&lt;/font&gt;"</string>
   <string name="supervised_user_creation_label">Add child</string>
   <bool name="config_allowDisablingAssistDisclosure">true</bool>
   <bool name="config_allowRotationResolver">false</bool>
@@ -63,15 +63,15 @@
   <bool name="config_swipe_up_gesture_setting_available">true</bool>
   <bool name="config_systemCaptionsServiceCallsEnabled">true</bool>
   <bool name="config_useRoundIcon">true</bool>
-  <dimen name="config_bottomDialogCornerRadius">16.000000dp</dimen>
-  <dimen name="config_buttonCornerRadius">4.000000dp</dimen>
-  <dimen name="config_dialogCornerRadius">28.000000dp</dimen>
+  <dimen name="config_bottomDialogCornerRadius">16dp</dimen>
+  <dimen name="config_buttonCornerRadius">4dp</dimen>
+  <dimen name="config_dialogCornerRadius">28dp</dimen>
   <dimen name="config_fixedOrientationLetterboxAspectRatio">1.333</dimen>
   <dimen name="config_highResTaskSnapshotScale">0.8</dimen>
   <dimen name="config_letterboxVerticalPositionMultiplier">0.5</dimen>
-  <dimen name="config_progressBarCornerRadius">1000.000000dp</dimen>
-  <dimen name="system_app_widget_background_radius">28.000000dp</dimen>
-  <dimen name="system_app_widget_inner_radius">20.000000dp</dimen>
+  <dimen name="config_progressBarCornerRadius">1000dp</dimen>
+  <dimen name="system_app_widget_background_radius">28dp</dimen>
+  <dimen name="system_app_widget_inner_radius">20dp</dimen>
   <integer name="config_cameraPrivacyLightAlsAveragingIntervalMillis">3000</integer>
   <integer name="config_cameraPrivacyLightAlsNightThreshold">4</integer>
   <integer name="config_deskDockRotation">270</integer>
@@ -117,28 +117,7 @@
     <item>"Face unlock unavailable. Phone is too hot."</item>
     <item>"Face unlock needs to be set up again"</item>
   </string-array>
-  <integer-array name="config_face_acquire_biometricprompt_ignorelist">
-    <item>1</item>
-    <item>2</item>
-    <item>4</item>
-    <item>5</item>
-    <item>6</item>
-    <item>7</item>
-    <item>8</item>
-    <item>9</item>
-    <item>11</item>
-    <item>12</item>
-    <item>13</item>
-    <item>14</item>
-    <item>15</item>
-    <item>16</item>
-    <item>17</item>
-    <item>18</item>
-    <item>19</item>
-  </integer-array>
-  <integer-array name="config_face_acquire_enroll_ignorelist">
-    <item>13</item>
-  </integer-array>
+  <array name="config_notificationMsgPkgsAllowedAsConvos"/>
   <integer-array name="config_supportedDreamComplications">
     <item>1</item>
     <item>2</item>
@@ -152,10 +131,4 @@
   <integer-array name="non_removable_euicc_slots">
     <item>0</item>
   </integer-array>
-  <array name="config_face_acquire_keyguard_ignorelist"/>
-  <array name="config_face_acquire_vendor_biometricprompt_ignorelist"/>
-  <array name="config_face_acquire_vendor_enroll_ignorelist"/>
-  <array name="config_face_acquire_vendor_keyguard_ignorelist"/>
-  <array name="config_notificationMsgPkgsAllowedAsConvos"/>
-  <array name="face_acquired_vendor"/>
 </resources>
