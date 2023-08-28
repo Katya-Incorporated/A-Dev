@@ -14,6 +14,10 @@ filters:
       - android:string/config_feedbackIntent
       - android:string/config_helpIntent
       - android:string/config_helpPackage
+      # "Face unlock" is not shipped
+      - com.android.settings:bool/config_face_
+      - com.android.settings:string/config_face_
+      - com.android.settings:string/security_settings_face_
       # Pixel SetupWizard
       - com.google.android.pixel.setupwizard
       # Unused
@@ -42,8 +46,11 @@ filters:
       - com.google.android.flipendo
       # unused oma-dm stuff
       - com.android.omadm.service
-    regex:
+    substring:
       - branded_vpn
+      # "Face unlock" is not shipped
+      - /config_face_
+      - /face_acquired
     match:
       - android:bool/config_adaptive_sleep_available
       - android:bool/config_assistLongPressHomeEnabledDefault
@@ -196,18 +203,20 @@ filters:
       - com.android.providers.telephony:string/apn_source_service
       - com.android.server.telecom:string/call_diagnostic_service_package_name
       - com.android.server.telecom:string/dialer_default_class
+      - com.android.settings:bool/config_auto_rotate_face_detection_available
       - com.android.settings:bool/config_nfc_detection_point
       - com.android.settings:bool/config_show_communal_settings
       - com.android.settings:bool/config_show_reverse_charging
       - com.android.settings:bool/config_show_touch_sensitivity
       - com.android.settings:bool/config_suc_use_partner_resource
+      - com.android.settings:bool/config_suw_support_face_enroll
       - com.android.settings:drawable/$aware_assist_static__0
       - com.android.settings:drawable/$aware_assist_static__1
       - com.android.settings:drawable/aware_assist_static
+      - com.android.settings:integer-array/face_enroll_primary_buckets
       - com.android.settings:string-array/config_preinstalled_dream_components
       - com.android.settings:string-array/config_settings_slices_accessibility_components
       - com.android.settings:string-array/slice_allowlist_package_names
-      - com.android.settings:string/config_face_enroll_traffic_light_package
       - com.android.settings:string/security_settings_fingerprint_v2_enroll_introduction_message_learn_more
       - com.android.systemui:bool/config_touch_context_enabled
       - com.android.systemui:bool/config_wlc_support_enabled
