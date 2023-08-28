@@ -8,15 +8,3 @@ platform:
 
 includes:
   - common/gen7pixel.yml
-
-filters:
-  overlay_files:
-    match:
-      # aapt2 parsing bug encountered within adevtool
-      - Flipendo__auto_generated_rro_product.apk
-      - HbmSVManager__auto_generated_rro_product.apk
-      - SettingsGoogle__auto_generated_rro_product.apk
-      - SettingsGoogleOverlayFelix.apk
-      - StorageManagerGoogle__auto_generated_rro_product.apk
-      - SystemUIGoogle__auto_generated_rro_product.apk
-      - Traceur__auto_generated_rro_product.apk
