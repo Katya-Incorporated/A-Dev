@@ -1,5 +1,6 @@
 import { Command, flags } from '@oclif/command'
 import { promises as fs } from 'fs'
+import { COLLECTED_SYSTEM_STATE_DIR } from '../config/paths'
 
 import { collectSystemState, serializeSystemState } from '../config/system-state'
 import { forEachDevice } from '../frontend/devices'
@@ -21,14 +22,17 @@ export default class CollectState extends Command {
       description: 'generate devices in parallel (causes buggy progress spinners)',
       default: false,
     }),
+    outPath: flags.string({
+      char: 'o',
+      description: `output path for system state JSON file(s). If it's a directory, $device.json will be used for file names`,
+      required: true,
+      default: COLLECTED_SYSTEM_STATE_DIR,
+    }),
   }
-
-  static args = [{ name: 'output_path', description: 'output path for system state JSON file(s)', required: true }]
 
   async run() {
     let {
-      flags: { aapt2: aapt2Path, device: devices, outRoot, parallel },
-      args: { output_path: outPath },
+      flags: { aapt2: aapt2Path, device: devices, outRoot, parallel, outPath },
     } = this.parse(CollectState)
 
     let isDir = (await fs.stat(outPath)).isDirectory()
