@@ -26,7 +26,7 @@
   <string name="aware_wake_display_summary_aod_off">Unavailable because always-on display is off</string>
   <string name="aware_wake_display_title">On when you’re nearby</string>
   <string name="dialog_aware_settings_message">If you turn off Motion Sense, you can’t use Quick Gestures, show display when nearby, and reach to check phone</string>
-  <string name="dialog_aware_settings_title">Turn off Motion Sense?</string>
+  <string name="dialog_aware_settings_title">"Turn off Motion Sense?"</string>
   <string name="display_white_balance_summary">Dynamically adjusts the display based on surrounding light levels</string>
   <string name="display_white_balance_title">Ambient EQ</string>
   <string name="fingerprint_unlock_set_unlock_password">Pixel Imprint + Password</string>
@@ -65,7 +65,11 @@
   <string name="security_settings_fingerprint_enroll_consent_introduction_title">Allow Pixel Imprint</string>
   <string name="security_settings_fingerprint_enroll_introduction_footer_message_1">The data recorded by Pixel Imprint is stored securely and never leaves your phone. You can delete your data anytime in Settings.</string>
   <string name="security_settings_fingerprint_enroll_introduction_message">Use your fingerprint to unlock your phone or verify it’s you, like when you sign in to apps or approve a purchase.</string>
-  <string name="security_settings_fingerprint_enroll_introduction_message_unlock_disabled">With Pixel Imprint, you can use your fingerprint to authorize purchases or sign in to apps</string>
+  <string name="security_settings_fingerprint_enroll_introduction_message_unlock_disabled">"With Pixel Imprint, you can use your fingerprint to authorize purchases or sign in to apps.
+
+Be careful whose fingerprints you add. Any fingerprints added will be able to do these things.
+
+Note: You can’t use your fingerprint to unlock this device. For more information, contact your organization’s admin."</string>
   <string name="security_settings_fingerprint_enroll_introduction_title">Set up Pixel Imprint</string>
   <string name="security_settings_fingerprint_enroll_introduction_title_unlock_disabled">Pixel Imprint</string>
   <string name="security_settings_fingerprint_preference_title">Pixel Imprint</string>

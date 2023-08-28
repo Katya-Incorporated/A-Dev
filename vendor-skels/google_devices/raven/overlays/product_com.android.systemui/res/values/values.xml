@@ -7,11 +7,6 @@
   <bool name="config_nfc_conflict_with_usb_audio">true</bool>
   <bool name="config_nfc_conflict_with_wlc">true</bool>
   <bool name="config_vibrateOnIconAnimation">true</bool>
-  <integer-array name="config_face_auth_props">
-    <item>720</item>
-    <item>84</item>
-    <item>40</item>
-  </integer-array>
   <integer-array name="config_nfc_conflict_with_usb_audio_productid">
     <item>20532</item>
   </integer-array>

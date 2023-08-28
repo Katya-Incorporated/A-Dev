@@ -5,6 +5,8 @@
   <string name="charging_sounds_title">Charging sounds</string>
   <string name="communal_settings_title">Hub Mode</string>
   <string name="data_usage_app_summary_title">Wi‑Fi</string>
+  <string name="display_white_balance_summary">Dynamically adapts the display to warmer or cooler tones based on ambient lighting</string>
+  <string name="display_white_balance_title">Adaptive tone</string>
   <string name="dream_no_screen_saver_caption">No screen saver</string>
   <string name="dream_no_screen_saver_description">To save energy, your screen will turn off after inactivity</string>
   <string name="dream_no_screen_saver_preview_caption">Eco-friendly</string>
@@ -15,6 +17,7 @@
   <string name="fingerprint_unlock_set_unlock_pin">Fingerprint Unlock + PIN</string>
   <string name="fingerprint_unlock_skip_fingerprint">Continue without Fingerprint Unlock</string>
   <string name="fingerprint_unlock_title">With Fingerprint Unlock, you can unlock your tablet using your fingerprint. For security, this option requires a backup screen lock.</string>
+  <string name="fingerprint_v2_delete_message">"This deletes the fingerprint model associated with '%1$s' that is stored on your tablet"</string>
   <string name="lock_settings_picker_fingerprint_message">Choose a backup screen lock to use with Fingerprint Unlock</string>
   <string name="network_dashboard_summary_no_mobile">Wi‑Fi</string>
   <string name="non_carrier_data_usage">Wi‑Fi data usage</string>
@@ -23,9 +26,19 @@
   <string name="screensaver_settings_summary_off">Show favorite photos, artwork, clocks, and more when idle</string>
   <string name="security_settings_fingerprint_bad_calibration">Can’t use fingerprint sensor. Visit a repair provider or g.co/pixel/fingerprintunlock</string>
   <string name="security_settings_fingerprint_enroll_consent_introduction_title">Allow Fingerprint Unlock</string>
-  <string name="security_settings_fingerprint_enroll_find_sensor_message">The fingerprint sensor is on the Power button</string>
+  <string name="security_settings_fingerprint_enroll_find_sensor_message">"The fingerprint sensor is on the Power button.
+
+Lightly touch the button without pressing it down."</string>
   <string name="security_settings_fingerprint_enroll_find_sensor_title">Touch the Power button</string>
+  <string name="security_settings_fingerprint_enroll_introduction_footer_message_1">The data recorded by Pixel Imprint is stored securely and never leaves your phone. You can delete your data anytime in Settings.</string>
+  <string name="security_settings_fingerprint_enroll_introduction_message">Use your fingerprint to unlock your phone or verify it’s you, like when you sign in to apps or approve a purchase.</string>
+  <string name="security_settings_fingerprint_enroll_introduction_message_unlock_disabled">"With Pixel Imprint, you can use your fingerprint to authorize purchases or sign in to apps.
+
+Be careful whose fingerprints you add. Any fingerprints added will be able to do these things.
+
+Note: You can’t use your fingerprint to unlock this device. For more information, contact your organization’s admin."</string>
   <string name="security_settings_fingerprint_enroll_introduction_title">Set up Fingerprint Unlock</string>
+  <string name="security_settings_fingerprint_enroll_introduction_title_unlock_disabled">Pixel Imprint</string>
   <string name="security_settings_fingerprint_enroll_repeat_title">Lift, then touch. Move your finger slightly each time.</string>
   <string name="security_settings_fingerprint_enroll_touch_dialog_message">The fingerprint sensor is on the power button.</string>
   <string name="security_settings_fingerprint_enroll_touch_dialog_title">Touch the sensor instead</string>
@@ -36,14 +49,21 @@
   <string name="security_settings_fingerprint_v2_enroll_introduction_footer_message_consent_2">Fingerprint Unlock creates a unique model of your child’s fingerprint to verify it’s them. To create this fingerprint model during setup, they will take images of their fingerprint from different positions.</string>
   <string name="security_settings_fingerprint_v2_enroll_introduction_footer_message_consent_3">When they use Fingerprint Unlock, images are used to update their fingerprint model. Images used to create your child’s fingerprint model are never stored, but the fingerprint model is stored securely on the tablet and never leaves the tablet. All processing occurs securely on the tablet.</string>
   <string name="security_settings_fingerprint_v2_enroll_introduction_footer_message_consent_4">You and your child can delete their fingerprint model, or turn off Fingerprint Unlock at any time in Settings. Fingerprint models are stored on the tablet until they’re deleted.</string>
+  <string name="security_settings_sfps_enroll_start_message">"Touch the sensor without pressing it. Lift your finger after each touch.
+
+Move your finger slightly each time. This helps capture more of your fingerprint."</string>
   <string name="security_settings_work_fingerprint_preference_title">Fingerprint Unlock for work</string>
+  <string name="setup_fingerprint_enroll_finish_message">Just touch the Pixel Imprint sensor to wake and unlock your phone.</string>
   <string name="sound_dashboard_summary">Volume, Do Not Disturb</string>
   <string name="sound_settings">Sound</string>
+  <string name="suggested_fingerprint_lock_settings_summary">Use Pixel Imprint to unlock your tablet</string>
   <string name="suggested_fingerprint_lock_settings_title">Use Fingerprint Unlock</string>
   <string name="tether_settings_title_all">Tethering</string>
   <string name="tethering_footer_info">Use tethering to provide internet to other devices through USB, Ethernet, or Bluetooth.</string>
   <bool name="config_clear_calling_enabled">false</bool>
+  <bool name="config_hspa_data_distinguishable">true</bool>
   <bool name="config_limited_warranty_enabled">true</bool>
+  <bool name="config_show_emergency_settings">false</bool>
   <bool name="config_show_premium_sms">false</bool>
   <bool name="config_show_sim_info">false</bool>
   <bool name="config_show_wifi_hotspot_settings">false</bool>
@@ -51,8 +71,18 @@
   <bool name="dream_setup_supported">true</bool>
   <bool name="enrollment_message_display_controller_flag">true</bool>
   <bool name="has_dock_settings">true</bool>
-  <dimen name="dream_item_min_column_width">210.000000dp</dimen>
-  <dimen name="dream_preference_card_padding">20.000000dp</dimen>
+  <fraction name="display_density_max_scale">133.12378%</fraction>
+  <dimen name="dream_item_min_column_width">210dp</dimen>
+  <dimen name="dream_preference_card_padding">20dp</dimen>
+  <string-array name="enabled_networks_except_gsm_values">
+    <item>"10"</item>
+    <item>"0"</item>
+  </string-array>
+  <string-array name="enabled_networks_values">
+    <item>"10"</item>
+    <item>"0"</item>
+    <item>"1"</item>
+  </string-array>
   <integer name="enrollment_collect_time">100</integer>
   <integer name="enrollment_help_minimum_time_display">250</integer>
   <integer name="enrollment_progress_minimum_time_display">250</integer>
