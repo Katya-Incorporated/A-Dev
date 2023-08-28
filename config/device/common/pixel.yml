@@ -15,10 +15,6 @@ platform:
     - hardware/google/pixel-sepolicy
 
 filters:
-  dep_files:
-    prefix:
-      # Protobufs for inline carrier extraction
-      - product/etc/CarrierSettings/
   deprivileged_apks:
     prefix:
       - system_ext/priv-app/PixelNfc/
