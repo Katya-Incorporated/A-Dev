@@ -12,11 +12,6 @@ filters:
       - vendor/lib/libadsprpc.so
       - vendor/lib64/libadsprpc.so
 
-  overlay_files:
-    match:
-      # aapt2 parsing bug encountered within adevtool
-      - HbmSVManager__auto_generated_rro_vendor.apk
-
   files:
     match:
       - vendor/etc/vintf/manifest/manifest_wifi_ext.xml
