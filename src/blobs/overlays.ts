@@ -1,21 +1,19 @@
+import assert from 'assert'
 import { promises as fs } from 'fs'
+import { tmpdir } from 'os'
 import path from 'path'
+import { unzip, ZipEntry } from 'unzipit'
 import xml2js from 'xml2js'
 
 import { serializeBlueprint } from '../build/soong'
-import { aapt2 } from '../util/process'
+import { Filters, filterValue } from '../config/filters'
+import { Configuration } from '../proto-ts/frameworks/base/tools/aapt2/Configuration'
+import { Item, ResourceTable, XmlAttribute, XmlNode } from '../proto-ts/frameworks/base/tools/aapt2/Resources'
 import { exists, listFilesRecursive } from '../util/fs'
 import { XML_HEADER } from '../util/headers'
-import { parseLines } from '../util/parse'
 import { EXT_PARTITIONS } from '../util/partitions'
-import { Filters, filterValue } from '../config/filters'
-
-const TARGET_PACKAGE_PATTERN = makeManifestRegex('targetPackage')
-const TARGET_NAME_PATTERN = makeManifestRegex('targetName')
-
-// This is terrible, but aapt2 doesn't escape strings properly and some of these
-// strings contain double quotes, which break our parser.
-const EXCLUDE_LOCALES = new Set(['ar', 'iw'])
+import { spawnAsyncNoOut } from '../util/process'
+import { NodeFileReader } from '../util/zip'
 
 // Diff exclusions
 const DIFF_EXCLUDE_TYPES = new Set(['raw', 'xml', 'color'])
@@ -42,15 +40,6 @@ export interface ResKey {
 export type ResValues = Map<string, ResValue>
 
 export type PartResValues = { [part: string]: ResValues }
-
-function makeManifestRegex(attr: string) {
-  return new RegExp(
-    /^\s+A: http:\/\/schemas.android.com\/apk\/res\/android:/.source +
-      attr +
-      /\(0x[a-z0-9]+\)="(.+)" \(Raw: ".*$/.source,
-    'm', // multiline flag
-  )
-}
 
 function encodeResKey(key: ResKey) {
   // pkg/name:type/key|flags
@@ -91,195 +80,42 @@ function toResKey(
   })
 }
 
-function finishArray(
-  values: Map<string, ResValue>,
-  targetPkg: string,
-  targetName: string | null,
-  type: string | null,
-  key: string | null,
-  flags: string | null,
-  arrayLines: Array<string> | null,
-) {
-  // Exclude problematic locales and types (ID references)
-  let rawValue = arrayLines!.join('\n')
-  if (EXCLUDE_LOCALES.has(flags!) || rawValue.startsWith('[@0x')) {
-    return
-  }
-
-  let array = parseAaptJson(rawValue) as Array<ResValue>
-
-  // Change to typed array?
-  if (typeof array[0] === 'string') {
-    type = 'string-array'
-  } else if (typeof array[0] === 'number') {
-    // Float arrays are just <array>, so check for integers
-    if (array.find(v => !Number.isInteger(v)) == undefined) {
-      type = 'integer-array'
-    }
-  }
-
-  values.set(toResKey(targetPkg, targetName, type, key, flags), array)
-}
-
-function parseAaptJson(value: string) {
-  // Fix backslash escapes
-  value = value.replaceAll(/\\/g, '\\\\')
-
-  // Parse hex arrays
-  value = value.replaceAll(/\b0x[0-9a-f]+\b/g, value => `${parseInt(value.slice(2), 16)}`)
-
-  return JSON.parse(value)
-}
-
-function parseRsrcLines(rsrc: string, targetPkg: string, targetName: string | null) {
-  // Finished values with encoded res keys
-  let values: ResValues = new Map<string, ResValue>()
-
-  // Current resource state machine
-  let curType: string | null = null
-  let curKey: string | null = null
-  let curFlags: string | null = null
-  let curArray: Array<string> | null = null
-
-  // Parse line-by-line
-  for (let line of parseLines(rsrc)) {
-    // Start resource
-    let resStart = line.match(/^resource 0x[a-z0-9]+ (.+)$/)
-    if (resStart) {
-      // Finish last array?
-      if (curArray != null) {
-        finishArray(values, targetPkg, targetName, curType, curKey, curFlags, curArray)
-      }
-
-      let keyParts = resStart[1]!.split('/')
-      curType = keyParts[0]
-      curKey = keyParts[1]
-      curFlags = null
-      curArray = null
-      continue
-    }
-
-    // New resource is array
-    let arrayLine = line.match(/^\(([a-zA-Z0-9\-_+]*)\) \(array\) size=\d+$/)
-    if (arrayLine) {
-      // Finish last array?
-      if (curArray != null) {
-        finishArray(values, targetPkg, targetName, curType, curKey, curFlags, curArray)
-      }
-
-      // Start new array
-      curFlags = arrayLine[1]
-      curArray = []
-      continue
-    }
-
-    // New value
-    let valueLine = line.match(/^\(([a-zA-Z0-9\-_+]*)\) (.+)$/)
-    if (valueLine) {
-      curFlags = valueLine![1]
-
-      // Exclude broken locales and styles for now
-      if (EXCLUDE_LOCALES.has(curFlags!) || curType == 'style') {
-        continue
-      }
-
-      let value: ResValue
-      let rawValue = valueLine![2]
-      if (rawValue.startsWith('(file) ')) {
-        continue
-      } else if (curType == 'dimen') {
-        // Keep dimensions as strings to preserve unit
-        value = rawValue
-      } else if (curType == 'color') {
-        // Raw hex code
-        value = rawValue
-      } else if (rawValue.startsWith('0x')) {
-        // Hex integer
-        value = parseInt(rawValue.slice(2), 16)
-      } else if (rawValue.startsWith('(styled string) ')) {
-        // Skip styled strings for now
-        continue
-      } else if (curType == 'string') {
-        // Don't rely on quotes for simple strings
-        value = rawValue.slice(1, -1)
-      } else {
-        value = parseAaptJson(rawValue)
-      }
-
-      values.set(toResKey(targetPkg, targetName, curType, curKey, curFlags), value)
-    }
-
-    // New type section
-    let typeLine = line.match(/^type .+$/)
-    if (typeLine) {
-      // Just skip this line. Next resource/end will finish the last array, and this
-      // shouldn't be added to the last array.
-      continue
-    }
-
-    // Continuation of array?
-    if (curArray != null) {
-      curArray.push(line)
-    }
-  }
-
-  // Finish remaining array?
-  if (curArray != null) {
-    finishArray(values, targetPkg, targetName, curType, curKey, curFlags, curArray)
-  }
-
-  return values
-}
-
 async function parseOverlayApksRecursive(
   aapt2Path: string,
+  partition: string,
   overlaysDir: string,
   pathCallback?: (path: string) => void,
   filters: Filters | null = null,
 ) {
   let values: ResValues = new Map<string, ResValue>()
 
-  for await (let apkPath of listFilesRecursive(overlaysDir)) {
-    if (path.extname(apkPath) != '.apk') {
-      continue
+  let tmpDir = fs.mkdtemp(path.join(tmpdir(), 'adevtool-overlay-parsing-'))
+  try {
+    let promises: Promise<ResValues | null>[] = []
+
+    for await (let apkPath of listFilesRecursive(overlaysDir)) {
+      if (path.extname(apkPath) != '.apk') {
+        continue
+      }
+
+      if (filters != null && !filterValue(filters, path.relative(overlaysDir, apkPath))) {
+        continue
+      }
+
+      promises.push(loadApkResValues(aapt2Path, partition, apkPath, await tmpDir))
     }
 
-    if (pathCallback != undefined) {
-      pathCallback(apkPath)
+    for await (let resValues of promises) {
+      if (resValues === null) {
+        continue
+      }
+      // Merge overlayed values
+      for (let [key, value] of resValues) {
+        values.set(key, value)
+      }
     }
-
-    if (filters != null && !filterValue(filters, path.relative(overlaysDir, apkPath))) {
-      continue
-    }
-
-    // Check the manifest for eligibility first
-    let manifest = await aapt2(aapt2Path, 'dump', 'xmltree', '--file', 'AndroidManifest.xml', apkPath)
-    // Overlays that have categories are user-controlled, so they're not relevant here
-    if (manifest.includes('A: http://schemas.android.com/apk/res/android:category(')) {
-      continue
-    }
-    // Prop-guarded overlays are almost always in AOSP already, so don't bother checking them
-    if (manifest.includes('A: http://schemas.android.com/apk/res/android:requiredSystemPropertyName(')) {
-      continue
-    }
-
-    // Get the target package
-    let match = manifest.match(TARGET_PACKAGE_PATTERN)
-    if (!match) throw new Error(`Overlay ${apkPath} is missing target package`)
-    let targetPkg = match[1]
-
-    // Get the target overlayable config name, if it exists
-    match = manifest.match(TARGET_NAME_PATTERN)
-    let targetName = match == undefined ? null : match[1]
-
-    // Overlay is eligible, now read the resource table
-    let rsrc = await aapt2(aapt2Path, 'dump', 'resources', apkPath)
-    let apkValues = parseRsrcLines(rsrc, targetPkg, targetName)
-
-    // Merge overlayed values
-    for (let [key, value] of apkValues) {
-      values.set(key, value)
-    }
+  } finally {
+    await fs.rm(await tmpDir, { recursive: true })
   }
 
   return values
@@ -299,7 +135,7 @@ export async function parsePartOverlayApks(
       continue
     }
 
-    partValues[partition] = await parseOverlayApksRecursive(aapt2Path, src, pathCallback, filters)
+    partValues[partition] = await parseOverlayApksRecursive(aapt2Path, partition, src, pathCallback, filters)
   }
 
   return partValues
@@ -447,6 +283,14 @@ export async function serializePartOverlays(partValues: PartResValues, overlaysD
           },
         } as { [key: string]: any }
 
+        if (type === 'string') {
+          let s = value as string
+          if (s.match(/([@?\n\t'"])/)) {
+            // quote strings that have special characters
+            value = '"' + (value as string).replace('"', '\\"') + '"'
+          }
+        }
+
         if (type.includes('array')) {
           entry.item = (value as Array<any>).map(v => JSON.stringify(v))
         } else {
@@ -466,9 +310,12 @@ export async function serializePartOverlays(partValues: PartResValues, overlaysD
       let overlayDir = `${overlaysDir}/${partition}_${genTarget}`
       let resDir = `${overlayDir}/res/values`
       await fs.mkdir(resDir, { recursive: true })
-      await fs.writeFile(`${overlayDir}/Android.bp`, bp)
-      await fs.writeFile(`${overlayDir}/AndroidManifest.xml`, manifest)
-      await fs.writeFile(`${resDir}/values.xml`, valuesXml)
+      let writes = [
+        fs.writeFile(`${overlayDir}/Android.bp`, bp),
+        fs.writeFile(`${overlayDir}/AndroidManifest.xml`, manifest),
+        fs.writeFile(`${resDir}/values.xml`, valuesXml),
+      ]
+      await Promise.all(writes)
 
       buildPkgs.push(rroName)
     }
@@ -476,3 +323,283 @@ export async function serializePartOverlays(partValues: PartResValues, overlaysD
 
   return buildPkgs
 }
+
+async function loadApkResValues(aapt2Path: string, partition: string, apkPath: string, tmpDir: string) {
+  let protoApk = path.join(tmpDir, partition + '_' + path.basename(apkPath, '.apk') + '.proto.apk')
+  // convert resource table and XMLs from binary to proto format
+  await spawnAsyncNoOut(aapt2Path, [
+    'convert',
+    '--for-adevtool',
+    '--output-format',
+    'proto',
+    apkPath,
+    '-v', // verbose logging
+    '-o',
+    protoApk,
+  ])
+
+  let reader = new NodeFileReader(protoApk)
+  try {
+    let { entries: zipEntries } = await unzip(reader)
+
+    let manifest = XmlNode.decode(await zipEntryAsUint8Array(zipEntries['AndroidManifest.xml']))
+
+    let overlayNode = manifest.element!.child.find(c => c.element?.name === 'overlay')!
+
+    let namespaceUri = 'http://schemas.android.com/apk/res/android'
+
+    let overlayAttrs = new Map<string, XmlAttribute>()
+
+    for (let a of overlayNode.element!.attribute) {
+      if (a.namespaceUri === namespaceUri) {
+        overlayAttrs.set(a.name, a)
+      }
+    }
+
+    if (overlayAttrs.has('category')) {
+      // comment from original impl:
+      // Overlays that have categories are user-controlled, so they're not relevant here
+      return null
+    }
+
+    if (overlayAttrs.has('requiredSystemPropertyName')) {
+      // comment from original impl:
+      // Prop-guarded overlays are almost always in AOSP already, so don't bother checking them
+      return null
+    }
+
+    let targetPkgAttr = overlayAttrs.get('targetPackage')
+    assert(targetPkgAttr !== undefined, 'missing targetPkg overlay attribute for ' + apkPath)
+    let targetNameAttr = overlayAttrs.get('targetName')
+
+    let targetPkg = targetPkgAttr.value
+    let targetName = targetNameAttr?.value ?? null
+
+    let resourceTable = ResourceTable.decode(await zipEntryAsUint8Array(zipEntries['resources.pb']))
+
+    return resourseTableToResValues(resourceTable, targetPkg, targetName)
+  } finally {
+    reader.close()
+    await fs.rm(protoApk)
+  }
+}
+
+function resourseTableToResValues(resTable: ResourceTable, targetPkg: string, targetName: string | null): ResValues {
+  let values: ResValues = new Map<string, ResValue>()
+
+  for (let pkg of resTable.package) {
+    for (let resType of pkg.type) {
+      for (let resEntry of resType.entry) {
+        for (let resConfigValue of resEntry.configValue) {
+          let resConfig = resConfigValue.config!
+          let val = resConfigValue.value!
+
+          let resItem = val.item
+          if (resItem !== undefined) {
+            let rv = protoResItemToResValue(resItem)
+            if (rv !== null) {
+              let resKey = toResKey(targetPkg, targetName, resType.name, resEntry.name, resConfigStr(resConfig))
+              values.set(resKey, rv)
+            }
+          } else {
+            let cv = val.compoundValue!
+            if (cv.array) {
+              let items = cv.array.element.map(e => protoResItemToResValue(e.item!))
+
+              // check that all array entries are of supported type
+              if (items.find(i => i === null) === undefined) {
+                let typeName = 'array'
+                let firstItem = cv.array!.element[0]?.item
+                if (firstItem?.str !== undefined) {
+                  typeName = 'string-array'
+                } else if (
+                  firstItem?.prim?.intHexadecimalValue !== undefined ||
+                  firstItem?.prim?.intDecimalValue !== undefined
+                ) {
+                  typeName = 'integer-array'
+                }
+                let resKey = toResKey(targetPkg, targetName, typeName, resEntry.name, resConfigStr(resConfig))
+                values.set(resKey, items as ResValue[])
+              }
+            }
+            // TODO add support for more CompoundValue types
+          }
+        }
+      }
+    }
+  }
+  return values
+}
+
+function protoResItemToResValue(item: Item): ResValue | null {
+  if (item.str !== undefined) {
+    return item.str.value
+  }
+
+  if (item.prim) {
+    let p = item.prim
+    if (p.booleanValue !== undefined) {
+      return p.booleanValue
+    }
+    if (p.intDecimalValue !== undefined) {
+      return p.intDecimalValue
+    }
+    if (p.intHexadecimalValue !== undefined) {
+      return p.intHexadecimalValue
+    }
+    if (p.floatValue !== undefined) {
+      return roundFloat(p.floatValue)
+    }
+    if (p.emptyValue !== undefined) {
+      return ''
+    }
+    if (p.fractionValue !== undefined) {
+      return new Complex(ComplexType.TYPE_FRACTION, p.fractionValue).asString()
+    }
+    if (p.dimensionValue !== undefined) {
+      return new Complex(ComplexType.TYPE_DIMENSION, p.dimensionValue).asString()
+    }
+    if (p.colorArgb4Value !== undefined) {
+      return '#' + p.colorArgb4Value.toString(16)
+    }
+    if (p.colorArgb8Value !== undefined) {
+      return '#' + p.colorArgb8Value.toString(16)
+    }
+    if (p.colorRgb4Value !== undefined) {
+      return '#' + p.colorRgb4Value.toString(16)
+    }
+    if (p.colorRgb8Value !== undefined) {
+      return '#' + p.colorRgb8Value.toString(16)
+    }
+    if (p.nullValue !== undefined) {
+      return ''
+    }
+  }
+  // TODO add support for more types
+
+  return null
+}
+
+async function zipEntryAsUint8Array(e: ZipEntry) {
+  return new Uint8Array(await e.arrayBuffer())
+}
+
+enum ComplexType {
+  TYPE_DIMENSION,
+  TYPE_FRACTION,
+}
+
+// configuration values joined by dashes, same format as in values- Android resource dirs (e.g. en-sw600dp-night)
+function resConfigStr(c: Configuration) {
+  let v = c.stringified!
+  if (v === '') {
+    return null
+  }
+  return v
+}
+
+function roundFloat(v: number) {
+  return parseFloat(
+    v.toLocaleString(undefined, {
+      useGrouping: false,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 5,
+    }),
+  )
+}
+
+// ported to TypeScript from frameworks/base/core/java/android/util/TypedValue.java
+class Complex {
+  unit: number
+
+  constructor(readonly type: ComplexType, readonly raw: number) {
+    this.unit = (raw >> COMPLEX_UNIT_SHIFT) & COMPLEX_UNIT_MASK
+  }
+
+  asFloat() {
+    return (
+      (this.raw & (COMPLEX_MANTISSA_MASK << COMPLEX_MANTISSA_SHIFT)) * RADIX_MULTS[(this.raw >> COMPLEX_RADIX_SHIFT) & COMPLEX_RADIX_MASK])
+  }
+
+  asString() {
+    let fv = this.asFloat()
+    let f = roundFloat(fv).toString()
+    switch (this.type) {
+      case ComplexType.TYPE_DIMENSION: {
+        switch (this.unit) {
+          case COMPLEX_UNIT_PX:
+            return f + 'px'
+          case COMPLEX_UNIT_DIP:
+            return f + 'dp'
+          case COMPLEX_UNIT_SP:
+            return f + 'sp'
+          case COMPLEX_UNIT_PT:
+            return f + 'pt'
+          case COMPLEX_UNIT_IN:
+            return f + 'in'
+          case COMPLEX_UNIT_MM:
+            return f + 'mm'
+        }
+        throw new Error('unknown unit ' + this.unit)
+      }
+      case ComplexType.TYPE_FRACTION: {
+        switch (this.unit) {
+          case COMPLEX_UNIT_FRACTION:
+            return roundFloat(fv * 100.0) + '%'
+          case COMPLEX_UNIT_FRACTION_PARENT:
+            return roundFloat(fv * 100.0) + '%p'
+        }
+        throw new Error('unknown unit ' + this.unit)
+      }
+    }
+    return null
+  }
+}
+
+/** {@link #TYPE_DIMENSION} complex unit: Value is raw pixels. */
+const COMPLEX_UNIT_PX = 0
+/** {@link #TYPE_DIMENSION} complex unit: Value is Device Independent
+ *  Pixels. */
+const COMPLEX_UNIT_DIP = 1
+/** {@link #TYPE_DIMENSION} complex unit: Value is a scaled pixel. */
+const COMPLEX_UNIT_SP = 2
+/** {@link #TYPE_DIMENSION} complex unit: Value is in points. */
+const COMPLEX_UNIT_PT = 3
+/** {@link #TYPE_DIMENSION} complex unit: Value is in inches. */
+const COMPLEX_UNIT_IN = 4
+/** {@link #TYPE_DIMENSION} complex unit: Value is in millimeters. */
+const COMPLEX_UNIT_MM = 5
+
+/** {@link #TYPE_FRACTION} complex unit: A basic fraction of the overall
+ *  size. */
+const COMPLEX_UNIT_FRACTION = 0
+/** {@link #TYPE_FRACTION} complex unit: A fraction of the parent size. */
+const COMPLEX_UNIT_FRACTION_PARENT = 1
+
+/** Complex data: where the radix information is, telling where the decimal
+ *  place appears in the mantissa. */
+const COMPLEX_RADIX_SHIFT = 4
+/** Complex data: mask to extract radix information (after shifting by
+ * {@link #COMPLEX_RADIX_SHIFT}). This give us 4 possible fixed point
+ * representations as defined below. */
+const COMPLEX_RADIX_MASK = 0x3
+
+/** Complex data: bit location of mantissa information. */
+const COMPLEX_MANTISSA_SHIFT = 8
+/** Complex data: mask to extract mantissa information (after shifting by
+ *  {@link #COMPLEX_MANTISSA_SHIFT}). This gives us 23 bits of precision
+ *  the top bit is the sign. */
+const COMPLEX_MANTISSA_MASK = 0xffffff
+
+const MANTISSA_MULT = 1.0 / (1<<COMPLEX_MANTISSA_SHIFT)
+const RADIX_MULTS = [
+    1.0*MANTISSA_MULT, 1.0/(1<<7)*MANTISSA_MULT,
+    1.0/(1<<15)*MANTISSA_MULT, 1.0/(1<<23)*MANTISSA_MULT
+]
+
+/** Complex data: bit location of unit information. */
+const COMPLEX_UNIT_SHIFT = 0
+/** Complex data: mask to extract unit information (after shifting by
+ *  {@link #COMPLEX_UNIT_SHIFT}). This gives us 16 possible types, as
+ *  defined below. */
+const COMPLEX_UNIT_MASK = 0xf
