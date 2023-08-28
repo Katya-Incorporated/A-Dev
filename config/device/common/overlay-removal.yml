@@ -1,4 +1,8 @@
 filters:
+  overlay_files:
+    prefix:
+      - HbmSVManager__auto_generated_rro_
+
   overlay_keys:
     prefix:
       # Face Unlock

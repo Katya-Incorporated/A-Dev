@@ -6,9 +6,3 @@ platform:
 
 includes:
   - common/gen7pixel.yml
-
-filters:
-  overlay_files:
-    match:
-      # aapt2 parsing bug encountered within adevtool
-      - HbmSVManager__auto_generated_rro_product.apk
