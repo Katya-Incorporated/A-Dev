@@ -1,7 +1,12 @@
 filters:
   overlay_files:
     prefix:
+      # these overlays are for packages that are not shipped
+      - Flipendo
       - HbmSVManager__auto_generated_rro_
+      - PixelSetupWizardOverlay
+      - Scone
+      - TipsOverlay
 
   overlay_keys:
     prefix:
@@ -35,15 +40,10 @@ filters:
       # Useless provisioning items
       - com.android.managedprovisioning
       - com.android.systemui:string/config_dock_setup_
-      - com.google.android.apps.tips
       # google media apexs
       - com.google.android.providers.media.module
       - com.google.android.storagemanager
-      # scone
       - com.google.android.apps.nexuslauncher
-      - com.google.android.apps.scone
-      # unused flipendo
-      - com.google.android.flipendo
       # unused oma-dm stuff
       - com.android.omadm.service
     substring:
