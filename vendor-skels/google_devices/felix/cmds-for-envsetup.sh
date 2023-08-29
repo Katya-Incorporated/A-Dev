@@ -1,0 +1,2 @@
+export BUILD_ID_felix="TQ3C.230805.001.A3"
+unset PLATFORM_SECURITY_PATCH_felix
