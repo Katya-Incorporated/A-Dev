@@ -378,3 +378,24 @@ export async function generateBuildFiles(
 
   await writeBuildFiles(build, dirs, config)
 }
+
+export async function writeEnvsetupCommands(config: DeviceConfig, dirs: VendorDirectories) {
+  let vars = new Map<string, string | undefined>()
+  let product = config.device.name
+
+  vars.set(`BUILD_ID_${product}`, config.device.build_id)
+  vars.set(`PLATFORM_SECURITY_PATCH_${product}`, config.device.platform_security_patch_level_override)
+
+  let cmds: string[] = []
+
+  for (let [k, v] of vars.entries()) {
+    if (v === undefined) {
+      cmds.push(`unset ${k}`)
+    } else {
+      cmds.push(`export ${k}="${v}"`)
+    }
+  }
+  cmds.push('')
+
+  await fs.writeFile(path.join(dirs.out, 'cmds-for-envsetup.sh'), cmds.join('\n'))
+}

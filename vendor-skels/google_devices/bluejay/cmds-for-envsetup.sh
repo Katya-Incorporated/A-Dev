@@ -1,0 +1,2 @@
+export BUILD_ID_bluejay="TQ3A.230805.001"
+unset PLATFORM_SECURITY_PATCH_bluejay

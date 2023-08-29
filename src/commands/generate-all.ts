@@ -22,7 +22,7 @@ import {
   PropResults,
   resolveOverrides,
   resolveSepolicyDirs,
-  updatePresigned,
+  updatePresigned, writeEnvsetupCommands,
 } from '../frontend/generate'
 import { writeReadme } from '../frontend/readme'
 import { DeviceImages, prepareDeviceImages, WRAPPED_SOURCE_FLAGS, wrapSystemSrc } from '../frontend/source'
@@ -161,8 +161,10 @@ const doDevice = (
       ),
     )
 
-    // 12. Readme
-    await writeReadme(config, dirs, propResults)
+    await Promise.all([
+      writeEnvsetupCommands(config, dirs),
+      writeReadme(config, dirs, propResults),
+    ])
   })
 
 export default class GenerateFull extends Command {
