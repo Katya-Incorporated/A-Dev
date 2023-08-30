@@ -1,7 +1,8 @@
 import { Command, flags } from '@oclif/command'
 import { promises as fs } from 'fs'
-import { COLLECTED_SYSTEM_STATE_DIR } from '../config/paths'
 
+import { DEVICE_CONFIG_FLAGS, loadDeviceConfigs } from '../config/device'
+import { COLLECTED_SYSTEM_STATE_DIR } from '../config/paths'
 import { collectSystemState, serializeSystemState } from '../config/system-state'
 import { forEachDevice } from '../frontend/devices'
 
@@ -15,7 +16,6 @@ export default class CollectState extends Command {
       description: 'path to aapt2 executable',
       default: 'out/host/linux-x86/bin/aapt2',
     }),
-    device: flags.string({ char: 'd', description: 'name of target device', required: true, multiple: true }),
     outRoot: flags.string({ char: 'r', description: 'path to AOSP build output directory (out/)', default: 'out' }),
     parallel: flags.boolean({
       char: 'p',
@@ -28,20 +28,28 @@ export default class CollectState extends Command {
       required: true,
       default: COLLECTED_SYSTEM_STATE_DIR,
     }),
+    ...DEVICE_CONFIG_FLAGS,
   }
 
   async run() {
     let {
-      flags: { aapt2: aapt2Path, device: devices, outRoot, parallel, outPath },
+      flags: { aapt2: aapt2Path, devices, outRoot, parallel, outPath },
     } = this.parse(CollectState)
 
-    let isDir = (await fs.stat(outPath)).isDirectory()
-    await forEachDevice(devices, parallel, async device => {
-      let state = await collectSystemState(device, outRoot, aapt2Path)
+    let configs = await loadDeviceConfigs(devices)
 
-      // Write
-      let devicePath = isDir ? `${outPath}/${device}.json` : outPath
-      await fs.writeFile(devicePath, serializeSystemState(state))
-    })
+    let isDir = (await fs.stat(outPath)).isDirectory()
+    await forEachDevice(
+      configs,
+      parallel,
+      async config => {
+        let state = await collectSystemState(config.device.name, outRoot, aapt2Path)
+
+        // Write
+        let devicePath = isDir ? `${outPath}/${config}.json` : outPath
+        await fs.writeFile(devicePath, serializeSystemState(state))
+      },
+      c => c.device.name,
+    )
   }
 }
