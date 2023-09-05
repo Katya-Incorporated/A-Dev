@@ -36,4 +36,18 @@ export class GitLsRemote {
 
     return result
   }
+
+  public getTagsForCommit(commit: string) {
+    return getKeysForCommit(this.tags, commit)
+  }
+
+  public getBranchesForCommit(commit: string) {
+    return getKeysForCommit(this.branches, commit)
+  }
+}
+
+function getKeysForCommit(map: Map<string, string>, value: string) {
+  return Array.from(map.entries())
+    .filter(entry => entry[1].startsWith(value))
+    .map(entry => entry[0])
 }
