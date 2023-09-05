@@ -3,6 +3,8 @@ filters:
     prefix:
       # these overlays are for packages that are not shipped
       - Flipendo
+      - GoogleDeviceLockControllerOverlay
+      - GoogleHealthConnectOverlay
       - HbmSVManager__auto_generated_rro_
       - PixelSetupWizardOverlay
       - Scone
@@ -88,8 +90,16 @@ filters:
       - android:string-array/config_defaultFirstUserRestrictions
       - android:string-array/config_disabledUntilUsedPreinstalledImes
       - android:string-array/config_disabledUntilUsedPreinstalledImes
+      # com.google.android.gms/.auth.api.credentials.credman.service.PasswordAndPasskeyService
+      - android:string-array/config_enabledCredentialProviderService
       - android:string-array/config_ephemeralResolverPackage
+      # /product/etc/security/fsverity/gms_fsverity_cert.der
+      - android:string-array/config_fontManagerServiceCerts
       - android:string-array/config_forceQueryablePackages
+      # B2C0A80E485934BFB08F902CA27505813DF3159E4E6DD4A4DF078D66CB1C2003
+      - android:string-array/config_healthConnectMigrationKnownSigners
+      # 56BE132B780656FE2444CD34326EB5D7AAC91D2096ABF0FE673A99270622EC87
+      - android:string-array/config_healthConnectRestoreKnownSigners
       - android:string-array/config_integrityRuleProviderPackages
       - android:string-array/config_keep_warming_services
       - android:string-array/config_locationExtraPackageNames
@@ -98,6 +108,8 @@ filters:
       - android:string-array/config_nonBlockableNotificationPackages
       - android:string-array/config_nonBlockableNotificationPackages
       - android:string-array/config_packagesExemptFromSuspension
+      # com.google.android.gms/.auth.api.credentials.credman.service.PasswordAndPasskeyService
+      - android:string-array/config_primaryCredentialProviderService
       - android:string-array/config_priorityOnlyDndExemptPackages
       - android:string-array/config_priorityOnlyDndExemptPackages
       - android:string-array/vendor_cross_profile_apps
@@ -123,9 +135,13 @@ filters:
       - android:string/config_defaultCaptivePortalLoginPackageName
       - android:string/config_defaultContentCaptureService
       - android:string/config_defaultContentSuggestionsService
+      # com.google.android.gms/.auth.api.credentials.credman.service.RemoteService
+      - android:string/config_defaultCredentialManagerHybridService
       - android:string/config_defaultDialer
       - android:string/config_defaultDndAccessPackages
       - android:string/config_defaultDockManagerPackageName
+      # com.google.android.as/com.google.android.apps.miphone.aiai.app.AutofillFieldClassificationService
+      - android:string/config_defaultFieldClassificationService
       - android:string/config_defaultGallery
       - android:string/config_defaultListenerAccessPackages
       - android:string/config_defaultModuleMetadataProvider
@@ -156,6 +172,8 @@ filters:
       - android:string/config_deviceProvisioningPackage
       - android:string/config_dreamsDefaultComponent
       - android:string/config_emergency_dialer_package
+      # com.google.android.apps.healthdata
+      - android:string/config_healthConnectMigratorPackageName
       - android:string/config_helpPackageNameValue
       - android:string/config_incidentReportApproverPackage
       - android:string/config_loggable_dream_prefix
@@ -176,8 +194,12 @@ filters:
       - android:string/config_systemAudioIntelligence
       - android:string/config_systemAutomotiveProjection
       - android:string/config_systemBluetoothStack
+      # com.google.android.gms
+      - android:string/config_systemCallStreaming
       - android:string/config_systemCompanionDeviceProvider
       - android:string/config_systemContacts
+      # com.google.android.devicelockcontroller
+      - android:string/config_systemFinancedDeviceController
       - android:string/config_systemGallery
       - android:string/config_systemGameService
       - android:string/config_systemImageEditor
@@ -213,11 +235,15 @@ filters:
       - com.android.settings:drawable/$aware_assist_static__0
       - com.android.settings:drawable/$aware_assist_static__1
       - com.android.settings:drawable/aware_assist_static
+      - com.android.settings:integer-array/datausage_hiding_carrier_service_carrier_id
       - com.android.settings:integer-array/face_enroll_primary_buckets
       - com.android.settings:string-array/config_preinstalled_dream_components
       - com.android.settings:string-array/config_settings_slices_accessibility_components
+      - com.android.settings:string-array/datausage_hiding_carrier_service_package_names
       - com.android.settings:string-array/slice_allowlist_package_names
       - com.android.settings:string/security_settings_fingerprint_v2_enroll_introduction_message_learn_more
+      # "Google Assistant"
+      - com.android.systemui.accessibility.accessibilitymenu:string/assistant_utterance
       - com.android.systemui:bool/config_touch_context_enabled
       - com.android.systemui:bool/config_wlc_support_enabled
       - com.android.systemui:integer/config_keyguardRefreshRate
