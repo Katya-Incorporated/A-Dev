@@ -3,7 +3,7 @@ platform:
     - device/google/redbull-sepolicy
 
 includes:
-  - pixel.yml
+  - pixel-qcom.yml
 
 filters:
   files:
