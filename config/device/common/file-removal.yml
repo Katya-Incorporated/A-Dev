@@ -10,6 +10,8 @@ filters:
       - product/etc/fonts_customization.xml
       # GMS Game service
       - product/etc/sysconfig/game_service.xml
+      # com.google.android.apps.wearables.maestro.companion
+      - product/etc/default-permissions/default-permissions_maestro.xml
       # Google stuff we dont want/need/cant use
       - product/etc/permissions/com.google.android.apps.diagnosticstool.xml
       - product/etc/permissions/com.google.android.apps.dreamliner.xml
@@ -26,13 +28,16 @@ filters:
       - product/etc/sysconfig/dreamliner.xml
       - product/etc/sysconfig/game_overlay.xml
       - product/etc/sysconfig/google-hiddenapi-package-whitelist.xml
+      - product/etc/sysconfig/google-initial-package-stopped-states.xml
       - product/etc/sysconfig/google-staged-installer-whitelist.xml
+      - product/etc/sysconfig/google-system-apps-update-ownership.xml
       - product/etc/sysconfig/google.xml
       - product/etc/sysconfig/google_build.xml
       - product/etc/sysconfig/google_fi.xml
       - product/etc/sysconfig/kids_home_experience.xml
       - product/etc/sysconfig/nexus.xml
       - product/etc/sysconfig/nga.xml
+      - product/etc/sysconfig/pixel_2017-initial-package-stopped-states.xml
       - product/etc/sysconfig/pixel_2019_exclusive.xml
       - product/etc/sysconfig/pixel_docking_experience_2022.xml
       - product/etc/sysconfig/pixel_experience_2017.xml
@@ -48,6 +53,8 @@ filters:
       - product/etc/sysconfig/pixel_tablet_experience_2023.xml
       - product/etc/sysconfig/pixel_experience_2023_midyear.xml
       - product/etc/sysconfig/preinstalled-packages-product-pixel-2017-and-newer.xml
+      - product/etc/sysconfig/preinstalled-packages-product-pixel-2018-and-newer.xml
+      - product/etc/sysconfig/preinstalled-packages-product-pixel-2019-and-newer.xml
       - product/etc/sysconfig/quick_tap.xml
       - product/framework/com.google.android.dialer.support.jar
       - system/etc/permissions/privapp-permissions-google.xml
@@ -188,6 +195,8 @@ filters:
       # com.google.android.accessibility.soundamplifier
       - product/app/SoundAmplifierPrebuilt/
       - product/app/SoundPickerPrebuilt/
+      # com.google.android.accessibility.switchaccess
+      - product/app/SwitchAccessPrebuilt/
       - product/app/TrichromeLibrary/
       - product/app/TrichromeLibrary-Stub/
       # Google Fi app, com.google.android.apps.tycho
@@ -206,6 +215,7 @@ filters:
       - product/app/arcore/
       - product/app/talkback/
       - product/priv-app/AdaptiveVPNPrebuilt/
+      - product/priv-app/AICorePrebuilt/
       # "Pixel Ambient Services", com.google.intelligence.sense, found on 4th and 5th gen
       - product/priv-app/AmbientSensePrebuilt/
       # "Cross-Device Services", com.google.ambient.streaming, used for integration with ChromeOS
@@ -233,6 +243,7 @@ filters:
       - product/priv-app/DMService/
       # "Private Compute Services", https://play.google.com/store/apps/details?id=com.google.android.as.oss
       - product/priv-app/DeviceIntelligenceNetworkPrebuilt/
+      - product/priv-app/DeviceIntelligenceNetworkPrebuiltPreview/
       # DevicePersonalizationPrebuiltPixel{4,2021,2022}
       - product/priv-app/DevicePersonalizationPrebuiltPixel
       # com.android.sdm.plugins.diagmon, but included on Tensor Pixels too
@@ -269,6 +280,7 @@ filters:
       # Play Store app (com.android.vending)
       - product/priv-app/Phonesky/
       - product/priv-app/PixelLiveWallpaperPrebuilt/
+      - product/priv-app/PixelSupportPrebuilt/
       # "Messages by Google", com.google.android.apps.messaging
       - product/priv-app/PrebuiltBugle/
       - product/priv-app/PrebuiltGmsCore/
