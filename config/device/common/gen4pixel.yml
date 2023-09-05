@@ -3,7 +3,7 @@ platform:
     - device/google/coral-sepolicy
 
 includes:
-  - pixel.yml
+  - pixel-qcom.yml
 
 device:
   build_id: TP1A.221005.002.B2

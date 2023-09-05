@@ -3,7 +3,7 @@ platform:
     - device/google/sunfish-sepolicy
 
 includes:
-  - pixel.yml
+  - pixel-qcom.yml
 
 filters:
   dep_files:
