@@ -23,7 +23,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.ril.ecc.xml=1 \
     ro.vendor.dolby.dax.version=DAX3_G_3.7.3.0_r1
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/panther/panther:13/TQ3A.230805.001/10316531:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/panther/panther:13/TQ3A.230901.001/10750268:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \

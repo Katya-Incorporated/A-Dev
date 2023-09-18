@@ -2,7 +2,7 @@ Android.bp: c9ffd08891ecb53ae8e9094354e795dd69f8739b43792c4ad4b3bc7c768affcf
 Android.mk: d81ba865d988c58adfc72c3ba3f62113a95438fd81dba91bfcdd82e111d4abcf
 AndroidProducts.mk: 959a37c84ca5d813590059bd64ac6203b8ec8d06c576eee2aadf7a4f16049474
 README.md: 18956bd57461b0635927439681702c11ad0b3030fc5798b20636db0000ebdf49
-cmds-for-envsetup.sh: f073f3bde518cca39c41f638011de428c50863a4b806a8d0df4e805fd3367cc6
+cmds-for-envsetup.sh: eb2a8425bd7ef371bc9c97a82e5c70df58e8118ba4c8204b9636e66e3d8a76d6
 firmware: dir
 firmware/abl.img: b4dd5d57a763df3688aabd7b304a290d1422fd0f21d90da79782998547846038
 firmware/android-info.txt: d6f6767a9fbe9c79a2c955224861018bd76b94a1d99b34efa3965c4bb92f5411
@@ -74,7 +74,7 @@ proprietary: dir
 proprietary-files.txt: e3731f57110077de94c6092bb7b853a653fd8c2f0aaba7801d17f472a690ad2a
 proprietary/Android.bp: f7b4137685d410371646c25def400dda5b3eb11c7479d2c6d077d587d3dfbfb0
 proprietary/BoardConfigVendor.mk: 785a58016d4e5e646e0170a6fc05ca81b1ca66482814dd7a89fe190baf916df8
-proprietary/device-vendor.mk: 891f35eaaa46173cf632ed9d01cbdbcfbf8c8396a516e3a32a59b2aad16dd7b9
+proprietary/device-vendor.mk: de54eb7eb8fd9a26b892ba7626dc84b4b1c1338acbdc8b65935abe696ad74a3e
 proprietary/product: dir
 proprietary/product/etc: dir
 proprietary/product/etc/appcompat: dir
@@ -116,12 +116,12 @@ proprietary/system_ext/priv-app/EuiccSupportPixel/esim-full-ofl-v1.img: aa6fd573
 proprietary/system_ext/priv-app/EuiccSupportPixel/esim-full-v0.img: 0bc872d177e2c8db5324bde9a4ca5bae2c2796ccec2812a52cd3143a0e5df569
 proprietary/system_ext/priv-app/EuiccSupportPixel/esim-full-v1.img: 0fef06fd39185d6493fbccf60c88118964c89891441afefabc610d67ebb5687c
 proprietary/system_ext/priv-app/PixelNfc: dir
-proprietary/system_ext/priv-app/PixelNfc/PixelNfc.apk: 28eb3a7544c5f15cd5a78e30400780e999428ded14d14f81c9ef89f663a3da6d
+proprietary/system_ext/priv-app/PixelNfc/PixelNfc.apk: 9aebd126ef008340ff29892c2e85b115ffb6efbd071c0cc1f8f7027129e06cd9
 proprietary/system_ext/priv-app/UwbVendorService: dir
-proprietary/system_ext/priv-app/UwbVendorService/UwbVendorService.apk: 6f2e5c514ec2c73d8e0d02bf8e407652030cbde7894d7433927aa6783387aa0e
+proprietary/system_ext/priv-app/UwbVendorService/UwbVendorService.apk: a3e7762cf092f56dec380530770059bba5868a3769ace54291e3bee6add38f85
 proprietary/vendor: dir
 proprietary/vendor/apex: dir
-proprietary/vendor/apex/com.google.pixel.camera.hal.apex: eadbd8fe6d934cd769b4861de0865cbddd07beb4c548a00353e8963b38344f3f
+proprietary/vendor/apex/com.google.pixel.camera.hal.apex: 3dd54697d7e040de2751f930534e558d0e9d24c1042b999c560697713f2137c0
 proprietary/vendor/bin: dir
 proprietary/vendor/bin/aocd: d6baaf5399aae1472cf45bd9f343f44f92a3e216be0f0729b292eee68a16d7b4
 proprietary/vendor/bin/chre: ffc9a233d701ad1deab3c0b3107ffa3394d28341b9eb68015583c6ae0deff31f
@@ -506,6 +506,6 @@ proprietary/vendor/lib64/vendor.google.wireless_charger@1.1.so: 2722c39741be3c23
 proprietary/vendor/lib64/vendor.google.wireless_charger@1.2.so: 418065f2915e652b79a2476f31e096f9d5ea7b47f6f53df452ee8d7b8ea64fc2
 proprietary/vendor/lib64/vendor.google.wireless_charger@1.3.so: 4854c4642d28144d6b6cd143b539d89cc1cff4bb21445498f80155faab8fad4e
 sepolicy: dir
-tangorpro.mk: fac1c540d6e25a1c205defb0e97e7f901a0a8ebddd94ba5eb4adef5e73a44abe
+tangorpro.mk: f7920df6e96a7fa6997c1abe80fab846b80507e6169ab17b67cc6f55b34973c3
 vintf: dir
 vintf/adevtool_manifest_vendor.xml: 7524109f03b93a23a8c10b433cf85c6bf7b1165363c0f0e051e1598f196459bf

@@ -22,7 +22,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.gfx.angle.supported=true \
     ro.vendor.uwb.calibration.calibrationpaths=/vendor/etc/uwb/calib_paths
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/tangorpro/tangorpro:13/TQ3A.230805.001.B1/10317384:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/tangorpro/tangorpro:13/TQ3A.230901.001.B1/10750577:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \
