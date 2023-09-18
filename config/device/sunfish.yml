@@ -1,5 +1,7 @@
 device:
   name: sunfish
+  build_id: TQ3A.230805.001
+  platform_security_patch_level_override: 2023-09-01
 
 platform:
   product_makefile: device/google/sunfish/aosp_sunfish.mk
