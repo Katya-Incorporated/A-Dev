@@ -26,7 +26,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     media.mediadrmservice.enable=true \
     ro.gfx.angle.supported=true
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/raven/raven:13/TQ3A.230805.001/10316531:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/raven/raven:13/TQ3A.230901.001/10750268:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \

@@ -2,7 +2,7 @@ Android.bp: c9ffd08891ecb53ae8e9094354e795dd69f8739b43792c4ad4b3bc7c768affcf
 Android.mk: 42ff0b2e9160ca0ecf9b0da87b5a06057a81b260d6655f8d3a48795943e6f977
 AndroidProducts.mk: 8ac03df01b4526feca7f6554918285e974ffe4c1fe4bb05f8ba50fb24896486c
 README.md: 0f5e54eb8966916d3ac212672e7595401aaa74fb929cf8ad03b1d5bcc3345242
-cmds-for-envsetup.sh: fdbecbcd958cc89cbdbe68f14159891c83b66a39364cdcfee8cd116e8cd0c42d
+cmds-for-envsetup.sh: 03c9f8f8f766c6ef414070d49893689825bb59fe1364536cebb818a5ad386754
 firmware: dir
 firmware/abl.img: 89d21cffd2f6884cc5a72125968e5605faaf878876dfc8db01c937a3a3cbac3e
 firmware/android-info.txt: 8e2a98ceb6067ed6fd42f83b7174b36a4f8effd430af488f12a0c19760e18877
@@ -2675,5 +2675,5 @@ proprietary/vendor/rfs/msm/mpss/readonly/vendor/mbn/mcfg_sw/generic/common/WildC
 proprietary/vendor/rfs/msm/mpss/readonly/vendor/mbn/mcfg_sw/mbn_sw.dig: 72246d2ffa2bc22248e12da02431f85192bff7ee5c516725ce50ed9f877e8bc5
 proprietary/vendor/rfs/msm/mpss/readonly/vendor/mbn/mcfg_sw/mbn_sw.txt: a1267b5fd8717bcc89b36baf697b36e796f1198472817d3189f9429013105415
 sepolicy: dir
-sunfish.mk: ef9e5c8ce68516ccdd70a2ba35c95f219a35a25063f90b36bda0478b71610e9c
+sunfish.mk: 06f0a71b511503d28cd2aefcaa64b85c2bdd43689dcf7ff8dd22901262efbbb4
 vintf: dir

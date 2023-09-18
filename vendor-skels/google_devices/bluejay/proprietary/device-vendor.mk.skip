@@ -22,7 +22,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.ril.support_nr_ds=0 \
     persist.vendor.ril.ecc.xml=1
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/bluejay/bluejay:13/TQ3A.230805.001/10316531:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/bluejay/bluejay:13/TQ3A.230901.001/10750268:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \
