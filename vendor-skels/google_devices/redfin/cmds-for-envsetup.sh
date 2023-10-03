@@ -1,2 +1,2 @@
 export BUILD_ID_redfin="TQ3A.230901.001"
-unset PLATFORM_SECURITY_PATCH_redfin
+export PLATFORM_SECURITY_PATCH_redfin="2023-09-01"
