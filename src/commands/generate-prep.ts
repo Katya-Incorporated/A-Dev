@@ -12,6 +12,10 @@ import { loadBuildIndex } from '../images/build-index'
 import { withSpinner } from '../util/cli'
 import { withTempDir } from '../util/fs'
 
+export async function generatePrep(config: DeviceConfig, stockSrc: string, buildId: string) {
+  await doDevice(config, stockSrc, buildId, false, false)
+}
+
 const doDevice = (
   config: DeviceConfig,
   stockSrc: string,
