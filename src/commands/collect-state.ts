@@ -46,7 +46,7 @@ export default class CollectState extends Command {
         let state = await collectSystemState(config.device.name, outRoot, aapt2Path)
 
         // Write
-        let devicePath = isDir ? `${outPath}/${config}.json` : outPath
+        let devicePath = isDir ? `${outPath}/${config.device.name}.json` : outPath
         await fs.writeFile(devicePath, serializeSystemState(state))
       },
       c => c.device.name,
