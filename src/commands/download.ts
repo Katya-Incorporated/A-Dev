@@ -1,7 +1,9 @@
 import { Command, flags } from '@oclif/command'
+import assert from 'assert'
 
 import { DEVICE_CONFIG_FLAGS, loadDeviceConfigs, resolveBuildId } from '../config/device'
 import { IMAGE_DOWNLOAD_DIR } from '../config/paths'
+import { prepareFactoryImages } from '../frontend/source'
 import { ImageType, loadBuildIndex } from '../images/build-index'
 import { DeviceImage } from '../images/device-image'
 import { downloadDeviceImages } from '../images/download'
@@ -22,6 +24,11 @@ export default class Download extends Command {
       description: 'build ID(s) of images to download, defaults to the current build ID',
       required: false,
       multiple: true,
+    }),
+    unpack: flags.boolean({
+      char: 'u',
+      description: 'unpack downloaded factory images',
+      default: false,
     }),
     ...DEVICE_CONFIG_FLAGS,
   }
@@ -56,6 +63,15 @@ export default class Download extends Command {
 
     for (let image of images) {
       this.log(`${image.toString()}: '${image.getPath()}'`)
+    }
+
+    if (flags.unpack) {
+      assert(types.includes(ImageType.Factory), 'missing "-t factory"')
+      let imageMap = prepareFactoryImages(await index, await deviceConfigs, flags.buildId)
+
+      for (let [deviceBuildId, deviceImages] of await imageMap) {
+        this.log(`${deviceBuildId}: '${deviceImages.unpackedFactoryImageDir}'`)
+      }
     }
   }
 }
