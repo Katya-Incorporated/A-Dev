@@ -1,10 +1,17 @@
 import { Command, flags } from '@oclif/command'
+import assert from 'assert'
+import { spawnSync } from 'child_process'
 import { promises as fs } from 'fs'
+import path from 'path'
 
-import { DEVICE_CONFIG_FLAGS, loadDeviceConfigs } from '../config/device'
-import { COLLECTED_SYSTEM_STATE_DIR } from '../config/paths'
+import { DEVICE_CONFIG_FLAGS, DeviceBuildId, getDeviceBuildId, loadDeviceConfigs } from '../config/device'
+import { ADEVTOOL_DIR, COLLECTED_SYSTEM_STATE_DIR, OS_CHECKOUT_DIR } from '../config/paths'
 import { collectSystemState, serializeSystemState } from '../config/system-state'
 import { forEachDevice } from '../frontend/devices'
+import { DeviceImages, prepareFactoryImages } from '../frontend/source'
+import { loadBuildIndex } from '../images/build-index'
+import { spawnAsync } from '../util/process'
+import { generatePrep } from './generate-prep'
 
 export default class CollectState extends Command {
   static description = 'collect built system state for use with other commands'
@@ -28,21 +35,46 @@ export default class CollectState extends Command {
       required: true,
       default: COLLECTED_SYSTEM_STATE_DIR,
     }),
+    rebuild: flags.boolean({
+      description: 'generate prep vendor module (same as generate-prep) and make an OS build before collecting state',
+      default: false,
+    }),
+    allowOutReuse: flags.boolean({
+      description: 'if --rebuild is specified, do not remove out/ dir before making an OS build',
+      default: false,
+    }),
     ...DEVICE_CONFIG_FLAGS,
   }
 
   async run() {
     let {
-      flags: { aapt2: aapt2Path, devices, outRoot, parallel, outPath },
+      flags: { aapt2: aapt2Path, devices, outRoot, parallel, outPath, rebuild, allowOutReuse },
     } = this.parse(CollectState)
 
     let configs = await loadDeviceConfigs(devices)
+
+    let deviceImagesMap: Map<DeviceBuildId, DeviceImages>
+    if (rebuild) {
+      deviceImagesMap = await prepareFactoryImages(await loadBuildIndex(), configs)
+    }
 
     let isDir = (await fs.stat(outPath)).isDirectory()
     await forEachDevice(
       configs,
       parallel,
       async config => {
+        if (rebuild) {
+          let deviceImages = deviceImagesMap.get(getDeviceBuildId(config))
+          assert(deviceImages !== undefined)
+          await generatePrep(config, deviceImages.unpackedFactoryImageDir, config.device.build_id)
+          if (!allowOutReuse) {
+            await spawnAsync('rm', ['-rf', path.join(OS_CHECKOUT_DIR, 'out')])
+          }
+          let res = spawnSync(path.join(ADEVTOOL_DIR, 'scripts/make-prep-build.sh'),
+            [config.device.name], { stdio: 'inherit' })
+          console.assert(res.status === 0, `make-prep-build.sh failed, exit code ${res.status}`)
+        }
+
         let state = await collectSystemState(config.device.name, outRoot, aapt2Path)
 
         // Write
