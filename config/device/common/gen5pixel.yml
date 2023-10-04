@@ -5,9 +5,6 @@ platform:
 includes:
   - pixel-qcom.yml
 
-device:
-  platform_security_patch_level_override: 2023-09-01
-
 filters:
   files:
     match:
