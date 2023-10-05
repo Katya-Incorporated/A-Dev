@@ -35,6 +35,7 @@ BOARD_VENDOR_SEPOLICY_DIRS += \
     hardware/google/pixel-sepolicy/connectivity_thermal_power_manager \
     vendor/google_devices/redfin/sepolicy
 
+# Missing vendor SELinux context: /vendor/bin/hw/vendor\.google\.wireless_charger-default u:object_r:hal_wireless_charger_exec:s0
 # Missing vendor SELinux context: /vendor/bin/hw/vendor\.google\.exo_camera_injection@1\.1-service u:object_r:hal_exo_camera_injection_exec:s0
 # Missing vendor SELinux context: vendor.google.exo_camera_injection::IExoCameraInjection u:object_r:hal_exo_camera_injection_hwservice:s0
 # Missing vendor SELinux context: user=_app seinfo=platform name=com.google.pixel.exo domain=exo_app type=app_data_file levelFrom=all
