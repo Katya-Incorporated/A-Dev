@@ -9,6 +9,7 @@ filters:
     match:
       # Debug
       - ro.adb.secure
+      - ro.camerax.extensions.enabled
     prefix:
       # APEX
       - ro.apex.updatable
