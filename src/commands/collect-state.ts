@@ -72,7 +72,7 @@ export default class CollectState extends Command {
           }
           let res = spawnSync(path.join(ADEVTOOL_DIR, 'scripts/make-prep-build.sh'),
             [config.device.name], { stdio: 'inherit' })
-          console.assert(res.status === 0, `make-prep-build.sh failed, exit code ${res.status}`)
+          assert(res.status === 0, `make-prep-build.sh failed, exit code ${res.status}`)
         }
 
         let state = await collectSystemState(config.device.name, outRoot, aapt2Path)
