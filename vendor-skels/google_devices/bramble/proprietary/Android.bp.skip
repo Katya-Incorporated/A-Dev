@@ -28,6 +28,26 @@ android_app_import {
     product_specific: true,
 }
 
+cc_prebuilt_binary {
+    name: "qvirtmgr",
+    owner: "google_devices",
+    srcs: [ "product/bin/qvirtmgr" ],
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    product_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "vendor.qti.qvirt-service",
+    owner: "google_devices",
+    srcs: [ "product/bin/vendor.qti.qvirt-service" ],
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    product_specific: true,
+}
+
 dex_import {
     name: "qti-telephony-hidl-wrapper-prd",
     owner: "google_devices",
@@ -133,6 +153,18 @@ cc_prebuilt_library_shared {
     product_specific: true,
 }
 
+cc_prebuilt_library_shared {
+    name: "vendor.qti.qvirt-V1-ndk__product",
+    owner: "google_devices",
+    stem: "vendor.qti.qvirt-V1-ndk",
+    target: { android_arm64: { srcs: [ "product/lib64/vendor.qti.qvirt-V1-ndk.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    product_specific: true,
+}
+
 android_app_import {
     name: "EuiccGoogle",
     owner: "google_devices",
@@ -171,6 +203,15 @@ android_app_import {
 }
 
 android_app_import {
+    name: "DeviceStatisticsService",
+    owner: "google_devices",
+    apk: "system_ext/app/DeviceStatisticsService/DeviceStatisticsService.apk",
+    certificate: "platform",
+    dex_preopt: { enabled: false },
+    system_ext_specific: true,
+}
+
+android_app_import {
     name: "QtiTelephonyService",
     owner: "google_devices",
     apk: "system_ext/app/QtiTelephonyService/QtiTelephonyService.apk",
@@ -185,6 +226,26 @@ android_app_import {
     apk: "system_ext/app/uceShimService/uceShimService.apk",
     certificate: "platform",
     dex_preopt: { enabled: false },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "qcrosvm",
+    owner: "google_devices",
+    srcs: [ "system_ext/bin/qcrosvm" ],
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "qsguard",
+    owner: "google_devices",
+    srcs: [ "system_ext/bin/qsguard" ],
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
     system_ext_specific: true,
 }
 
@@ -399,6 +460,20 @@ dex_import {
 }
 
 dex_import {
+    name: "vendor.qti.data.factory-V2.6-java",
+    owner: "google_devices",
+    jars: [ "system_ext/framework/vendor.qti.data.factory-V2.6-java.jar" ],
+    system_ext_specific: true,
+}
+
+dex_import {
+    name: "vendor.qti.data.factory-V2.7-java",
+    owner: "google_devices",
+    jars: [ "system_ext/framework/vendor.qti.data.factory-V2.7-java.jar" ],
+    system_ext_specific: true,
+}
+
+dex_import {
     name: "vendor.qti.hardware.data.cne.internal.api-V1.0-java",
     owner: "google_devices",
     jars: [ "system_ext/framework/vendor.qti.hardware.data.cne.internal.api-V1.0-java.jar" ],
@@ -423,6 +498,20 @@ dex_import {
     name: "vendor.qti.hardware.data.cne.internal.server-V1.1-java",
     owner: "google_devices",
     jars: [ "system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.1-java.jar" ],
+    system_ext_specific: true,
+}
+
+dex_import {
+    name: "vendor.qti.hardware.data.cne.internal.server-V1.2-java",
+    owner: "google_devices",
+    jars: [ "system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.2-java.jar" ],
+    system_ext_specific: true,
+}
+
+dex_import {
+    name: "vendor.qti.hardware.data.cne.internal.server-V1.3-java",
+    owner: "google_devices",
+    jars: [ "system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.3-java.jar" ],
     system_ext_specific: true,
 }
 
@@ -511,6 +600,13 @@ dex_import {
 }
 
 dex_import {
+    name: "vendor.qti.ims.datachannelservice-V1-java",
+    owner: "google_devices",
+    jars: [ "system_ext/framework/vendor.qti.ims.datachannelservice-V1-java.jar" ],
+    system_ext_specific: true,
+}
+
+dex_import {
     name: "vendor.qti.ims.factory-V1.0-java",
     owner: "google_devices",
     jars: [ "system_ext/framework/vendor.qti.ims.factory-V1.0-java.jar" ],
@@ -539,6 +635,13 @@ dex_import {
 }
 
 dex_import {
+    name: "vendor.qti.ims.factory-V2.2-java",
+    owner: "google_devices",
+    jars: [ "system_ext/framework/vendor.qti.ims.factory-V2.2-java.jar" ],
+    system_ext_specific: true,
+}
+
+dex_import {
     name: "vendor.qti.ims.rcsconfig-V1.0-java",
     owner: "google_devices",
     jars: [ "system_ext/framework/vendor.qti.ims.rcsconfig-V1.0-java.jar" ],
@@ -560,6 +663,13 @@ dex_import {
 }
 
 dex_import {
+    name: "vendor.qti.ims.rcssip-V1.2-java",
+    owner: "google_devices",
+    jars: [ "system_ext/framework/vendor.qti.ims.rcssip-V1.2-java.jar" ],
+    system_ext_specific: true,
+}
+
+dex_import {
     name: "vendor.qti.ims.rcsuce-V1.0-java",
     owner: "google_devices",
     jars: [ "system_ext/framework/vendor.qti.ims.rcsuce-V1.0-java.jar" ],
@@ -570,6 +680,13 @@ dex_import {
     name: "vendor.qti.ims.rcsuce-V1.1-java",
     owner: "google_devices",
     jars: [ "system_ext/framework/vendor.qti.ims.rcsuce-V1.1-java.jar" ],
+    system_ext_specific: true,
+}
+
+dex_import {
+    name: "vendor.qti.ims.rcsuce-V1.2-java",
+    owner: "google_devices",
+    jars: [ "system_ext/framework/vendor.qti.ims.rcsuce-V1.2-java.jar" ],
     system_ext_specific: true,
 }
 
@@ -738,21 +855,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "com.qualcomm.qti.wifidisplayhal@1.0__system_ext",
-    owner: "google_devices",
-    stem: "com.qualcomm.qti.wifidisplayhal@1.0",
-    target: {
-        android_arm: { srcs: [ "system_ext/lib/com.qualcomm.qti.wifidisplayhal@1.0.so" ] },
-        android_arm64: { srcs: [ "system_ext/lib64/com.qualcomm.qti.wifidisplayhal@1.0.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "com.quicinc.cne.api@1.0__system_ext",
     owner: "google_devices",
     stem: "com.quicinc.cne.api@1.0",
@@ -879,54 +981,6 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: { srcs: [ "system_ext/lib/com.quicinc.cne.server@2.2.so" ] },
         android_arm64: { srcs: [ "system_ext/lib64/com.quicinc.cne.server@2.2.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.qccsyshal@1.0-impl__system_ext",
-    owner: "google_devices",
-    stem: "vendor.qti.hardware.qccsyshal@1.0-impl",
-    relative_install_path: "hw",
-    target: {
-        android_arm: { srcs: [ "system_ext/lib/hw/vendor.qti.hardware.qccsyshal@1.0-impl.so" ] },
-        android_arm64: { srcs: [ "system_ext/lib64/hw/vendor.qti.hardware.qccsyshal@1.0-impl.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.qccsyshal@1.1-impl__system_ext",
-    owner: "google_devices",
-    stem: "vendor.qti.hardware.qccsyshal@1.1-impl",
-    relative_install_path: "hw",
-    target: {
-        android_arm: { srcs: [ "system_ext/lib/hw/vendor.qti.hardware.qccsyshal@1.1-impl.so" ] },
-        android_arm64: { srcs: [ "system_ext/lib64/hw/vendor.qti.hardware.qccsyshal@1.1-impl.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.sigma_miracast@1.0-impl__system_ext",
-    owner: "google_devices",
-    stem: "vendor.qti.hardware.sigma_miracast@1.0-impl",
-    relative_install_path: "hw",
-    target: {
-        android_arm: { srcs: [ "system_ext/lib/hw/vendor.qti.hardware.sigma_miracast@1.0-impl.so" ] },
-        android_arm64: { srcs: [ "system_ext/lib64/hw/vendor.qti.hardware.sigma_miracast@1.0-impl.so" ] }
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -1581,6 +1635,36 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libqccdme__system_ext",
+    owner: "google_devices",
+    stem: "libqccdme",
+    target: {
+        android_arm: { srcs: [ "system_ext/lib/libqccdme.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/libqccdme.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqccfileservice__system_ext",
+    owner: "google_devices",
+    stem: "libqccfileservice",
+    target: {
+        android_arm: { srcs: [ "system_ext/lib/libqccfileservice.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/libqccfileservice.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libqmi_cci_system__system_ext",
     owner: "google_devices",
     stem: "libqmi_cci_system",
@@ -1731,21 +1815,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libsmomo.qti__system_ext",
-    owner: "google_devices",
-    stem: "libsmomo.qti",
-    target: {
-        android_arm: { srcs: [ "system_ext/lib/libsmomo.qti.so" ] },
-        android_arm64: { srcs: [ "system_ext/lib64/libsmomo.qti.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libsmomoconfig.qti__system_ext",
     owner: "google_devices",
     stem: "libsmomoconfig.qti",
@@ -1827,51 +1896,6 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: { srcs: [ "system_ext/lib/libvr_object_engine.so" ] },
         android_arm64: { srcs: [ "system_ext/lib64/libvr_object_engine.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libvr_sam_wrapper__system_ext",
-    owner: "google_devices",
-    stem: "libvr_sam_wrapper",
-    target: {
-        android_arm: { srcs: [ "system_ext/lib/libvr_sam_wrapper.so" ] },
-        android_arm64: { srcs: [ "system_ext/lib64/libvr_sam_wrapper.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libvraudio_client.qti__system_ext",
-    owner: "google_devices",
-    stem: "libvraudio_client.qti",
-    target: {
-        android_arm: { srcs: [ "system_ext/lib/libvraudio_client.qti.so" ] },
-        android_arm64: { srcs: [ "system_ext/lib64/libvraudio_client.qti.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libvraudio__system_ext",
-    owner: "google_devices",
-    stem: "libvraudio",
-    target: {
-        android_arm: { srcs: [ "system_ext/lib/libvraudio.so" ] },
-        android_arm64: { srcs: [ "system_ext/lib64/libvraudio.so" ] }
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -2331,21 +2355,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.google.wifi_ext@1.0__system_ext",
-    owner: "google_devices",
-    stem: "vendor.google.wifi_ext@1.0",
-    target: {
-        android_arm: { srcs: [ "system_ext/lib/vendor.google.wifi_ext@1.0.so" ] },
-        android_arm64: { srcs: [ "system_ext/lib64/vendor.google.wifi_ext@1.0.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.data.factory@1.0__system_ext",
     owner: "google_devices",
     stem: "vendor.qti.data.factory@1.0",
@@ -2442,6 +2451,36 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: { srcs: [ "system_ext/lib/vendor.qti.data.factory@2.5.so" ] },
         android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.data.factory@2.5.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.data.factory@2.6__system_ext",
+    owner: "google_devices",
+    stem: "vendor.qti.data.factory@2.6",
+    target: {
+        android_arm: { srcs: [ "system_ext/lib/vendor.qti.data.factory@2.6.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.data.factory@2.6.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.data.factory@2.7__system_ext",
+    owner: "google_devices",
+    stem: "vendor.qti.data.factory@2.7",
+    target: {
+        android_arm: { srcs: [ "system_ext/lib/vendor.qti.data.factory@2.7.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.data.factory@2.7.so" ] }
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -2586,6 +2625,21 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.data.cne.internal.server@1.3__system_ext",
+    owner: "google_devices",
+    stem: "vendor.qti.hardware.data.cne.internal.server@1.3",
+    target: {
+        android_arm: { srcs: [ "system_ext/lib/vendor.qti.hardware.data.cne.internal.server@1.3.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.3.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.data.connection@1.0__system_ext",
     owner: "google_devices",
     stem: "vendor.qti.hardware.data.connection@1.0",
@@ -2622,6 +2676,21 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: { srcs: [ "system_ext/lib/vendor.qti.hardware.data.flow@1.0.so" ] },
         android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.hardware.data.flow@1.0.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.data.flow@1.1__system_ext",
+    owner: "google_devices",
+    stem: "vendor.qti.hardware.data.flow@1.1",
+    target: {
+        android_arm: { srcs: [ "system_ext/lib/vendor.qti.hardware.data.flow@1.1.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.hardware.data.flow@1.1.so" ] }
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -2781,42 +2850,12 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.qccsyshal@1.0-halimpl__system_ext",
-    owner: "google_devices",
-    stem: "vendor.qti.hardware.qccsyshal@1.0-halimpl",
-    target: {
-        android_arm: { srcs: [ "system_ext/lib/vendor.qti.hardware.qccsyshal@1.0-halimpl.so" ] },
-        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.hardware.qccsyshal@1.0-halimpl.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.qccsyshal@1.0__system_ext",
     owner: "google_devices",
     stem: "vendor.qti.hardware.qccsyshal@1.0",
     target: {
         android_arm: { srcs: [ "system_ext/lib/vendor.qti.hardware.qccsyshal@1.0.so" ] },
         android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.hardware.qccsyshal@1.0.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.qccsyshal@1.1-halimpl__system_ext",
-    owner: "google_devices",
-    stem: "vendor.qti.hardware.qccsyshal@1.1-halimpl",
-    target: {
-        android_arm: { srcs: [ "system_ext/lib/vendor.qti.hardware.qccsyshal@1.1-halimpl.so" ] },
-        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.hardware.qccsyshal@1.1-halimpl.so" ] }
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -2841,12 +2880,12 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.qccvndhal@1.0__system_ext",
+    name: "vendor.qti.hardware.qccsyshal@1.2-halimpl__system_ext",
     owner: "google_devices",
-    stem: "vendor.qti.hardware.qccvndhal@1.0",
+    stem: "vendor.qti.hardware.qccsyshal@1.2-halimpl",
     target: {
-        android_arm: { srcs: [ "system_ext/lib/vendor.qti.hardware.qccvndhal@1.0.so" ] },
-        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.hardware.qccvndhal@1.0.so" ] }
+        android_arm: { srcs: [ "system_ext/lib/vendor.qti.hardware.qccsyshal@1.2-halimpl.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so" ] }
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -2856,12 +2895,27 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.qdutils_disp@1.0__system_ext",
+    name: "vendor.qti.hardware.qccsyshal@1.2__system_ext",
     owner: "google_devices",
-    stem: "vendor.qti.hardware.qdutils_disp@1.0",
+    stem: "vendor.qti.hardware.qccsyshal@1.2",
     target: {
-        android_arm: { srcs: [ "system_ext/lib/vendor.qti.hardware.qdutils_disp@1.0.so" ] },
-        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.hardware.qdutils_disp@1.0.so" ] }
+        android_arm: { srcs: [ "system_ext/lib/vendor.qti.hardware.qccsyshal@1.2.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.qccvndhal@1.0__system_ext",
+    owner: "google_devices",
+    stem: "vendor.qti.hardware.qccvndhal@1.0",
+    target: {
+        android_arm: { srcs: [ "system_ext/lib/vendor.qti.hardware.qccvndhal@1.0.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.hardware.qccvndhal@1.0.so" ] }
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -3353,21 +3407,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.sigma_miracast@1.0__system_ext",
-    owner: "google_devices",
-    stem: "vendor.qti.hardware.sigma_miracast@1.0",
-    target: {
-        android_arm: { srcs: [ "system_ext/lib/vendor.qti.hardware.sigma_miracast@1.0.so" ] },
-        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.hardware.sigma_miracast@1.0.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.slmadapter@1.0__system_ext",
     owner: "google_devices",
     stem: "vendor.qti.hardware.slmadapter@1.0",
@@ -3404,21 +3443,6 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: { srcs: [ "system_ext/lib/vendor.qti.hardware.tui_comm@1.0.so" ] },
         android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.hardware.tui_comm@1.0.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.qti.hardware.wifidisplaysession@1.0__system_ext",
-    owner: "google_devices",
-    stem: "vendor.qti.hardware.wifidisplaysession@1.0",
-    target: {
-        android_arm: { srcs: [ "system_ext/lib/vendor.qti.hardware.wifidisplaysession@1.0.so" ] },
-        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so" ] }
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -3563,6 +3587,21 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.ims.factory@2.2__system_ext",
+    owner: "google_devices",
+    stem: "vendor.qti.ims.factory@2.2",
+    target: {
+        android_arm: { srcs: [ "system_ext/lib/vendor.qti.ims.factory@2.2.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.ims.factory@2.2.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.ims.rcsconfig@1.0__system_ext",
     owner: "google_devices",
     stem: "vendor.qti.ims.rcsconfig@1.0",
@@ -3653,6 +3692,21 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.ims.rcssip@1.2__system_ext",
+    owner: "google_devices",
+    stem: "vendor.qti.ims.rcssip@1.2",
+    target: {
+        android_arm: { srcs: [ "system_ext/lib/vendor.qti.ims.rcssip@1.2.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.ims.rcssip@1.2.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.ims.rcsuce@1.0__system_ext",
     owner: "google_devices",
     stem: "vendor.qti.ims.rcsuce@1.0",
@@ -3683,12 +3737,57 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.ims.rcsuce@1.2__system_ext",
+    owner: "google_devices",
+    stem: "vendor.qti.ims.rcsuce@1.2",
+    target: {
+        android_arm: { srcs: [ "system_ext/lib/vendor.qti.ims.rcsuce@1.2.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.ims.rcsuce@1.2.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.ImsRtpService-V1-ndk__system_ext",
+    owner: "google_devices",
+    stem: "vendor.qti.ImsRtpService-V1-ndk",
+    target: {
+        android_arm: { srcs: [ "system_ext/lib/vendor.qti.ImsRtpService-V1-ndk.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.ImsRtpService-V1-ndk.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.imsrtpservice@3.0__system_ext",
     owner: "google_devices",
     stem: "vendor.qti.imsrtpservice@3.0",
     target: {
         android_arm: { srcs: [ "system_ext/lib/vendor.qti.imsrtpservice@3.0.so" ] },
         android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.imsrtpservice@3.0.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.imsrtpservice@3.1__system_ext",
+    owner: "google_devices",
+    stem: "vendor.qti.imsrtpservice@3.1",
+    target: {
+        android_arm: { srcs: [ "system_ext/lib/vendor.qti.imsrtpservice@3.1.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.imsrtpservice@3.1.so" ] }
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -3713,6 +3812,36 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.latency@2.1__system_ext",
+    owner: "google_devices",
+    stem: "vendor.qti.latency@2.1",
+    target: {
+        android_arm: { srcs: [ "system_ext/lib/vendor.qti.latency@2.1.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.latency@2.1.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.latency@2.2__system_ext",
+    owner: "google_devices",
+    stem: "vendor.qti.latency@2.2",
+    target: {
+        android_arm: { srcs: [ "system_ext/lib/vendor.qti.latency@2.2.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.latency@2.2.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.mstatservice@1.0__system_ext",
     owner: "google_devices",
     stem: "vendor.qti.mstatservice@1.0",
@@ -3721,6 +3850,42 @@ cc_prebuilt_library_shared {
         android_arm64: { srcs: [ "system_ext/lib64/vendor.qti.mstatservice@1.0.so" ] }
     },
     compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.qesdhal@1.0__system_ext",
+    owner: "google_devices",
+    stem: "vendor.qti.qesdhal@1.0",
+    target: { android_arm: { srcs: [ "system_ext/lib/vendor.qti.qesdhal@1.0.so" ] } },
+    compile_multilib: "32",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.qesdhal@1.1__system_ext",
+    owner: "google_devices",
+    stem: "vendor.qti.qesdhal@1.1",
+    target: { android_arm: { srcs: [ "system_ext/lib/vendor.qti.qesdhal@1.1.so" ] } },
+    compile_multilib: "32",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.qesdhal@1.2__system_ext",
+    owner: "google_devices",
+    stem: "vendor.qti.qesdhal@1.2",
+    target: { android_arm: { srcs: [ "system_ext/lib/vendor.qti.qesdhal@1.2.so" ] } },
+    compile_multilib: "32",
     check_elf_files: false,
     prefer: true,
     strip: { none: true },
@@ -4022,6 +4187,76 @@ android_app_import {
 }
 
 android_app_import {
+    name: "SystemUIClocks-BigNum",
+    owner: "google_devices",
+    apk: "system_ext/priv-app/SystemUIClocks-BigNum/SystemUIClocks-BigNum.apk",
+    certificate: "platform",
+    privileged: true,
+    dex_preopt: { enabled: false },
+    system_ext_specific: true,
+}
+
+android_app_import {
+    name: "SystemUIClocks-Calligraphy",
+    owner: "google_devices",
+    apk: "system_ext/priv-app/SystemUIClocks-Calligraphy/SystemUIClocks-Calligraphy.apk",
+    certificate: "platform",
+    privileged: true,
+    dex_preopt: { enabled: false },
+    system_ext_specific: true,
+}
+
+android_app_import {
+    name: "SystemUIClocks-Flex",
+    owner: "google_devices",
+    apk: "system_ext/priv-app/SystemUIClocks-Flex/SystemUIClocks-Flex.apk",
+    certificate: "platform",
+    privileged: true,
+    dex_preopt: { enabled: false },
+    system_ext_specific: true,
+}
+
+android_app_import {
+    name: "SystemUIClocks-Growth",
+    owner: "google_devices",
+    apk: "system_ext/priv-app/SystemUIClocks-Growth/SystemUIClocks-Growth.apk",
+    certificate: "platform",
+    privileged: true,
+    dex_preopt: { enabled: false },
+    system_ext_specific: true,
+}
+
+android_app_import {
+    name: "SystemUIClocks-Inflate",
+    owner: "google_devices",
+    apk: "system_ext/priv-app/SystemUIClocks-Inflate/SystemUIClocks-Inflate.apk",
+    certificate: "platform",
+    privileged: true,
+    dex_preopt: { enabled: false },
+    system_ext_specific: true,
+}
+
+android_app_import {
+    name: "SystemUIClocks-NumOverlap",
+    owner: "google_devices",
+    apk: "system_ext/priv-app/SystemUIClocks-NumOverlap/SystemUIClocks-NumOverlap.apk",
+    certificate: "platform",
+    privileged: true,
+    dex_preopt: { enabled: false },
+    system_ext_specific: true,
+}
+
+android_app_import {
+    name: "SystemUIClocks-Weather",
+    owner: "google_devices",
+    apk: "system_ext/priv-app/SystemUIClocks-Weather/SystemUIClocks-Weather.apk",
+    certificate: "platform",
+    privileged: true,
+    dex_preopt: { enabled: false },
+    system_ext_specific: true,
+}
+
+android_app_import {
     name: "adreno_graphics_driver",
     owner: "google_devices",
     apk: "vendor/app/adreno_graphics_driver/adreno_graphics_driver.apk",
@@ -4206,6 +4441,17 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "android.hardware.authsecret-service.citadel",
+    owner: "google_devices",
+    srcs: [ "vendor/bin/hw/android.hardware.authsecret-service.citadel" ],
+    relative_install_path: "hw",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "android.hardware.biometrics.fingerprint@2.2-service.fpc",
     owner: "google_devices",
     srcs: [ "vendor/bin/hw/android.hardware.biometrics.fingerprint@2.2-service.fpc" ],
@@ -4239,9 +4485,9 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
-    name: "android.hardware.drm-service.widevine",
+    name: "android.hardware.drm-service.widevine-v17",
     owner: "google_devices",
-    srcs: [ "vendor/bin/hw/android.hardware.drm-service.widevine" ],
+    srcs: [ "vendor/bin/hw/android.hardware.drm-service.widevine-v17" ],
     relative_install_path: "hw",
     check_elf_files: false,
     prefer: true,
@@ -4338,9 +4584,31 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "android.hardware.oemlock-service.citadel",
+    owner: "google_devices",
+    srcs: [ "vendor/bin/hw/android.hardware.oemlock-service.citadel" ],
+    relative_install_path: "hw",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "android.hardware.rebootescrow-service.citadel",
     owner: "google_devices",
     srcs: [ "vendor/bin/hw/android.hardware.rebootescrow-service.citadel" ],
+    relative_install_path: "hw",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.weaver-service.citadel",
+    owner: "google_devices",
+    srcs: [ "vendor/bin/hw/android.hardware.weaver-service.citadel" ],
     relative_install_path: "hw",
     check_elf_files: false,
     prefer: true,
@@ -4437,9 +4705,9 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
-    name: "vendor.google.wifi_ext@1.0-service-vendor",
+    name: "vendor.google.wifi_ext-service-vendor",
     owner: "google_devices",
-    srcs: [ "vendor/bin/hw/vendor.google.wifi_ext@1.0-service-vendor" ],
+    srcs: [ "vendor/bin/hw/vendor.google.wifi_ext-service-vendor" ],
     relative_install_path: "hw",
     check_elf_files: false,
     prefer: true,
@@ -9137,20 +9405,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libqmi_vs-google-1",
-    owner: "google_devices",
-    target: {
-        android_arm: { srcs: [ "vendor/lib/libqmi_vs-google-1.so" ] },
-        android_arm64: { srcs: [ "vendor/lib64/libqmi_vs-google-1.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libqmi",
     owner: "google_devices",
     target: {
@@ -9380,20 +9634,6 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: { srcs: [ "vendor/lib/libril-qc-radioconfig.so" ] },
         android_arm64: { srcs: [ "vendor/lib64/libril-qc-radioconfig.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libril-qcril-hook-oem",
-    owner: "google_devices",
-    target: {
-        android_arm: { srcs: [ "vendor/lib/libril-qcril-hook-oem.so" ] },
-        android_arm64: { srcs: [ "vendor/lib64/libril-qcril-hook-oem.so" ] }
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -9646,20 +9886,6 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: { srcs: [ "vendor/lib/libsensorsuez.so" ] },
         android_arm64: { srcs: [ "vendor/lib64/libsensorsuez.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libsettings",
-    owner: "google_devices",
-    target: {
-        android_arm: { srcs: [ "vendor/lib/libsettings.so" ] },
-        android_arm64: { srcs: [ "vendor/lib64/libsettings.so" ] }
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -10972,62 +11198,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.google.radioext@1.0",
-    owner: "google_devices",
-    target: {
-        android_arm: { srcs: [ "vendor/lib/vendor.google.radioext@1.0.so" ] },
-        android_arm64: { srcs: [ "vendor/lib64/vendor.google.radioext@1.0.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.google.radioext@1.1",
-    owner: "google_devices",
-    target: {
-        android_arm: { srcs: [ "vendor/lib/vendor.google.radioext@1.1.so" ] },
-        android_arm64: { srcs: [ "vendor/lib64/vendor.google.radioext@1.1.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.google.radioext@1.2",
-    owner: "google_devices",
-    target: {
-        android_arm: { srcs: [ "vendor/lib/vendor.google.radioext@1.2.so" ] },
-        android_arm64: { srcs: [ "vendor/lib64/vendor.google.radioext@1.2.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.google.radioext@1.3",
-    owner: "google_devices",
-    target: {
-        android_arm: { srcs: [ "vendor/lib/vendor.google.radioext@1.3.so" ] },
-        android_arm64: { srcs: [ "vendor/lib64/vendor.google.radioext@1.3.so" ] }
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.qti.data.factory@2.0",
     owner: "google_devices",
     target: {
@@ -11285,6 +11455,20 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: { srcs: [ "vendor/lib/vendor.qti.hardware.data.flow@1.0.so" ] },
         android_arm64: { srcs: [ "vendor/lib64/vendor.qti.hardware.data.flow@1.0.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.data.flow@1.1",
+    owner: "google_devices",
+    target: {
+        android_arm: { srcs: [ "vendor/lib/vendor.qti.hardware.data.flow@1.1.so" ] },
+        android_arm64: { srcs: [ "vendor/lib64/vendor.qti.hardware.data.flow@1.1.so" ] }
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -12302,6 +12486,20 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.latency@2.2",
+    owner: "google_devices",
+    target: {
+        android_arm: { srcs: [ "vendor/lib/vendor.qti.latency@2.2.so" ] },
+        android_arm64: { srcs: [ "vendor/lib64/vendor.qti.latency@2.2.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.power.pasrmanager@1.0",
     owner: "google_devices",
     target: {
@@ -12351,6 +12549,17 @@ cc_prebuilt_library_shared {
         android_arm64: { srcs: [ "vendor/lib64/vendor.qti.voiceprint@1.0.so" ] }
     },
     compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.authsecret-impl.nos",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/android.hardware.authsecret-impl.nos.so" ] } },
+    compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
     strip: { none: true },
@@ -12408,6 +12617,17 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "android.hardware.oemlock-impl.nos",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/android.hardware.oemlock-impl.nos.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "android.hardware.oemlock@1.0-impl.nos",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/android.hardware.oemlock@1.0-impl.nos.so" ] } },
@@ -12419,9 +12639,31 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "android.hardware.weaver-impl.nos",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/android.hardware.weaver-impl.nos.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "android.hardware.weaver@1.0-impl.nos",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/android.hardware.weaver@1.0-impl.nos.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.weaver2-impl.nos",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/android.hardware.weaver2-impl.nos.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -12987,9 +13229,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "com.google.input-V1-ndk",
+    name: "com.google.input-V2-ndk",
     owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/com.google.input-V1-ndk.so" ] } },
+    target: { android_arm64: { srcs: [ "vendor/lib64/com.google.input-V2-ndk.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -13935,6 +14177,17 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libqmi_vs-google-1",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/libqmi_vs-google-1.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libqmiextservices",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/libqmiextservices.so" ] } },
@@ -13971,17 +14224,6 @@ cc_prebuilt_library_shared {
     name: "libtouchflow",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/libtouchflow.so" ] } },
-    compile_multilib: "64",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libwvaidl",
-    owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/libwvaidl.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -14144,42 +14386,64 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.google.radioext@1.0",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.radioext@1.0.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.google.radioext@1.1",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.radioext@1.1.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.google.radioext@1.2",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.radioext@1.2.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.google.radioext@1.3",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.radioext@1.3.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.google.wifi_ext-V1-ndk",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.wifi_ext-V1-ndk.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.google.wifi_ext@1.0",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.wifi_ext@1.0.so" ] } },
-    compile_multilib: "64",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.google.wifi_ext@1.1",
-    owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.wifi_ext@1.1.so" ] } },
-    compile_multilib: "64",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.google.wifi_ext@1.2",
-    owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.wifi_ext@1.2.so" ] } },
-    compile_multilib: "64",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.google.wifi_ext@1.3",
-    owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.wifi_ext@1.3.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -14393,6 +14657,39 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.qtiradio@2.5",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.5.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.qtiradio@2.6",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.6.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.radio.qtiradio@2.7",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.7.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.hardware.vpp@1.1",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/vendor.qti.hardware.vpp@1.1.so" ] } },
@@ -14411,6 +14708,33 @@ cc_prebuilt_library_shared {
     check_elf_files: false,
     prefer: true,
     strip: { none: true },
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "vendor.qti.qvirt-service__2",
+    owner: "google_devices",
+    src: "product/etc/vintf/manifest/vendor.qti.qvirt-service.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    product_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "atcmdfwd-saidl",
+    owner: "google_devices",
+    src: "system_ext/etc/vintf/manifest/atcmdfwd-saidl.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    system_ext_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "android.hardware.authsecret-service.citadel__2",
+    owner: "google_devices",
+    src: "vendor/etc/vintf/manifest/android.hardware.authsecret-service.citadel.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
     soc_specific: true,
 }
 
@@ -14469,6 +14793,24 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
+    name: "android.hardware.oemlock-service.citadel__2",
+    owner: "google_devices",
+    src: "vendor/etc/vintf/manifest/android.hardware.oemlock-service.citadel.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "android.hardware.weaver-service.citadel__2",
+    owner: "google_devices",
+    src: "vendor/etc/vintf/manifest/android.hardware.weaver-service.citadel.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
     name: "android.hardware.weaver@1.0-service.citadel__2",
     owner: "google_devices",
     src: "vendor/etc/vintf/manifest/android.hardware.weaver@1.0-service.citadel.xml",
@@ -14487,9 +14829,9 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "manifest_android.hardware.drm-service.widevine",
+    name: "manifest_android.hardware.drm-service.widevine-v17",
     owner: "google_devices",
-    src: "vendor/etc/vintf/manifest/manifest_android.hardware.drm-service.widevine.xml",
+    src: "vendor/etc/vintf/manifest/manifest_android.hardware.drm-service.widevine-v17.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
@@ -14499,6 +14841,15 @@ prebuilt_etc_xml {
     name: "manifest_input.processor-service",
     owner: "google_devices",
     src: "vendor/etc/vintf/manifest/manifest_input.processor-service.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "manifest_wifi_ext_aidl",
+    owner: "google_devices",
+    src: "vendor/etc/vintf/manifest/manifest_wifi_ext_aidl.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
