@@ -4,6 +4,9 @@
 PRODUCT_SOONG_NAMESPACES += \
     vendor/google_devices/barbet
 
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.hotword.detection_service_required=true
+
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.lito.api30 \
     graphics.gpu.profiler.support=true \
@@ -12,8 +15,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
 
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.build.expect.bootloader=b9-0.5-9825789 \
-    ro.build.expect.baseband=g7250-00258-230518-B-10157620 \
+    ro.build.expect.bootloader=b9-0.6-10490014 \
+    ro.build.expect.baseband=g7250-00264-230619-B-10346159 \
     ro.crypto.dm_default_key.options_format.version=2 \
     ro.crypto.volume.metadata.method=dm-default-key \
     drm.service.enabled=true \
@@ -23,7 +26,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.hardware.vulkan=adreno \
     media.mediadrmservice.enable=true
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/barbet/barbet:13/TQ3A.230901.001/10750268:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/barbet/barbet:14/UP1A.231005.007/10754064:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \
@@ -34,8 +37,12 @@ PRODUCT_PACKAGES += \
     ambient \
     ambient_micro \
     android.auto_generated_rro_product_adevtool__ \
-    android.frameworks.sensorservice@1.0.vendor:32 \
+    android.frameworks.sensorservice@1.0.vendor \
     android.frameworks.stats@1.0.vendor:64 \
+    android.hardware.authsecret-impl.nos \
+    android.hardware.authsecret-service.citadel \
+    android.hardware.authsecret-service.citadel__2 \
+    android.hardware.authsecret-V1-ndk.vendor:64 \
     android.hardware.authsecret@1.0-impl.nos \
     android.hardware.authsecret@1.0.vendor \
     android.hardware.biometrics.fingerprint@2.1.vendor \
@@ -53,7 +60,7 @@ PRODUCT_PACKAGES += \
     android.hardware.confirmationui@1.0-service-google \
     android.hardware.confirmationui@1.0-service-google__2 \
     android.hardware.confirmationui@1.0.vendor:64 \
-    android.hardware.drm-service.widevine \
+    android.hardware.drm-service.widevine-v17 \
     android.hardware.gatekeeper@1.0-impl-qti \
     android.hardware.gatekeeper@1.0-service-qti \
     android.hardware.gatekeeper@1.0.vendor \
@@ -76,12 +83,14 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
     android.hardware.identity_credential.xml \
     android.hardware.identity-support-lib.vendor:64 \
+    android.hardware.identity-V5-ndk.vendor:64 \
     android.hardware.identity.strongbox \
     android.hardware.identity@1.0-impl.nos \
     android.hardware.identity@1.0-service.citadel \
     android.hardware.input.common-V1-ndk.vendor:64 \
     android.hardware.input.processor-service \
     android.hardware.input.processor-V1-ndk.vendor:64 \
+    android.hardware.keymaster-V3-ndk.vendor:64 \
     android.hardware.keymaster@3.0.vendor:32 \
     android.hardware.keymaster@4.0-service-qti \
     android.hardware.keymaster@4.0.vendor:32 \
@@ -90,6 +99,7 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1-service.citadel \
     android.hardware.keymaster@4.1-service.citadel__2 \
     android.hardware.keymaster@4.1.vendor:32 \
+    android.hardware.media.bufferpool2-V1-ndk.vendor \
     android.hardware.media.c2@1.0.vendor \
     android.hardware.neuralnetworks@1.0.vendor:64 \
     android.hardware.neuralnetworks@1.1.vendor:64 \
@@ -97,6 +107,10 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3-service-qti \
     android.hardware.neuralnetworks@1.3-service-qti__2 \
     android.hardware.neuralnetworks@1.3.vendor:64 \
+    android.hardware.oemlock-impl.nos \
+    android.hardware.oemlock-service.citadel \
+    android.hardware.oemlock-service.citadel__2 \
+    android.hardware.oemlock-V1-ndk.vendor:64 \
     android.hardware.oemlock@1.0-impl.nos \
     android.hardware.oemlock@1.0.vendor:64 \
     android.hardware.power-V1-ndk.vendor:32 \
@@ -112,7 +126,10 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.4.vendor:64 \
     android.hardware.radio@1.5.vendor:64 \
     android.hardware.rebootescrow-service.citadel \
-    android.hardware.sensors@1.0.vendor:32 \
+    android.hardware.rebootescrow-V1-ndk.vendor:64 \
+    android.hardware.security.keymint-V3-ndk.vendor:64 \
+    android.hardware.security.rkp-V3-ndk.vendor:64 \
+    android.hardware.sensors@1.0.vendor \
     android.hardware.sensors@2.0-ScopedWakelock.vendor \
     android.hardware.sensors@2.0-service.multihal \
     android.hardware.sensors@2.0.vendor \
@@ -121,13 +138,20 @@ PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.control@1.0.vendor:64 \
     android.hardware.thermal@1.0.vendor:32 \
     android.hardware.thermal@2.0.vendor:32 \
+    android.hardware.weaver-impl.nos \
+    android.hardware.weaver-service.citadel \
+    android.hardware.weaver-service.citadel__2 \
+    android.hardware.weaver-V2-ndk.vendor:64 \
     android.hardware.weaver@1.0-impl.nos \
     android.hardware.weaver@1.0-service.citadel \
     android.hardware.weaver@1.0-service.citadel__2 \
     android.hardware.weaver@1.0.vendor:64 \
+    android.hardware.weaver2-impl.nos \
+    android.hardware.wifi@1.0.vendor:64 \
     android.hidl.memory.block@1.0.vendor \
     android.system.net.netd@1.0.vendor:64 \
     android.system.net.netd@1.1.vendor:64 \
+    atcmdfwd-saidl \
     atfwd \
     audio.primary.lito \
     audiosphere \
@@ -171,7 +195,7 @@ PRODUCT_PACKAGES += \
     com.google.ghawb.tuning.imx363 \
     com.google.ghawb.tuning.imx481 \
     com.google.hardware.pixel.display-V1-ndk.vendor:64 \
-    com.google.input-V1-ndk \
+    com.google.input-V2-ndk \
     com.google.node.copy \
     com.google.node.eis \
     com.google.node.fd \
@@ -277,7 +301,6 @@ PRODUCT_PACKAGES += \
     com.qualcomm.qti.uceservice@2.2 \
     com.qualcomm.qti.uceservice@2.2__system_ext \
     com.qualcomm.qti.uceservice@2.3 \
-    com.qualcomm.qti.wifidisplayhal@1.0__system_ext \
     com.quicinc.cne.api-V1.0-java \
     com.quicinc.cne.api-V1.1-java \
     com.quicinc.cne.api@1.0__system_ext \
@@ -295,6 +318,7 @@ PRODUCT_PACKAGES += \
     datastatusnotification \
     device_symlinks \
     deviceInfoServiceModule \
+    DeviceStatisticsService \
     diag_klog \
     diag_mdlog \
     diag_socket_log \
@@ -644,6 +668,7 @@ PRODUCT_PACKAGES += \
     libnos_client_citadel:64 \
     libnos_datagram_citadel:64 \
     libnos_datagram:64 \
+    libnos_feature:64 \
     libnos_transport:64 \
     libnos:64 \
     libnosprotos:64 \
@@ -682,7 +707,6 @@ PRODUCT_PACKAGES += \
     libpowercallback \
     libpowercore \
     libpowerstatshaldataprovider__system_ext \
-    libprotobuf-cpp-full-vendorcompat \
     libpuresoftkeymasterdevice.vendor:64 \
     libpvr \
     libq3dtools_adreno \
@@ -693,6 +717,8 @@ PRODUCT_PACKAGES += \
     libqcc__system_ext \
     libqcc_file_agent \
     libqcc_file_agent_sys__system_ext \
+    libqccdme__system_ext \
+    libqccfileservice__system_ext \
     libqcci_legacy \
     libqcmaputils \
     libqcodec2_base \
@@ -749,7 +775,6 @@ PRODUCT_PACKAGES += \
     libril-qc-logger \
     libril-qc-ltedirectdisc \
     libril-qc-radioconfig \
-    libril-qcril-hook-oem \
     librilqmiservices \
     librmnetctl \
     librmp \
@@ -771,12 +796,10 @@ PRODUCT_PACKAGES += \
     libsecureuisvc_jni__system_ext \
     libsensorslog \
     libsensorsuez \
-    libsettings \
     libshoebox \
     libsi \
     libskewknob_system__system_ext \
     libsmemlog \
-    libsmomo.qti__system_ext \
     libsmomoconfig.qti__system_ext \
     libsmwrapper \
     libsndmonitor \
@@ -796,6 +819,7 @@ PRODUCT_PACKAGES += \
     libssd \
     libstabilitydomain_skel \
     libstabilitydomain_skel__2 \
+    libstagefright_aidl_bufferpool2.vendor \
     libstagefright_bufferpool@2.0.1.vendor \
     libstagefrighthw \
     libStDrvInt \
@@ -853,9 +877,6 @@ PRODUCT_PACKAGES += \
     libvpt_preproc_postproc \
     libvr_amb_engine__system_ext \
     libvr_object_engine__system_ext \
-    libvr_sam_wrapper__system_ext \
-    libvraudio__system_ext \
-    libvraudio_client.qti__system_ext \
     libvsc \
     libwfdclient__system_ext \
     libwfdcommonutils__system_ext \
@@ -887,7 +908,6 @@ PRODUCT_PACKAGES += \
     libWNR__system_ext \
     libWNR_intf__system_ext \
     libwqe \
-    libwvaidl \
     libxml \
     libxtadapter \
     libxtwifi_server_protocol \
@@ -896,8 +916,9 @@ PRODUCT_PACKAGES += \
     loc_launcher \
     lowi_client \
     lowi-server \
-    manifest_android.hardware.drm-service.widevine \
+    manifest_android.hardware.drm-service.widevine-v17 \
     manifest_input.processor-service \
+    manifest_wifi_ext_aidl \
     memtrack.lito \
     modem_svc \
     motiondetector \
@@ -919,10 +940,12 @@ PRODUCT_PACKAGES += \
     qcrild_librilutils \
     qcrilhook \
     qcrilmsgtunnel \
+    qcrosvm \
     qmapbridge \
     qrtr-cfg \
     qrtr-ns \
     qseecomd \
+    qsguard \
     qti \
     qti-telephony-hidl-wrapper \
     qti-telephony-hidl-wrapper-prd \
@@ -930,6 +953,7 @@ PRODUCT_PACKAGES += \
     qtibus \
     qtimutex \
     QtiTelephonyService \
+    qvirtmgr \
     ramoops \
     rebootescrow-citadel \
     remotesimlockmanagerlibrary \
@@ -948,6 +972,13 @@ PRODUCT_PACKAGES += \
     ssr_diag \
     ssr_setup \
     subsystem_ramdump \
+    SystemUIClocks-BigNum \
+    SystemUIClocks-Calligraphy \
+    SystemUIClocks-Flex \
+    SystemUIClocks-Growth \
+    SystemUIClocks-Inflate \
+    SystemUIClocks-NumOverlap \
+    SystemUIClocks-Weather \
     test_diag \
     tftp_server \
     time_daemon \
@@ -1010,12 +1041,9 @@ PRODUCT_PACKAGES += \
     vendor.google.radioext@1.1 \
     vendor.google.radioext@1.2 \
     vendor.google.radioext@1.3 \
+    vendor.google.wifi_ext-service-vendor \
+    vendor.google.wifi_ext-V1-ndk \
     vendor.google.wifi_ext@1.0 \
-    vendor.google.wifi_ext@1.0__system_ext \
-    vendor.google.wifi_ext@1.0-service-vendor \
-    vendor.google.wifi_ext@1.1 \
-    vendor.google.wifi_ext@1.2 \
-    vendor.google.wifi_ext@1.3 \
     vendor.qti.data.factory-V1.0-java \
     vendor.qti.data.factory-V2.0-java \
     vendor.qti.data.factory-V2.1-java \
@@ -1023,6 +1051,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.data.factory-V2.3-java \
     vendor.qti.data.factory-V2.4-java \
     vendor.qti.data.factory-V2.5-java \
+    vendor.qti.data.factory-V2.6-java \
+    vendor.qti.data.factory-V2.7-java \
     vendor.qti.data.factory@1.0__system_ext \
     vendor.qti.data.factory@2.0 \
     vendor.qti.data.factory@2.0__system_ext \
@@ -1034,6 +1064,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.data.factory@2.3__system_ext \
     vendor.qti.data.factory@2.4__system_ext \
     vendor.qti.data.factory@2.5__system_ext \
+    vendor.qti.data.factory@2.6__system_ext \
+    vendor.qti.data.factory@2.7__system_ext \
     vendor.qti.data.mwqem@1.0 \
     vendor.qti.data.mwqem@1.0__system_ext \
     vendor.qti.data.slm@1.0 \
@@ -1060,10 +1092,13 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.data.cne.internal.constants@1.0__system_ext \
     vendor.qti.hardware.data.cne.internal.server-V1.0-java \
     vendor.qti.hardware.data.cne.internal.server-V1.1-java \
+    vendor.qti.hardware.data.cne.internal.server-V1.2-java \
+    vendor.qti.hardware.data.cne.internal.server-V1.3-java \
     vendor.qti.hardware.data.cne.internal.server@1.0 \
     vendor.qti.hardware.data.cne.internal.server@1.0__system_ext \
     vendor.qti.hardware.data.cne.internal.server@1.1__system_ext \
     vendor.qti.hardware.data.cne.internal.server@1.2__system_ext \
+    vendor.qti.hardware.data.cne.internal.server@1.3__system_ext \
     vendor.qti.hardware.data.connection-V1.0-java \
     vendor.qti.hardware.data.connection@1.0 \
     vendor.qti.hardware.data.connection@1.0__system_ext \
@@ -1074,6 +1109,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.data.dynamicdds@1.1 \
     vendor.qti.hardware.data.flow@1.0 \
     vendor.qti.hardware.data.flow@1.0__system_ext \
+    vendor.qti.hardware.data.flow@1.1 \
+    vendor.qti.hardware.data.flow@1.1__system_ext \
     vendor.qti.hardware.data.iwlan-V1.0-java \
     vendor.qti.hardware.data.iwlan@1.0 \
     vendor.qti.hardware.data.iwlan@1.0__system_ext \
@@ -1124,17 +1161,14 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.1 \
     vendor.qti.hardware.qccsyshal@1.0 \
     vendor.qti.hardware.qccsyshal@1.0__system_ext \
-    vendor.qti.hardware.qccsyshal@1.0-halimpl__system_ext \
-    vendor.qti.hardware.qccsyshal@1.0-impl__system_ext \
     vendor.qti.hardware.qccsyshal@1.1__system_ext \
-    vendor.qti.hardware.qccsyshal@1.1-halimpl__system_ext \
-    vendor.qti.hardware.qccsyshal@1.1-impl__system_ext \
+    vendor.qti.hardware.qccsyshal@1.2__system_ext \
+    vendor.qti.hardware.qccsyshal@1.2-halimpl__system_ext \
     vendor.qti.hardware.qccvndhal@1.0 \
     vendor.qti.hardware.qccvndhal@1.0__system_ext \
     vendor.qti.hardware.qccvndhal@1.0-halimpl \
     vendor.qti.hardware.qccvndhal@1.0-impl \
     vendor.qti.hardware.qdutils_disp@1.0 \
-    vendor.qti.hardware.qdutils_disp@1.0__system_ext \
     vendor.qti.hardware.qseecom@1.0 \
     vendor.qti.hardware.qseecom@1.0__system_ext \
     vendor.qti.hardware.qseecom@1.0-impl \
@@ -1184,6 +1218,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.radio.qtiradio@2.3__system_ext \
     vendor.qti.hardware.radio.qtiradio@2.4 \
     vendor.qti.hardware.radio.qtiradio@2.4__system_ext \
+    vendor.qti.hardware.radio.qtiradio@2.5 \
+    vendor.qti.hardware.radio.qtiradio@2.6 \
+    vendor.qti.hardware.radio.qtiradio@2.7 \
     vendor.qti.hardware.radio.uim_remote_client@1.0 \
     vendor.qti.hardware.radio.uim_remote_client@1.0__system_ext \
     vendor.qti.hardware.radio.uim_remote_client@1.1 \
@@ -1203,8 +1240,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.secureprocessor.config@1.0__system_ext \
     vendor.qti.hardware.secureprocessor.device@1.0__system_ext \
     vendor.qti.hardware.sigma_miracast@1.0 \
-    vendor.qti.hardware.sigma_miracast@1.0__system_ext \
-    vendor.qti.hardware.sigma_miracast@1.0-impl__system_ext \
     vendor.qti.hardware.slmadapter-V1.0-java \
     vendor.qti.hardware.slmadapter@1.0 \
     vendor.qti.hardware.slmadapter@1.0__system_ext \
@@ -1221,7 +1256,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.vpp@1.1 \
     vendor.qti.hardware.vpp@1.2 \
     vendor.qti.hardware.wifidisplaysession@1.0 \
-    vendor.qti.hardware.wifidisplaysession@1.0__system_ext \
     vendor.qti.hardware.wigig.netperftuner@1.0 \
     vendor.qti.ims.callcapability@1.0 \
     vendor.qti.ims.callcapability@1.0__system_ext \
@@ -1232,16 +1266,19 @@ PRODUCT_PACKAGES += \
     vendor.qti.ims.configservice@1.1__system_ext \
     vendor.qti.ims.connection-V1.0-java \
     vendor.qti.ims.connection@1.0__system_ext \
+    vendor.qti.ims.datachannelservice-V1-java \
     vendor.qti.ims.factory-V1.0-java \
     vendor.qti.ims.factory-V1.1-java \
     vendor.qti.ims.factory-V2.0-java \
     vendor.qti.ims.factory-V2.1-java \
+    vendor.qti.ims.factory-V2.2-java \
     vendor.qti.ims.factory@1.0 \
     vendor.qti.ims.factory@1.0__system_ext \
     vendor.qti.ims.factory@1.1 \
     vendor.qti.ims.factory@1.1__system_ext \
     vendor.qti.ims.factory@2.0__system_ext \
     vendor.qti.ims.factory@2.1__system_ext \
+    vendor.qti.ims.factory@2.2__system_ext \
     vendor.qti.ims.rcsconfig-V1.0-java \
     vendor.qti.ims.rcsconfig@1.0 \
     vendor.qti.ims.rcsconfig@1.0__system_ext \
@@ -1253,26 +1290,41 @@ PRODUCT_PACKAGES += \
     vendor.qti.ims.rcsconfig@2.1__system_ext \
     vendor.qti.ims.rcssip-V1.0-java \
     vendor.qti.ims.rcssip-V1.1-java \
+    vendor.qti.ims.rcssip-V1.2-java \
     vendor.qti.ims.rcssip@1.0__system_ext \
     vendor.qti.ims.rcssip@1.1__system_ext \
+    vendor.qti.ims.rcssip@1.2__system_ext \
     vendor.qti.ims.rcsuce-V1.0-java \
     vendor.qti.ims.rcsuce-V1.1-java \
+    vendor.qti.ims.rcsuce-V1.2-java \
     vendor.qti.ims.rcsuce@1.0__system_ext \
     vendor.qti.ims.rcsuce@1.1__system_ext \
+    vendor.qti.ims.rcsuce@1.2__system_ext \
+    vendor.qti.ImsRtpService-V1-ndk__system_ext \
     vendor.qti.imsrtpservice@3.0 \
     vendor.qti.imsrtpservice@3.0__system_ext \
     vendor.qti.imsrtpservice@3.0-service-Impl \
+    vendor.qti.imsrtpservice@3.1__system_ext \
     vendor.qti.latency-V2.0-java \
     vendor.qti.latency@2.0 \
     vendor.qti.latency@2.0__system_ext \
     vendor.qti.latency@2.1 \
+    vendor.qti.latency@2.1__system_ext \
+    vendor.qti.latency@2.2 \
+    vendor.qti.latency@2.2__system_ext \
     vendor.qti.media.c2@1.0-service \
     vendor.qti.mstatservice@1.0__system_ext \
     vendor.qti.power.pasrmanager@1.0 \
+    vendor.qti.qesdhal@1.0__system_ext \
+    vendor.qti.qesdhal@1.1__system_ext \
+    vendor.qti.qesdhal@1.2__system_ext \
     vendor.qti.qspmhal@1.0 \
     vendor.qti.qspmhal@1.0__system_ext \
     vendor.qti.qspmhal@1.0-impl \
     vendor.qti.qspmhal@1.0-service \
+    vendor.qti.qvirt-service \
+    vendor.qti.qvirt-service__2 \
+    vendor.qti.qvirt-V1-ndk__product \
     vendor.qti.voiceprint-V1.0-java \
     vendor.qti.voiceprint@1.0 \
     vendor.qti.voiceprint@1.0__system_ext \
@@ -1284,10 +1336,13 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/1and1_de.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/1and1_de.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/2degrees_nz.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/2degrees_nz.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/a1_at.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/a1_at.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/a1_si.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/a1_si.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/ahamo_jp.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/ahamo_jp.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/airtel_in.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/airtel_in.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/ais_th.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/ais_th.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/altice_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/altice_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/apt_tw.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/apt_tw.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/asda_gb.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/asda_gb.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/assurance_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/assurance_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/astca_as.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/astca_as.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/att_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/att_us.pb \
@@ -1323,18 +1378,25 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/cspire_nl.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/cspire_nl.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/cspire_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/cspire_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/default.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/default.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/digi_hu.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/digi_hu.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/digi_my.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/digi_my.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/digi_ro.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/digi_ro.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/dishatt_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/dishatt_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/dito_ph.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/dito_ph.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/dna_fi.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/dna_fi.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/docomo_jp.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/docomo_jp.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/docomomvno_jp.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/docomomvno_jp.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/du_ae.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/du_ae.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/eastlink_ca.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/eastlink_ca.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/ee_gb.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/ee_gb.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/eir_ie.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/eir_ie.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/elisa1_fi.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/elisa1_fi.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/elisa2_fi.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/elisa2_fi.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/enreach_nl.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/enreach_nl.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/eplus_de.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/eplus_de.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/esn_gb.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/esn_gb.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/euskaltel_es.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/euskaltel_es.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/evolve_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/evolve_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/fastweb_it.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/fastweb_it.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/fet_tw.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/fet_tw.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/fi_at.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/fi_at.pb \
@@ -1358,10 +1420,12 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/h3g27202_ie.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/h3g27202_ie.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/halebop_se.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/halebop_se.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/homobile_it.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/homobile_it.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/hotmobile_il.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/hotmobile_il.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/ice_no.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/ice_no.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/idea_in.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/idea_in.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/idmobile_gb.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/idmobile_gb.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/iliad_it.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/iliad_it.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/jazztel_es.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/jazztel_es.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/kddi_jp.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/kddi_jp.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/kddimvno_jp.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/kddimvno_jp.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/kena_it.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/kena_it.pb \
@@ -1376,6 +1440,7 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/maxis_my.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/maxis_my.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/meo_pt.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/meo_pt.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/metropcs_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/metropcs_us.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/mobily_sa.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/mobily_sa.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/movistar_es.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/movistar_es.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/nextech_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/nextech_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/nos_pt.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/nos_pt.pb \
@@ -1423,6 +1488,7 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/singtel_sg.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/singtel_sg.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/skinny_nz.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/skinny_nz.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/sky_gb.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/sky_gb.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/smartone_hk.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/smartone_hk.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/smarty_gb.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/smarty_gb.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/softbank_jp.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/softbank_jp.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/solomobile_ca.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/solomobile_ca.pb \
@@ -1432,6 +1498,7 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/sprintprepaid_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/sprintprepaid_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/sprintwholesale_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/sprintwholesale_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/starhub_sg.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/starhub_sg.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/stc_kw.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/stc_kw.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/stc_sa.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/stc_sa.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/strata_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/strata_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/sunrise_ch.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/sunrise_ch.pb \
@@ -1448,7 +1515,10 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/telekom_hr.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/telekom_hr.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/telekom_hu.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/telekom_hu.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/telekom_pl.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/telekom_pl.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/telekom_ro.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/telekom_ro.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/telekom_si.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/telekom_si.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/telekom_sk.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/telekom_sk.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/telemach_si.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/telemach_si.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/telenet_be.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/telenet_be.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/telenor_dk.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/telenor_dk.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/telenor_no.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/telenor_no.pb \
@@ -1484,6 +1554,7 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/umobile_my.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/umobile_my.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/unifi_my.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/unifi_my.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/uqmobile_jp.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/uqmobile_jp.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/uqmobile5gsa_jp.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/uqmobile5gsa_jp.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/uscc_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/uscc_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/verizon_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/verizon_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/verymobile_it.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/verymobile_it.pb \
@@ -1519,10 +1590,14 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/felica/common.cfg:$(TARGET_COPY_OUT_PRODUCT)/etc/felica/common.cfg \
     vendor/google_devices/barbet/proprietary/product/etc/felica/mfm.cfg:$(TARGET_COPY_OUT_PRODUCT)/etc/felica/mfm.cfg \
     vendor/google_devices/barbet/proprietary/product/etc/felica/mfs.cfg:$(TARGET_COPY_OUT_PRODUCT)/etc/felica/mfs.cfg \
+    vendor/google_devices/barbet/proprietary/product/etc/init/qvirtmgr.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/qvirtmgr.rc \
+    vendor/google_devices/barbet/proprietary/product/etc/init/vendor.qti.qvirt-service.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/vendor.qti.qvirt-service.rc \
+    vendor/google_devices/barbet/proprietary/product/etc/qvirtmgr.json:$(TARGET_COPY_OUT_PRODUCT)/etc/qvirtmgr.json \
     vendor/google_devices/barbet/proprietary/product/etc/res/images/charger/battery_fail.png:$(TARGET_COPY_OUT_PRODUCT)/etc/res/images/charger/battery_fail.png \
     vendor/google_devices/barbet/proprietary/product/etc/res/images/charger/battery_scale.png:$(TARGET_COPY_OUT_PRODUCT)/etc/res/images/charger/battery_scale.png \
     vendor/google_devices/barbet/proprietary/product/etc/res/images/charger/main_font.png:$(TARGET_COPY_OUT_PRODUCT)/etc/res/images/charger/main_font.png \
     vendor/google_devices/barbet/proprietary/product/etc/res/values/charger/animation.txt:$(TARGET_COPY_OUT_PRODUCT)/etc/res/values/charger/animation.txt \
+    vendor/google_devices/barbet/proprietary/system_ext/etc/init/qsguard.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/qsguard.rc \
     vendor/google_devices/barbet/proprietary/system_ext/etc/init/sxrauxd_ext.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/sxrauxd_ext.rc \
     vendor/google_devices/barbet/proprietary/system_ext/etc/perf/wlc_model.tflite:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/perf/wlc_model.tflite \
     vendor/google_devices/barbet/proprietary/system_ext/etc/seccomp_policy/sxraux-arm.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/sxraux-arm.policy \
@@ -1631,10 +1706,11 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/vendor/etc/chre/preloaded_nanoapps.json:$(TARGET_COPY_OUT_VENDOR)/etc/chre/preloaded_nanoapps.json \
     vendor/google_devices/barbet/proprietary/vendor/etc/cne/mwqem.conf:$(TARGET_COPY_OUT_VENDOR)/etc/cne/mwqem.conf \
     vendor/google_devices/barbet/proprietary/vendor/etc/default_snd.mps:$(TARGET_COPY_OUT_VENDOR)/etc/default_snd.mps \
+    vendor/google_devices/barbet/proprietary/vendor/etc/init/android.hardware.authsecret-service.citadel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.authsecret-service.citadel.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/android.hardware.biometrics.fingerprint@2.2-service.fpc.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint@2.2-service.fpc.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.bluetooth@1.0-service-qti.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/android.hardware.confirmationui@1.0-service-google.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.confirmationui@1.0-service-google.rc \
-    vendor/google_devices/barbet/proprietary/vendor/etc/init/android.hardware.drm-service.widevine.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm-service.widevine.rc \
+    vendor/google_devices/barbet/proprietary/vendor/etc/init/android.hardware.drm-service.widevine-v17.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.drm-service.widevine-v17.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/android.hardware.gnss@2.1-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gnss@2.1-service-qti.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/android.hardware.identity@1.0-service.citadel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.identity@1.0-service.citadel.rc \
@@ -1642,6 +1718,8 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.keymaster@4.0-service-qti.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/android.hardware.keymaster@4.1-service.citadel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.keymaster@4.1-service.citadel.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc \
+    vendor/google_devices/barbet/proprietary/vendor/etc/init/android.hardware.oemlock-service.citadel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.oemlock-service.citadel.rc \
+    vendor/google_devices/barbet/proprietary/vendor/etc/init/android.hardware.weaver-service.citadel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.weaver-service.citadel.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/android.hardware.weaver@1.0-service.citadel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.weaver@1.0-service.citadel.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/citadeld.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/citadeld.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/cnd-generic.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/cnd-generic.rc \
@@ -1668,7 +1746,7 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/vendor.display.color@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.display.color@1.0-service.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/vendor.google.google_battery-default.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.google.google_battery-default.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/vendor.google.radioext@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.google.radioext@1.0-service.rc \
-    vendor/google_devices/barbet/proprietary/vendor/etc/init/vendor.google.wifi_ext@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.google.wifi_ext@1.0-service.rc \
+    vendor/google_devices/barbet/proprietary/vendor/etc/init/vendor.google.wifi_ext-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.google.wifi_ext-service.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/vendor.qti.adsprpc-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.adsprpc-service.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/vendor.qti.cdsprpc-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.cdsprpc-service.rc \
     vendor/google_devices/barbet/proprietary/vendor/etc/init/vendor.qti.hardware.charger_monitor@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.charger_monitor@1.0-service.rc \
@@ -1747,6 +1825,7 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/vendor/etc/sensors/config/tcs3701.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/config/tcs3701.json \
     vendor/google_devices/barbet/proprietary/vendor/etc/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
     vendor/google_devices/barbet/proprietary/vendor/etc/sensors/proto/sns_direct_channel.proto:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/proto/sns_direct_channel.proto \
+    vendor/google_devices/barbet/proprietary/vendor/etc/sensors/proto/sns_formatter_notify.proto:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/proto/sns_formatter_notify.proto \
     vendor/google_devices/barbet/proprietary/vendor/etc/sensors/sns_reg_config:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sns_reg_config \
     vendor/google_devices/barbet/proprietary/vendor/etc/ssg/ta_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/ssg/ta_config.json \
     vendor/google_devices/barbet/proprietary/vendor/etc/ssg/tz_whitelist.json:$(TARGET_COPY_OUT_VENDOR)/etc/ssg/tz_whitelist.json \
@@ -2084,12 +2163,14 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/permissions/uimremoteserver.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/uimremoteserver.xml \
     vendor/google_devices/barbet/proprietary/product/etc/permissions/UimService.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/UimService.xml \
     vendor/google_devices/barbet/proprietary/product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml \
+    vendor/google_devices/barbet/proprietary/system_ext/etc/default-permissions/default-permissions-euiccpixel.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/default-permissions/default-permissions-euiccpixel.xml \
     vendor/google_devices/barbet/proprietary/system_ext/etc/permissions/audiosphere.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/audiosphere.xml \
     vendor/google_devices/barbet/proprietary/system_ext/etc/permissions/com.google.android.camera.extensions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.android.camera.extensions.xml \
     vendor/google_devices/barbet/proprietary/system_ext/etc/permissions/com.google.euiccpixel.permissions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.euiccpixel.permissions.xml \
     vendor/google_devices/barbet/proprietary/system_ext/etc/permissions/com.google.euiccpixel.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.euiccpixel.xml \
     vendor/google_devices/barbet/proprietary/system_ext/etc/permissions/com.qti.dpmframework.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qti.dpmframework.xml \
     vendor/google_devices/barbet/proprietary/system_ext/etc/permissions/com.qti.media.secureprocessor.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qti.media.secureprocessor.xml \
+    vendor/google_devices/barbet/proprietary/system_ext/etc/permissions/com.qti.qcc.vendor_qcc.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qti.qcc.vendor_qcc.xml \
     vendor/google_devices/barbet/proprietary/system_ext/etc/permissions/com.qualcomm.qcrilmsgtunnel.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qualcomm.qcrilmsgtunnel.xml \
     vendor/google_devices/barbet/proprietary/system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml \
     vendor/google_devices/barbet/proprietary/system_ext/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml \
