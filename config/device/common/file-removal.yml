@@ -354,6 +354,8 @@ filters:
       - system_ext/priv-app/SettingsGoogle/
       - system_ext/priv-app/SettingsGoogleFutureFaceEnroll/
       - system_ext/priv-app/StorageManagerGoogle/
+      # SystemUI Clocks
+      - system_ext/priv-app/SystemUIClocks
       - system_ext/priv-app/SystemUIGoogle/
       # Pixel Tablet
       - system_ext/priv-app/SystemUITitan/
