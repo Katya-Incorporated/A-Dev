@@ -18,6 +18,7 @@ filters:
       - ro.config.alarm_alert
       # Google Assistant
       - ro.opa.eligible_device
+      - ro.hotword.detection_service_required
       # Google IME
       - ro.com.google.ime
       # SetupWizard
