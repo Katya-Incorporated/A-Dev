@@ -159,6 +159,7 @@ filters:
       - product/app/GoogleCamera/
       - product/app/GoogleContacts/
       - product/app/GoogleContactsSyncAdapter/
+      - product/app/GoogleKeepPrebuilt/
       - product/app/GoogleTTS/
       # Gboard
       - product/app/HealthConnectHideApps/
@@ -249,6 +250,8 @@ filters:
       # com.android.sdm.plugins.diagmon, but included on Tensor Pixels too
       - product/priv-app/DiagMon/
       - product/priv-app/DiagnosticsToolPrebuilt/
+      # Google Docker app moved to product partition as of 14
+      - product/priv-app/DockManagerPrebuilt/
       # DreamlinerPrebuilt is the Pixel Stand app, DreamlinerUpdater is firmware updater for Pixel Stand
       - product/priv-app/Dreamliner
       - product/priv-app/FilesPrebuilt/
