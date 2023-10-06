@@ -15,7 +15,7 @@ firmware/ldfw.img: 691eb29b7e35b239a54265896779177e5ae453122bb09debe84b5b923b7cb
 firmware/pbl.img: b2e792cd7106542b3301eac760b4f62de33b23bf54393f55f3f881ac98e71180
 firmware/tzsw.img: ace6d326e3368f041631715c5f3953d116144012fd2e3d978861df3ad8a5baa4
 overlays: dir
-overlays/product.txt: 58bdf59bc00b5f9a2c5a2c491d97e5c6b4f889e201c3a1b8cd623fe87ff55e07
+overlays/product.txt: a37639b74b79776cee50c48c99c90082c9c03ec9fedaf2da0a910ce4e5a6562f
 overlays/product_android: dir
 overlays/product_android/Android.bp: 3137f7daaf29e961bcc2696bc41758df7f4a13f9515fda5c287723570c563cec
 overlays/product_android/AndroidManifest.xml: 80efab0a2e72b6fa7ddfd376385437e827f16a8058b8cb5f0d07835a0adaa5a6
@@ -64,12 +64,6 @@ overlays/product_com.google.android.grilservice__GrilRadioCustomizable/AndroidMa
 overlays/product_com.google.android.grilservice__GrilRadioCustomizable/res: dir
 overlays/product_com.google.android.grilservice__GrilRadioCustomizable/res/values: dir
 overlays/product_com.google.android.grilservice__GrilRadioCustomizable/res/values/values.xml: 245aa394af83186413bf47063d9b40729fa181a739e079078651e7ef210da16e
-overlays/product_com.google.android.uwb.resources__UwbCustomization: dir
-overlays/product_com.google.android.uwb.resources__UwbCustomization/Android.bp: cfb3ed18426c000c82dc0296f2d739952ec5642137078534f721f6bb7f6fbad2
-overlays/product_com.google.android.uwb.resources__UwbCustomization/AndroidManifest.xml: 1e5df2a46a54140537e6f6d8f89679f29d69bea5b121f421c3b1c870ab0aec07
-overlays/product_com.google.android.uwb.resources__UwbCustomization/res: dir
-overlays/product_com.google.android.uwb.resources__UwbCustomization/res/values: dir
-overlays/product_com.google.android.uwb.resources__UwbCustomization/res/values/values.xml: 69b266381286d3fc18c0097f2daa51c6075363f3e67f7295925addfc88241c38
 overlays/product_com.google.euiccpixel: dir
 overlays/product_com.google.euiccpixel/Android.bp: 070136f5fcc6ebf7c47d013564dd88746512080c20d6b06494b98cf86fb10c8f
 overlays/product_com.google.euiccpixel/AndroidManifest.xml: 3ef3617161fe74a924304853e3ef423af832010bb74cb7a52097c5ed2042bd85
@@ -77,10 +71,10 @@ overlays/product_com.google.euiccpixel/res: dir
 overlays/product_com.google.euiccpixel/res/values: dir
 overlays/product_com.google.euiccpixel/res/values/values.xml: 13fa5753b62e2f8e3231fda280d516ccd04da67a5dda93ff1114197e60791e6c
 proprietary: dir
-proprietary-files.txt: 4212d8e239b48765a9b4af69d1ec5a44ded744d6d88b60dcd21e62decb44927f
-proprietary/Android.bp: 94e5c23be11838dae6f4489352a0f6d320f09f1565075d7a8bc4cec1fdd6fbfa
+proprietary-files.txt: f9a1221b6fe6e8d972f2357ff4009e61fcdd897fa59e04f3399761c140714953
+proprietary/Android.bp: 2eee46801db30e54b7086a724e35b5bc6aff5e092eaf99f293cb6439bdf043e9
 proprietary/BoardConfigVendor.mk: 6f750258b15df2907551a09d4abee7fc77637531aea4e9cce7d092c08230c538
-proprietary/device-vendor.mk: e2dbdaf19b0e1ca205e7b69f2ddcc19b63fd139b51c121f63c27786848b586aa
+proprietary/device-vendor.mk: a025ecfd285fa3b97a07dca83982ba613e3cd29fcd859761fcb5c261a293f3b4
 proprietary/product: dir
 proprietary/product/etc: dir
 proprietary/product/etc/appcompat: dir
@@ -101,7 +95,6 @@ proprietary/system_ext/etc/init: dir
 proprietary/system_ext/etc/init/vendor.google.edgetpu_app_service@1.0-service.rc: 8963b8d7da2cca37074f0cd93b4c370e3f75ec0d9df2dcf6cf29fb9448978fc2
 proprietary/system_ext/etc/permissions: dir
 proprietary/system_ext/etc/permissions/com.google.android.camera.extensions.xml: 83a901047d016793f3caa6e21be94a260ca969c652321eb47dc4c0661bb6281c
-proprietary/system_ext/etc/permissions/com.google.android.camerax.extensions.xml: d4cac59101fed751baa3c829b67d1cc9a58f2f6247589a9da352a6819f62821d
 proprietary/system_ext/etc/permissions/google-ril.xml: cd7972edc9ffb2b6f8e811392afdff7e654167ecb506063c44ee86bf1bb174f3
 proprietary/system_ext/etc/permissions/privapp-permissions-qorvo.xml: c322766882ccaf1e5115ddf20dd5dc9495cdc09741618d5065615d598c471d20
 proprietary/system_ext/etc/vintf: dir
@@ -109,7 +102,6 @@ proprietary/system_ext/etc/vintf/manifest: dir
 proprietary/system_ext/etc/vintf/manifest/vendor.google.edgetpu_app_service@1.0-service.xml: 440dcac59351c0a42989ab0761b83040dd06ed4a79c9dc20912bc6ac57d329e7
 proprietary/system_ext/framework: dir
 proprietary/system_ext/framework/com.google.android.camera.extensions.jar: a75c29bd24780e1c088e08c3c9ba96a0baec40586c857e880e722f8492b21fcb
-proprietary/system_ext/framework/com.google.android.camerax.extensions.jar: e741ed7f6adce53df8eb5c7dad4672d88569789f150119aad11e88ae98b9ee09
 proprietary/system_ext/framework/google-ril.jar: 24078a215055f6aaa271eb35b3ba226f8f107d15f25e1ca3db0a871ade1e497e
 proprietary/system_ext/lib: dir
 proprietary/system_ext/lib/libedgetpu_dba.google.so: b3388bcaccc577728fc25d8165dc76885e431265a210f2b8859d19fd32a0e738

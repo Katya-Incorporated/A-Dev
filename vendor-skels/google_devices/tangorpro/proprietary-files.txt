@@ -4,12 +4,10 @@
 system_ext/bin/hw/vendor.google.edgetpu_app_service@1.0-service
 system_ext/etc/init/vendor.google.edgetpu_app_service@1.0-service.rc
 system_ext/etc/permissions/com.google.android.camera.extensions.xml
-system_ext/etc/permissions/com.google.android.camerax.extensions.xml
 system_ext/etc/permissions/google-ril.xml
 system_ext/etc/permissions/privapp-permissions-qorvo.xml
 system_ext/etc/vintf/manifest/vendor.google.edgetpu_app_service@1.0-service.xml
 system_ext/framework/com.google.android.camera.extensions.jar
-system_ext/framework/com.google.android.camerax.extensions.jar
 system_ext/framework/google-ril.jar
 system_ext/lib/libedgetpu_dba.google.so
 system_ext/lib64/com.google.edgetpu_app_service-V2-ndk.so

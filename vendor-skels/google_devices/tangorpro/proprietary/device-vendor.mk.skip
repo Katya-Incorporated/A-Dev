@@ -7,7 +7,6 @@ PRODUCT_SOONG_NAMESPACES += \
 DEVICE_MANIFEST_FILE += vendor/google_devices/tangorpro/vintf/adevtool_manifest_vendor.xml
 
 PRODUCT_SYSTEM_PROPERTIES += \
-    ro.camerax.extensions.enabled=true \
     persist.uwb.enable_uci_stack=1
 
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -136,9 +135,7 @@ PRODUCT_PACKAGES += \
     com.fingerprints42.extension@1.0 \
     com.google.android.camera.experimental2022 \
     com.google.android.camera.extensions \
-    com.google.android.camerax.extensions \
     com.google.android.grilservice__GrilRadioCustomizable.auto_generated_rro_product_adevtool__ \
-    com.google.android.uwb.resources__UwbCustomization.auto_generated_rro_product_adevtool__ \
     com.google.android.widevine \
     com.google.edgetpu_app_service-V2-ndk \
     com.google.edgetpu_app_service-V2-ndk__system_ext \
@@ -449,7 +446,6 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/tangorpro/proprietary/product/etc/sysconfig/google-nest-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/google-nest-hiddenapi-package-whitelist.xml \
     vendor/google_devices/tangorpro/proprietary/product/etc/sysconfig/pixel_tablet-initial-package-stopped-states.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_tablet-initial-package-stopped-states.xml \
     vendor/google_devices/tangorpro/proprietary/system_ext/etc/permissions/com.google.android.camera.extensions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.android.camera.extensions.xml \
-    vendor/google_devices/tangorpro/proprietary/system_ext/etc/permissions/com.google.android.camerax.extensions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.android.camerax.extensions.xml \
     vendor/google_devices/tangorpro/proprietary/system_ext/etc/permissions/google-ril.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/google-ril.xml \
     vendor/google_devices/tangorpro/proprietary/system_ext/etc/permissions/privapp-permissions-qorvo.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qorvo.xml \
     vendor/google_devices/tangorpro/proprietary/vendor/etc/display_settings.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display_settings.xml \
