@@ -4187,76 +4187,6 @@ android_app_import {
 }
 
 android_app_import {
-    name: "SystemUIClocks-BigNum",
-    owner: "google_devices",
-    apk: "system_ext/priv-app/SystemUIClocks-BigNum/SystemUIClocks-BigNum.apk",
-    certificate: "platform",
-    privileged: true,
-    dex_preopt: { enabled: false },
-    system_ext_specific: true,
-}
-
-android_app_import {
-    name: "SystemUIClocks-Calligraphy",
-    owner: "google_devices",
-    apk: "system_ext/priv-app/SystemUIClocks-Calligraphy/SystemUIClocks-Calligraphy.apk",
-    certificate: "platform",
-    privileged: true,
-    dex_preopt: { enabled: false },
-    system_ext_specific: true,
-}
-
-android_app_import {
-    name: "SystemUIClocks-Flex",
-    owner: "google_devices",
-    apk: "system_ext/priv-app/SystemUIClocks-Flex/SystemUIClocks-Flex.apk",
-    certificate: "platform",
-    privileged: true,
-    dex_preopt: { enabled: false },
-    system_ext_specific: true,
-}
-
-android_app_import {
-    name: "SystemUIClocks-Growth",
-    owner: "google_devices",
-    apk: "system_ext/priv-app/SystemUIClocks-Growth/SystemUIClocks-Growth.apk",
-    certificate: "platform",
-    privileged: true,
-    dex_preopt: { enabled: false },
-    system_ext_specific: true,
-}
-
-android_app_import {
-    name: "SystemUIClocks-Inflate",
-    owner: "google_devices",
-    apk: "system_ext/priv-app/SystemUIClocks-Inflate/SystemUIClocks-Inflate.apk",
-    certificate: "platform",
-    privileged: true,
-    dex_preopt: { enabled: false },
-    system_ext_specific: true,
-}
-
-android_app_import {
-    name: "SystemUIClocks-NumOverlap",
-    owner: "google_devices",
-    apk: "system_ext/priv-app/SystemUIClocks-NumOverlap/SystemUIClocks-NumOverlap.apk",
-    certificate: "platform",
-    privileged: true,
-    dex_preopt: { enabled: false },
-    system_ext_specific: true,
-}
-
-android_app_import {
-    name: "SystemUIClocks-Weather",
-    owner: "google_devices",
-    apk: "system_ext/priv-app/SystemUIClocks-Weather/SystemUIClocks-Weather.apk",
-    certificate: "platform",
-    privileged: true,
-    dex_preopt: { enabled: false },
-    system_ext_specific: true,
-}
-
-android_app_import {
     name: "adreno_graphics_driver",
     owner: "google_devices",
     apk: "vendor/app/adreno_graphics_driver/adreno_graphics_driver.apk",
@@ -14721,15 +14651,6 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "atcmdfwd-saidl",
-    owner: "google_devices",
-    src: "system_ext/etc/vintf/manifest/atcmdfwd-saidl.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    system_ext_specific: true,
-}
-
-prebuilt_etc_xml {
     name: "android.hardware.authsecret-service.citadel__2",
     owner: "google_devices",
     src: "vendor/etc/vintf/manifest/android.hardware.authsecret-service.citadel.xml",
@@ -14841,15 +14762,6 @@ prebuilt_etc_xml {
     name: "manifest_input.processor-service",
     owner: "google_devices",
     src: "vendor/etc/vintf/manifest/manifest_input.processor-service.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "manifest_wifi_ext_aidl",
-    owner: "google_devices",
-    src: "vendor/etc/vintf/manifest/manifest_wifi_ext_aidl.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
