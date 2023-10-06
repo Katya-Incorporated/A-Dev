@@ -127,6 +127,10 @@ export default class GeneratePrep extends Command {
           buildId = flags.buildId
         }
 
+        // these makefiles are expected to reference proprietary files that are
+        // inaccessible during state collection build
+        config.platform.extra_product_makefiles = []
+
         await doDevice(config, stockSrc, buildId, flags.skipCopy, flags.useTemp)
       },
       config => config.device.name,
