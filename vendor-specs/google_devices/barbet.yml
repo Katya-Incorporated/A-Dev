@@ -71,10 +71,10 @@ overlays/product_org.codeaurora.ims/res: dir
 overlays/product_org.codeaurora.ims/res/values: dir
 overlays/product_org.codeaurora.ims/res/values/values.xml: d740f1e01a2535a2382a3f40920d7ac4b90be155ce5726962b1f2041e40daca6
 proprietary: dir
-proprietary-files.txt: 1cf63ed6ac20440832c37454c9304c167e60dd550522f94b2305e12bc24c52d7
-proprietary/Android.bp: d5b6394cf54d78f74ba593b827d70a408e8ae9c0b6d8585c0166ccc37e927512
+proprietary-files.txt: 9267086b5a144446b2f75fe80ce64d844856f0e602a7b73e4dda6489f63a9c2a
+proprietary/Android.bp: 583a465b3cc5a1baef5cdb8717c024660e2a9a22b38c1028a44f1981621621db
 proprietary/BoardConfigVendor.mk: 5c24f479c707b4ade0485b3dc8166ea62b66ba253a27517af4142709bed4e724
-proprietary/device-vendor.mk: 44f1418eeebf20ad58a35fa16188d99d0e967a094ece5ca1fb6b2fecfb71d283
+proprietary/device-vendor.mk: 338c57a9a47a38d480f125de675a857bc69731a9254c1ea916b97bdfe98bf979
 proprietary/product: dir
 proprietary/product/app: dir
 proprietary/product/app/uimremoteclient: dir
@@ -448,6 +448,9 @@ proprietary/system_ext/etc/seccomp_policy/sxraux-arm.policy: cc0a0b382edeed1b79e
 proprietary/system_ext/etc/seccomp_policy/tcmd.policy: 7e26f0e5d93aa77bc4b1433e718169b6b9e8409715182d3cff3cc1cdf490198b
 proprietary/system_ext/etc/sysconfig: dir
 proprietary/system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml: 4fda0c6e64ad8d6f10f6098401dd77c7218c60e89fa67600362eb84f8d807c80
+proprietary/system_ext/etc/vintf: dir
+proprietary/system_ext/etc/vintf/manifest: dir
+proprietary/system_ext/etc/vintf/manifest/atcmdfwd-saidl.xml: 1c1dbd32f7624edfe6cbd98e727de70ec61a7c20b10bd5ceff3249034a15b6e1
 proprietary/system_ext/framework: dir
 proprietary/system_ext/framework/ActivityExt.jar: de1f6bbd26c6293a4e9e1ed3b3d9bfcaeb387fe94161417762ffa0fcfb09ad74
 proprietary/system_ext/framework/audiosphere.jar: 682884e45bc718d1088025b26edbff29a468af5d4693942584eb35a26f29ef2f
