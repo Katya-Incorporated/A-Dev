@@ -128,6 +128,9 @@ filters:
       # ssrestart files
       - vendor/bin/sscoredump
       - vendor/etc/init/init.sscoredump.rc
+      # Added as of android 14
+      - vendor/bin/init.camera.set-interrupts-ownership
+      - vendor/etc/init/init.camera.set-interrupts-ownership.rc
       # we dont ship exo
       - system_ext/etc/default-permissions/default-exo-permissions.xml
     suffix:
