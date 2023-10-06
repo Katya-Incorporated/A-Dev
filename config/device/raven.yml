@@ -6,3 +6,4 @@ platform:
 
 includes:
   - common/gen6pixel.yml
+  - common/gs-wireless-charger.yml

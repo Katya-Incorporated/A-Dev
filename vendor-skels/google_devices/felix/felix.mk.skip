@@ -10,6 +10,8 @@ PRODUCT_MODEL := Pixel Fold
 PRODUCT_BRAND := google
 PRODUCT_MANUFACTURER := Google
 
+include device/google/gs-common/wireless_charger/wireless_charger.mk
+
 ifneq ($(BUILD_ID),UP1A.231005.007)
   $(error BUILD_ID: expected UP1A.231005.007, got $(BUILD_ID))
 endif
