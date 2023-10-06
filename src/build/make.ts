@@ -236,6 +236,13 @@ PRODUCT_MANUFACTURER := ${mk.manufacturer}`)
     blocks.push(`PRODUCT_ENFORCE_RRO_TARGETS := ${mk.enforceRros}`)
   }
 
+  let extraMakefiles = config?.platform?.extra_product_makefiles
+  if (extraMakefiles !== undefined && extraMakefiles.length > 0) {
+    for (let mk of extraMakefiles) {
+      blocks.push(`include ${mk}`)
+    }
+  }
+
   let build_id = config?.device?.build_id
 
   if (build_id !== undefined) {
