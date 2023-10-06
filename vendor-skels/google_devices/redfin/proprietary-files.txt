@@ -36,6 +36,7 @@ system_ext/etc/permissions/qti_telephony_utils.xml
 system_ext/etc/seccomp_policy/sxraux-arm.policy
 system_ext/etc/seccomp_policy/tcmd.policy
 system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml
+system_ext/etc/vintf/manifest/atcmdfwd-saidl.xml
 system_ext/framework/ActivityExt.jar
 system_ext/framework/audiosphere.jar
 system_ext/framework/com.google.android.camera.experimental2022_system.jar

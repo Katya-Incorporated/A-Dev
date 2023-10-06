@@ -10,7 +10,6 @@ filters:
     match:
       - vendor/etc/vintf/manifest/manifest_wifi_ext.xml
       - vendor/etc/vintf/manifest/manifest_wifi_ext_aidl.xml
-      - system_ext/etc/vintf/manifest/atcmdfwd-saidl.xml
 
   dep_files:
     match:

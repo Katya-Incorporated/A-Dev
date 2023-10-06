@@ -14704,6 +14704,15 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
+    name: "atcmdfwd-saidl",
+    owner: "google_devices",
+    src: "system_ext/etc/vintf/manifest/atcmdfwd-saidl.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    system_ext_specific: true,
+}
+
+prebuilt_etc_xml {
     name: "android.hardware.authsecret-service.citadel__2",
     owner: "google_devices",
     src: "vendor/etc/vintf/manifest/android.hardware.authsecret-service.citadel.xml",
