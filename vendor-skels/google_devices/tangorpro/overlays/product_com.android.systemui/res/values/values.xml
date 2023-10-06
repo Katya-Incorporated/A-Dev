@@ -42,6 +42,7 @@
   </integer-array>
   <bool name="config_enableBouncerUserSwitcher">true</bool>
   <bool name="config_enableFullscreenUserSwitcher">true</bool>
+  <bool name="config_enableLockScreenCustomClocks">false</bool>
   <bool name="config_hspa_data_distinguishable">true</bool>
   <bool name="config_letterboxIsReachabilityEducationEnabled">true</bool>
   <bool name="config_letterboxIsRestartDialogEnabled">true</bool>
@@ -51,6 +52,7 @@
   <bool name="config_show_low_light_clock_when_docked">true</bool>
   <bool name="config_show_wifi_tethering">false</bool>
   <bool name="config_vibrateOnIconAnimation">true</bool>
+  <bool name="custom_lockscreen_shortcuts_enabled">false</bool>
   <bool name="doze_display_state_supported">true</bool>
   <bool name="doze_suspend_display_state_supported">false</bool>
   <bool name="flag_battery_shield_icon">true</bool>
@@ -73,7 +75,30 @@
   </string-array>
   <integer name="config_showTemperatureWarning">1</integer>
   <integer name="config_showUsbPortAlarm">1</integer>
-  <fraction name="display_density_max_scale">133.12378%</fraction>
+  <string name="desc_ProfileIcons1">Playful illustration of two dark-green semi-circles on a light green background</string>
+  <string name="desc_ProfileIcons10">Playful illustration of an orange butterfly on a yellow background</string>
+  <string name="desc_ProfileIcons11">Black nose shape with rounded edges on a dark gray background</string>
+  <string name="desc_ProfileIcons12">Black clover shape with rounded edges on a light gray background</string>
+  <string name="desc_ProfileIcons13">Light purple wiggly circle on a dark purple background</string>
+  <string name="desc_ProfileIcons14">Light blue clover shape with rounded edges on an orange background</string>
+  <string name="desc_ProfileIcons15">Light green hexagon with rounded edges on a dark green background</string>
+  <string name="desc_ProfileIcons16">Black diamond shape with rounded edges on a light gray background</string>
+  <string name="desc_ProfileIcons17">Playful illustration of an orange leaf on a yellow background</string>
+  <string name="desc_ProfileIcons18">Playful illustration of the planet Saturn on a peach background</string>
+  <string name="desc_ProfileIcons19">Playful illustration of white and orange stars and circles in a celestial pattern on a black background</string>
+  <string name="desc_ProfileIcons2">Abstract illustration of black and white intersecting cylinders</string>
+  <string name="desc_ProfileIcons20">Playful illustration of a dog with blue ears and a white face on a yellow background</string>
+  <string name="desc_ProfileIcons21">Playful illustration of a white dove flying with an olive branch on a purple background</string>
+  <string name="desc_ProfileIcons22">Playful illustration of a dog with black ears and a white face on a blue background</string>
+  <string name="desc_ProfileIcons23">Playful illustration of a pink flower with green leaves on a cream background</string>
+  <string name="desc_ProfileIcons24">Abstract illustration of six blue cylinders on a red background</string>
+  <string name="desc_ProfileIcons3">Abstract illustration of a light blue clover shape on a dark blue background</string>
+  <string name="desc_ProfileIcons4">Abstract illustration of two pink, three-dimensional triangles</string>
+  <string name="desc_ProfileIcons5">Abstract illustration of teal layers on a yellow background</string>
+  <string name="desc_ProfileIcons6">Abstract illustration of purple rocks on a green background</string>
+  <string name="desc_ProfileIcons7">Playful illustration of five white, geometric flowers on an orange background</string>
+  <string name="desc_ProfileIcons8">Playful illustration of three blueberries on a pink background</string>
+  <string name="desc_ProfileIcons9">Playful illustration of a lemon with a black leaf on a green background</string>
   <string name="dock_setup_notification_text">Choose a screen saver and turn on hands-free help while your tablet is docked</string>
   <string name="dock_setup_notification_title">Do more while docked</string>
   <string name="doze_brightness_sensor_type">com.google.sensor.binned_brightness</string>
@@ -81,4 +106,5 @@
   <string name="proximity_sensor_type"/>
   <string name="stylus_system_update_notification_text">To make the most of your stylus, install the latest Android update</string>
   <string name="stylus_system_update_notification_title">Install Android update</string>
+  <fraction name="display_density_max_scale">133.12378%</fraction>
 </resources>
