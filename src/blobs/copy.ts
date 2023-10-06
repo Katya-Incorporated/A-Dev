@@ -25,9 +25,27 @@ export async function copyBlobs(entries: Iterable<BlobEntry>, srcDir: string, de
     // Some files need patching
     if (entry.path.endsWith('.xml')) {
       let xml = await readFile(srcPath)
-      // Fix Qualcomm "version 2.0" XMLs
+      // Fix Qualcomm XMLs
+      let patched
       if (xml.startsWith('<?xml version="2.0"')) {
-        let patched = xml.replace(/^<\?xml version="2.0"/, '<?xml version="1.0"')
+        patched = xml.replace(/^<\?xml version="2.0"/, '<?xml version="1.0"')
+      } else if (xml.startsWith('/*')) {
+        patched = xml
+          .split('\n')
+          .map(line => {
+            switch (line) {
+              case '/*':
+                return '<!--'
+              case ' */':
+                return '-->'
+              default:
+                return line
+            }
+          })
+          .join('\n')
+      }
+
+      if (patched !== undefined) {
         await fs.writeFile(outPath, patched)
         continue
       }
