@@ -23,6 +23,7 @@ const DIFF_MAP_PACKAGES = new Map([
   ['com.google.android.networkstack', 'com.android.networkstack'],
   ['com.google.android.networkstack.tethering', 'com.android.networkstack.tethering'],
   ['com.google.android.permissioncontroller', 'com.android.permissioncontroller'],
+  ['com.google.android.uwb.resources', 'com.android.uwb.resources'],
 ])
 
 const XML_BUILDER = new xml2js.Builder()
