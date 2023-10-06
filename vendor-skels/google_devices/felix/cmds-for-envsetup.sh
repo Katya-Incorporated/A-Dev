@@ -1,2 +1,2 @@
-export BUILD_ID_felix="TQ3C.230901.001.A1"
+export BUILD_ID_felix="UP1A.231005.007"
 unset PLATFORM_SECURITY_PATCH_felix

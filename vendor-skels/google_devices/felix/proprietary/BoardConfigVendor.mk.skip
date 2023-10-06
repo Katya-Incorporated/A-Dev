@@ -30,6 +30,8 @@ BOARD_VENDOR_SEPOLICY_DIRS += \
 
 # Missing vendor SELinux context: /vendor/bin/hw/android\.hardware\.biometrics\.face-service(.[a-zA-Z0-9]+)?.pixel u:object_r:hal_face_default_exec:s0
 # Missing vendor SELinux context: /vendor/bin/hw/android\.hardware\.biometrics\.face-service-[a-zA-Z0-9]+ u:object_r:hal_face_default_exec:s0
+# Missing vendor SELinux context: /vendor/bin/init\.camera\.set-interrupts-ownership u:object_r:init-camera-set-interrupts-ownership_exec:s0
+# Missing vendor SELinux context: /vendor/bin/hw/vendor\.google\.wireless_charger-default u:object_r:hal_wireless_charger_exec:s0
 # Missing vendor SELinux context: /vendor/bin/hw/vendor\.google\.exo_camera_injection@1\.1-service u:object_r:hal_exo_camera_injection_exec:s0
 # Missing vendor SELinux context: com.google.face.debug::IDebugHost u:object_r:hal_face_debug_hwservice:s0
 # Missing vendor SELinux context: vendor.google.exo_camera_injection::IExoCameraInjection u:object_r:hal_exo_camera_injection_hwservice:s0
@@ -40,3 +42,4 @@ BOARD_VENDOR_SEPOLICY_DIRS += \
 # Missing vendor SELinux context: user=_app seinfo=CameraFishfood name=com.google.android.apps.googlecamera.fishfood domain=google_camera_app type=app_data_file levelFrom=all
 # Missing vendor SELinux context: user=_app seinfo=CameraEng name=com.google.android.apps.googlecamera.fishfood domain=debug_camera_app type=app_data_file levelFrom=all
 # Missing vendor SELinux context: com.google.face.debug.IDebugHost/default u:object_r:hal_face_debug_service:s0
+# Missing vendor SELinux context: com.google.face.debug.IDebugManager/default u:object_r:hal_face_debug_service:s0

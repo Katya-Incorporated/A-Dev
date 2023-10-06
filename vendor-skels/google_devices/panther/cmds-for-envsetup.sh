@@ -1,2 +1,2 @@
-export BUILD_ID_panther="TQ3A.230901.001"
+export BUILD_ID_panther="UP1A.231005.007"
 unset PLATFORM_SECURITY_PATCH_panther

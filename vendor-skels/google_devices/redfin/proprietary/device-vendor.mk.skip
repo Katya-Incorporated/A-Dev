@@ -4,9 +4,6 @@
 PRODUCT_SOONG_NAMESPACES += \
     vendor/google_devices/redfin
 
-PRODUCT_SYSTEM_PROPERTIES += \
-    ro.hotword.detection_service_required=true
-
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.lito.api30 \
     graphics.gpu.profiler.support=true \
@@ -925,7 +922,6 @@ PRODUCT_PACKAGES += \
     lowi-server \
     manifest_android.hardware.drm-service.widevine-v17 \
     manifest_input.processor-service \
-    manifest_wifi_ext_aidl \
     memtrack.lito \
     modem_svc \
     motiondetector \
@@ -980,13 +976,6 @@ PRODUCT_PACKAGES += \
     ssr_diag \
     ssr_setup \
     subsystem_ramdump \
-    SystemUIClocks-BigNum \
-    SystemUIClocks-Calligraphy \
-    SystemUIClocks-Flex \
-    SystemUIClocks-Growth \
-    SystemUIClocks-Inflate \
-    SystemUIClocks-NumOverlap \
-    SystemUIClocks-Weather \
     test_diag \
     tftp_server \
     time_daemon \

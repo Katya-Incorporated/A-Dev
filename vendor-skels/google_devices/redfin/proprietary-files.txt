@@ -556,13 +556,6 @@ system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so
 system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so
 system_ext/priv-app/PixelNfc/PixelNfc.apk
 system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-system_ext/priv-app/SystemUIClocks-BigNum/SystemUIClocks-BigNum.apk
-system_ext/priv-app/SystemUIClocks-Calligraphy/SystemUIClocks-Calligraphy.apk
-system_ext/priv-app/SystemUIClocks-Flex/SystemUIClocks-Flex.apk
-system_ext/priv-app/SystemUIClocks-Growth/SystemUIClocks-Growth.apk
-system_ext/priv-app/SystemUIClocks-Inflate/SystemUIClocks-Inflate.apk
-system_ext/priv-app/SystemUIClocks-NumOverlap/SystemUIClocks-NumOverlap.apk
-system_ext/priv-app/SystemUIClocks-Weather/SystemUIClocks-Weather.apk
 product/app/uimremoteclient/uimremoteclient.apk
 product/app/uimremoteserver/uimremoteserver.apk
 product/app/xdivert/xdivert.apk
@@ -1310,7 +1303,6 @@ vendor/etc/vintf/manifest/android.hardware.weaver@1.0-service.citadel.xml
 vendor/etc/vintf/manifest/c2_manifest_vendor.xml
 vendor/etc/vintf/manifest/manifest_android.hardware.drm-service.widevine-v17.xml
 vendor/etc/vintf/manifest/manifest_input.processor-service.xml
-vendor/etc/vintf/manifest/manifest_wifi_ext_aidl.xml
 vendor/etc/vintf/manifest/pixel-display-default.xml
 vendor/etc/vintf/manifest/rebootescrow-citadel.xml
 vendor/etc/vintf/manifest/vendor.google.google_battery-default.xml
