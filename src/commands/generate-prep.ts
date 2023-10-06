@@ -6,7 +6,13 @@ import { copyBlobs } from '../blobs/copy'
 import { BlobEntry } from '../blobs/entry'
 import { DEVICE_CONFIG_FLAGS, DeviceBuildId, DeviceConfig, getDeviceBuildId, loadDeviceConfigs } from '../config/device'
 import { forEachDevice } from '../frontend/devices'
-import { enumerateFiles, extractProps, generateBuildFiles, PropResults } from '../frontend/generate'
+import {
+  enumerateFiles,
+  extractProps,
+  generateBuildFiles,
+  PropResults,
+  writeEnvsetupCommands,
+} from '../frontend/generate'
 import { DeviceImages, prepareFactoryImages, WRAPPED_SOURCE_FLAGS, wrapSystemSrc } from '../frontend/source'
 import { loadBuildIndex } from '../images/build-index'
 import { withSpinner } from '../util/cli'
@@ -63,6 +69,8 @@ const doDevice = (
     await withSpinner('Generating build files', () =>
       generateBuildFiles(config, dirs, entries, [], propResults, null, null, null, stockSrc, false, true),
     )
+
+    await writeEnvsetupCommands(config, dirs)
   })
 
 export default class GeneratePrep extends Command {
