@@ -448,6 +448,7 @@ async function unpackFactoryImage(factoryImagePath: string, image: DeviceImage, 
       await fs.rename(unpackedTmp, out)
 
       console.log('unpacked ' + getUnpackedFactoryDirName(image))
+      return
     }
   } finally {
     await fd.close()
