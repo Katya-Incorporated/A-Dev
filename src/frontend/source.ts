@@ -388,7 +388,11 @@ async function unpackFactoryImage(factoryImagePath: string, image: DeviceImage, 
     // There's a TOCTOU race (file is accessed after check), but it affects all other generated files too.
     // Fixing it for this particular case is not worth the complexity increase
   } else {
-    throw new Error(`SHA-256 mismatch for '${image.fileName}': expected ${image.sha256} got ${sha256}`)
+    if (image.skipSha256Check) {
+      console.warn(`skipping SHA-256 check for ${image.fileName}, SHA-256: ${sha256}`)
+    } else {
+      throw new Error(`SHA-256 mismatch for '${image.fileName}': expected ${image.sha256} got ${sha256}`)
+    }
   }
 
   let fd = await fs.open(factoryImagePath, 'r')
@@ -400,9 +404,15 @@ async function unpackFactoryImage(factoryImagePath: string, image: DeviceImage, 
       let entry: yauzl.Entry = entryP
       let entryName = entry.filename
 
-      let isInnerZip =
-        entryName.includes(`-${image.buildId.toLowerCase()}/image-${image.deviceConfig.device.name}`) &&
-        entryName.endsWith(`-${image.buildId.toLowerCase()}.zip`)
+      let isInnerZip = false
+
+      let deviceName = image.deviceConfig.device.name
+      if (image.isGrapheneOS) {
+        isInnerZip = entryName.includes(`/image-${deviceName}-`) && entryName.endsWith('.zip')
+      } else {
+        isInnerZip = entryName.includes(`-${image.buildId.toLowerCase()}/image-${deviceName}`) &&
+          entryName.endsWith(`-${image.buildId.toLowerCase()}.zip`)
+      }
 
       if (!isInnerZip) {
         continue
