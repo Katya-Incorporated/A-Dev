@@ -70,13 +70,21 @@ async function downloadImage(image: DeviceImage, outDir: string) {
 
   let sha256Digest: string = sha256.digest('hex')
   console.log('SHA-256: ' + sha256Digest)
-  assert(sha256Digest === image.sha256, 'SHA256 mismatch, expected ' + image.sha256)
+  if (image.skipSha256Check) {
+    console.warn('skipping SHA-256 check for ' + completeOutFile)
+  } else {
+    assert(sha256Digest === image.sha256, 'SHA256 mismatch, expected ' + image.sha256)
+  }
 
   await fs.rename(tmpOutFile, completeOutFile)
 }
 
 function logTermsAndConditionsNotice(images: DeviceImage[]) {
-  if (images.filter(i => i.type === ImageType.Factory || i.type === ImageType.Ota).length == 0) {
+  if (
+    images.filter(i => {
+      return !i.isGrapheneOS && (i.type === ImageType.Factory || i.type === ImageType.Ota)
+    }).length == 0
+  ) {
     // vendor images show T&C notice themselves as part of unpacking
     return
   }
