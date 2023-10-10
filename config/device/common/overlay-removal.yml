@@ -263,3 +263,5 @@ filters:
       - com.android.systemui:string/config_screenshotEditor
       - com.android.systemui:string/quick_settings_tiles_default
       - com.android.systemui:string/config_lowLightDreamComponent
+      # Config not copied from Google's SystemUI, to disallow overriding it
+      - com.android.systemui:bool/custom_lockscreen_shortcuts_enabled
