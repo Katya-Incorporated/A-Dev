@@ -15,7 +15,7 @@ firmware/ldfw.img: 691eb29b7e35b239a54265896779177e5ae453122bb09debe84b5b923b7cb
 firmware/pbl.img: b2e792cd7106542b3301eac760b4f62de33b23bf54393f55f3f881ac98e71180
 firmware/tzsw.img: ace6d326e3368f041631715c5f3953d116144012fd2e3d978861df3ad8a5baa4
 overlays: dir
-overlays/product.txt: a37639b74b79776cee50c48c99c90082c9c03ec9fedaf2da0a910ce4e5a6562f
+overlays/product.txt: 1535a03c64832de515316f648aa8c4a42f49832b038e054c66289fabed5a7829
 overlays/product_android: dir
 overlays/product_android/Android.bp: 3137f7daaf29e961bcc2696bc41758df7f4a13f9515fda5c287723570c563cec
 overlays/product_android/AndroidManifest.xml: 80efab0a2e72b6fa7ddfd376385437e827f16a8058b8cb5f0d07835a0adaa5a6
@@ -51,7 +51,7 @@ overlays/product_com.android.systemui/Android.bp: 2a9224d7a90f57e4ca497f82ad4717
 overlays/product_com.android.systemui/AndroidManifest.xml: 855ccc73311fe5d578005a73eb2a2e1eadd8bef2a2e15d50f1071858bbb5256e
 overlays/product_com.android.systemui/res: dir
 overlays/product_com.android.systemui/res/values: dir
-overlays/product_com.android.systemui/res/values/values.xml: ab587f38ae1749d47563f4f03b33b261ecc65c7c9b5d535b5640a7d7c139174d
+overlays/product_com.android.systemui/res/values/values.xml: ad48e00afff82f87a1dc913b2714ba5f8dd8c1ccd0757f0405f5f23e0b7dae86
 overlays/product_com.android.traceur: dir
 overlays/product_com.android.traceur/Android.bp: 2d4e9af842591a0a96e6fa98ad988c0a0014d4c9b7c026ccaf17ee8b87dc710e
 overlays/product_com.android.traceur/AndroidManifest.xml: 06e45ec04737f96e55f0b350a93106dbfaedc7242d5fc248733a5a4e297ee1b1

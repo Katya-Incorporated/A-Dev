@@ -234,7 +234,6 @@ com.android.systemui:bool/config_enableBouncerUserSwitcher = true
 com.android.systemui:bool/config_enableFullscreenUserSwitcher = true
 com.android.systemui:bool/config_enableLockScreenCustomClocks = false
 com.android.systemui:bool/config_show_low_light_clock_when_docked = true
-com.android.systemui:bool/custom_lockscreen_shortcuts_enabled = false
 com.android.systemui:bool/doze_display_state_supported = true
 com.android.systemui:bool/doze_suspend_display_state_supported = false
 com.android.systemui:bool/flag_battery_shield_icon = true
