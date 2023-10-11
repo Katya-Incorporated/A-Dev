@@ -119,14 +119,14 @@ function parseFactoryOrOtaPage(buildIndex: BuildIndex, pageType: string, dom: JS
       assert(version.endsWith(')'), 'unexpected version string: ' + version)
 
       let buildIdAndDescription = version.slice(version.indexOf(' (') + 2, -1)
-      let buildId = buildIdAndDescription.substring(0, buildIdAndDescription.indexOf(','))
-      assert(buildId === row.id.substring(device.length).toUpperCase(),
-        'row.id ' + row.id + ' does not match version string ' + version)
+      let buildId = row.id.substring(device.length).toUpperCase()
 
       let description = buildIdAndDescription.substring(buildId.length + 2)
 
       let buildProps = getBuildProps(buildIndex, device, buildId)
-      buildProps.set(BUILD_PROP_DESCRIPTION, description)
+      if (!buildProps.has(BUILD_PROP_DESCRIPTION)) {
+        buildProps.set(BUILD_PROP_DESCRIPTION, description)
+      }
 
       parseFactoryOrOtaRow(row, pageType, device, buildId, buildProps)
     }
@@ -266,7 +266,10 @@ function parseFactoryOrOtaRow(row: HTMLTableRowElement, pageType: string, dev: s
 
 function parseSha256(cell: HTMLTableCellElement) {
   let s = cell.textContent!
-  assert(s.length === 64)
+  if (s.endsWith('.zip')) {
+    s = s.slice(0, -'.zip'.length)
+  }
+  assert(s.length === 64, s)
   return s
 }
 
