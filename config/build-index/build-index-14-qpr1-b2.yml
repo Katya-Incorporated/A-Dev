@@ -1,0 +1,28 @@
+barbet U1B2.230922.006:
+  factory: 12b6c3aa3ee5ee60ec141fa12c8fcdaa76bf0f838434432ec6df2d352fdf279c https://dl.google.com/developers/android/udc/images/factory/barbet_beta-u1b2.230922.006-factory-12b6c3aa.zip
+  ota: 5596b6370387fa52813862c46e4e157525ea939c6ffa3e168e56a998c17878ae https://dl.google.com/developers/android/udc/images/ota/barbet_beta-ota-u1b2.230922.006-5596b637.zip
+oriole U1B2.230922.006:
+  factory: b5b06e4a3f855251b2295ca9fafc76f67837e0003c197731ab22cf6587f38a11 https://dl.google.com/developers/android/udc/images/factory/oriole_beta-u1b2.230922.006-factory-b5b06e4a.zip
+  ota: 93635618f9b735614df1c442bc9d810232642a4bdbdabf854361691783fe2b22 https://dl.google.com/developers/android/udc/images/ota/oriole_beta-ota-u1b2.230922.006-93635618.zip
+raven U1B2.230922.006:
+  factory: ed0f6caccf21435a62dcff25db62f50506f68f16e65bc491fb6162b29c22b02a https://dl.google.com/developers/android/udc/images/factory/raven_beta-u1b2.230922.006-factory-ed0f6cac.zip
+  ota: c16e218d181cf91f7c4cb0831770711ffc6151b32739a438da7d9dd628cbbdbd https://dl.google.com/developers/android/udc/images/ota/raven_beta-ota-u1b2.230922.006-c16e218d.zip
+bluejay U1B2.230922.006:
+  factory: d80094e2d015f5a8fa58d93a3bbb1f14a91044c6bbf078e0bce6ca0949c31ce7 https://dl.google.com/developers/android/udc/images/factory/bluejay_beta-u1b2.230922.006-factory-d80094e2.zip
+  ota: 002016aeb2c9441b54296298be65179ab7325d41351557ae783db0e1c25c6001 https://dl.google.com/developers/android/udc/images/ota/bluejay_beta-ota-u1b2.230922.006-002016ae.zip
+panther U1B2.230922.006:
+  factory: 14782a8a9be3c698167079a6fc71bf43a42c51c40e42c0c35026250cdc91ee79 https://dl.google.com/developers/android/udc/images/factory/panther_beta-u1b2.230922.006-factory-14782a8a.zip
+  ota: d8af5ba83b74bdf642d4b0a3d93aaac6fe89126aa325352b06de60165941e90f https://dl.google.com/developers/android/udc/images/ota/panther_beta-ota-u1b2.230922.006-d8af5ba8.zip
+cheetah U1B2.230922.006:
+  factory: 4d745e423bb60d27b8a722a8764c5e5406ad2a009196837097535f82d8ca5a64 https://dl.google.com/developers/android/udc/images/factory/cheetah_beta-u1b2.230922.006-factory-4d745e42.zip
+  ota: 31c11481e5f796e18c468e712561e0861d0ec165be514800220f30feb584667a https://dl.google.com/developers/android/udc/images/ota/cheetah_beta-ota-u1b2.230922.006-31c11481.zip
+lynx U1B2.230922.006:
+  factory: 05444db899944fc05bc6987723cf9598cc0db0fa86dffdf4897f8c45ff9bccbe https://dl.google.com/developers/android/udc/images/factory/lynx_beta-u1b2.230922.006-factory-05444db8.zip
+  ota: 354d205508ddcd9dbb7e4a2169984a3ddee706ec4005f782ffb37236661598b3 https://dl.google.com/developers/android/udc/images/ota/lynx_beta-ota-u1b2.230922.006-354d2055.zip
+felix U1B2.230922.006:
+  factory: 58b6a2f5a4ddac21d10bf7eef05c98114392fba1c7a75c03fc0f51cf396f6486 https://dl.google.com/developers/android/udc/images/factory/felix_beta-u1b2.230922.006-factory-58b6a2f5.zip
+  ota: f44729693a90199a9fce54273b571ca9dc061402dc691ad1f6effa75f309f024 https://dl.google.com/developers/android/udc/images/ota/felix_beta-ota-u1b2.230922.006-f4472969.zip
+tangorpro U1B2.230922.006:
+  factory: 10a39eae22c797a9cc46b1d8d634ba70e26e15adb786e61d4d2a1e259ad0626f https://dl.google.com/developers/android/udc/images/factory/tangorpro_beta-u1b2.230922.006-factory-10a39eae.zip
+  ota: 08067b2f8fc81922c14cbb7eeb802d506dbccad21ab2488548c0a24071c7cfae https://dl.google.com/developers/android/udc/images/ota/tangorpro_beta-ota-u1b2.230922.006-08067b2f.zip
+
