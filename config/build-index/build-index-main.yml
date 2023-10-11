@@ -1,3 +1,53 @@
+husky UD1A.230803.022.A3:
+  desc: Sep 2023, Verizon
+  factory: a95417f6ace90bb3ed39f86966bf9f32aad0505c29d5698dc19dddb9739f37bc husky-ud1a.230803.022.a3-factory-a95417f6.zip
+  ota: d93512561608343757f3de3708eececb981aa04d4b4f40106c099ab1756eed21 husky-ota-ud1a.230803.022.a3-d9351256.zip
+  vendor/google_devices: 482cc0d24cdc5bd1a278af2021985271a9e850b5fcde3042fb63f0459fee777f google_devices-husky-ud1a.230803.022.a3-5ee7d7f9.tgz
+husky UD1A.230803.022.A4:
+  desc: Sep 2023, US-Emerging/G-store,CA,TW,AU,Fi
+  factory: 621d3cb071c936cfa76b7fb08472fd670aad6c4c0472ba4919c870fc6e702883 husky-ud1a.230803.022.a4-factory-621d3cb0.zip
+  ota: 3fc154f89b81f4afee07ec5446c4d68f7033d64f39bdc2b0778912ee187a2362 husky-ota-ud1a.230803.022.a4-3fc154f8.zip
+  vendor/google_devices: b626cfcaad3dd1e17b2daef4a52a7508b9b073f7ca1b465cbc55a1ef655efbd5 google_devices-husky-ud1a.230803.022.a4-261278f6.tgz
+husky UD1A.230803.022.B1:
+  desc: Sep 2023, T-Mobile
+  factory: ad17d26df55b25168634f86eee3eff17848efd8a7ad3be4f7d206a47964580a8 husky-ud1a.230803.022.b1-factory-ad17d26d.zip
+  ota: 13ff7dfb0923e92809c5d4b88dfe7ca2e94e936ed31e6089ff97d5a9f7d5eafb husky-ota-ud1a.230803.022.b1-13ff7dfb.zip
+  vendor/google_devices: b47edcffd5bd4f5b1e6c4216d4ef6f49b20368d4c2604d9b6df225e5adbe2fa7 google_devices-husky-ud1a.230803.022.b1-99982696.tgz
+husky UD1A.230803.022:
+  desc: Sep 2023, AT&T/EMEA/JP/IN
+  factory: 38765209a6e1c3df8bed46d4133bc5c494197fbdde841e9b726a5c70aa23979a husky-ud1a.230803.022-factory-38765209.zip
+  ota: 102b3fd35b565a18ae653d5c0e5386f818a54dd1a04e1e8deb120e0118d90423 husky-ota-ud1a.230803.022-102b3fd3.zip
+  vendor/google_devices: 152dc0f5dbe5a7c8616f3882278d296c316d6cf746ae7e0cdb784996514cb702 google_devices-husky-ud1a.230803.022-bfe0aad5.tgz
+husky UD1A.230803.041:
+  desc: Oct 2023
+  factory: f26063c5cd9d4810d2f69007dbb8af5f7f06a1e7a2f866a1e8a121e89c445c00 husky-ud1a.230803.041-factory-f26063c5.zip
+  ota: cca7e1116663aadbf103f7c841d301bf5f0ea6a680e8774391bc45ea282e27f9 husky-ota-ud1a.230803.041-cca7e111.zip
+  vendor/google_devices: 058fe8f2c9ab835e8626982b596b919e38a8a9ebcd735c956f67f77f9c1fb26b google_devices-husky-ud1a.230803.041-d34ba4d0.tgz
+shiba UD1A.230803.022.A5:
+  desc: Sep 2023, US Non Verizon/AT&T/T-Mobile carriers/CA/TW
+  factory: 85c06d1dd95b2e157ea1ba3c78fc2df8dabeb42dcd58c9cdb6f015e2c0c7b455 shiba-ud1a.230803.022.a5-factory-85c06d1d.zip
+  ota: 415253a6a0965e71be565f3ddfbc42a2acf4fe35871a2210d10f109119cdb23c shiba-ota-ud1a.230803.022.a5-415253a6.zip
+  vendor/google_devices: ffbec5104b97a4c65c3a62891ba64c46a7277d01fcbb8488ef1629a9c3938480 google_devices-shiba-ud1a.230803.022.a5-cfbb20ac.tgz
+shiba UD1A.230803.022.B2:
+  desc: Sep 2023, T-Mobile
+  factory: 829d0a859ba4f15d510b46eea38d56b714338df03169cb430eb35d7d6a6b521a shiba-ud1a.230803.022.b2-factory-829d0a85.zip
+  ota: 8813e2e5b944b313fe7d2935265f8577130bd9d56131f57ba5adfea4b2098f83 shiba-ota-ud1a.230803.022.b2-8813e2e5.zip
+  vendor/google_devices: 8d2c9d071208780b000519760e7e23c9bbc33cb10de1b939ac327039c6c30f8b google_devices-shiba-ud1a.230803.022.b2-b2b58f33.tgz
+shiba UD1A.230803.022.C1:
+  desc: Sep 2023, AT&T/JP/EU/IN
+  factory: 750b1e833285b61c7a9625b0a85a5befee47af5a0ca603a42984fa38a3df3954 shiba-ud1a.230803.022.c1-factory-750b1e83.zip
+  ota: 527c3ceb0ab3f8f9ae8d76a6a492caf9194b4461256f4730de6ebcd75f0d4cf4 shiba-ota-ud1a.230803.022.c1-527c3ceb.zip
+  vendor/google_devices: 13efadfb87cfd94ca9c503cd7df0bcf0c0fab9b2da7981831878c09d25b838b0 google_devices-shiba-ud1a.230803.022.c1-65da8417.tgz
+shiba UD1A.230803.022.D1:
+  desc: Sep 2023, Verizon
+  factory: e99ecc7583f5e1fa6d482e09051a92ac3c14f1b219c86485967355ca4202c5fc shiba-ud1a.230803.022.d1-factory-e99ecc75.zip
+  ota: c6106030881afecc35fd124b0c378cfbd4cf68ea4badc4727110d14ff5b91e6f shiba-ota-ud1a.230803.022.d1-c6106030.zip
+  vendor/google_devices: 1925f36a7347c50babe951297492e243a962c0b38ff1992652ab7d32721c1461 google_devices-shiba-ud1a.230803.022.d1-d17d5963.tgz
+shiba UD1A.230803.041:
+  desc: Oct 2023
+  factory: 3ed11735021f723d9dd49ba98170d4a5ad0d88e9c54338723674886a2a334b54 shiba-ud1a.230803.041-factory-3ed11735.zip
+  ota: 6bbb528c219cc0065c6a64cd82ddab0b138591b3064580659b1163c5f397c7bc shiba-ota-ud1a.230803.041-6bbb528c.zip
+  vendor/google_devices: ece0bddd28711f778b5ef58562624076caf336bc88c0c0dfe54d6fc79a005cea google_devices-shiba-ud1a.230803.041-e5290b7e.tgz
 felix TD3A.230203.070.A1:
   desc: Jun 2023
   factory: d935f0196d7959c916e4f42e25d92e05cd7d2ca0c01080ee46fc35fa996e302b felix-td3a.230203.070.a1-factory-d935f019.zip
