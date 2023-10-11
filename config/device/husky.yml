@@ -1,0 +1,9 @@
+device:
+  name: husky
+
+platform:
+  product_makefile: device/google/shusky/aosp_husky.mk
+
+includes:
+  - common/gen8pixel.yml
+  - common/gs-wireless-charger.yml

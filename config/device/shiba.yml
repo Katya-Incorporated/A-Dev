@@ -1,0 +1,9 @@
+device:
+  name: shiba
+
+platform:
+  product_makefile: device/google/shusky/aosp_shiba.mk
+
+includes:
+  - common/gen8pixel.yml
+  - common/gs-wireless-charger.yml

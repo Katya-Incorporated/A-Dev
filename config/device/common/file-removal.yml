@@ -170,6 +170,7 @@ filters:
       - product/app/Maps/
       # com.google.android.markup is a screenshot/image editor
       - product/app/MarkupGoogle/
+      - product/app/MeetPrebuilt/
       - product/app/MicropaperPrebuilt/
       - product/app/ModuleMetadataGoogle/
       - product/app/MotionSenseBridgePrebuilt/
@@ -219,6 +220,7 @@ filters:
       - product/app/talkback/
       - product/priv-app/AdaptiveVPNPrebuilt/
       - product/priv-app/AICorePrebuilt/
+      - product/priv-app/AiWallpapers/
       # "Pixel Ambient Services", com.google.intelligence.sense, found on 4th and 5th gen
       - product/priv-app/AmbientSensePrebuilt/
       # "Cross-Device Services", com.google.ambient.streaming, used for integration with ChromeOS
@@ -269,6 +271,7 @@ filters:
       # them to Google. Runs each time device finishes booting.
       - product/priv-app/HardwareInfo/
       - product/priv-app/HealthConnectPrebuilt/
+      - product/priv-app/HealthIntelligenceStubPrebuilt/
       # "Google Support Services", https://play.google.com/store/apps/details?id=com.google.android.apps.helprtc
       - product/priv-app/HelpRtcPrebuilt/
       # HotwordEnrollment{OKGoogleFUSION,OKGoogleHEMIDELTA,XGoogleFUSION etc}
@@ -319,6 +322,7 @@ filters:
       # Google search app (GSA), com.google.android.googlequicksearchbox
       - product/priv-app/Velvet/
       - product/priv-app/WallpaperEffect/
+      - product/priv-app/WeatherPixelPrebuilt/
       # Digital Wellbeing, https://play.google.com/store/apps/details?id=com.google.android.apps.wellbeing
       - product/priv-app/WellbeingPrebuilt/
       # Wi-Fi Calling setup, com.google.android.apps.wfcactivation
