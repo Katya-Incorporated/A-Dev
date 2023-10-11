@@ -624,7 +624,7 @@ raven SD1A.210817.015.A4:
   ota: 83028e9cbd809931361575c7d6b3186bff95f113b10044bd384a552a919075b3 raven-ota-sd1a.210817.015.a4-83028e9c.zip
   vendor/google_devices: 4267914736943b542103ee037b872084fce71b06f90c3f638cd7aca7d009abb4 google_devices-raven-sd1a.210817.015.a4-31a5656a.tgz
 raven SD1A.210817.019.B1:
-  desc: Oct 2021, ATT
+  desc: Oct 2021, AT&T
   factory: e74172d8c9245a6611396e14527e981e2dd578b632205af0cd08fd3b7c34397c raven-sd1a.210817.019.b1-factory-e74172d8.zip
   ota: 9e27b8e6a8b3f0e1057312cd9e30977527c22dbf57a2fe79744b5bc36dd240ab raven-ota-sd1a.210817.019.b1-9e27b8e6.zip
   vendor/google_devices: ec7586c1c24327a686770733d8b5174be9650bf94004e3ef5fd6f1dc3b097baf google_devices-raven-sd1a.210817.019.b1-c05af44d.tgz
@@ -1719,7 +1719,7 @@ redfin TQ3A.230901.001:
   vendor/google_devices: 690c685b96084baa3953784b52a673f5c4dd5333136ccebef2051c58734cc2da google_devices-redfin-tq3a.230901.001-1c6ad221.tgz
   vendor/qcom: 0336b293f52030558eff30ac82d6e1f6bafb1e782946fcd26820dff245f572f0 qcom-redfin-tq3a.230901.001-e5b12b12.tgz
 redfin TQ3A.230901.001.C2:
-  desc: Sep 2023
+  desc: Sep 2023, Verizon, Verizon MVNOs
   factory: ca20bd0281398bdb5f9f527604a0800b45b3f41d2649b55cd8c22ec91c37f85e redfin-tq3a.230901.001.c2-factory-ca20bd02.zip
   ota: fc8ea12b245aa0949a1c5d167c94854202f8ecdd947a6e956b17aa1445d181ca redfin-ota-tq3a.230901.001.c2-fc8ea12b.zip
   vendor/google_devices: 389601dea39c8b3622e55aff91a8108a5ada6e62aeac0a58e08d035657b75097 google_devices-redfin-tq3a.230901.001.c2-c073db67.tgz
@@ -2103,7 +2103,7 @@ sunfish QD4A.200317.024.A1:
   vendor/google_devices: d47394ab981045679ea35eb507958ffd7af34345d29175873c0a88b958ec6df2 google_devices-sunfish-qd4a.200317.024.a1-44c42f0b.tgz
   vendor/qcom: 91d0218019fa51a56a6d6cbeb5b4d006494b6f6aedea4f39ba1efdab3aec292b qcom-sunfish-qd4a.200317.024.a1-c551c921.tgz
 sunfish QD4A.200317.027:
-  desc: Aug 2020
+  desc: May 2020
   factory: f137d3d1efd95c2f34f67c140e3c3907b0d8db11a932ee7bc9883082901440dd sunfish-qd4a.200317.027-factory-f137d3d1.zip
   ota: 6c6c95d063ac06d58ece57b24570efb9342b00485fc00bbf2931d28e084c806b sunfish-ota-qd4a.200317.027-6c6c95d0.zip
   vendor/google_devices: d0f4279e5a0372e34790e9e3dc622fda24a90a24835026139fe796696189ca1e google_devices-sunfish-qd4a.200317.027-35d50112.tgz
