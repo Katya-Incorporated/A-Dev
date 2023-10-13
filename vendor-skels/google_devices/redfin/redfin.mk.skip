@@ -10,6 +10,8 @@ PRODUCT_MODEL := Pixel 5
 PRODUCT_BRAND := google
 PRODUCT_MANUFACTURER := Google
 
+include device/google/redfin/wireless_charger/wireless_charger.mk
+
 ifneq ($(BUILD_ID),UP1A.231005.007)
   $(error BUILD_ID: expected UP1A.231005.007, got $(BUILD_ID))
 endif

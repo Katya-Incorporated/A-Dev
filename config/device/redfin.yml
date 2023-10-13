@@ -3,6 +3,8 @@ device:
 
 platform:
   product_makefile: device/google/redfin/aosp_redfin.mk
+  extra_product_makefiles:
+    - device/google/redfin/wireless_charger/wireless_charger.mk
 
 includes:
   - common/gen5pixel.yml
