@@ -40,6 +40,7 @@ export interface DeviceConfig {
     product_makefile: string // required
     // not included in makefile for state collection build (generate-prep)
     extra_product_makefiles: string[]
+    vendor_linker_config: object
   }
 
   generate: {
@@ -102,6 +103,7 @@ const DEFAULT_CONFIG_BASE = {
     namespaces: [],
     sepolicy_dirs: [],
     extra_product_makefiles: [],
+    vendor_linker_config: {},
   },
   generate: {
     overrides: true,

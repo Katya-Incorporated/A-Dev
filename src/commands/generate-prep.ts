@@ -67,7 +67,7 @@ const doDevice = (
 
     // 4. Build files
     await withSpinner('Generating build files', () =>
-      generateBuildFiles(config, dirs, entries, [], propResults, null, null, null, stockSrc, false, true),
+      generateBuildFiles(config, dirs, entries, [], propResults, null, null, null, null, stockSrc, false, true),
     )
 
     await writeEnvsetupCommands(config, dirs)

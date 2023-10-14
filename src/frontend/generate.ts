@@ -295,6 +295,7 @@ export async function generateBuildFiles(
   propResults: PropResults | null,
   fwPaths: string[] | null,
   vintfManifestPaths: Map<string, string> | null,
+  vendorLinkerConfigPath: string | null,
   sepolicyResolutions: SelinuxPartResolutions | null,
   stockSrc: string,
   addAbOtaParts = true,
@@ -305,6 +306,10 @@ export async function generateBuildFiles(
   // Add rules to build overridden modules and overlays, then re-sort
   build.deviceMakefile!.packages!.push(...buildPkgs)
   build.deviceMakefile!.packages!.sort((a, b) => a.localeCompare(b))
+
+  if (vendorLinkerConfigPath !== null) {
+    build.deviceMakefile!.vendorLinkerConfigPath = vendorLinkerConfigPath
+  }
 
   // Add device parts
   build.deviceMakefile = {

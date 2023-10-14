@@ -146,6 +146,14 @@ const doDevice = (
       )
     }
 
+    let vendorLinkerConfig = config.platform.vendor_linker_config
+    let vendorLinkerConfigPath: string | null = null
+    if (Object.keys(vendorLinkerConfig).length > 0) {
+      let json = JSON.stringify(vendorLinkerConfig, null, 4)
+      vendorLinkerConfigPath = path.join(dirs.proprietary, 'linker-config-adevtool.json')
+      await fs.writeFile(vendorLinkerConfigPath, json)
+    }
+
     // 11. Build files
     await withSpinner('Generating build files', () =>
       generateBuildFiles(
@@ -156,6 +164,7 @@ const doDevice = (
         propResults,
         fwPaths,
         vintfManifestPaths,
+        vendorLinkerConfigPath,
         sepolicyResolutions,
         stockSrc,
       ),
