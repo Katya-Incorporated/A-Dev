@@ -78,7 +78,8 @@ proprietary: dir
 proprietary-files.txt: b8bcd84fe12bd83510bbda46e1c70f3e504939cf8ec5d42ee206193c06f66110
 proprietary/Android.bp: 3a3250a864e2488ec810ce6b0f48baa0ea1da57b94de335a1483fa97576087b5
 proprietary/BoardConfigVendor.mk: 0eba5ffd431b0175ecb83c8360d14c857c185bd33b20cc2e45aecd81fb410d61
-proprietary/device-vendor.mk: 6c6f109f6cc02d39a4e83c08b849479d288ff0eb65965ae3a4464a530d161090
+proprietary/device-vendor.mk: ebf980235ecfa2813d4fd5e5ad5d9468512e186c3e503e52d5d2acdb174959cb
+proprietary/linker-config-adevtool.json: 6b3c6b57416c259790eb479ca3bf9575437bc060fd7439a96b2826785f73bcfc
 proprietary/product: dir
 proprietary/product/etc: dir
 proprietary/product/etc/CarrierSettings: dir

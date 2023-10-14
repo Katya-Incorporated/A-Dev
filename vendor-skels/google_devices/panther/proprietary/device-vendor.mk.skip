@@ -6,6 +6,8 @@ PRODUCT_SOONG_NAMESPACES += \
 
 DEVICE_MANIFEST_FILE += vendor/google_devices/panther/vintf/adevtool_manifest_vendor.xml
 
+PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += vendor/google_devices/panther/proprietary/linker-config-adevtool.json
+
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.gwfcactivation.disabled_carriers=1492 \
     ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \

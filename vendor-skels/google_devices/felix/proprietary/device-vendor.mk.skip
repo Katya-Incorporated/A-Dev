@@ -6,6 +6,8 @@ PRODUCT_SOONG_NAMESPACES += \
 
 DEVICE_MANIFEST_FILE += vendor/google_devices/felix/vintf/adevtool_manifest_vendor.xml
 
+PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += vendor/google_devices/felix/proprietary/linker-config-adevtool.json
+
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.uwb.enable_uci_stack=1
 
