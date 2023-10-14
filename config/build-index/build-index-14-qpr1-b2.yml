@@ -25,4 +25,10 @@ felix U1B2.230922.006:
 tangorpro U1B2.230922.006:
   factory: 10a39eae22c797a9cc46b1d8d634ba70e26e15adb786e61d4d2a1e259ad0626f https://dl.google.com/developers/android/udc/images/factory/tangorpro_beta-u1b2.230922.006-factory-10a39eae.zip
   ota: 08067b2f8fc81922c14cbb7eeb802d506dbccad21ab2488548c0a24071c7cfae https://dl.google.com/developers/android/udc/images/ota/tangorpro_beta-ota-u1b2.230922.006-08067b2f.zip
+shiba U1B2.230922.006:
+  factory: df0bdd7987c6cee51b4d7ea3e1c3e2a26df49488b3b2ec72a312352eae4c39bd https://dl.google.com/developers/android/udc/images/factory/shiba_beta-u1b2.230922.006-factory-df0bdd79.zip
+  ota: f83571f679181df37980161b2f253409445b6fc83f91087bdec92bf8a5820cfc https://dl.google.com/developers/android/udc/images/ota/shiba_beta-ota-u1b2.230922.006-f83571f6.zip
+husky U1B2.230922.006:
+  factory: f84628b5878f444b72755433ad709e5d3e7456f7f9544e4a41e51e32d384017f https://dl.google.com/developers/android/udc/images/factory/husky_beta-u1b2.230922.006-factory-f84628b5.zip
+  ota: 5fad6d0132f8717f754b1585a40374ae1cd028f00e94ba96743461a0362ba97f https://dl.google.com/developers/android/udc/images/ota/husky_beta-ota-u1b2.230922.006-5fad6d01.zip
 
