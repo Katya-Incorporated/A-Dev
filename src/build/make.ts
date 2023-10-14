@@ -52,6 +52,8 @@ export interface DeviceMakefile {
 
   vintfManifestPaths?: Map<string, string>
 
+  vendorLinkerConfigPath?: string
+
   props?: PartitionProps
   fingerprint?: string
   enforceRros?: string
@@ -191,6 +193,10 @@ export function serializeDeviceMakefile(mk: DeviceMakefile) {
     for (let [partition, manifestPath] of mk.vintfManifestPaths.entries()) {
       blocks.push(`${VINTF_MANIFEST_PARTITION_VARS[partition]} += ${manifestPath}`)
     }
+  }
+
+  if (mk.vendorLinkerConfigPath !== undefined) {
+    blocks.push(`PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += ${mk.vendorLinkerConfigPath}`)
   }
 
   if (mk.props != undefined) {
