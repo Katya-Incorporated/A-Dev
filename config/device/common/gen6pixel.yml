@@ -4,6 +4,7 @@ platform:
 
 includes:
   - pixel.yml
+  - gs.yml
 
 filters:
   dep_files:

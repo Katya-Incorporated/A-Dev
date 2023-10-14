@@ -6,6 +6,8 @@ PRODUCT_SOONG_NAMESPACES += \
 
 DEVICE_MANIFEST_FILE += vendor/google_devices/oriole/vintf/adevtool_manifest_vendor.xml
 
+PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += vendor/google_devices/oriole/proprietary/linker-config-adevtool.json
+
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
     ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions

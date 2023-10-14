@@ -1,0 +1,6 @@
+platform:
+  vendor_linker_config:
+    # TODO: look into generating this automatically, at least for APEXes, by unpacking them and checking apex_manifest.pb
+    provideLibs:
+      # used by com.google.android.widevine.apex
+      - liboemcrypto.so
