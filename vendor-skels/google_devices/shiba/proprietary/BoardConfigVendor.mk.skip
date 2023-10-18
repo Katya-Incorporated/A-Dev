@@ -25,13 +25,13 @@ AB_OTA_PARTITIONS += \
 TARGET_BOARD_INFO_FILE := vendor/google_devices/shiba/firmware/android-info.txt
 
 BOARD_VENDOR_SEPOLICY_DIRS += \
+    device/google/zuma-sepolicy/vendor \
     hardware/google/pixel-sepolicy/googlebattery \
     hardware/google/pixel-sepolicy/connectivity_thermal_power_manager \
     vendor/google_devices/shiba/sepolicy
 
 # Missing vendor SELinux context: /vendor/bin/hw/android\.hardware\.biometrics\.face-service(.[a-zA-Z0-9]+)?.pixel u:object_r:hal_face_default_exec:s0
 # Missing vendor SELinux context: /vendor/bin/hw/android\.hardware\.biometrics\.face-service-[a-zA-Z0-9]+ u:object_r:hal_face_default_exec:s0
-# Missing vendor SELinux context: /vendor/bin/hw/vendor\.dolby\.media\.c2@1\.0-service u:object_r:mediacodec_exec:s0
 # Missing vendor SELinux context: /vendor/bin/hw/vendor\.google\.wireless_charger-default u:object_r:hal_wireless_charger_exec:s0
 # Missing vendor SELinux context: /vendor/bin/hw/vendor\.google\.exo_camera_injection@1\.1-service u:object_r:hal_exo_camera_injection_exec:s0
 # Missing vendor SELinux context: com.google.face.debug::IDebugHost u:object_r:hal_face_debug_hwservice:s0
