@@ -12,6 +12,7 @@ PRODUCT_SYSTEM_PROPERTIES += \
     persist.uwb.enable_uci_stack=1
 
 PRODUCT_PRODUCT_PROPERTIES += \
+    ro.preventative_fsck=1 \
     ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
     ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
 
@@ -28,7 +29,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     media.mediadrmservice.enable=true \
     ro.vendor.dolby.dax.version=DAX3_G_3.7.3.0_r1
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/raven/raven:14/UP1A.231005.007/10754064:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/raven/raven:14/UP1A.231105.003/11010452:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \

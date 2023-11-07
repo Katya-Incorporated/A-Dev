@@ -17,7 +17,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
     ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions \
     setprop=undefined \
-    enable_one_pane_in_embedded_activity=true
+    enable_one_pane_in_embedded_activity=true \
+    ro.preventative_fsck=1
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.build.expect.bootloader=tangorpro-14.0-10529422 \
@@ -26,7 +27,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     media.mediadrmservice.enable=true \
     ro.vendor.uwb.calibration.calibrationpaths=/vendor/etc/uwb/calib_paths
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/tangorpro/tangorpro:14/UP1A.231005.007/10754064:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/tangorpro/tangorpro:14/UP1A.231105.003/11010452:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \

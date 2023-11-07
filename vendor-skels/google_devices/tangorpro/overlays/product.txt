@@ -211,6 +211,7 @@ android:bool/config_dreamsEnabledByDefault = false
 android:bool/config_dreamsOnlyEnabledForDockUser = true
 android:bool/config_enableTimeoutToDockUserWhenDocked = true
 android:bool/config_keepDreamingWhenUnplugging = true
+android:bool/config_orderUnlockAndWake = true
 android:bool/config_resetScreenTimeoutOnUnexpectedDreamExit = true
 android:bool/config_skipActivityRelaunchWhenDocking = true
 android:bool/config_startDreamImmediatelyOnDock = false

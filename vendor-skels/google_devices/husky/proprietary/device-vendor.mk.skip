@@ -12,11 +12,12 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.gwfcactivation.disabled_carriers=1492 \
     pixel_legel_joint_permission=true \
     pixel_legal_joint_permission=true \
+    ro.preventative_fsck=1 \
     ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
     ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
 
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.build.expect.bootloader=ripcurrent-14.0-10807316 \
+    ro.build.expect.bootloader=ripcurrent-14.0-10839436 \
     ro.build.expect.baseband=g5300i-230829-230906-B-10765749 \
     ro.gfx.angle.supported=true \
     drm.service.enabled=true \
@@ -27,7 +28,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.ril.ecc.use.xml=1 \
     ro.vendor.dolby.dax.version=DAX3_G_3.7.3.0_r1
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/husky/husky:14/UD1A.230803.041/10808477:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/husky/husky:14/UD1A.231105.004/11010374:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \
