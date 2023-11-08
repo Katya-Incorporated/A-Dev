@@ -12,14 +12,14 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
 
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.build.expect.bootloader=s5-0.5-9825683 \
+    ro.build.expect.bootloader=s5-0.5-10252351 \
     ro.build.expect.baseband=g7150-00112-230505-B-10075601 \
     drm.service.enabled=true \
     ro.hardware.vulkan=adreno \
     ro.hardware.egl=adreno \
     media.mediadrmservice.enable=true
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/sunfish/sunfish:13/TQ3A.230805.001/10316531:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/sunfish/sunfish:13/TQ3A.230805.001.S1/10786265:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \
