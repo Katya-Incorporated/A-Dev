@@ -1,2 +1,2 @@
 export BUILD_ID_cheetah="UP1A.231105.003"
-unset PLATFORM_SECURITY_PATCH_cheetah
+export PLATFORM_SECURITY_PATCH_cheetah="2023-11-01"

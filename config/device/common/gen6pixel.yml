@@ -6,6 +6,9 @@ includes:
   - pixel.yml
   - gs.yml
 
+device:
+  platform_security_patch_level_override: 2023-11-01
+
 filters:
   dep_files:
     match:
