@@ -1,2 +1,2 @@
 export BUILD_ID_redfin="UP1A.231105.001"
-export PLATFORM_SECURITY_PATCH_redfin="2023-11-05"
+unset PLATFORM_SECURITY_PATCH_redfin

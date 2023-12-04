@@ -7,7 +7,6 @@ includes:
 
 device:
   build_id: UP1A.231105.001
-  platform_security_patch_level_override: 2023-11-05
 
 filters:
   files:
