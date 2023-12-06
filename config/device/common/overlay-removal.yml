@@ -112,6 +112,8 @@ filters:
       - android:string-array/config_primaryCredentialProviderService
       - android:string-array/config_priorityOnlyDndExemptPackages
       - android:string-array/config_priorityOnlyDndExemptPackages
+      # first appeared in Pixel Fold 14 QPR1 image
+      - android:string-array/default_wallpaper_component_per_device_color
       - android:string-array/vendor_cross_profile_apps
       - android:string-array/vendor_cross_profile_apps
       - android:string-array/vendor_disallowed_apps_managed_device
@@ -134,6 +136,7 @@ filters:
       - android:string/config_defaultBugReportHandlerApp
       - android:string/config_defaultCaptivePortalLoginPackageName
       - android:string/config_defaultContentCaptureService
+      - android:string/config_defaultContentProtectionService
       - android:string/config_defaultContentSuggestionsService
       # com.google.android.gms/.auth.api.credentials.credman.service.RemoteService
       - android:string/config_defaultCredentialManagerHybridService
@@ -154,6 +157,7 @@ filters:
       - android:string/config_defaultProfcollectReportUploaderAction
       - android:string/config_defaultProfcollectReportUploaderApp
       - android:string/config_defaultQrCodeComponent
+      - android:string/config_defaultRetailDemo
       - android:string/config_defaultRotationResolverService
       - android:string/config_defaultSearchSelectorPackageName
       - android:string/config_defaultSearchUiService
@@ -186,6 +190,8 @@ filters:
       - android:string/config_secondaryHomePackage
       - android:string/config_secondaryLocationTimeZoneProviderPackageName
       - android:string/config_servicesExtensionPackage
+      - android:string/config_sharedConnectivityServiceIntentAction
+      - android:string/config_sharedConnectivityServicePackage
       # set to Play services on tangorpro
       - android:string/config_supervisedUserCreationPackage
       - android:string/config_systemActivityRecognizer
@@ -249,6 +255,8 @@ filters:
       - com.android.systemui:integer/config_keyguardRefreshRate
       - com.android.systemui:string-array/config_controlsPreferredPackages
       - com.android.systemui:string-array/config_dock_setup_completed_packages
+      # first appeared in Pixel Tablet 14 QPR1 image, set to com.google.android.apps.mediashell
+      - com.android.systemui:string-array/config_fingerprint_listen_on_occluding_activity_packages
       - com.android.systemui:string-array/config_pluginWhitelist
       - com.android.systemui:string/branded_monitoring_description_app_personal
       - com.android.systemui:string/config_cameraProtectionExcludedPackages

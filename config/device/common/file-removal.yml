@@ -22,6 +22,7 @@ filters:
       - product/etc/permissions/com.google.SSRestartDetector.xml
       - product/etc/permissions/privapp-permissions-google-p.xml
       - product/etc/permissions/split-permissions-google.xml
+      - product/etc/res/raw/content_protection/package_name_blocklist.txt
       - product/etc/sysconfig/GoogleCamera_6gb_or_more_ram.xml
       - product/etc/sysconfig/adaptivecharging.xml
       - product/etc/sysconfig/communal.xml
@@ -58,6 +59,7 @@ filters:
       - product/etc/sysconfig/quick_tap.xml
       - product/framework/com.google.android.dialer.support.jar
       - system/etc/permissions/privapp-permissions-google.xml
+      - system_ext/etc/default-permissions/default-permissions_wallpapereffect.xml
       - system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
       - system_ext/etc/permissions/com.google.android.apps.nest.dockmanager.app.xml
       - system_ext/etc/permissions/privapp-permissions-google-se.xml
@@ -183,6 +185,7 @@ filters:
       - product/app/Photos/
       # PixelCameraServices{B3,P10,Oriole,Raven,Sunfish} etc
       - product/app/PixelCameraServices
+      - product/priv-app/PixelCameraServices
       # PixelThemesStub{,2022_and_newer}
       - product/app/PixelThemesStub
       # PixelWallpapers{2021,2021a,2022}
@@ -246,6 +249,7 @@ filters:
       # com.android.sdm.plugins.dcmo, "Carrier OMA Device Management"
       - product/priv-app/DCMO/
       - product/priv-app/DMService/
+      - product/priv-app/DeviceConnectivityServicePrebuilt/
       # "Private Compute Services", https://play.google.com/store/apps/details?id=com.google.android.as.oss
       - product/priv-app/DeviceIntelligenceNetworkPrebuilt/
       - product/priv-app/DeviceIntelligenceNetworkPrebuiltPreview/
@@ -340,6 +344,7 @@ filters:
       - system_ext/app/EmergencyInfoGoogleNoUi/
       # "Extreme Battery Saver", com.google.android.flipendo
       - system_ext/app/Flipendo/
+      - system_ext/app/RepairMode/
       - system_ext/priv-app/CarrierSetup/
       # Manages thermal throttling of cellular and Wi-Fi connectivity, com.google.android.connectivitythermalpowermanager
       - system_ext/priv-app/ConnectivityThermalPowerManager/
@@ -368,6 +373,7 @@ filters:
       - system_ext/priv-app/SystemUIGoogle/
       # Pixel Tablet
       - system_ext/priv-app/SystemUITitan/
+      - system_ext/priv-app/TelephonyGoogle/
       # com.google.android.turboadapter, see TurboPrebuilt above
       - system_ext/priv-app/TurboAdapter/
       # com.google.android.uvexposurereporter talks to the uv_exposure context hub nanoapp
