@@ -1,6 +1,5 @@
 device:
   name: felix
-  prev_build_id: TQ3C.230901.001.A1
 
 platform:
   product_makefile: device/google/felix/aosp_felix.mk

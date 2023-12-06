@@ -1,6 +1,5 @@
 device:
   name: tangorpro
-  prev_build_id: TQ3A.230901.001.B1
 
 platform:
   product_makefile: device/google/tangorpro/aosp_tangorpro.mk
