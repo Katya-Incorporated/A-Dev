@@ -1,5 +1,6 @@
 device:
   name: bramble
+  platform_security_patch_level_override: 2023-12-01
 
 platform:
   product_makefile: device/google/bramble/aosp_bramble.mk
