@@ -1,2 +1,2 @@
 export BUILD_ID_bramble="UP1A.231105.001"
-unset PLATFORM_SECURITY_PATCH_bramble
+export PLATFORM_SECURITY_PATCH_bramble="2023-11-05"

@@ -2,7 +2,7 @@ Android.bp: c9ffd08891ecb53ae8e9094354e795dd69f8739b43792c4ad4b3bc7c768affcf
 Android.mk: f75271d1eba45eb471e9b3dffa0f7408651e6200e01dc042bed822421d590c29
 AndroidProducts.mk: fb1b98422dbed3055ca8adf4274b8925e047979f54a34a5832148e8274d7b7e0
 README.md: 3c35cb6ff3f9002cdedf1c62fff48a21bcc2bde96be22bcfeba3ddd1ed69514b
-cmds-for-envsetup.sh: 51e77d7453f29a339fdaeee4c9a7238b29c8452972f3886ebac938aa64d7882d
+cmds-for-envsetup.sh: a1b28239a8483da4d7ebc3438db4ab81d1b8e68359b5df53f7e41fec8d4bdbcf
 firmware: dir
 firmware/abl.img: 8ed75e02acf7afccc5c5ce396b87adcc1a865ec945bef52bbeff678393526b6e
 firmware/android-info.txt: 9ab68208aa328c1d6056db3470360190210fbd9ca626ab8cfbdd570758c5c426
@@ -3252,6 +3252,6 @@ proprietary/vendor/rfs/msm/mpss/readonly/vendor/mbn/mcfg_sw/generic/common/Defau
 proprietary/vendor/rfs/msm/mpss/readonly/vendor/mbn/mcfg_sw/generic/common/Default/Default/mcfg_sw.mbn: 79958e473ff16a785c8d06affd88dcdefbb438844a63b00f3b225502b313e86a
 proprietary/vendor/rfs/msm/mpss/readonly/vendor/mbn/mcfg_sw/mbn_sw.dig: 543912ebfa76753a6702d45700b1ffaa20b04038cf2cec92d58bdacf72b507ca
 proprietary/vendor/rfs/msm/mpss/readonly/vendor/mbn/mcfg_sw/mbn_sw.txt: 7a38d00047a739d587965af9e64ea3dfcf0c3b0e1aa8d0e28a73add15851d746
-redfin.mk: 059ea57b4f11f3ef6202f75afc1bdb53ea761746cd4c3090c1d06abcaf7c09b1
+redfin.mk: c4bb33816b393804df6aa365efb57663b2b55aacaf7436cfa06c3f697218ae29
 sepolicy: dir
 vintf: dir
