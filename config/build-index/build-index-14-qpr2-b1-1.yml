@@ -1,0 +1,34 @@
+barbet AP11.231020.016:
+  factory: c9c7bec629781ad7d1a5afdae2bf682091618e4f5661af81b6cc0257641dfd79 https://dl.google.com/developers/android/udc/images/factory/barbet_beta-ap11.231020.016-factory-c9c7bec6.zip
+  ota: ac23033ff068d194976f2edc77aa371beb6e2d56f9991452e2e93a0d7e11e2f4 https://dl.google.com/developers/android/udc/images/ota/barbet_beta-ota-ap11.231020.016-ac23033f.zip
+oriole AP11.231020.016.A1:
+  factory: 9b176c3856891903e5b7c03327eacf9c0e8051737352186e9d6bb431174cfd66 https://dl.google.com/developers/android/udc/images/factory/oriole_beta-ap11.231020.016.a1-factory-9b176c38.zip
+  ota: 207a30742edfd3ca0dae266a993c0d290aa8ba651f718a5235c360621dc44b94 https://dl.google.com/developers/android/udc/images/ota/oriole_beta-ota-ap11.231020.016.a1-207a3074.zip
+raven AP11.231020.016.A1:
+  factory: 9aea5081e81c82eba6261eafdc54705e65e8461a89100f4048443f20a58a2aa6 https://dl.google.com/developers/android/udc/images/factory/raven_beta-ap11.231020.016.a1-factory-9aea5081.zip
+  ota: fa6be2fd809a2014cf522c6cb73a0cbd5a84b00f1a3921a6a2ec2fe7d50d2fbd https://dl.google.com/developers/android/udc/images/ota/raven_beta-ota-ap11.231020.016.a1-fa6be2fd.zip
+bluejay AP11.231020.016.A1:
+  factory: 717aab98cbc3f24111635fa93660077407ab6bc6a2fb5c98100c7f683dddf47e https://dl.google.com/developers/android/udc/images/factory/bluejay_beta-ap11.231020.016.a1-factory-717aab98.zip
+  ota: ec3a284e086f5b5a288d925f22d550fbca2000b51c281657ba906d4a33876f95 https://dl.google.com/developers/android/udc/images/ota/bluejay_beta-ota-ap11.231020.016.a1-ec3a284e.zip
+panther AP11.231020.016.A1:
+  factory: a73a2c0cda173c8929186fa5f8836084191743afe1fc8d09606ce6f1954fd8b7 https://dl.google.com/developers/android/udc/images/factory/panther_beta-ap11.231020.016.a1-factory-a73a2c0c.zip
+  ota: eb10bb64a351b6c9ecc2892419f4bccf47d9410e2914a745f3cd2f1e5cb06f5b https://dl.google.com/developers/android/udc/images/ota/panther_beta-ota-ap11.231020.016.a1-eb10bb64.zip
+cheetah AP11.231020.016.A1:
+  factory: f1589d0d583a1cebe4497c6563e75c5339d0f822fe8a4aa014124d2eb26ab1ac https://dl.google.com/developers/android/udc/images/factory/cheetah_beta-ap11.231020.016.a1-factory-f1589d0d.zip
+  ota: af9901f98ce72abb7772aa681041ec64cdaf677c2aeece86db23855ba82b68b1 https://dl.google.com/developers/android/udc/images/ota/cheetah_beta-ota-ap11.231020.016.a1-af9901f9.zip
+lynx AP11.231020.016.A1:
+  factory: b05b49fc2d8bf95dd7df07a0473b43f2c629926eefcb32ffe79627ab46e34f8d https://dl.google.com/developers/android/udc/images/factory/lynx_beta-ap11.231020.016.a1-factory-b05b49fc.zip
+  ota: 29b3c9ae9ee4f5e47e60e13ca49a63eb857a8029537bbf79cf51d6ce5b5ec2c9 https://dl.google.com/developers/android/udc/images/ota/lynx_beta-ota-ap11.231020.016.a1-29b3c9ae.zip
+felix AP11.231020.016.A1:
+  factory: 0f36c3aa220d56c39d258ed0919c35bf8d3ff4473550922f4e3f3ebf1132c457 https://dl.google.com/developers/android/udc/images/factory/felix_beta-ap11.231020.016.a1-factory-0f36c3aa.zip
+  ota: 90f417d467e5c8ba8710038202198bc00547182aedd76b86387f836358fe3d9a https://dl.google.com/developers/android/udc/images/ota/felix_beta-ota-ap11.231020.016.a1-90f417d4.zip
+tangorpro AP11.231020.016.A1:
+  factory: d82c317be140fd738cfbbbf99ccf086db7c8c0871ad6edb08766b11adf23552f https://dl.google.com/developers/android/udc/images/factory/tangorpro_beta-ap11.231020.016.a1-factory-d82c317b.zip
+  ota: f1dd3b53da48933cfca8982228ed96489399f48fedd5efb177c96a6a97e0c7d5 https://dl.google.com/developers/android/udc/images/ota/tangorpro_beta-ota-ap11.231020.016.a1-f1dd3b53.zip
+shiba AP11.231020.016:
+  factory: eab05555a618386fa8ba8e5601cef71c5cb0c3759e93ffa2bdf917dd9649dd83 https://dl.google.com/developers/android/udc/images/factory/shiba_beta-ap11.231020.016-factory-eab05555.zip
+  ota: 44d352669143420c7b080ad6f885b478fc6170fcc0ff8a17ca34a679b39a1431 https://dl.google.com/developers/android/udc/images/ota/shiba_beta-ota-ap11.231020.016-44d35266.zip
+husky AP11.231020.016:
+  factory: 286d713a0ae984c18987749bc4b3d144b0d55dda26d0e638feee17f6d0eeb5bb https://dl.google.com/developers/android/udc/images/factory/husky_beta-ap11.231020.016-factory-286d713a.zip
+  ota: c112c198c5011dc95a6517f8f7233105b7083b6c345cb9d5d41534d80c169d1c https://dl.google.com/developers/android/udc/images/ota/husky_beta-ota-ap11.231020.016-c112c198.zip
+
