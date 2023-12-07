@@ -4,7 +4,15 @@
 PRODUCT_SOONG_NAMESPACES += \
     vendor/google_devices/redfin
 
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.product.model_for_attestation= \
+    ro.product.brand_for_attestation= \
+    ro.product.name_for_attestation=
+
 PRODUCT_PRODUCT_PROPERTIES += \
+    ro.product.model_for_attestation= \
+    ro.product.brand_for_attestation= \
+    ro.product.name_for_attestation= \
     ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.lito.api30 \
     graphics.gpu.profiler.support=true \
     graphics.gpu.profiler.vulkan_layer_apk=com.google.pixel.redbull.gpuprofiling.vulkanlayer \
@@ -12,6 +20,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
 
 PRODUCT_VENDOR_PROPERTIES += \
+    ro.product.model_for_attestation= \
+    ro.product.brand_for_attestation= \
+    ro.product.name_for_attestation= \
     ro.build.expect.bootloader=r3-0.6-10489834 \
     ro.build.expect.baseband=g7250-00264-230619-B-10346159 \
     ro.crypto.dm_default_key.options_format.version=2 \
@@ -36,6 +47,7 @@ PRODUCT_PACKAGES += \
     android.auto_generated_rro_product_adevtool__ \
     android.frameworks.sensorservice@1.0.vendor \
     android.frameworks.stats@1.0.vendor:64 \
+    android.hardware.audio.common-V1-ndk.vendor \
     android.hardware.authsecret-impl.nos \
     android.hardware.authsecret-service.citadel \
     android.hardware.authsecret-service.citadel__2 \
@@ -133,8 +145,8 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@2.1.vendor \
     android.hardware.tetheroffload.config@1.0.vendor:64 \
     android.hardware.tetheroffload.control@1.0.vendor:64 \
-    android.hardware.thermal@1.0.vendor:32 \
-    android.hardware.thermal@2.0.vendor:32 \
+    android.hardware.thermal@1.0.vendor \
+    android.hardware.thermal@2.0.vendor \
     android.hardware.weaver-impl.nos \
     android.hardware.weaver-service.citadel \
     android.hardware.weaver-service.citadel__2 \
@@ -1604,6 +1616,7 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/redfin/proprietary/system_ext/etc/seccomp_policy/tcmd.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/tcmd.policy \
     vendor/google_devices/redfin/proprietary/system_ext/priv-app/EuiccSupportPixel/esim-full-v1.img:$(TARGET_COPY_OUT_SYSTEM_EXT)/priv-app/EuiccSupportPixel/esim-full-v1.img \
     vendor/google_devices/redfin/proprietary/system_ext/priv-app/EuiccSupportPixel/P20_Mini-Applet_dsem.apdu:$(TARGET_COPY_OUT_SYSTEM_EXT)/priv-app/EuiccSupportPixel/P20_Mini-Applet_dsem.apdu \
+    vendor/google_devices/redfin/proprietary/system/system/etc/motion_predictor_model.fb:$(PRODUCT_OUT)/etc/motion_predictor_model.fb \
     vendor/google_devices/redfin/proprietary/system/system/etc/public.libraries-qti.txt:$(PRODUCT_OUT)/etc/public.libraries-qti.txt \
     vendor/google_devices/redfin/proprietary/vendor/dsp/adsp/activity.napp_header:$(TARGET_COPY_OUT_VENDOR)/dsp/adsp/activity.napp_header \
     vendor/google_devices/redfin/proprietary/vendor/dsp/adsp/AlacDecoderModule.so.1:$(TARGET_COPY_OUT_VENDOR)/dsp/adsp/AlacDecoderModule.so.1 \

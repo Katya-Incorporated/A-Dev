@@ -27,6 +27,7 @@
   <bool name="config_hotspotNetworksEnabledForService">false</bool>
   <bool name="config_knownNetworksEnabledForService">false</bool>
   <bool name="config_lockscreenWeatherEnabledByDefault">true</bool>
+  <bool name="config_repairModeSupported">true</bool>
   <bool name="config_safetyProtectionEnabled">true</bool>
   <bool name="config_settingsHelpLinksEnabled">true</bool>
   <bool name="config_supportLongPressPowerWhenNonInteractive">true</bool>

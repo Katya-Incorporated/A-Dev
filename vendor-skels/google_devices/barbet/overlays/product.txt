@@ -84,7 +84,7 @@ com.android.settings:string/security_settings_fingerprint_enroll_introduction_ti
 com.android.settings:string/security_settings_fingerprint_enroll_introduction_title_unlock_disabled = Pixel Imprint
 com.android.settings:string/security_settings_fingerprint_preference_title = Pixel Imprint
 com.android.settings:string/suggested_fingerprint_lock_settings_summary = Use Pixel Imprint to unlock your phone
-com.android.systemui:string-array/config_pluginAllowlist = com.android.systemui,com.android.systemui.plugin.globalactions.wallet,com.android.systemui.falcon,com.android.systemui.falcon.debug,com.android.systemui.falcon.one,com.android.systemui.falcon.two,com.android.systemui.falcon.three,com.android.systemui.falcon.four,com.android.systemui.falcon.five,com.android.systemui.falcon.six,com.android.systemui.falcon.seven,com.android.systemui.falcon.eight,com.android.systemui.falcon.nine
+com.android.systemui:string-array/config_pluginAllowlist = com.android.systemui,com.android.systemui.plugin.globalactions.wallet,com.android.systemui.clocks,com.android.systemui.clocks.debug,com.android.systemui.clocks.bignum,com.android.systemui.clocks.calligraphy,com.android.systemui.clocks.flex,com.android.systemui.clocks.growth,com.android.systemui.clocks.handwritten,com.android.systemui.clocks.inflate,com.android.systemui.clocks.metro,com.android.systemui.clocks.numoverlap,com.android.systemui.clocks.weather
 com.android.systemui:bool/config_hspa_data_distinguishable = true
 com.android.systemui:bool/config_vibrateOnIconAnimation = true
 com.android.systemui:integer/config_showTemperatureWarning = 1
@@ -149,5 +149,6 @@ android:string-array/config_highRefreshRateBlacklist = com.google.android.apps.m
 android:string-array/config_nightDisplayColorTemperatureCoefficients = 0.0,0.0,1.0,-0.000000014365268757,0.000255092801250106,-0.064156942434907716,-0.000000000910931179,0.000207598323269139,-0.349361641294833436
 android:integer-array/non_removable_euicc_slots = 1
 android:bool/config_allowDisablingAssistDisclosure = true
+android:bool/config_repairModeSupported = true
 org.codeaurora.ims:bool/config_ims_preferred = true
 com.android.networkstack.tethering/TetheringConfig:string-array/config_tether_wifi_p2p_regexs = p2p-p2p\d-.*,p2p\d,p2p-wlan\d-.*

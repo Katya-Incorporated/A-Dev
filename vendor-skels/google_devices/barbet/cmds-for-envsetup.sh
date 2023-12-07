@@ -1,2 +1,2 @@
-export BUILD_ID_barbet="UP1A.231105.001"
-export PLATFORM_SECURITY_PATCH_barbet="2023-11-05"
+export BUILD_ID_barbet="UQ1A.231205.014"
+unset PLATFORM_SECURITY_PATCH_barbet

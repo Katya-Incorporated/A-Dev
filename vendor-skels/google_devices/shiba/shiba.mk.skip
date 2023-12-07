@@ -12,6 +12,6 @@ PRODUCT_MANUFACTURER := Google
 
 include device/google/gs-common/wireless_charger/wireless_charger.mk
 
-ifneq ($(BUILD_ID),UD1A.231105.004)
-  $(error BUILD_ID: expected UD1A.231105.004, got $(BUILD_ID))
+ifneq ($(BUILD_ID),UQ1A.231205.015)
+  $(error BUILD_ID: expected UQ1A.231205.015, got $(BUILD_ID))
 endif

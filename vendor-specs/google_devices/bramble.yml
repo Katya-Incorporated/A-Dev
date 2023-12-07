@@ -2,8 +2,8 @@ Android.bp: c9ffd08891ecb53ae8e9094354e795dd69f8739b43792c4ad4b3bc7c768affcf
 Android.mk: 6f19c305a871f3ff14e10719c0a4a29bd23ab56d225a210bcdcd7b3f8f248b59
 AndroidProducts.mk: b0ac9ed34f646f349d985f637a7e8d1b0412f3be70f78e9c3a4fd2669b81f4a6
 README.md: aea083d1852ec210deb59ac5f452b684ada27bba228ff7343ae8e432791a96a3
-bramble.mk: cc76c8de773714b6e476935aff4a2f5d062fd02d1a7bd767ebb3acba3b48dd25
-cmds-for-envsetup.sh: e057b1b45edfc5a0ab5d1318152da52f03e2550869c3ebdc2dcf9d41bea29812
+bramble.mk: c85999790dccad64436384907bb8bd02344069891a37f6b2241139516bc17482
+cmds-for-envsetup.sh: 47f4974880d3623671dfc3ced13d05cdeeea6ac2474c9c52c7120ab081917d5c
 firmware: dir
 firmware/abl.img: 1a14a6a3cb65fcdab9c6121d81c81f50084283d206a75865c71c2382fd9cfefe
 firmware/android-info.txt: 521661cbf9878e63a0cf7148802087e8c0f0f335d7dd01d9442e0ab4a4ab3c74
@@ -71,10 +71,10 @@ overlays/product_org.codeaurora.ims/res: dir
 overlays/product_org.codeaurora.ims/res/values: dir
 overlays/product_org.codeaurora.ims/res/values/values.xml: d740f1e01a2535a2382a3f40920d7ac4b90be155ce5726962b1f2041e40daca6
 proprietary: dir
-proprietary-files.txt: e24d80e8c70c380dc92b081446cd35b45d15672d1e7e3408a7967de1d0403df6
+proprietary-files.txt: 1c15ccc4d2ace6e236b4dd05547af4180f8f348aa08b9ff552455f5cfce160f0
 proprietary/Android.bp: e99a7c746ac0070acef770a8984c71dda83d483a81e01c7ca2c851a202ca9956
 proprietary/BoardConfigVendor.mk: d18c602f104635718ddab70e06592a326173516cd11e6a3cd4e9d730d587ca5d
-proprietary/device-vendor.mk: 9299c4c835973af5c120f3e2db027baa60c07f6492d9bcf42e0b76dbe24a3e45
+proprietary/device-vendor.mk: ecf23c7a5f3bdb57efa02dc0ef3bf89b0198a101fa0ee222f5296b96c35aa365
 proprietary/product: dir
 proprietary/product/app: dir
 proprietary/product/app/uimremoteclient: dir
@@ -399,6 +399,7 @@ proprietary/product/priv-app/EuiccGoogle/EuiccGoogle.apk: fa40e7f447fa180176a5f0
 proprietary/system: dir
 proprietary/system/system: dir
 proprietary/system/system/etc: dir
+proprietary/system/system/etc/motion_predictor_model.fb: e5e4541cff7f56f16f324105750b8f57d1494f0c82bafa4b38bb042ecb91eb49
 proprietary/system/system/etc/public.libraries-qti.txt: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 proprietary/system_ext: dir
 proprietary/system_ext/app: dir

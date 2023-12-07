@@ -29,8 +29,9 @@
   <string name="vendor_required_attestation_revocation_list_url">https://android.googleapis.com/attestation/status</string>
   <bool name="config_allowDisablingAssistDisclosure">true</bool>
   <bool name="config_allowRotationResolver">false</bool>
+  <bool name="config_appCompatUserAppAspectRatioFullscreenIsEnabled">true</bool>
+  <bool name="config_appCompatUserAppAspectRatioSettingsIsEnabled">true</bool>
   <bool name="config_buttonTextAllCaps">false</bool>
-  <bool name="config_dozePickupGestureEnabled">false</bool>
   <bool name="config_enableAutoPowerModes">true</bool>
   <bool name="config_enableMultiUserUI">true</bool>
   <bool name="config_fingerprintSupportsGestures">true</bool>
@@ -53,6 +54,7 @@
   <bool name="config_localDisplaysMirrorContent">false</bool>
   <bool name="config_lockscreenWeatherEnabledByDefault">true</bool>
   <bool name="config_offsetWallpaperToCenterOfLargestDisplay">true</bool>
+  <bool name="config_repairModeSupported">true</bool>
   <bool name="config_safetyProtectionEnabled">true</bool>
   <bool name="config_settingsHelpLinksEnabled">true</bool>
   <bool name="config_showUserSwitcherByDefault">false</bool>
@@ -62,7 +64,7 @@
   <bool name="config_swipe_up_gesture_setting_available">true</bool>
   <bool name="config_systemCaptionsServiceCallsEnabled">true</bool>
   <bool name="config_useRoundIcon">true</bool>
-  <bool name="config_windowManagerHalfFoldAutoRotateOverride">true</bool>
+  <bool name="config_windowManagerHalfFoldAutoRotateOverride">false</bool>
   <bool name="config_windowManagerPauseRotationWhenUnfolding">true</bool>
   <dimen name="config_bottomDialogCornerRadius">16dp</dimen>
   <dimen name="config_buttonCornerRadius">4dp</dimen>

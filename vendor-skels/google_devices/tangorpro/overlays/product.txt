@@ -1,4 +1,3 @@
-com.android.settings:bool/config_clear_calling_enabled = false
 com.google.euiccpixel:string-array/config_state_busy_intent_list = intent:#Intent;action=com.google.android.gms.dck.action.SE_STATE_CHANGED;i.com.google.android.gms.dck.extra.SE_STATE=1;end,intent:#Intent;action=com.qorvo.uwb.action.SE_STATE_CHANGED;i.com.qorvo.uwb.extra.SE_STATE=1;end
 com.google.euiccpixel:string-array/config_state_ready_intent_list = intent:#Intent;action=com.google.android.gms.dck.action.SE_STATE_CHANGED;i.com.google.android.gms.dck.extra.SE_STATE=0;end,intent:#Intent;action=com.qorvo.uwb.action.SE_STATE_CHANGED;i.com.qorvo.uwb.extra.SE_STATE=0;end
 com.google.euiccpixel:string-array/config_state_request_intent_list = intent:#Intent;action=com.google.android.gms.dck.action.SE_STATE_REQUEST;end,intent:#Intent;action=com.qorvo.uwb.action.SE_STATE_REQUEST;end
@@ -23,6 +22,8 @@ com.android.systemui:dimen/biometric_dialog_fingerprint_icon_height = 150dp
 com.android.systemui:dimen/biometric_dialog_fingerprint_icon_width = 150dp
 com.google.android.grilservice/GrilRadioCustomizable:bool/board_with_radio = false
 android:bool/config_allowRotationResolver = false
+android:bool/config_appCompatUserAppAspectRatioFullscreenIsEnabled = true
+android:bool/config_appCompatUserAppAspectRatioSettingsIsEnabled = true
 android:bool/config_enableMultiUserUI = true
 android:bool/config_isCameraCompatControlForStretchedIssuesEnabled = true
 android:bool/config_isCompatFakeFocusEnabled = true
@@ -63,6 +64,7 @@ android:string/config_ambientContextEventArrayExtraKey = EVENT_ARRAY
 android:string/config_ambientContextPackageNameExtraKey = PACKAGE_NAME
 android:string/config_clockFontFamily = google-sans-clock
 android:string/config_icon_mask = M50 0C77.6 0 100 22.4 100 50C100 77.6 77.6 100 50 100C22.4 100 0 77.6 0 50C0 22.4 22.4 0 50 0Z
+com.android.settings:bool/config_clear_calling_enabled = false
 com.android.settings:bool/config_limited_warranty_enabled = true
 com.android.settings:bool/config_show_premium_sms = false
 com.android.settings:bool/config_show_sim_info = false
@@ -73,6 +75,7 @@ com.android.settings:string/data_usage_app_summary_title = Wi‑Fi
 com.android.settings:string/edge_to_edge_navigation_summary = To go home, quick-swipe up from the bottom. To access the Taskbar, slow-swipe up from the bottom. To switch apps, swipe up from the bottom, hold, and release. To go back, swipe from the left or right edge.
 com.android.settings:string/help_uri_private_dns = https://support.google.com/googlepixeltablet/?p=private_DNS
 com.android.settings:string/link_locale_picker_footer_learn_more = https://support.google.com/googlepixeltablet/?p=app_language
+com.android.settings:string/location_settings_footer_learn_more_link = https://support.google.com/googlepixeltablet/?p=location_settings
 com.android.settings:string/network_dashboard_summary_no_mobile = Wi‑Fi
 com.android.settings:string/non_carrier_data_usage = Wi‑Fi data usage
 com.android.settings:string/non_carrier_data_usage_warning = 
@@ -82,6 +85,7 @@ com.android.settings:string/sound_dashboard_summary = Volume, Do Not Disturb
 com.android.settings:string/sound_settings = Sound
 com.android.settings:string/tether_settings_title_all = Tethering
 com.android.settings:string/tethering_footer_info = Use tethering to provide internet to other devices through USB, Ethernet, or Bluetooth.
+com.android.settings:integer-array/config_userAspectRatioOverrideValues = 0,6,1,4
 com.android.settings:string-array/enabled_networks_except_gsm_values = 10,0
 com.android.settings:string-array/enabled_networks_values = 10,0,1
 com.android.settings:bool/config_hspa_data_distinguishable = true
@@ -136,7 +140,7 @@ com.android.settings:bool/enrollment_message_display_controller_flag = true
 com.android.settings:integer/enrollment_collect_time = 100
 com.android.settings:integer/enrollment_help_minimum_time_display = 250
 com.android.settings:integer/enrollment_progress_minimum_time_display = 250
-com.android.settings:string/security_settings_fingerprint_bad_calibration = Visit a repair provider or g.co/pixel/fingerprintunlock.
+com.android.settings:string/help_url_fingerprint = http://g.co/pixeltablet/fingerprintunlock
 com.android.settings:string/security_settings_fingerprint_enroll_find_sensor_message = The fingerprint sensor is on the Power button.
 
 Lightly touch the button without pressing it down.
@@ -154,7 +158,7 @@ com.android.settings:string/security_settings_work_fingerprint_preference_title 
 com.android.settings:string/suggested_fingerprint_lock_settings_title = Use Fingerprint Unlock
 com.android.systemui:integer-array/config_nfc_conflict_with_usb_audio_productid = 20532
 com.android.systemui:integer-array/config_nfc_conflict_with_usb_audio_vendorid = 6353
-com.android.systemui:string-array/config_pluginAllowlist = com.android.systemui,com.android.systemui.plugin.globalactions.wallet,com.android.systemui.falcon,com.android.systemui.falcon.debug,com.android.systemui.falcon.one,com.android.systemui.falcon.two,com.android.systemui.falcon.three,com.android.systemui.falcon.four,com.android.systemui.falcon.five,com.android.systemui.falcon.six,com.android.systemui.falcon.seven,com.android.systemui.falcon.eight,com.android.systemui.falcon.nine
+com.android.systemui:string-array/config_pluginAllowlist = com.android.systemui,com.android.systemui.plugin.globalactions.wallet,com.android.systemui.clocks,com.android.systemui.clocks.debug,com.android.systemui.clocks.bignum,com.android.systemui.clocks.calligraphy,com.android.systemui.clocks.flex,com.android.systemui.clocks.growth,com.android.systemui.clocks.handwritten,com.android.systemui.clocks.inflate,com.android.systemui.clocks.metro,com.android.systemui.clocks.numoverlap,com.android.systemui.clocks.weather
 com.android.systemui:bool/config_hspa_data_distinguishable = true
 com.android.systemui:bool/config_letterboxIsReachabilityEducationEnabled = true
 com.android.systemui:bool/config_letterboxIsRestartDialogEnabled = true
@@ -215,6 +219,7 @@ android:bool/config_orderUnlockAndWake = true
 android:bool/config_resetScreenTimeoutOnUnexpectedDreamExit = true
 android:bool/config_skipActivityRelaunchWhenDocking = true
 android:bool/config_startDreamImmediatelyOnDock = false
+android:integer/config_dreamsBatteryLevelDrainCutoff = 2
 android:integer/config_navBarInteractionMode = 2
 android:integer/config_shortPressOnPowerBehavior = 7
 android:string/config_dozeComponent = com.android.systemui/com.android.systemui.doze.DozeService
@@ -234,6 +239,7 @@ com.android.systemui:integer-array/config_doze_brightness_sensor_to_scrim_opacit
 com.android.systemui:bool/config_enableBouncerUserSwitcher = true
 com.android.systemui:bool/config_enableFullscreenUserSwitcher = true
 com.android.systemui:bool/config_enableLockScreenCustomClocks = false
+com.android.systemui:bool/config_enableVisualQueryAttentionDetection = true
 com.android.systemui:bool/config_show_low_light_clock_when_docked = true
 com.android.systemui:bool/doze_display_state_supported = true
 com.android.systemui:bool/doze_suspend_display_state_supported = false
@@ -285,6 +291,7 @@ com.android.traceur:string/desc_ProfileIcons6 = Abstract illustration of purple 
 com.android.traceur:string/desc_ProfileIcons7 = Playful illustration of five white, geometric flowers on an orange background
 com.android.traceur:string/desc_ProfileIcons8 = Playful illustration of three blueberries on a pink background
 com.android.traceur:string/desc_ProfileIcons9 = Playful illustration of a lemon with a black leaf on a green background
+android:integer-array/config_cameraPrivacyLightAlsLuxThresholds = 10,55
 android:string-array/config_nightDisplayColorTemperatureCoefficients = 0.0,0.0,1.0,-0.000000014365268757,0.000255092801250106,-0.064156942434907716,-0.000000000910931179,0.000207598323269139,-0.349361641294833436
 android:integer-array/non_removable_euicc_slots = 0
 android:bool/config_allowDisablingAssistDisclosure = true
@@ -294,7 +301,6 @@ android:bool/config_performantAuthDefault = true
 android:bool/config_reverseDefaultRotation = true
 android:bool/config_sensorPrivacyRequiresAuthentication = false
 android:integer/config_cameraPrivacyLightAlsAveragingIntervalMillis = 3000
-android:integer/config_cameraPrivacyLightAlsNightThreshold = 55
 android:integer/config_deskDockRotation = 270
 android:integer/config_globalActionsKeyTimeout = 750
 android:integer/config_longPressOnPowerDurationMs = 750

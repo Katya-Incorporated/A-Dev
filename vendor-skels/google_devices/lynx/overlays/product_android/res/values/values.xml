@@ -20,12 +20,14 @@
   <string name="safety_protection_display_text">"&lt;font face=\"google-sans"&gt;Protected by &lt;/font&gt;&lt;font face="google-sans-medium"&gt;Android&lt;/font&gt;"</string>
   <string name="vendor_required_attestation_revocation_list_url">https://android.googleapis.com/attestation/status</string>
   <bool name="config_allowDisablingAssistDisclosure">true</bool>
+  <bool name="config_biometricFrrNotificationEnabled">true</bool>
   <bool name="config_buttonTextAllCaps">false</bool>
   <bool name="config_enableAutoPowerModes">true</bool>
   <bool name="config_fingerprintSupportsGestures">false</bool>
   <bool name="config_hotspotNetworksEnabledForService">false</bool>
   <bool name="config_knownNetworksEnabledForService">false</bool>
   <bool name="config_lockscreenWeatherEnabledByDefault">true</bool>
+  <bool name="config_repairModeSupported">true</bool>
   <bool name="config_safetyProtectionEnabled">true</bool>
   <bool name="config_settingsHelpLinksEnabled">true</bool>
   <bool name="config_supportLongPressPowerWhenNonInteractive">true</bool>

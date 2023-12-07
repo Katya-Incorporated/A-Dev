@@ -31,9 +31,10 @@ BOARD_VENDOR_SEPOLICY_DIRS += \
     hardware/google/pixel-sepolicy/connectivity_thermal_power_manager \
     vendor/google_devices/tangorpro/sepolicy
 
-# Missing vendor SELinux context: /vendor/bin/init\.camera\.set-interrupts-ownership u:object_r:init-camera-set-interrupts-ownership_exec:s0
 # Missing vendor SELinux context: /vendor/bin/hw/vendor\.google\.exo_camera_injection@1\.1-service u:object_r:hal_exo_camera_injection_exec:s0
 # Missing vendor SELinux context: vendor.google.exo_camera_injection::IExoCameraInjection u:object_r:hal_exo_camera_injection_hwservice:s0
+# Missing vendor SELinux context: user=_app seinfo=CameraServices name=com.google.android.apps.camera.services domain=vendor_pcs_app type=app_data_file levelFrom=all
+# Missing vendor SELinux context: user=_app seinfo=CameraServices name=com.google.android.apps.camera.services:* domain=vendor_pcs_app type=app_data_file levelFrom=all
 # Missing vendor SELinux context: user=_app seinfo=platform name=com.google.pixel.exo domain=exo_app type=app_data_file levelFrom=all
 # Missing vendor SELinux context: user=_app isPrivApp=true seinfo=mds name=com.google.mds domain=modem_diagnostic_app type=app_data_file levelFrom=user
 # Missing vendor SELinux context: user=_app isPrivApp=true seinfo=google name=com.google.android.GoogleCamera domain=google_camera_app type=app_data_file levelFrom=all

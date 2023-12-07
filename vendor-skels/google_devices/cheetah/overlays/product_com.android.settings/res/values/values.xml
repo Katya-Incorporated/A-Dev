@@ -80,6 +80,7 @@ This deletes the fingerprint images and model stored on your device. Your face m
   <string name="unlock_disable_frp_warning_content_unknown_fingerprint">"Device protection features will not work without your screen lock.
 
 This also deletes the fingerprint images and model stored on your device. You won’t be able to use your fingerprint for authentication in apps."</string>
+  <bool name="config_adaptive_alert_vibration_enabled">true</bool>
   <bool name="config_clear_calling_enabled">true</bool>
   <bool name="config_hspa_data_distinguishable">true</bool>
   <bool name="config_limited_warranty_enabled">true</bool>

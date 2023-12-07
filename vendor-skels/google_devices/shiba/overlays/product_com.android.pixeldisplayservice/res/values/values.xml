@@ -4,31 +4,43 @@
 <resources>
   <integer name="config_ambient_brightness_changed_debounce_ms">500</integer>
   <integer name="config_compensation_filter_horizon">1500</integer>
-  <bool name="config_compensation_animation_enabled">false</bool>
+  <bool name="config_compensation_animation_enabled">true</bool>
   <dimen name="config_compensation_filter_intercept">10</dimen>
   <dimen name="config_za_compensation_brightness_enter_threshold">0.57143</dimen>
+  <array name="config_za_compensation_opr_thresholds">
+    <item>0.4</item>
+  </array>
+  <array name="config_za_condition1_brightness_thresholds">
+    <item>0.60714</item>
+    <item>0.625</item>
+    <item>0.64286</item>
+    <item>0.66071</item>
+    <item>0.67857</item>
+    <item>0.76786</item>
+    <item>0.85714</item>
+    <item>0.92857</item>
+    <item>1</item>
+  </array>
+  <array name="config_za_condition2_brightness_thresholds">
+    <item>0.60714</item>
+    <item>0.625</item>
+    <item>0.71429</item>
+    <item>0.71429</item>
+    <item>0.78571</item>
+    <item>0.82143</item>
+    <item>0.85714</item>
+    <item>0.92857</item>
+    <item>0.94643</item>
+    <item>0.96429</item>
+    <item>0.98214</item>
+    <item>1</item>
+  </array>
   <integer-array name="config_za_compensation_with_shadow_compensation_thresholds">
     <item>50000</item>
     <item>65000</item>
     <item>80000</item>
     <item>95000</item>
   </integer-array>
-  <array name="config_za_condition1_brightness_thresholds">
-    <item>0.60714</item>
-    <item>0.625</item>
-    <item>0.64286</item>
-    <item>0.66071</item>
-    <item>0.67929</item>
-  </array>
-  <array name="config_za_condition2_brightness_thresholds">
-    <item>0.60714</item>
-    <item>0.625</item>
-    <item>0.64286</item>
-    <item>0.71429</item>
-    <item>0.78571</item>
-    <item>0.82143</item>
-    <item>0.85786</item>
-  </array>
   <string-array name="config_za_shadow_comp_not_support_panels">
     <item>"SB3-0"</item>
   </string-array>

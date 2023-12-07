@@ -4167,6 +4167,14 @@ android_app_import {
     system_ext_specific: true,
 }
 
+prebuilt_apex {
+    name: "com.google.pixel.euicc.update",
+    owner: "google_devices",
+    src: "vendor/apex/com.google.pixel.euicc.update.apex",
+    prefer: true,
+    soc_specific: true,
+}
+
 android_app_import {
     name: "adreno_graphics_driver",
     owner: "google_devices",
