@@ -13,12 +13,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     pixel_legel_joint_permission=true \
     pixel_legal_joint_permission=true \
     ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
-    ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions \
-    ro.arm64.memtag.bootctl_supported=1 \
-    persist.arm64.memtag.app.com.android.se=off \
-    persist.arm64.memtag.app.com.google.android.bluetooth=off \
-    persist.arm64.memtag.app.com.android.nfc=off \
-    persist.arm64.memtag.system_server=off
+    ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.build.expect.bootloader=ripcurrent-14.1-11012321 \

@@ -9,8 +9,13 @@ filters:
     match:
       # Debug
       - ro.adb.secure
+      # intentionally removed, see device/google/zuma commit
+      - ro.arm64.memtag.bootctl_supported
       - ro.camerax.extensions.enabled
     prefix:
+      # these props disable memory tagging for some of system processes
+      - persist.arm64.memtag.app.
+      - persist.arm64.memtag.system_server
       # APEX
       - ro.apex.updatable
       # Debug
