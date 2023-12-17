@@ -1,6 +1,6 @@
 import assert from 'assert'
 import chalk from 'chalk'
-import cliProgress from 'cli-progress'
+import cliProgress, { MultiBar } from 'cli-progress'
 import { createHash } from 'crypto'
 import { createWriteStream, existsSync, promises as fs } from 'fs'
 import fetch from 'node-fetch'
@@ -11,6 +11,7 @@ import { IMAGE_DOWNLOAD_DIR } from '../config/paths'
 import { maybePlural } from '../util/cli'
 import { ImageType } from './build-index'
 import { DeviceImage } from './device-image'
+import { runTasksWithLimit } from './paraller-downloader'
 
 export async function downloadDeviceImages(images: DeviceImage[], showTncNotice = true) {
   await fs.mkdir(IMAGE_DOWNLOAD_DIR, { recursive: true })
@@ -18,10 +19,30 @@ export async function downloadDeviceImages(images: DeviceImage[], showTncNotice 
     logTermsAndConditionsNotice(images)
   }
 
-  for (let image of images) {
-    console.log(chalk.bold(chalk.blueBright(`\n${image.deviceConfig.device.name} ${image.buildId} ${image.type}`)))
-    await downloadImage(image, IMAGE_DOWNLOAD_DIR)
-  }
+  const taskProgressBar = new cliProgress.MultiBar(
+    {
+      format: '    {bar} {percentage}% | {value}/{total} MB | {message}',
+      stopOnComplete: true,
+      hideCursor: true,
+      clearOnComplete: true,
+    },
+    cliProgress.Presets.shades_classic,
+  )
+
+  let currentTaskIndex = 0
+
+  await runTasksWithLimit(
+    () => {
+      if (currentTaskIndex < images.length) {
+        const info = images[currentTaskIndex]
+        currentTaskIndex++
+        return downloadImage(info, IMAGE_DOWNLOAD_DIR, taskProgressBar)
+      }
+      return null
+    },
+    4,
+    (error: string) => taskProgressBar.log(`${error} \n`),
+  )
 }
 
 export async function downloadMissingDeviceImages(images: DeviceImage[]) {
@@ -33,13 +54,14 @@ export async function downloadMissingDeviceImages(images: DeviceImage[]) {
   }
 }
 
-async function downloadImage(image: DeviceImage, outDir: string) {
+async function downloadImage(image: DeviceImage, outDir: string, downloadProgressMultiBar: MultiBar) {
   let tmpOutFile = path.join(outDir, image.fileName + '.tmp')
   await fs.rm(tmpOutFile, { force: true })
 
   let completeOutFile = path.join(outDir, image.fileName)
   assert(!existsSync(completeOutFile), completeOutFile + ' already exists')
 
+  console.log(chalk.bold(chalk.blueBright(`\n${image.deviceConfig.device.name} ${image.buildId} ${image.type}`)))
   console.log(`    ${image.url}`)
 
   let resp = await fetch(image.url)
@@ -47,22 +69,19 @@ async function downloadImage(image: DeviceImage, outDir: string) {
     throw new Error(`Error ${resp.status}: ${resp.statusText}`)
   }
 
-  let bar = new cliProgress.SingleBar(
-    {
-      format: '    {bar} {percentage}% | {value}/{total} MB',
-    },
-    cliProgress.Presets.shades_classic,
-  )
-  let progress = 0
   let totalSize = parseInt(resp.headers.get('content-length') ?? '0') / 1e6
+  let progress = 0
+  const startValue = 0
+  const bar = downloadProgressMultiBar.create(totalSize, startValue)
   bar.start(Math.round(totalSize), 0)
 
   let sha256 = createHash('sha256')
 
+  const message = `${image.deviceConfig.device.name} ${image.buildId} ${image.type}`
   resp.body!.on('data', chunk => {
     sha256.update(chunk)
     progress += chunk.length / 1e6
-    bar.update(Math.round(progress))
+    bar.update(Math.round(progress), { message: message })
   })
 
   await stream.pipeline(resp.body!, createWriteStream(tmpOutFile))
