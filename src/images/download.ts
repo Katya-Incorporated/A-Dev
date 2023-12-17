@@ -61,8 +61,10 @@ async function downloadImage(image: DeviceImage, outDir: string, downloadProgres
   let completeOutFile = path.join(outDir, image.fileName)
   assert(!existsSync(completeOutFile), completeOutFile + ' already exists')
 
-  console.log(chalk.bold(chalk.blueBright(`\n${image.deviceConfig.device.name} ${image.buildId} ${image.type}`)))
-  console.log(`    ${image.url}`)
+  downloadProgressMultiBar.log(
+    chalk.bold(chalk.blueBright(`\n${image.deviceConfig.device.name} ${image.buildId} ${image.type}`)) + '\n',
+  )
+  downloadProgressMultiBar.log(`    ${image.url} \n`)
 
   let resp = await fetch(image.url)
   if (!resp.ok) {
@@ -88,7 +90,9 @@ async function downloadImage(image: DeviceImage, outDir: string, downloadProgres
   bar.stop()
 
   let sha256Digest: string = sha256.digest('hex')
-  console.log('SHA-256: ' + sha256Digest)
+  downloadProgressMultiBar.log(
+    `SHA-256: ${sha256Digest} - ${image.deviceConfig.device.name} ${image.buildId} ${image.type} \n`,
+  )
   if (image.skipSha256Check) {
     console.warn('skipping SHA-256 check for ' + completeOutFile)
   } else {
