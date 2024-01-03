@@ -1,2 +1,2 @@
-export BUILD_ID_oriole="UQ1A.231205.015"
+export BUILD_ID_oriole="UQ1A.240105.002"
 unset PLATFORM_SECURITY_PATCH_oriole

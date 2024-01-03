@@ -1,2 +1,2 @@
-export BUILD_ID_lynx="UQ1A.231205.015"
+export BUILD_ID_lynx="UQ1A.240105.004"
 unset PLATFORM_SECURITY_PATCH_lynx

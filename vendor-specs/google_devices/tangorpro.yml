@@ -2,7 +2,7 @@ Android.bp: c9ffd08891ecb53ae8e9094354e795dd69f8739b43792c4ad4b3bc7c768affcf
 Android.mk: d81ba865d988c58adfc72c3ba3f62113a95438fd81dba91bfcdd82e111d4abcf
 AndroidProducts.mk: 959a37c84ca5d813590059bd64ac6203b8ec8d06c576eee2aadf7a4f16049474
 README.md: 18956bd57461b0635927439681702c11ad0b3030fc5798b20636db0000ebdf49
-cmds-for-envsetup.sh: 975b52da2df592fa7fded2134c1e2723fb3c1996a12b3730a6cdb3b5c1897c09
+cmds-for-envsetup.sh: 2fc00589cb985395a03a3c2cb6d1fcb0997af2a4890c881e28504eff3ea324b4
 firmware: dir
 firmware/abl.img: 3ef9e35cb48f456b2f60152a6f350f257965c2e1040f32fc797bc682274841ae
 firmware/android-info.txt: d6675829d4c46aefa34b4afffee877a8824224f9dabf72d5f6d5e90a208cd10e
@@ -74,7 +74,7 @@ proprietary: dir
 proprietary-files.txt: 0342ddacf9da75e1060ba0a5f74bedc603828cd1fd57b11d67480c53754a72b9
 proprietary/Android.bp: 43b68ea837c8e777d93d70e091006c11dbdc905f761e7870696bdc178479e5a0
 proprietary/BoardConfigVendor.mk: 2e787417f5cbe8bd5303527973a16dc5e490b5dbc5c426dd1694ea324aa1e484
-proprietary/device-vendor.mk: 5eea1d27a182829058f147edd95307bd3379924d259542cff4cd840064dae074
+proprietary/device-vendor.mk: 2bed6f0c9cad9fd92874217eaac5770545a76a917c04e2a4b721996901e95e78
 proprietary/linker-config-adevtool.json: 6b3c6b57416c259790eb479ca3bf9575437bc060fd7439a96b2826785f73bcfc
 proprietary/product: dir
 proprietary/product/etc: dir
@@ -93,7 +93,7 @@ proprietary/product/etc/sysconfig/pixel_tablet-initial-package-stopped-states.xm
 proprietary/system_ext: dir
 proprietary/system_ext/app: dir
 proprietary/system_ext/app/PersistentBackgroundCameraServices: dir
-proprietary/system_ext/app/PersistentBackgroundCameraServices/PersistentBackgroundCameraServices.apk: 83f5597823221093612d8b50355bf6010b66a0accb8586934b8bad43be54e79c
+proprietary/system_ext/app/PersistentBackgroundCameraServices/PersistentBackgroundCameraServices.apk: fd2d1f5806bbaf3b953abbfa412b476e0b09c1a34e271cff927453b7ac70cecc
 proprietary/system_ext/bin: dir
 proprietary/system_ext/bin/hw: dir
 proprietary/system_ext/bin/hw/vendor.google.edgetpu_app_service@1.0-service: 2a140222b7b2db83054690e8480712118c031fc06d71077451e20de0b0fe81d7
@@ -138,14 +138,14 @@ proprietary/system_ext/priv-app/EuiccSupportPixel/esim-full-ofl-v1.img: aa6fd573
 proprietary/system_ext/priv-app/EuiccSupportPixel/esim-full-v0.img: 6531dc0c3f5416b5c9a72034cd9583c42abe3e593eef5d274249f73cde6beabd
 proprietary/system_ext/priv-app/EuiccSupportPixel/esim-full-v1.img: 0fef06fd39185d6493fbccf60c88118964c89891441afefabc610d67ebb5687c
 proprietary/system_ext/priv-app/PixelNfc: dir
-proprietary/system_ext/priv-app/PixelNfc/PixelNfc.apk: 3444131038718b11f8d0caca360417add8f2cd995dc01ba195151cbe72297614
+proprietary/system_ext/priv-app/PixelNfc/PixelNfc.apk: ce88cc5f0ef93f43b72f33d00213032d0dfa4ba0c2343f7a99243f370bc9288e
 proprietary/system_ext/priv-app/UwbVendorService: dir
-proprietary/system_ext/priv-app/UwbVendorService/UwbVendorService.apk: ece368cb054b01f4572a146c6731b25a902b4ec82f4e0f4053bfd8b2719ef373
+proprietary/system_ext/priv-app/UwbVendorService/UwbVendorService.apk: edd92ad0271e4a00f983c289a41244511b73f2cc5268d892a7b60cf787c3a4f0
 proprietary/vendor: dir
 proprietary/vendor/apex: dir
-proprietary/vendor/apex/com.google.android.widevine.apex: 96fafd020795dfaee6ee9f3513659956d9b421b419bee48fedefcf3ad16e9eab
-proprietary/vendor/apex/com.google.pixel.camera.hal.apex: 5a56e3a0ee8bd53aa6b17d78971b90d7220d713e59e8a10f32196797fba8a73e
-proprietary/vendor/apex/com.google.pixel.wifi.ext.apex: 2ef85bf0a68d2832e83ef4de0292aa755219ce684d6df34d961fefaa73cec34b
+proprietary/vendor/apex/com.google.android.widevine.apex: bf3149c4682ebf16f67d41c223ab37a69529dd5fa1534690dc75fb8e2786c2c7
+proprietary/vendor/apex/com.google.pixel.camera.hal.apex: fa2b46f6fb70d6f52046af8547959849f79676b363612218fc196ec5f5a56b19
+proprietary/vendor/apex/com.google.pixel.wifi.ext.apex: 847f77ec8a3acb2ea82792c7387e102ae1de10c291bd49e4d1250aab801bd780
 proprietary/vendor/bin: dir
 proprietary/vendor/bin/aocd: 88c2e3ee189487930e13a163ab16ae8c19f628de20d3badd3983a1d3925c4c30
 proprietary/vendor/bin/chre: 796deb93c916ef226340cb24cebedba5f029da29ae3ec7e053b9fc07441707f8
@@ -322,7 +322,7 @@ proprietary/vendor/etc/vintf/manifest/vendor.google.edgetpu_vendor_service@1.0-s
 proprietary/vendor/etc/vintf/manifest/vendor.google.google_battery-default.xml: a1ad5f3ac192542896ff3c0171eadf76feca338789e166700e72f6c09255610a
 proprietary/vendor/firmware: dir
 proprietary/vendor/firmware/1540.app: 1de2e53278104c57640ca3c5ae33e394eaa9f922b96d79b1450ebac8f599c232
-proprietary/vendor/firmware/aoc.bin: 333812976579072f659fe9083d1f4024c7afc01b0c57fa2a98a54e9c17a0e6bd
+proprietary/vendor/firmware/aoc.bin: 2d25d01c2f5ced010dae378130ee356efb6c53cb943388daf68ac041ef3f9a74
 proprietary/vendor/firmware/bcmdhd.cal: b477d9595a720520b2d84678f80076a595fb20b78ddb4a5b002bbc53efb926d8
 proprietary/vendor/firmware/bcmdhd_clm.blob: 7150f1b4da0d258cc50e9c44f07be3f708a47e0fe594140b4c6abc017cbcb624
 proprietary/vendor/firmware/cast_auth.app: 80576d38521894fa64498120967b02a66165832f333816e018a5561e58c6641d
@@ -560,6 +560,6 @@ proprietary/vendor/lib64/vendor.google.wifi_ext-V1-ndk.so: 4b415e91db285c6c86f81
 proprietary/vendor/lib64/vendor_chre_atoms_log.so: 91ea28cd534eac8a34f7e6f0e8f441ed054cb3ab39c54be311b9d6fc159dcb4f
 proprietary/vendor/lib64/vendor_chre_metrics-cpp.so: 6a53ee3f0b1c13ff5d2f50a301a0f7eb33051b1c4ffeb2bcdc57f205d76f0371
 sepolicy: dir
-tangorpro.mk: 89849fad4af0855352576d10b8eb543f1077f6720a97833bf4b759483b112371
+tangorpro.mk: 41ef211b4d401e5c21378b4c3bea1078dc1589ce2bd13bded9d320bc6c0c0db3
 vintf: dir
 vintf/adevtool_manifest_vendor.xml: 4db1443742d336ac9d4d8ac6defe3db4b5381750bdf24699026892b5ec8acacf
