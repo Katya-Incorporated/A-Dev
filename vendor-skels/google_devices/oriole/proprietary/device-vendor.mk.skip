@@ -2488,7 +2488,6 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/oriole/proprietary/vendor/firmware/stable_modem/modem.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/stable_modem/modem.bin \
     vendor/google_devices/oriole/proprietary/vendor/firmware/stable_modem/version.cfg:$(TARGET_COPY_OUT_VENDOR)/firmware/stable_modem/version.cfg \
     vendor/google_devices/oriole/proprietary/vendor/firmware/stm_fts_production_limits_o6.csv:$(TARGET_COPY_OUT_VENDOR)/firmware/stm_fts_production_limits_o6.csv \
-    vendor/google_devices/oriole/proprietary/product/etc/default-permissions/default-permissions_pixelsupport.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions_pixelsupport.xml \
     vendor/google_devices/oriole/proprietary/product/etc/permissions/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml \
     vendor/google_devices/oriole/proprietary/product/etc/permissions/androidx.camera.extensions.impl.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/androidx.camera.extensions.impl.xml \
     vendor/google_devices/oriole/proprietary/product/etc/permissions/com.google.pixel.camera.connectivity.impl.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.google.pixel.camera.connectivity.impl.xml \

@@ -2771,7 +2771,6 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/lynx/proprietary/vendor/firmware/uecapconfig/WILDCARD.binarypb:$(TARGET_COPY_OUT_VENDOR)/firmware/uecapconfig/WILDCARD.binarypb \
     vendor/google_devices/lynx/proprietary/vendor/firmware/uecapconfig/WINDTRE.binarypb:$(TARGET_COPY_OUT_VENDOR)/firmware/uecapconfig/WINDTRE.binarypb \
     vendor/google_devices/lynx/proprietary/vendor/firmware/wlan/qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/qcom_cfg.ini \
-    vendor/google_devices/lynx/proprietary/product/etc/default-permissions/default-permissions_pixelsupport.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions_pixelsupport.xml \
     vendor/google_devices/lynx/proprietary/product/etc/permissions/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml \
     vendor/google_devices/lynx/proprietary/product/etc/permissions/androidx.camera.extensions.impl.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/androidx.camera.extensions.impl.xml \
     vendor/google_devices/lynx/proprietary/product/etc/permissions/com.google.pixel.camera.connectivity.impl.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.google.pixel.camera.connectivity.impl.xml \

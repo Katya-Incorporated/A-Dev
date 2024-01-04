@@ -107,8 +107,9 @@ filters:
       # Unused hardware info jar
       - product/etc/permissions/com.google.android.hardwareinfo.xml
       - product/framework/libhwinfo.jar
-      # Unwanted OMA-DM and carrier trash
       - product/etc/default-permissions/default-permissions_diagnostictool.xml
+      # permissions for the "Pixel Troubleshooting" app (com.google.android.apps.pixel.support)
+      - product/etc/default-permissions/default-permissions_pixelsupport.xml
       - product/etc/default-permissions/default-permissions_SmartDisplayPrebuilt.xml
       - product/etc/permissions/com.android.omadm.service.xml
       - product/etc/permissions/com.android.sdm.plugins.connmo.xml
