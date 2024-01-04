@@ -2500,7 +2500,6 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/raven/proprietary/vendor/firmware/stable_modem/confpack/release-label:$(TARGET_COPY_OUT_VENDOR)/firmware/stable_modem/confpack/release-label \
     vendor/google_devices/raven/proprietary/vendor/firmware/stable_modem/modem.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/stable_modem/modem.bin \
     vendor/google_devices/raven/proprietary/vendor/firmware/stable_modem/version.cfg:$(TARGET_COPY_OUT_VENDOR)/firmware/stable_modem/version.cfg \
-    vendor/google_devices/raven/proprietary/product/etc/default-permissions/default-permissions_pixelsupport.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions_pixelsupport.xml \
     vendor/google_devices/raven/proprietary/product/etc/permissions/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml \
     vendor/google_devices/raven/proprietary/product/etc/permissions/androidx.camera.extensions.impl.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/androidx.camera.extensions.impl.xml \
     vendor/google_devices/raven/proprietary/product/etc/permissions/com.google.pixel.camera.connectivity.impl.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.google.pixel.camera.connectivity.impl.xml \
