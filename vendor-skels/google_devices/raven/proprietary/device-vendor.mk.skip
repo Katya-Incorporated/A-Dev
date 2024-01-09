@@ -9,7 +9,8 @@ DEVICE_MANIFEST_FILE += vendor/google_devices/raven/vintf/adevtool_manifest_vend
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += vendor/google_devices/raven/proprietary/linker-config-adevtool.json
 
 PRODUCT_SYSTEM_PROPERTIES += \
-    persist.uwb.enable_uci_stack=1
+    persist.uwb.enable_uci_stack=1 \
+    ro.camerax.extensions.enabled=true
 
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
@@ -163,6 +164,7 @@ PRODUCT_PACKAGES += \
     com.google.android.camera.experimental2021 \
     com.google.android.camera.experimental2022_system \
     com.google.android.camera.extensions \
+    com.google.android.camerax.extensions \
     com.google.android.widevine \
     com.google.edgetpu_app_service-V2-ndk \
     com.google.edgetpu_app_service-V2-ndk__system_ext \
@@ -2511,6 +2513,7 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/raven/proprietary/system_ext/etc/default-permissions/default-permissions-euiccpixel.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/default-permissions/default-permissions-euiccpixel.xml \
     vendor/google_devices/raven/proprietary/system_ext/etc/permissions/com.google.android.camera.experimental2022_system.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.android.camera.experimental2022_system.xml \
     vendor/google_devices/raven/proprietary/system_ext/etc/permissions/com.google.android.camera.extensions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.android.camera.extensions.xml \
+    vendor/google_devices/raven/proprietary/system_ext/etc/permissions/com.google.android.camerax.extensions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.android.camerax.extensions.xml \
     vendor/google_devices/raven/proprietary/system_ext/etc/permissions/com.google.euiccpixel.permissions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.euiccpixel.permissions.xml \
     vendor/google_devices/raven/proprietary/system_ext/etc/permissions/com.google.euiccpixel.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.euiccpixel.xml \
     vendor/google_devices/raven/proprietary/system_ext/etc/permissions/com.google.pixel.camera.connectivity.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.pixel.camera.connectivity.xml \
