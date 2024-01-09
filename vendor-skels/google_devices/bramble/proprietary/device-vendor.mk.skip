@@ -943,6 +943,7 @@ PRODUCT_PACKAGES += \
     org.codeaurora.ims.auto_generated_rro_product_adevtool__ \
     pd-mapper \
     pixel-display-default \
+    PixelCameraServicesBramble \
     PixelNfc \
     PktRspTest \
     pm-proxy \

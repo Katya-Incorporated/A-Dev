@@ -42,6 +42,16 @@ android_app_import {
 }
 
 android_app_import {
+    name: "PixelCameraServicesF10",
+    owner: "google_devices",
+    apk: "product/priv-app/PixelCameraServicesF10/PixelCameraServicesF10.apk",
+    presigned: true,
+    privileged: true,
+    dex_preopt: { enabled: false },
+    product_specific: true,
+}
+
+android_app_import {
     name: "OemRilHookService",
     owner: "google_devices",
     apk: "system_ext/app/OemRilHookService/OemRilHookService.apk",

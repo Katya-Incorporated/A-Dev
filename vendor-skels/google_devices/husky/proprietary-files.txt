@@ -360,6 +360,7 @@ product/etc/sysconfig/pixel_experience_2023.xml
 product/lib64/libdmengine.so
 product/lib64/libdmjavaplugin.so
 product/priv-app/EuiccGoogle/EuiccGoogle.apk
+product/priv-app/PixelCameraServicesHK3/PixelCameraServicesHK3.apk;PRESIGNED
 vendor/apex/com.google.android.widevine.apex
 vendor/apex/com.google.pixel.camera.hal.apex
 vendor/apex/com.google.pixel.euicc.update.apex

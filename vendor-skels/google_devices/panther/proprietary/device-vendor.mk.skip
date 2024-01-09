@@ -365,6 +365,7 @@ PRODUCT_PACKAGES += \
     OemRilService \
     PersistentBackgroundCameraServices \
     pixel-power-ext-V1-ndk.vendor:32 \
+    PixelCameraServicesP10 \
     PixelNfc \
     pixelpowerstats_provider_aidl_interface-cpp.vendor:64 \
     PixelQualifiedNetworksService \

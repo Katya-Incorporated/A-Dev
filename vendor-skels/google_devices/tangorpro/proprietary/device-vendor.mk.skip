@@ -307,6 +307,7 @@ PRODUCT_PACKAGES += \
     nos_app_weaver:64 \
     PersistentBackgroundCameraServices \
     pixel-power-ext-V1-ndk.vendor:32 \
+    PixelCameraServicesT6PRO \
     PixelNfc \
     pixelpowerstats_provider_aidl_interface-cpp.vendor:64 \
     pvmfw_bin \

@@ -44,6 +44,7 @@ product/etc/permissions/com.google.pixel.camera.services.lyricconfigprovider.imp
 product/etc/sysconfig/component-overrides.xml
 product/etc/sysconfig/google-nest-hiddenapi-package-whitelist.xml
 product/etc/sysconfig/pixel_tablet-initial-package-stopped-states.xml
+product/priv-app/PixelCameraServicesT6PRO/PixelCameraServicesT6PRO.apk;PRESIGNED
 vendor/apex/com.google.android.widevine.apex
 vendor/apex/com.google.pixel.camera.hal.apex
 vendor/apex/com.google.pixel.wifi.ext.apex

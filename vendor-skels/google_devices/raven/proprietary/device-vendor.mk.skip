@@ -344,6 +344,7 @@ PRODUCT_PACKAGES += \
     OemRilService \
     org.carconnectivity.android.digitalkey.timesync \
     PersistentBackgroundCameraServices \
+    PixelCameraServicesRaven \
     PixelNfc \
     pixelpowerstats_provider_aidl_interface-cpp.vendor:64 \
     pvmfw_bin \

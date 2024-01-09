@@ -355,6 +355,7 @@ product/lib/libdmjavaplugin.so
 product/lib64/libdmengine.so
 product/lib64/libdmjavaplugin.so
 product/priv-app/EuiccGoogle/EuiccGoogle.apk;PRESIGNED
+product/priv-app/PixelCameraServicesOriole/PixelCameraServicesOriole.apk;PRESIGNED
 vendor/apex/com.google.android.widevine.apex
 vendor/apex/com.google.pixel.camera.hal.apex
 vendor/apex/com.google.pixel.euicc.update.apex

@@ -184,9 +184,6 @@ filters:
       # com.google.vr.apps.ornament, found on 4th gen Pixels
       - product/app/Ornament/
       - product/app/Photos/
-      # PixelCameraServices{B3,P10,Oriole,Raven,Sunfish} etc
-      - product/app/PixelCameraServices
-      - product/priv-app/PixelCameraServices
       # PixelThemesStub{,2022_and_newer}
       - product/app/PixelThemesStub
       # PixelWallpapers{2021,2021a,2022}
