@@ -73,7 +73,7 @@ overlays/product_org.codeaurora.ims/res/values/values.xml: d740f1e01a2535a2382a3
 proprietary: dir
 proprietary-files.txt: 29b807ede4df150a05fc4aedd0b0d886d5bb1740b2a0a7acf43fbf636edf47de
 proprietary/Android.bp: 80f0ad4479e1aefe6c0ee4ab2e199dff29678cf5438bd92c62a3fa5219ec32c1
-proprietary/BoardConfigVendor.mk: 5c24f479c707b4ade0485b3dc8166ea62b66ba253a27517af4142709bed4e724
+proprietary/BoardConfigVendor.mk: 4494f131a8a17ea9532f7dbb1ca9a1ac4276912ba7d487b555410ba6e2c2fedf
 proprietary/device-vendor.mk: 5bd20de29a3998408ae342e5a270e2e1d06e55a095817fbbffe6d59d96807e12
 proprietary/product: dir
 proprietary/product/app: dir

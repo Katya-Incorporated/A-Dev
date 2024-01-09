@@ -60,6 +60,7 @@ filters:
 
   sepolicy_dirs:
     match:
+      - hardware/google/pixel-sepolicy/googlebattery
       - hardware/google/pixel-sepolicy/flipendo
       - hardware/google/pixel-sepolicy/ramdump
       - hardware/google/pixel-sepolicy/sota_app/system_ext

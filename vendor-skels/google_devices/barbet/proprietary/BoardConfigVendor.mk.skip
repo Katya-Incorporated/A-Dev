@@ -31,7 +31,6 @@ TARGET_BOARD_INFO_FILE := vendor/google_devices/barbet/firmware/android-info.txt
 BOARD_VENDOR_SEPOLICY_DIRS += \
     hardware/google/pixel-sepolicy/confirmationui_hal \
     hardware/google/pixel-sepolicy/input \
-    hardware/google/pixel-sepolicy/googlebattery \
     hardware/google/pixel-sepolicy/connectivity_thermal_power_manager \
     vendor/google_devices/barbet/sepolicy
 
