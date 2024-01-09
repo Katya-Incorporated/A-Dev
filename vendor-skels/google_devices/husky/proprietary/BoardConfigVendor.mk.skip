@@ -25,7 +25,6 @@ AB_OTA_PARTITIONS += \
 TARGET_BOARD_INFO_FILE := vendor/google_devices/husky/firmware/android-info.txt
 
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    hardware/google/pixel-sepolicy/googlebattery \
     hardware/google/pixel-sepolicy/connectivity_thermal_power_manager \
     vendor/google_devices/husky/sepolicy
 
@@ -34,12 +33,9 @@ BOARD_VENDOR_SEPOLICY_DIRS += \
 # Missing vendor SELinux context: /(vendor|system/vendor)/bin/hw/android\.hardware\.qorvo\.uwb-service u:object_r:hal_uwb_default_exec:s0
 # Missing vendor SELinux context: /vendor/bin/hw/android\.hardware\.biometrics\.face-service(.[a-zA-Z0-9]+)?.pixel u:object_r:hal_face_default_exec:s0
 # Missing vendor SELinux context: /vendor/bin/hw/android\.hardware\.biometrics\.face-service-[a-zA-Z0-9]+ u:object_r:hal_face_default_exec:s0
-# Missing vendor SELinux context: /vendor/bin/hw/vendor\.google\.wireless_charger-default u:object_r:hal_wireless_charger_exec:s0
 # Missing vendor SELinux context: /vendor/bin/hw/vendor\.google\.exo_camera_injection@1\.1-service u:object_r:hal_exo_camera_injection_exec:s0
 # Missing vendor SELinux context: com.google.face.debug::IDebugHost u:object_r:hal_face_debug_hwservice:s0
 # Missing vendor SELinux context: vendor.google.exo_camera_injection::IExoCameraInjection u:object_r:hal_exo_camera_injection_hwservice:s0
-# Missing vendor SELinux context: user=_app seinfo=CameraServices name=com.google.android.apps.camera.services domain=vendor_pcs_app type=app_data_file levelFrom=all
-# Missing vendor SELinux context: user=_app seinfo=CameraServices name=com.google.android.apps.camera.services:* domain=vendor_pcs_app type=app_data_file levelFrom=all
 # Missing vendor SELinux context: user=_app seinfo=platform name=com.google.pixel.exo domain=exo_app type=app_data_file levelFrom=all
 # Missing vendor SELinux context: user=_app isPrivApp=true seinfo=google name=com.google.android.GoogleCamera domain=google_camera_app type=app_data_file levelFrom=all
 # Missing vendor SELinux context: user=_app seinfo=CameraEng name=com.google.android.GoogleCameraEng domain=debug_camera_app type=app_data_file levelFrom=all

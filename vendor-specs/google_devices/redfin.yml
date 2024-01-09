@@ -70,10 +70,10 @@ overlays/product_org.codeaurora.ims/res: dir
 overlays/product_org.codeaurora.ims/res/values: dir
 overlays/product_org.codeaurora.ims/res/values/values.xml: d740f1e01a2535a2382a3f40920d7ac4b90be155ce5726962b1f2041e40daca6
 proprietary: dir
-proprietary-files.txt: 3152e66a57585b1778d71e8c7c35593423d27085652c0e4230acfcc893643937
-proprietary/Android.bp: 90449acd5321f9c7d440d2a102df9d5b134018206c1c7ea71372e9c5882d932e
-proprietary/BoardConfigVendor.mk: e2a1d661c8589a7df578205ea779987031189bf3af30d702e602772330fa6955
-proprietary/device-vendor.mk: 2caff39c93576e7aff6c0ef9ce7e21b6899f3cebad807c1f04a307528f72a3d2
+proprietary-files.txt: e8074eb38b6b03ec9bb4fea2c501237345ea7aafc5de0b45b02c6fe3726db0a8
+proprietary/Android.bp: 50f283ce9c967cb18ba697a64e2578bea5c6db9874ba17a92035b0eacad82710
+proprietary/BoardConfigVendor.mk: 9673df3f12c4c6ba286d7ada08542ec2d4b77e5f65dbbdecb4c268a7bfaf2792
+proprietary/device-vendor.mk: 20c2399e0ae41f36b475c760b15c7b06f432a539709ff2808d4f6c604f1c2833
 proprietary/product: dir
 proprietary/product/app: dir
 proprietary/product/app/uimremoteclient: dir
@@ -372,7 +372,6 @@ proprietary/product/etc/res/values: dir
 proprietary/product/etc/res/values/charger: dir
 proprietary/product/etc/res/values/charger/animation.txt: 8efecfa16c4d5c67e592cac336171d7d855d4d1890f32950cfca058cc2204eba
 proprietary/product/etc/vintf: dir
-proprietary/product/etc/vintf/compatibility_matrix.xml: 47cf8f47495d4f532af89298f08d6a9a6112affb4e5d9dc68fdad9940c5e26b3
 proprietary/product/etc/vintf/manifest: dir
 proprietary/product/etc/vintf/manifest/vendor.qti.qvirt-service.xml: 9297d2c6950eab26f238d172e8f5bea1022f7201cbb27f34f4e80957e92af9a9
 proprietary/product/framework: dir
