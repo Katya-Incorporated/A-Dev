@@ -83,10 +83,10 @@ overlays/vendor_android/res: dir
 overlays/vendor_android/res/values: dir
 overlays/vendor_android/res/values/values.xml: 11815719c304cb1a6dd8abdee61d50bee3d5f6c5f4c1a892a14209d1269924b0
 proprietary: dir
-proprietary-files.txt: cf1d481ef98d50e9056a9d29d7aded316acc6c14740bcfa910516b04d76807d4
+proprietary-files.txt: a3486e90ca740c5fa535921408a764aa180288e4510893ed6be197daa4a85bbd
 proprietary/Android.bp: 55d3237f98ed8ae849247c4538aa75201c6ee0e76a5989d551b057d31c49bf16
 proprietary/BoardConfigVendor.mk: bde74a1946ed02dacc54f3b0023ea792eb89fa1f07bd4f411b396737b8d8f447
-proprietary/device-vendor.mk: 541da44f1519f9812e8c87359964f68b153fcbfe9c417ae633f6ae9177be445c
+proprietary/device-vendor.mk: 59572b2b15e76a173bc55fa471285451b8e7f7d46f58d3d715d14190afba9019
 proprietary/linker-config-adevtool.json: 6b3c6b57416c259790eb479ca3bf9575437bc060fd7439a96b2826785f73bcfc
 proprietary/product: dir
 proprietary/product/etc: dir
@@ -414,7 +414,6 @@ proprietary/system_ext/bin/hw/vendor.google.edgetpu_app_service@1.0-service: 12c
 proprietary/system_ext/etc: dir
 proprietary/system_ext/etc/default-permissions: dir
 proprietary/system_ext/etc/default-permissions/default-permissions-euiccpixel.xml: 3d7b210f1631b79a2089c5af3fb38bd468a865480d836da16028ecd18d2f0bb5
-proprietary/system_ext/etc/default-permissions/default-permissions_tachyon.xml: c7dcc01058e47f142e1fcc37bfc950688f63817b305e718ff9ac84252e9aab84
 proprietary/system_ext/etc/init: dir
 proprietary/system_ext/etc/init/init.repair_mode.rc: 2f7ab3024d419aa51dd97568ceeccd851ad9c28acc7127dfa1a54ec2cdf11a82
 proprietary/system_ext/etc/init/vendor.google.edgetpu_app_service@1.0-service.rc: 8963b8d7da2cca37074f0cd93b4c370e3f75ec0d9df2dcf6cf29fb9448978fc2
@@ -664,8 +663,6 @@ proprietary/vendor/etc/database/DbEcc_750.xml: a7d78f240d3e5532261b1d27b8ad2b2e9
 proprietary/vendor/etc/database/DbEcc_DEFAULT.xml: 79aad43ea897623604d865415973d54436d7fcb00f5d3a86ba2d82ccc91befbb
 proprietary/vendor/etc/database/DbEcc_ICCID.xml: 0edcab68dcfd85f872a5bdf653cc9a389c98f3a8f6eb22a4c6fc67b15a068f7b
 proprietary/vendor/etc/database/ecc_version: 2e6d31a5983a91251bfae5aefa1c0a19d8ba3cf601d0e8a706b4cfa9661a6b8a
-proprietary/vendor/etc/default-permissions: dir
-proprietary/vendor/etc/default-permissions/default-permissions_wildlife.xml: 1fbf46b5dfcc6a55290eed69f86bf26557c5db781ab2dd164d384a5f4a5f935c
 proprietary/vendor/etc/displayconfig: dir
 proprietary/vendor/etc/displayconfig/display_port_0.xml: 91aecd207e7ab2cc3f681fb2419700757497b8b7c33dad24bcde3dcd9e8654fd
 proprietary/vendor/etc/earcheek_classifier.tflite: c82484c2aba0ab05d13f2761eb860938b8b72ea55c1a76cbc31b9ee06a38eed8

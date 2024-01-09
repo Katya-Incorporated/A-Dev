@@ -4,7 +4,6 @@
 system_ext/app/OemRilHookService/OemRilHookService.apk
 system_ext/app/PersistentBackgroundCameraServices/PersistentBackgroundCameraServices.apk
 system_ext/bin/hw/vendor.google.edgetpu_app_service@1.0-service
-system_ext/etc/default-permissions/default-permissions_tachyon.xml
 system_ext/etc/default-permissions/default-permissions-euiccpixel.xml
 system_ext/etc/init/init.repair_mode.rc
 system_ext/etc/init/vendor.google.edgetpu_app_service@1.0-service.rc
@@ -524,7 +523,6 @@ vendor/etc/database/DbEcc_750.xml
 vendor/etc/database/DbEcc_DEFAULT.xml
 vendor/etc/database/DbEcc_ICCID.xml
 vendor/etc/database/ecc_version
-vendor/etc/default-permissions/default-permissions_wildlife.xml
 vendor/etc/displayconfig/display_id_4619827677245947648.xml
 vendor/etc/displayconfig/display_id_4619827756650623232.xml
 vendor/etc/displayconfig/display_id_4619827812140078592.xml
