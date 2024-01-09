@@ -341,7 +341,6 @@ product/etc/CarrierSettings/zain_bh.pb
 product/etc/CarrierSettings/zain_kw.pb
 product/etc/CarrierSettings/zain_sa.pb
 product/etc/CarrierSettings/zeop_re.pb
-product/etc/default-permissions/default-permissions.xml
 product/etc/felica/common.cfg
 product/etc/felica/mfm.cfg
 product/etc/felica/mfs.cfg

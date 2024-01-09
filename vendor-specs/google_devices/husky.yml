@@ -83,10 +83,10 @@ overlays/vendor_android/res: dir
 overlays/vendor_android/res/values: dir
 overlays/vendor_android/res/values/values.xml: 11815719c304cb1a6dd8abdee61d50bee3d5f6c5f4c1a892a14209d1269924b0
 proprietary: dir
-proprietary-files.txt: a3486e90ca740c5fa535921408a764aa180288e4510893ed6be197daa4a85bbd
+proprietary-files.txt: 273c33790e70df29fd4a58f25366d5e4a3cd49ef8fd0c2859db82dafa1d35262
 proprietary/Android.bp: 55d3237f98ed8ae849247c4538aa75201c6ee0e76a5989d551b057d31c49bf16
 proprietary/BoardConfigVendor.mk: bde74a1946ed02dacc54f3b0023ea792eb89fa1f07bd4f411b396737b8d8f447
-proprietary/device-vendor.mk: 59572b2b15e76a173bc55fa471285451b8e7f7d46f58d3d715d14190afba9019
+proprietary/device-vendor.mk: 9013012efb3491c0ba3b8870165e7edf09e82023f6ddb4efef3862fc6b3b8df4
 proprietary/linker-config-adevtool.json: 6b3c6b57416c259790eb479ca3bf9575437bc060fd7439a96b2826785f73bcfc
 proprietary/product: dir
 proprietary/product/etc: dir
@@ -376,8 +376,6 @@ proprietary/product/etc/CarrierSettings/zain_bh.pb: 14fc53e08d25764a0523c1149e42
 proprietary/product/etc/CarrierSettings/zain_kw.pb: 30b0529bfaadd827f6ecee01c6f5d04f979f0e65cf616cad74c4423bb16a9999
 proprietary/product/etc/CarrierSettings/zain_sa.pb: 6e96226c44d165709db37ecabb195495675a82f07ccf38ceadff25107bb56101
 proprietary/product/etc/CarrierSettings/zeop_re.pb: c0fd7482a659c6da1bf56c7f3503ab08c92281257ac0606d322913a7a0f3dce5
-proprietary/product/etc/default-permissions: dir
-proprietary/product/etc/default-permissions/default-permissions.xml: 7be1d5d0827447351f244a1d0f787ea44948d205bebf592423884d1bc2e5f46a
 proprietary/product/etc/felica: dir
 proprietary/product/etc/felica/common.cfg: 1c698a44b13ad9ceef89071b0048525fefe9d4f781066cecb91363fe02c4dad7
 proprietary/product/etc/felica/mfm.cfg: cf887c8633e196aeec9ee649f3890aa68166357ab9140af9f82f1a16d2f4d39e
