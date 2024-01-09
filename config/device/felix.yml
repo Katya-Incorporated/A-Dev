@@ -3,6 +3,8 @@ device:
 
 platform:
   product_makefile: device/google/felix/aosp_felix.mk
+  extra_product_system_server_jars:
+    - system_ext:felix-services
 
 includes:
   - common/gen7pixel.yml
