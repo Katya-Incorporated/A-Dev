@@ -224,7 +224,7 @@ export async function writeBuildFiles(
   }
 
   if (build.deviceMakefile != undefined) {
-    let mk = serializeDeviceMakefile(build.deviceMakefile)
+    let mk = serializeDeviceMakefile(build.deviceMakefile, config)
     await fs.writeFile(`${dirs.proprietary}/device-vendor.mk`, mk)
   }
 

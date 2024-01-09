@@ -184,7 +184,7 @@ TARGET_COPY_OUT_ODM_DLKM := odm_dlkm`)
   return finishBlocks(blocks)
 }
 
-export function serializeDeviceMakefile(mk: DeviceMakefile) {
+export function serializeDeviceMakefile(mk: DeviceMakefile, config?: DeviceConfig) {
   let blocks = startBlocks()
 
   addContBlock(blocks, 'PRODUCT_SOONG_NAMESPACES', mk.namespaces)
@@ -198,6 +198,8 @@ export function serializeDeviceMakefile(mk: DeviceMakefile) {
   if (mk.vendorLinkerConfigPath !== undefined) {
     blocks.push(`PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += ${mk.vendorLinkerConfigPath}`)
   }
+
+  addContBlock(blocks, 'PRODUCT_SYSTEM_SERVER_JARS', config?.platform?.extra_product_system_server_jars)
 
   if (mk.props != undefined) {
     for (let [partition, props] of mk.props.entries()) {
