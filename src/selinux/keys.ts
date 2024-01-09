@@ -29,7 +29,7 @@ async function parseMacPermissions(xml: string) {
   let doc = await xml2js.parseStringPromise(xml)
   let signers = []
 
-  if (doc.policy) {
+  if (doc.policy?.signer !== undefined) {
     for (let {
       $: { signature: rawSig },
       seinfo: [
