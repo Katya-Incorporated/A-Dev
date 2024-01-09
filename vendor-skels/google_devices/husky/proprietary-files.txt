@@ -55,7 +55,7 @@ system_ext/priv-app/PixelDisplayService/lib/arm64/libpixeldisplaymanager_jni.so
 system_ext/priv-app/PixelDisplayService/PixelDisplayService.apk
 system_ext/priv-app/PixelNfc/PixelNfc.apk
 system_ext/priv-app/PixelQualifiedNetworksService/PixelQualifiedNetworksService.apk
-system_ext/priv-app/ril-extension/ril-extension.apk
+system_ext/priv-app/ril-extension/ril-extension.apk;PRESIGNED
 system_ext/priv-app/ShannonIms/ShannonIms.apk;PRESIGNED
 system_ext/priv-app/ShannonRcs/ShannonRcs.apk;PRESIGNED
 product/etc/CarrierSettings/1and1_de.pb

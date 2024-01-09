@@ -1,4 +1,7 @@
 platform:
+  sepolicy_dirs:
+    - device/google/gs-common
+
   vendor_linker_config:
     # TODO: look into generating this automatically, at least for APEXes, by unpacking them and checking apex_manifest.pb
     provideLibs:

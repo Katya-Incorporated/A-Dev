@@ -14686,15 +14686,6 @@ cc_prebuilt_library_shared {
 }
 
 prebuilt_etc_xml {
-    name: "compatibility_matrix",
-    owner: "google_devices",
-    src: "product/etc/vintf/compatibility_matrix.xml",
-    filename_from_src: true,
-    sub_dir: "vintf",
-    product_specific: true,
-}
-
-prebuilt_etc_xml {
     name: "vendor.qti.qvirt-service__2",
     owner: "google_devices",
     src: "product/etc/vintf/manifest/vendor.qti.qvirt-service.xml",

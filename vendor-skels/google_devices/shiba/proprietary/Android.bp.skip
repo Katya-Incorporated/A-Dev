@@ -326,7 +326,7 @@ android_app_import {
     name: "ril-extension",
     owner: "google_devices",
     apk: "system_ext/priv-app/ril-extension/ril-extension.apk",
-    certificate: "platform",
+    presigned: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,

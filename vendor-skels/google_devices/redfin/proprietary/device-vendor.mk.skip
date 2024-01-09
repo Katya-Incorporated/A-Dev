@@ -326,7 +326,6 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne.server@2.0__system_ext \
     com.quicinc.cne.server@2.1__system_ext \
     com.quicinc.cne.server@2.2__system_ext \
-    compatibility_matrix \
     datastatusnotification \
     device_symlinks \
     deviceInfoServiceModule \

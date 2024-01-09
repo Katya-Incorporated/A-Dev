@@ -838,7 +838,6 @@ product/etc/res/images/charger/battery_fail.png
 product/etc/res/images/charger/battery_scale.png
 product/etc/res/images/charger/main_font.png
 product/etc/res/values/charger/animation.txt
-product/etc/vintf/compatibility_matrix.xml
 product/etc/vintf/manifest/vendor.qti.qvirt-service.xml
 product/framework/qti-telephony-hidl-wrapper-prd.jar
 product/framework/remotesimlockmanagerlibrary.jar

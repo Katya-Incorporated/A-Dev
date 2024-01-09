@@ -24,13 +24,9 @@ TARGET_BOARD_INFO_FILE := vendor/google_devices/oriole/firmware/android-info.txt
 
 BOARD_VENDOR_SEPOLICY_DIRS += \
     hardware/google/pixel-sepolicy/input \
-    hardware/google/pixel-sepolicy/googlebattery \
     device/google/gs101-sepolicy/whitechapel/vendor/google/exo_camera_injection \
     hardware/google/pixel-sepolicy/connectivity_thermal_power_manager \
     device/google/gs101-sepolicy/ambient \
     vendor/google_devices/oriole/sepolicy
 
-# Missing vendor SELinux context: /vendor/bin/hw/vendor\.google\.wireless_charger-default u:object_r:hal_wireless_charger_exec:s0
-# Missing vendor SELinux context: user=_app seinfo=CameraServices name=com.google.android.apps.camera.services domain=vendor_pcs_app type=app_data_file levelFrom=all
-# Missing vendor SELinux context: user=_app seinfo=CameraServices name=com.google.android.apps.camera.services:* domain=vendor_pcs_app type=app_data_file levelFrom=all
 # Missing vendor SELinux context: user=_app isPrivApp=true seinfo=mds name=com.google.mds domain=modem_diagnostic_app type=app_data_file levelFrom=user
