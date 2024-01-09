@@ -2,6 +2,16 @@
 // For more info, see https://github.com/GrapheneOS/adevtool
 
 android_app_import {
+    name: "PixelCameraServicesT6PRO",
+    owner: "google_devices",
+    apk: "product/priv-app/PixelCameraServicesT6PRO/PixelCameraServicesT6PRO.apk",
+    presigned: true,
+    privileged: true,
+    dex_preopt: { enabled: false },
+    product_specific: true,
+}
+
+android_app_import {
     name: "PersistentBackgroundCameraServices",
     owner: "google_devices",
     apk: "system_ext/app/PersistentBackgroundCameraServices/PersistentBackgroundCameraServices.apk",

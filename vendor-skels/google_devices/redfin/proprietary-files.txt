@@ -557,6 +557,7 @@ system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so
 system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so
 system_ext/priv-app/PixelNfc/PixelNfc.apk
 system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+product/app/PixelCameraServicesRedfin/PixelCameraServicesRedfin.apk
 product/app/uimremoteclient/uimremoteclient.apk
 product/app/uimremoteserver/uimremoteserver.apk
 product/app/xdivert/xdivert.apk

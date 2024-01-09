@@ -374,6 +374,7 @@ PRODUCT_PACKAGES += \
     OemRilHookService \
     OemRilService \
     PersistentBackgroundCameraServices \
+    PixelCameraServicesSB3 \
     PixelDisplayService \
     PixelNfc \
     pixelpowerstats_provider_aidl_interface-cpp.vendor \

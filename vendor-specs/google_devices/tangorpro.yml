@@ -71,10 +71,10 @@ overlays/product_com.google.euiccpixel/res: dir
 overlays/product_com.google.euiccpixel/res/values: dir
 overlays/product_com.google.euiccpixel/res/values/values.xml: 13fa5753b62e2f8e3231fda280d516ccd04da67a5dda93ff1114197e60791e6c
 proprietary: dir
-proprietary-files.txt: 0342ddacf9da75e1060ba0a5f74bedc603828cd1fd57b11d67480c53754a72b9
-proprietary/Android.bp: 43b68ea837c8e777d93d70e091006c11dbdc905f761e7870696bdc178479e5a0
+proprietary-files.txt: 886ce387fbb9a5917acdec628f646fcd765179dd0f3bb3c115ebe178ca328d77
+proprietary/Android.bp: 59bdb89fafe04ad3dddba054175cccf6ba09312b681c0df76328fe67f2690fc3
 proprietary/BoardConfigVendor.mk: 785a58016d4e5e646e0170a6fc05ca81b1ca66482814dd7a89fe190baf916df8
-proprietary/device-vendor.mk: 2bed6f0c9cad9fd92874217eaac5770545a76a917c04e2a4b721996901e95e78
+proprietary/device-vendor.mk: b034dd3ec506febfe8f2144f0afae6da03df1f6e004eaf7178b4084f7183f759
 proprietary/linker-config-adevtool.json: 6b3c6b57416c259790eb479ca3bf9575437bc060fd7439a96b2826785f73bcfc
 proprietary/product: dir
 proprietary/product/etc: dir
@@ -90,6 +90,9 @@ proprietary/product/etc/sysconfig: dir
 proprietary/product/etc/sysconfig/component-overrides.xml: 56a09a156c096b0a8d9dc9dc0c1e39f6b9b11651debd4593d5858281b2ecd9fc
 proprietary/product/etc/sysconfig/google-nest-hiddenapi-package-whitelist.xml: 1188b8fbd4761ea7c09cf30d4617f95ce04a020fd4e5e53ae41d42b9025cc6e7
 proprietary/product/etc/sysconfig/pixel_tablet-initial-package-stopped-states.xml: 42b538ad7bce6a30cbbeb9930625ea7397a969333caa29e9b41a282908295323
+proprietary/product/priv-app: dir
+proprietary/product/priv-app/PixelCameraServicesT6PRO: dir
+proprietary/product/priv-app/PixelCameraServicesT6PRO/PixelCameraServicesT6PRO.apk: 9b647d5bf9dfdd110a3de6329c5358129741b762dfb7d4feab125e440cfc42f9
 proprietary/system_ext: dir
 proprietary/system_ext/app: dir
 proprietary/system_ext/app/PersistentBackgroundCameraServices: dir

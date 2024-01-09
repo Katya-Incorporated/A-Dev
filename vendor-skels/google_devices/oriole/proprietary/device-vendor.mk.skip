@@ -335,6 +335,7 @@ PRODUCT_PACKAGES += \
     OemRilHookService \
     OemRilService \
     PersistentBackgroundCameraServices \
+    PixelCameraServicesOriole \
     PixelNfc \
     pixelpowerstats_provider_aidl_interface-cpp.vendor:64 \
     pvmfw_bin \

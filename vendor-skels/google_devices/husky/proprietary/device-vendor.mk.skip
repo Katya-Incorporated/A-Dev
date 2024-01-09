@@ -379,6 +379,7 @@ PRODUCT_PACKAGES += \
     OemRilService \
     org.carconnectivity.android.digitalkey.timesync \
     PersistentBackgroundCameraServices \
+    PixelCameraServicesHK3 \
     PixelDisplayService \
     PixelNfc \
     pixelpowerstats_provider_aidl_interface-cpp.vendor \

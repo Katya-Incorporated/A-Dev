@@ -373,6 +373,7 @@ PRODUCT_PACKAGES += \
     org.carconnectivity.android.digitalkey.timesync \
     PersistentBackgroundCameraServices \
     pixel-power-ext-V1-ndk.vendor:32 \
+    PixelCameraServicesC10 \
     PixelNfc \
     pixelpowerstats_provider_aidl_interface-cpp.vendor:64 \
     PixelQualifiedNetworksService \
