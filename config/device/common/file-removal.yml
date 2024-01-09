@@ -65,6 +65,8 @@ filters:
       - system_ext/etc/permissions/privapp-permissions-google-se.xml
       - system_ext/framework/com.android.hotwordenrollment.common.util.jar
       - vendor/etc/default-permissions/default-permissions_talkback.xml
+      # "Pixel VPN by Google One" (com.google.android.apps.privacy.wildlife)
+      - vendor/etc/default-permissions/default-permissions_wildlife.xml
       - product/etc/sysconfig/google-install-constraints-package-allowlist.xml
       - system_ext/etc/sysconfig/google-nest-hiddenapi-package-whitelist.xml
       # Irrelevant OTA updater
@@ -133,6 +135,8 @@ filters:
       - vendor/etc/init/init.sscoredump.rc
       # we dont ship exo
       - system_ext/etc/default-permissions/default-exo-permissions.xml
+      # Google Meet (com.google.android.apps.tachyon)
+      - system_ext/etc/default-permissions/default-permissions_tachyon.xml
     suffix:
       # Precompiled content
       - .art
