@@ -1,2 +1,0 @@
-export BUILD_ID_coral="TP1A.221005.002.B2"
-export PLATFORM_SECURITY_PATCH_coral="2022-11-01"
