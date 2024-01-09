@@ -9,6 +9,7 @@ DEVICE_MANIFEST_FILE += vendor/google_devices/tangorpro/vintf/adevtool_manifest_
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += vendor/google_devices/tangorpro/proprietary/linker-config-adevtool.json
 
 PRODUCT_SYSTEM_PROPERTIES += \
+    ro.camerax.extensions.enabled=true \
     persist.uwb.enable_uci_stack=1 \
     ro.hotword.visual_query_service_enabled=true
 
@@ -149,6 +150,7 @@ PRODUCT_PACKAGES += \
     com.fingerprints42.extension@1.0 \
     com.google.android.camera.experimental2022 \
     com.google.android.camera.extensions \
+    com.google.android.camerax.extensions \
     com.google.android.grilservice__GrilRadioCustomizable.auto_generated_rro_product_adevtool__ \
     com.google.android.widevine \
     com.google.edgetpu_app_service-V2-ndk \
@@ -486,6 +488,7 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/tangorpro/proprietary/product/etc/sysconfig/google-nest-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/google-nest-hiddenapi-package-whitelist.xml \
     vendor/google_devices/tangorpro/proprietary/product/etc/sysconfig/pixel_tablet-initial-package-stopped-states.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_tablet-initial-package-stopped-states.xml \
     vendor/google_devices/tangorpro/proprietary/system_ext/etc/permissions/com.google.android.camera.extensions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.android.camera.extensions.xml \
+    vendor/google_devices/tangorpro/proprietary/system_ext/etc/permissions/com.google.android.camerax.extensions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.android.camerax.extensions.xml \
     vendor/google_devices/tangorpro/proprietary/system_ext/etc/permissions/com.google.pixel.camera.connectivity.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.pixel.camera.connectivity.xml \
     vendor/google_devices/tangorpro/proprietary/system_ext/etc/permissions/com.google.pixel.camera.services.cameraidremapper.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.pixel.camera.services.cameraidremapper.xml \
     vendor/google_devices/tangorpro/proprietary/system_ext/etc/permissions/com.google.pixel.camera.services.lyricconfigprovider.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.google.pixel.camera.services.lyricconfigprovider.xml \

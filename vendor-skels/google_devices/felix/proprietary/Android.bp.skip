@@ -88,6 +88,13 @@ dex_import {
 }
 
 dex_import {
+    name: "com.google.android.camerax.extensions",
+    owner: "google_devices",
+    jars: [ "system_ext/framework/com.google.android.camerax.extensions.jar" ],
+    system_ext_specific: true,
+}
+
+dex_import {
     name: "com.google.pixel.camera.connectivity",
     owner: "google_devices",
     jars: [ "system_ext/framework/com.google.pixel.camera.connectivity.jar" ],

@@ -5,6 +5,7 @@ system_ext/app/PersistentBackgroundCameraServices/PersistentBackgroundCameraServ
 system_ext/bin/hw/vendor.google.edgetpu_app_service@1.0-service
 system_ext/etc/init/vendor.google.edgetpu_app_service@1.0-service.rc
 system_ext/etc/permissions/com.google.android.camera.extensions.xml
+system_ext/etc/permissions/com.google.android.camerax.extensions.xml
 system_ext/etc/permissions/com.google.pixel.camera.connectivity.xml
 system_ext/etc/permissions/com.google.pixel.camera.services.cameraidremapper.xml
 system_ext/etc/permissions/com.google.pixel.camera.services.lyricconfigprovider.xml
@@ -13,6 +14,7 @@ system_ext/etc/permissions/privapp-permissions-qorvo.xml
 system_ext/etc/vintf/manifest/com.google.pixel.camera.services@1.0-service-google.xml
 system_ext/etc/vintf/manifest/vendor.google.edgetpu_app_service@1.0-service.xml
 system_ext/framework/com.google.android.camera.extensions.jar
+system_ext/framework/com.google.android.camerax.extensions.jar
 system_ext/framework/com.google.pixel.camera.connectivity.jar
 system_ext/framework/com.google.pixel.camera.services.cameraidremapper.jar
 system_ext/framework/com.google.pixel.camera.services.lyricconfigprovider.jar

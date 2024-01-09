@@ -75,10 +75,10 @@ overlays/vendor_android/res: dir
 overlays/vendor_android/res/values: dir
 overlays/vendor_android/res/values/values.xml: 11815719c304cb1a6dd8abdee61d50bee3d5f6c5f4c1a892a14209d1269924b0
 proprietary: dir
-proprietary-files.txt: 3475bce6230299b24e292932eba03d086a5adeb329211d068ea17a0564809a7c
-proprietary/Android.bp: c4e11bd5745db6dccb23a947d4862cb526a537746b3d867706c4a28ab714239c
+proprietary-files.txt: 1ffc1f267c6032140b76eb673a7b9b95fb86fc242650be4d4afa3005b6ba6842
+proprietary/Android.bp: 49e7d277f08ad8db528c7f65b913753e4141204c414dad19b6c82b67137536b3
 proprietary/BoardConfigVendor.mk: f91fc0cb703ea1851da755b3124edc94906f202ff7b394338c0a28a2f62e8162
-proprietary/device-vendor.mk: 0c5fdbcf858798bdd07f3b506bc5b02f0245e5f5ecc2fcb58c5c64bd4c7a0cdb
+proprietary/device-vendor.mk: 53af9c4fe076e551898cbb2fb7ac09700f6b3db9a3f848d4bd226542626e1894
 proprietary/linker-config-adevtool.json: 6b3c6b57416c259790eb479ca3bf9575437bc060fd7439a96b2826785f73bcfc
 proprietary/product: dir
 proprietary/product/etc: dir
@@ -410,6 +410,7 @@ proprietary/system_ext/etc/init/vendor.google.edgetpu_app_service@1.0-service.rc
 proprietary/system_ext/etc/permissions: dir
 proprietary/system_ext/etc/permissions/com.android.qns.xml: 747d29cdbf1c607eb1a36cbc9fd1e568ba8f560fbf399326b107fb54801a5e2d
 proprietary/system_ext/etc/permissions/com.google.android.camera.extensions.xml: 83a901047d016793f3caa6e21be94a260ca969c652321eb47dc4c0661bb6281c
+proprietary/system_ext/etc/permissions/com.google.android.camerax.extensions.xml: d4cac59101fed751baa3c829b67d1cc9a58f2f6247589a9da352a6819f62821d
 proprietary/system_ext/etc/permissions/com.google.euiccpixel.permissions.xml: 5b0c62ea593d8bac4240f6a34bfbfbfd3c40e7b6916d7242481a9ce5343c019b
 proprietary/system_ext/etc/permissions/com.google.euiccpixel.xml: 4723d1ab1c0ca40a40cc0a3ab9ec2eafdbb75d1a52f5a2eb8a801a07d6eb1a8d
 proprietary/system_ext/etc/permissions/com.google.pixel.camera.connectivity.xml: e9aa215f11ba82c8ffa7f3affa788b0c4a7f4944aac1eb1ece27a7a9f4bd2563
@@ -427,6 +428,7 @@ proprietary/system_ext/etc/vintf/manifest/com.google.pixel.camera.services@1.0-s
 proprietary/system_ext/etc/vintf/manifest/vendor.google.edgetpu_app_service@1.0-service.xml: 440dcac59351c0a42989ab0761b83040dd06ed4a79c9dc20912bc6ac57d329e7
 proprietary/system_ext/framework: dir
 proprietary/system_ext/framework/com.google.android.camera.extensions.jar: fbbdd65777ebb985d7da5e0f36eac8258611a4dd946858b1caa680ef4f8eb3c2
+proprietary/system_ext/framework/com.google.android.camerax.extensions.jar: 07c2212fd575d405595ae6d4f20d837c09542e18aeab1351df343ef7aaf8a822
 proprietary/system_ext/framework/com.google.pixel.camera.connectivity.jar: 705e342366316d3ddf33b6f3d6003992e7e9d1d80173a83ab3fc35db1a1e9c8e
 proprietary/system_ext/framework/com.google.pixel.camera.services.cameraidremapper.jar: 2c66c0fc3c03007a1ff443b564f48d9ba06c7dce462b9c5053fb3b6e452eb1a6
 proprietary/system_ext/framework/com.google.pixel.camera.services.lyricconfigprovider.jar: 36ab06f4ddc965432906ea154c2e632e7f7bb18c58ba0e6feca5961a58ea8e7d
