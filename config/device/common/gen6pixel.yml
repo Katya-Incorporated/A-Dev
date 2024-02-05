@@ -3,7 +3,7 @@ platform:
     - device/google/gs101-sepolicy
 
 device:
-  build_id: UQ1A.240105.002
+  prev_build_id: UQ1A.240105.002
 
 includes:
   - pixel.yml

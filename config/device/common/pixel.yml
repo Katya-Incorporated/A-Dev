@@ -8,8 +8,8 @@ device:
   system_fs_type: ext4
   kernel_repo_url: https://android.googlesource.com/kernel/gs
 
-  build_id: UQ1A.240105.004
-  prev_build_id: UQ1A.231205.015
+  build_id: UQ1A.240205.002
+  prev_build_id: UQ1A.240105.004
 
 platform:
   sepolicy_dirs:
