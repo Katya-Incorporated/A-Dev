@@ -24,7 +24,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     enable_one_pane_in_embedded_activity=true
 
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.build.expect.bootloader=felix-14.0-10780584 \
+    ro.build.expect.bootloader=felix-14.0-11170085 \
     ro.build.expect.baseband=g5300q-230927-231102-B-11040898 \
     ro.gfx.angle.supported=true \
     drm.service.enabled=true \
@@ -36,7 +36,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.uwb.calibration.calibrationpaths=/vendor/etc/uwb/calib_paths \
     ro.vendor.dolby.dax.version=DAX3_G_3.7.3.0_r1
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/felix/felix:14/UQ1A.240105.004/11206848:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/felix/felix:14/UQ1A.240205.002/11224170:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \

@@ -19,7 +19,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
 
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.build.expect.bootloader=ripcurrent-14.1-11012321 \
+    ro.build.expect.bootloader=ripcurrent-14.1-11208047 \
     ro.build.expect.baseband=g5300i-230927-231102-B-11040898 \
     ro.gfx.angle.supported=true \
     drm.service.enabled=true \
@@ -30,7 +30,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.ril.support_nr_ds=1 \
     persist.vendor.ril.ecc.use.xml=1
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/shiba/shiba:14/UQ1A.240105.004/11206848:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/shiba/shiba:14/UQ1A.240205.004/11269751:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \
