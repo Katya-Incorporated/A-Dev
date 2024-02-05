@@ -1,5 +1,6 @@
 device:
   name: redfin
+  build_id: UP1A.231105.001
   platform_security_patch_level_override: 2023-12-01
 
 platform:

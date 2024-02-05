@@ -5,3 +5,6 @@ includes:
 platform:
   sepolicy_dirs:
     - device/google/zuma-sepolicy
+
+device:
+  build_id: UQ1A.240205.004

@@ -1,7 +1,6 @@
 device:
   name: barbet
-  build_id: UQ1A.240105.002
-  prev_build_id: UQ1A.231205.014
+  prev_build_id: UQ1A.240105.002
 
 platform:
   product_makefile: device/google/barbet/aosp_barbet.mk
