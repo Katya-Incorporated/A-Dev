@@ -1,6 +1,7 @@
 device:
   name: bramble
-  build_id: UP1A.231105.001
+  build_id: UP1A.231105.001.B2
+  prev_build_id: UP1A.231105.001
   platform_security_patch_level_override: 2023-12-01
 
 platform:
