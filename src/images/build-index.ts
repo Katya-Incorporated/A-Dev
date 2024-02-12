@@ -169,9 +169,13 @@ function parseBetaFactoryOrOtaPage(
   // first row contains row names
   for (let i = 1; i < rows.length; ++i) {
     let row = rows[i]
-    // Columns: Device | Download Link | SHA-256 Checksum
+    // Columns: Device | Download Link <newline> SHA-256 Checksum
 
-    let fileName = row.cells[1].textContent!.trim()
+    let fileNameAndHash = row.cells[1].textContent!.split('\n')
+    assert(fileNameAndHash.length == 3, `unexpected fileNameAndHash value ${fileNameAndHash}`)
+    assert(fileNameAndHash[0] === '', fileNameAndHash)
+
+    let fileName = fileNameAndHash[1].trim()
     assert(fileName.endsWith('.zip'), `unexpected extension of filename ${fileName}`)
 
     let spr = typeInfo.betaNameSeparator!
@@ -192,7 +196,8 @@ function parseBetaFactoryOrOtaPage(
     let dlLink = dlButton.href
     assert(path.basename(dlLink) === fileName, dlLink)
 
-    let sha256 = parseSha256(row.cells[2])
+    let sha256 = fileNameAndHash[2].trim()
+    assert(sha256.length == 64, `unexpected SHA-256 lenght: ${sha256}`)
 
     let buildProps = getBuildProps(buildIndex, device, buildId)
     addImageToBuildProps(pageType, dlLink, sha256, buildProps)
