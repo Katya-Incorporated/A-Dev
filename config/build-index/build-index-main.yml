@@ -2165,6 +2165,12 @@ redfin UP1A.231105.001:
   ota: cb2967ff065f205953b29e31ef9a598c7f35167d5ebabb5e79ee05efb05b5b9d redfin-ota-up1a.231105.001-cb2967ff.zip
   vendor/google_devices: c2a5ca1f46fdca813f2b4f383d4f57c7923c55eeeeb638d6aa90a603b87b605a google_devices-redfin-up1a.231105.001-c7830c39.tgz
   vendor/qcom: 5f6b190eeb9df027de9b890a7de8711b8bd8038d198b1766dd48b1a373c093b4 qcom-redfin-up1a.231105.001-6e7c8da7.tgz
+redfin UP1A.231105.001.B2:
+  desc: Feb 2024
+  factory: 4e5a26793d8400f13b72cbd17aeb284e040b3236436f0c6f3119ccc77d4495ad redfin-up1a.231105.001.b2-factory-4e5a2679.zip
+  ota: 17322169afdc648e2e9ff46eee16156d5bdccd8842acb41b870b905cc28fe3b5 redfin-ota-up1a.231105.001.b2-17322169.zip
+  vendor/google_devices: 88ee57049e92d007815195439ebd109e4db6827a6c0b5867e1b2bfaf88421115 google_devices-redfin-up1a.231105.001.b2-dba16b6b.tgz
+  vendor/qcom: 936d737bfcb14c52576f95258da40aebfa7b79d5adc656d425fff38ec63008cb qcom-redfin-up1a.231105.001.b2-57e3c19c.tgz
 bramble RD1A.200810.020:
   desc: Oct 2020, AU & JP carriers
   factory: 97d5c03fa2778e20a068ec8cb19e011e6e5256f5311a2968755665a63c146435 bramble-rd1a.200810.020-factory-97d5c03f.zip
@@ -2537,6 +2543,12 @@ bramble UP1A.231105.001:
   ota: db54d0663e2fadd098b1c11e00e98a9e7acf7e66d46316ca7350d8be66c54894 bramble-ota-up1a.231105.001-db54d066.zip
   vendor/google_devices: 476c7bea41e70ac445f8278b83a9f6409c08a1f5d423aec36164fa7d71bd3310 google_devices-bramble-up1a.231105.001-a7387989.tgz
   vendor/qcom: ab2f5e7c279a49b4eb0c0aedbb8a4290b635b7b7326243e31ccb55ca28eaa41f qcom-bramble-up1a.231105.001-689e7c1c.tgz
+bramble UP1A.231105.001.B2:
+  desc: Feb 2024
+  factory: 46a218d9dc2bf1802a584fa4e7e1b4d609a62189bd87a474201fb6d84e1c3e1c bramble-up1a.231105.001.b2-factory-46a218d9.zip
+  ota: 06727ba9ba1d53b7c7ed3ae22eb5fada4af475ea5725a569d05774c753f32f48 bramble-ota-up1a.231105.001.b2-06727ba9.zip
+  vendor/google_devices: 6af72bf8bcef38fc9f4ecdeb6641c635189d9fd337abbc8772431a6944dc6199 google_devices-bramble-up1a.231105.001.b2-b7190494.tgz
+  vendor/qcom: 4f45752788214140a7b4377be9d021f8ebd19a197976b7c23680597fc99895b7 qcom-bramble-up1a.231105.001.b2-0ae207af.tgz
 raven SQ1D.211205.016.A1:
   vendor/google_devices: af62f2caad37c623bc7a6d87a1aa5a35aa73e54e17d5fec1e45938659ecb9375 google_devices-raven-sq1d.211205.016.a1-71ff241f.tgz
 raven SQ1D.211205.016.A4:

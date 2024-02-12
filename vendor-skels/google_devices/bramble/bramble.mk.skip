@@ -10,8 +10,8 @@ PRODUCT_MODEL := Pixel 4a (5G)
 PRODUCT_BRAND := google
 PRODUCT_MANUFACTURER := Google
 
-ifneq ($(BUILD_ID),UP1A.231105.001)
-  $(error BUILD_ID: expected UP1A.231105.001, got $(BUILD_ID))
+ifneq ($(BUILD_ID),UP1A.231105.001.B2)
+  $(error BUILD_ID: expected UP1A.231105.001.B2, got $(BUILD_ID))
 endif
 
 ifneq ($(PLATFORM_SECURITY_PATCH),2023-12-01)

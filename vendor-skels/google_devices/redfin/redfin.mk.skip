@@ -12,8 +12,8 @@ PRODUCT_MANUFACTURER := Google
 
 include device/google/redfin/wireless_charger/wireless_charger.mk
 
-ifneq ($(BUILD_ID),UP1A.231105.001)
-  $(error BUILD_ID: expected UP1A.231105.001, got $(BUILD_ID))
+ifneq ($(BUILD_ID),UP1A.231105.001.B2)
+  $(error BUILD_ID: expected UP1A.231105.001.B2, got $(BUILD_ID))
 endif
 
 ifneq ($(PLATFORM_SECURITY_PATCH),2023-12-01)
