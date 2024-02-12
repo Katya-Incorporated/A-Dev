@@ -74,7 +74,10 @@ export async function fetchBetaBuildIndex(devices: DeviceConfig[], version: stri
   return fetchBuildIndexInner(devices, version)
 }
 
-async function fetchBuildIndexInner(deviceConfigs: DeviceConfig[], betaVersion: string | null = null): Promise<YAMLMap> {
+async function fetchBuildIndexInner(
+  deviceConfigs: DeviceConfig[],
+  betaVersion: string | null = null,
+): Promise<YAMLMap> {
   let buildIndex: BuildIndex = new Map<DeviceBuildId, BuildProps>()
   let devices = new Set(deviceConfigs.map(d => d.device.name))
 
@@ -151,7 +154,13 @@ function parseVendorPage(buildIndex: BuildIndex, dom: JSDOM, devices: Set<string
   }
 }
 
-function parseBetaFactoryOrOtaPage(buildIndex: BuildIndex, pageType: string, typeInfo: PageTypeInfo, dom: JSDOM, devices: Set<string>) {
+function parseBetaFactoryOrOtaPage(
+  buildIndex: BuildIndex,
+  pageType: string,
+  typeInfo: PageTypeInfo,
+  dom: JSDOM,
+  devices: Set<string>,
+) {
   let doc: Document = dom.window.document
   let table = doc.querySelector('#images > tbody') as HTMLTableElement
 
@@ -237,7 +246,13 @@ function parseVendorTable(table: HTMLTableElement, dev: string, release: string,
   }
 }
 
-function parseFactoryOrOtaRow(row: HTMLTableRowElement, pageType: string, dev: string, buildId: string, buildProps: BuildProps) {
+function parseFactoryOrOtaRow(
+  row: HTMLTableRowElement,
+  pageType: string,
+  dev: string,
+  buildId: string,
+  buildProps: BuildProps,
+) {
   let cells = row.cells
 
   let linkIdx: number
