@@ -79,6 +79,7 @@ Note: You can’t use your fingerprint to unlock this device. For more informati
   <string name="security_settings_fingerprint_v2_enroll_introduction_footer_message_consent_2">Fingerprint Unlock creates a unique model of your child’s fingerprint to verify it’s them. To create this fingerprint model during setup, they will take images of their fingerprint from different positions.</string>
   <string name="security_settings_fingerprint_v2_enroll_introduction_footer_message_consent_3">When they use Fingerprint Unlock, images are used to update their fingerprint model. Images used to create your child’s fingerprint model are never stored, but the fingerprint model is stored securely on the phone and never leaves the phone. All processing occurs securely on the phone.</string>
   <string name="security_settings_fingerprint_v2_enroll_introduction_footer_message_consent_4">You and your child can delete their fingerprint model, or turn off Fingerprint Unlock at any time in Settings. Fingerprint models are stored on the phone until they’re deleted.</string>
+  <string name="security_settings_fingerprint_v2_enroll_introduction_message_learn_more">"Learn more at &lt;a href='http://g.co/pixel/fingerprintunlock'&gt;g.co/pixel/fingerprintunlock&lt;/a&gt;."</string>
   <string name="security_settings_work_fingerprint_preference_title">Fingerprint Unlock for work</string>
   <string name="setting_auto_rotate_folded">Auto-rotate when folded</string>
   <string name="setting_auto_rotate_unfolded">Auto-rotate when unfolded</string>
