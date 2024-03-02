@@ -81,12 +81,12 @@ Note: You can’t use your fingerprint to unlock this device. For more informati
   <string name="suggested_fingerprint_lock_settings_title">Use Fingerprint Unlock</string>
   <fraction name="display_density_max_scale">116.79993%</fraction>
   <string-array name="enabled_networks_except_gsm_values">
-    <item>"10"</item>
-    <item>"0"</item>
+    <item>10</item>
+    <item>0</item>
   </string-array>
   <string-array name="enabled_networks_values">
-    <item>"10"</item>
-    <item>"0"</item>
-    <item>"1"</item>
+    <item>10</item>
+    <item>0</item>
+    <item>1</item>
   </string-array>
 </resources>

@@ -284,18 +284,10 @@ export async function serializePartOverlays(partValues: PartResValues, overlaysD
           },
         } as { [key: string]: any }
 
-        if (type === 'string') {
-          let s = value as string
-          if (s.match(/([@?\n\t'"])/)) {
-            // quote strings that have special characters
-            value = '"' + (value as string).replace('"', '\\"') + '"'
-          }
-        }
-
         if (type.includes('array')) {
-          entry.item = (value as Array<any>).map(v => JSON.stringify(v))
+          entry.item = (value as Array<ResValue>).map(v => v.toString())
         } else {
-          entry._ = value
+          entry._ = value.toString()
         }
 
         if (valuesObj.resources.hasOwnProperty(type)) {
@@ -434,10 +426,18 @@ function resourseTableToResValues(resTable: ResourceTable, targetPkg: string, ta
 
 function protoResItemToResValue(item: Item): ResValue | null {
   if (item.str !== undefined) {
-    return item.str.value
-  }
-
-  if (item.prim) {
+    let v = item.str.value
+    return {
+      toString() {
+        // rest of special characters are handled by XML encoder
+        if (v.match(/([@?\n\t'"\\])/)) {
+          return '"' + v.replace('\\', '\\\\').replace('"', '\\"') + '"'
+        } else {
+          return v
+        }
+      },
+    } as ResValue
+  } else if (item.prim) {
     let p = item.prim
     if (p.booleanValue !== undefined) {
       return p.booleanValue

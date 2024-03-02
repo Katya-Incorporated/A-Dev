@@ -17,19 +17,19 @@
     <item>6353</item>
   </integer-array>
   <string-array name="config_pluginAllowlist">
-    <item>"com.android.systemui"</item>
-    <item>"com.android.systemui.plugin.globalactions.wallet"</item>
-    <item>"com.android.systemui.clocks"</item>
-    <item>"com.android.systemui.clocks.debug"</item>
-    <item>"com.android.systemui.clocks.bignum"</item>
-    <item>"com.android.systemui.clocks.calligraphy"</item>
-    <item>"com.android.systemui.clocks.flex"</item>
-    <item>"com.android.systemui.clocks.growth"</item>
-    <item>"com.android.systemui.clocks.handwritten"</item>
-    <item>"com.android.systemui.clocks.inflate"</item>
-    <item>"com.android.systemui.clocks.metro"</item>
-    <item>"com.android.systemui.clocks.numoverlap"</item>
-    <item>"com.android.systemui.clocks.weather"</item>
+    <item>com.android.systemui</item>
+    <item>com.android.systemui.plugin.globalactions.wallet</item>
+    <item>com.android.systemui.clocks</item>
+    <item>com.android.systemui.clocks.debug</item>
+    <item>com.android.systemui.clocks.bignum</item>
+    <item>com.android.systemui.clocks.calligraphy</item>
+    <item>com.android.systemui.clocks.flex</item>
+    <item>com.android.systemui.clocks.growth</item>
+    <item>com.android.systemui.clocks.handwritten</item>
+    <item>com.android.systemui.clocks.inflate</item>
+    <item>com.android.systemui.clocks.metro</item>
+    <item>com.android.systemui.clocks.numoverlap</item>
+    <item>com.android.systemui.clocks.weather</item>
   </string-array>
   <integer name="config_showTemperatureWarning">1</integer>
   <integer name="config_showUsbPortAlarm">1</integer>
