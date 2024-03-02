@@ -9,6 +9,11 @@
   <bool name="config_hspa_data_distinguishable">true</bool>
   <bool name="config_limited_warranty_enabled">true</bool>
   <bool name="enrollment_message_display_controller_flag">true</bool>
+  <array name="config_userAspectRatioOverrideEntries">
+    <item>@null</item>
+    <item>@null</item>
+    <item>@null</item>
+  </array>
   <integer-array name="config_userAspectRatioOverrideValues">
     <item>0</item>
     <item>6</item>

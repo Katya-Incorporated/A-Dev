@@ -68,6 +68,7 @@ com.android.settings:string/edge_to_edge_navigation_summary = To go home, quick-
 com.android.settings:string/setting_auto_rotate_folded = Auto-rotate when folded
 com.android.settings:string/setting_auto_rotate_unfolded = Auto-rotate when unfolded
 com.android.settings:integer/config_vibration_supported_intensity_levels = 3
+com.android.settings:array/config_userAspectRatioOverrideEntries = @null,@null,@null
 com.android.settings:integer-array/config_userAspectRatioOverrideValues = 0,6,1
 com.android.settings:string-array/enabled_networks_except_gsm_values = 10,0
 com.android.settings:string-array/enabled_networks_values = 10,0,1

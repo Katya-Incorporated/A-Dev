@@ -8,7 +8,13 @@ import xml2js from 'xml2js'
 import { serializeBlueprint } from '../build/soong'
 import { Filters, filterValue } from '../config/filters'
 import { Configuration } from '../proto-ts/frameworks/base/tools/aapt2/Configuration'
-import { Item, ResourceTable, XmlAttribute, XmlNode } from '../proto-ts/frameworks/base/tools/aapt2/Resources'
+import {
+  Item,
+  Reference_Type,
+  ResourceTable,
+  XmlAttribute,
+  XmlNode,
+} from '../proto-ts/frameworks/base/tools/aapt2/Resources'
 import { exists, listFilesRecursive } from '../util/fs'
 import { XML_HEADER } from '../util/headers'
 import { EXT_PARTITIONS } from '../util/partitions'
@@ -474,6 +480,15 @@ function protoResItemToResValue(item: Item): ResValue | null {
     }
     if (p.nullValue !== undefined) {
       return ''
+    }
+  } else if (item.ref) {
+    let ref = item.ref
+    if (ref.type === Reference_Type.REFERENCE && ref.id === 0 && ref.name === '' && !ref.isDynamic) {
+      return {
+        toString(): string {
+          return '@null'
+        },
+      } as ResValue
     }
   }
   // TODO add support for more types

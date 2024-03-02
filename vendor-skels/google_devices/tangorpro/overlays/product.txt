@@ -85,6 +85,7 @@ com.android.settings:string/sound_dashboard_summary = Volume, Do Not Disturb
 com.android.settings:string/sound_settings = Sound
 com.android.settings:string/tether_settings_title_all = Tethering
 com.android.settings:string/tethering_footer_info = Use tethering to provide internet to other devices through USB, Ethernet, or Bluetooth.
+com.android.settings:array/config_userAspectRatioOverrideEntries = @null,@null,@null,@null
 com.android.settings:integer-array/config_userAspectRatioOverrideValues = 0,6,1,4
 com.android.settings:string-array/enabled_networks_except_gsm_values = 10,0
 com.android.settings:string-array/enabled_networks_values = 10,0,1
