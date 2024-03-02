@@ -153,6 +153,7 @@ PRODUCT_PACKAGES += \
     com.android.server.telecom.auto_generated_rro_product_adevtool__ \
     com.android.settings.auto_generated_rro_product_adevtool__ \
     com.android.systemui.auto_generated_rro_product_adevtool__ \
+    com.android.systemui.auto_generated_rro_vendor_adevtool__ \
     com.android.traceur.auto_generated_rro_product_adevtool__ \
     com.google.android.camera.experimental2021 \
     com.google.android.camera.experimental2022_system \

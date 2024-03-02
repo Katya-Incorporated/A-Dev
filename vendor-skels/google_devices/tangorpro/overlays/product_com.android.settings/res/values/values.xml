@@ -95,6 +95,12 @@ Move your finger slightly each time. This helps capture more of your fingerprint
   <bool name="dream_setup_supported">true</bool>
   <bool name="enrollment_message_display_controller_flag">true</bool>
   <bool name="has_dock_settings">true</bool>
+  <array name="config_userAspectRatioOverrideEntries">
+    <item>@null</item>
+    <item>@null</item>
+    <item>@null</item>
+    <item>@null</item>
+  </array>
   <integer-array name="config_userAspectRatioOverrideValues">
     <item>0</item>
     <item>6</item>
