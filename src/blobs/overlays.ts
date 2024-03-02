@@ -519,7 +519,9 @@ class Complex {
 
   asFloat() {
     return (
-      (this.raw & (COMPLEX_MANTISSA_MASK << COMPLEX_MANTISSA_SHIFT)) * RADIX_MULTS[(this.raw >> COMPLEX_RADIX_SHIFT) & COMPLEX_RADIX_MASK])
+      (this.raw & (COMPLEX_MANTISSA_MASK << COMPLEX_MANTISSA_SHIFT)) *
+      RADIX_MULTS[(this.raw >> COMPLEX_RADIX_SHIFT) & COMPLEX_RADIX_MASK]
+    )
   }
 
   asString() {
@@ -592,10 +594,12 @@ const COMPLEX_MANTISSA_SHIFT = 8
  *  the top bit is the sign. */
 const COMPLEX_MANTISSA_MASK = 0xffffff
 
-const MANTISSA_MULT = 1.0 / (1<<COMPLEX_MANTISSA_SHIFT)
+const MANTISSA_MULT = 1.0 / (1 << COMPLEX_MANTISSA_SHIFT)
 const RADIX_MULTS = [
-    1.0*MANTISSA_MULT, 1.0/(1<<7)*MANTISSA_MULT,
-    1.0/(1<<15)*MANTISSA_MULT, 1.0/(1<<23)*MANTISSA_MULT
+  1.0 * MANTISSA_MULT,
+  (1.0 / (1 << 7)) * MANTISSA_MULT,
+  (1.0 / (1 << 15)) * MANTISSA_MULT,
+  (1.0 / (1 << 23)) * MANTISSA_MULT,
 ]
 
 /** Complex data: bit location of unit information. */
