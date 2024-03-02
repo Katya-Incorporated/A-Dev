@@ -42,6 +42,6 @@
     <item>95000</item>
   </integer-array>
   <string-array name="config_za_shadow_comp_not_support_panels">
-    <item>"SB3-0"</item>
+    <item>SB3-0</item>
   </string-array>
 </resources>

@@ -16,7 +16,7 @@ android:string/config_defaultAccessibilityNotificationSound = Effect_Tick.ogg
 android:string/face_recalibrate_notification_content = Face unlock may not work until you re-enroll
 android:string/face_recalibrate_notification_name = Face unlock
 android:string/face_recalibrate_notification_title = Please re-enroll your face
-android:string/safety_protection_display_text = <font face="google-sans">Protected by </font><font face="google-sans-medium">Android</font>
+android:string/safety_protection_display_text = "<font face=\"google-sans">Protected by </font><font face="google-sans-medium">Android</font>"
 android:string/vendor_required_attestation_revocation_list_url = https://android.googleapis.com/attestation/status
 com.android.systemui:bool/config_battery_index_enabled = true
 android:bool/config_swipe_up_gesture_setting_available = true
@@ -94,11 +94,11 @@ com.android.settings:string/fingerprint_unlock_skip_fingerprint = Continue witho
 com.android.settings:string/fingerprint_unlock_title = With Fingerprint Unlock, you can unlock your phone using your fingerprint. For security, this option requires a backup screen lock.
 com.android.settings:string/lockscreen_bypass_summary = After unlocking, go directly to last used screen. Notifications won’t show on lock screen. Swipe down from top to see them.
 com.android.settings:string/security_settings_fingerprint_enroll_consent_introduction_title = Allow Fingerprint Unlock
-com.android.settings:string/security_settings_fingerprint_enroll_introduction_message_unlock_disabled = With Pixel Imprint, you can use your fingerprint to authorize purchases or sign in to apps.
+com.android.settings:string/security_settings_fingerprint_enroll_introduction_message_unlock_disabled = "With Pixel Imprint, you can use your fingerprint to authorize purchases or sign in to apps.
 
 Be careful whose fingerprints you add. Any fingerprints added will be able to do these things.
 
-Note: You can’t use your fingerprint to unlock this device. For more information, contact your organization’s admin.
+Note: You can’t use your fingerprint to unlock this device. For more information, contact your organization’s admin."
 com.android.settings:string/security_settings_fingerprint_enroll_introduction_title = Set up Fingerprint Unlock
 com.android.settings:string/security_settings_fingerprint_enroll_introduction_title_unlock_disabled = Pixel Imprint
 com.android.settings:string/security_settings_fingerprint_preference_title = Fingerprint Unlock
@@ -179,30 +179,30 @@ com.android.settings:string/security_settings_fingerprint_v2_enroll_introduction
 com.android.settings:string/security_settings_fingerprint_v2_enroll_introduction_footer_message_consent_4 = You and your child can delete their fingerprint images and model, or turn off Fingerprint Unlock at any time in Settings. Fingerprint images and models are stored on the phone until they’re deleted.
 com.android.settings:string/security_settings_work_fingerprint_preference_title = Fingerprint Unlock for work
 com.android.settings:string/suggested_fingerprint_lock_settings_title = Use Fingerprint Unlock
-com.android.settings:string/unlock_disable_frp_warning_content_password_face_fingerprint = A password protects your phone if it’s lost or stolen.
+com.android.settings:string/unlock_disable_frp_warning_content_password_face_fingerprint = "A password protects your phone if it’s lost or stolen.
 
-This deletes the fingerprint images and model stored on your device. Your face model will also be permanently and securely deleted. You won’t be able to use your face or fingerprint for authentication in apps.
-com.android.settings:string/unlock_disable_frp_warning_content_password_fingerprint = A password protects your phone if it’s lost or stolen.
+This deletes the fingerprint images and model stored on your device. Your face model will also be permanently and securely deleted. You won’t be able to use your face or fingerprint for authentication in apps."
+com.android.settings:string/unlock_disable_frp_warning_content_password_fingerprint = "A password protects your phone if it’s lost or stolen.
 
-This also deletes the fingerprint images and model stored on your device. You won’t be able to use your fingerprint for authentication in apps.
-com.android.settings:string/unlock_disable_frp_warning_content_pattern_face_fingerprint = A pattern protects your phone if it’s lost or stolen.
+This also deletes the fingerprint images and model stored on your device. You won’t be able to use your fingerprint for authentication in apps."
+com.android.settings:string/unlock_disable_frp_warning_content_pattern_face_fingerprint = "A pattern protects your phone if it’s lost or stolen.
 
-This deletes the fingerprint images and model stored on your device. Your face model will also be permanently and securely deleted. You won’t be able to use your face or fingerprint for authentication in apps.
-com.android.settings:string/unlock_disable_frp_warning_content_pattern_fingerprint = A pattern protects your phone if it’s lost or stolen.
+This deletes the fingerprint images and model stored on your device. Your face model will also be permanently and securely deleted. You won’t be able to use your face or fingerprint for authentication in apps."
+com.android.settings:string/unlock_disable_frp_warning_content_pattern_fingerprint = "A pattern protects your phone if it’s lost or stolen.
 
-This also deletes the fingerprint images and model stored on your device. You won’t be able to use your fingerprint for authentication in apps.
-com.android.settings:string/unlock_disable_frp_warning_content_pin_face_fingerprint = A PIN protects your phone if it’s lost or stolen.
+This also deletes the fingerprint images and model stored on your device. You won’t be able to use your fingerprint for authentication in apps."
+com.android.settings:string/unlock_disable_frp_warning_content_pin_face_fingerprint = "A PIN protects your phone if it’s lost or stolen.
 
-This deletes the fingerprint images and model stored on your device. Your face model will also be permanently and securely deleted. You won’t be able to use your face or fingerprint for authentication in apps.
-com.android.settings:string/unlock_disable_frp_warning_content_pin_fingerprint = A PIN protects your phone if it’s lost or stolen.
+This deletes the fingerprint images and model stored on your device. Your face model will also be permanently and securely deleted. You won’t be able to use your face or fingerprint for authentication in apps."
+com.android.settings:string/unlock_disable_frp_warning_content_pin_fingerprint = "A PIN protects your phone if it’s lost or stolen.
 
-This also deletes the fingerprint images and model stored on your device. You won’t be able to use your fingerprint for authentication in apps.
-com.android.settings:string/unlock_disable_frp_warning_content_unknown_face_fingerprint = Device protection features will not work without your screen lock.
+This also deletes the fingerprint images and model stored on your device. You won’t be able to use your fingerprint for authentication in apps."
+com.android.settings:string/unlock_disable_frp_warning_content_unknown_face_fingerprint = "Device protection features will not work without your screen lock.
 
-This deletes the fingerprint images and model stored on your device. Your face model will also be permanently and securely deleted. You won’t be able to use your face or fingerprint for authentication in apps.
-com.android.settings:string/unlock_disable_frp_warning_content_unknown_fingerprint = Device protection features will not work without your screen lock.
+This deletes the fingerprint images and model stored on your device. Your face model will also be permanently and securely deleted. You won’t be able to use your face or fingerprint for authentication in apps."
+com.android.settings:string/unlock_disable_frp_warning_content_unknown_fingerprint = "Device protection features will not work without your screen lock.
 
-This also deletes the fingerprint images and model stored on your device. You won’t be able to use your fingerprint for authentication in apps.
+This also deletes the fingerprint images and model stored on your device. You won’t be able to use your fingerprint for authentication in apps."
 com.android.settings:bool/config_advanced_vpn_enabled = true
 com.android.systemui:bool/config_pixel_vpn_enabled = true
 android:string-array/config_nightDisplayColorTemperatureCoefficients = 0.0,0.0,1.0,-0.000000014365268757,0.000255092801250106,-0.064156942434907716,-0.000000000910931179,0.000207598323269139,-0.349361641294833436
@@ -217,7 +217,7 @@ android:integer/config_fingerprintMaxTemplatesPerUser = 4
 android:string/config_qualified_networks_service_package = com.android.qns
 android:string/fingerprint_error_bad_calibration = Can’t use fingerprint sensor. Visit a repair provider or g.co/pixel/fingerprintunlock
 android:string/fingerprint_recalibrate_notification_content = Visit a repair provider or g.co/pixel/fingerprintunlock
-com.android.networkstack.tethering/TetheringConfig:string-array/config_tether_ncm_regexs = ncm\d
-com.android.networkstack.tethering/TetheringConfig:string-array/config_tether_usb_regexs = rndis\d
-com.android.networkstack.tethering/TetheringConfig:string-array/config_tether_wifi_p2p_regexs = p2p-p2p\d-.*,p2p\d,p2p-wlan\d-.*
+com.android.networkstack.tethering/TetheringConfig:string-array/config_tether_ncm_regexs = "ncm\\d"
+com.android.networkstack.tethering/TetheringConfig:string-array/config_tether_usb_regexs = "rndis\\d"
+com.android.networkstack.tethering/TetheringConfig:string-array/config_tether_wifi_p2p_regexs = "p2p-p2p\\d-.*","p2p\\d","p2p-wlan\\d-.*"
 com.android.networkstack.tethering/TetheringConfig:integer/config_tether_usb_functions = 1

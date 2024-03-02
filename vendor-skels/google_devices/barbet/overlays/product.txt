@@ -12,7 +12,7 @@ android:string/config_defaultAccessibilityNotificationSound = Effect_Tick.ogg
 android:string/face_recalibrate_notification_content = Face unlock may not work until you re-enroll
 android:string/face_recalibrate_notification_name = Face unlock
 android:string/face_recalibrate_notification_title = Please re-enroll your face
-android:string/safety_protection_display_text = <font face="google-sans">Protected by </font><font face="google-sans-medium">Android</font>
+android:string/safety_protection_display_text = "<font face=\"google-sans">Protected by </font><font face="google-sans-medium">Android</font>"
 android:string/vendor_required_attestation_revocation_list_url = https://android.googleapis.com/attestation/status
 android:bool/config_swipe_up_gesture_setting_available = true
 android:array/config_notificationMsgPkgsAllowedAsConvos = 
@@ -75,11 +75,11 @@ com.android.settings:string/fingerprint_unlock_set_unlock_pin = Pixel Imprint + 
 com.android.settings:string/fingerprint_unlock_skip_fingerprint = Continue without Pixel Imprint
 com.android.settings:string/fingerprint_unlock_title = With Pixel Imprint, you can unlock your phone using your fingerprint. For security, this option requires a backup screen lock.
 com.android.settings:string/security_settings_fingerprint_enroll_consent_introduction_title = Allow Pixel Imprint
-com.android.settings:string/security_settings_fingerprint_enroll_introduction_message_unlock_disabled = With Pixel Imprint, you can use your fingerprint to authorize purchases or sign in to apps.
+com.android.settings:string/security_settings_fingerprint_enroll_introduction_message_unlock_disabled = "With Pixel Imprint, you can use your fingerprint to authorize purchases or sign in to apps.
 
 Be careful whose fingerprints you add. Any fingerprints added will be able to do these things.
 
-Note: You can’t use your fingerprint to unlock this device. For more information, contact your organization’s admin.
+Note: You can’t use your fingerprint to unlock this device. For more information, contact your organization’s admin."
 com.android.settings:string/security_settings_fingerprint_enroll_introduction_title = Set up Pixel Imprint
 com.android.settings:string/security_settings_fingerprint_enroll_introduction_title_unlock_disabled = Pixel Imprint
 com.android.settings:string/security_settings_fingerprint_preference_title = Pixel Imprint
@@ -151,4 +151,4 @@ android:integer-array/non_removable_euicc_slots = 1
 android:bool/config_allowDisablingAssistDisclosure = true
 android:bool/config_repairModeSupported = true
 org.codeaurora.ims:bool/config_ims_preferred = true
-com.android.networkstack.tethering/TetheringConfig:string-array/config_tether_wifi_p2p_regexs = p2p-p2p\d-.*,p2p\d,p2p-wlan\d-.*
+com.android.networkstack.tethering/TetheringConfig:string-array/config_tether_wifi_p2p_regexs = "p2p-p2p\\d-.*","p2p\\d","p2p-wlan\\d-.*"

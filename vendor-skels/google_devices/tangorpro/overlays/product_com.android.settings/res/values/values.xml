@@ -105,13 +105,13 @@ Move your finger slightly each time. This helps capture more of your fingerprint
   <dimen name="dream_item_min_column_width">210dp</dimen>
   <dimen name="dream_preference_card_padding">20dp</dimen>
   <string-array name="enabled_networks_except_gsm_values">
-    <item>"10"</item>
-    <item>"0"</item>
+    <item>10</item>
+    <item>0</item>
   </string-array>
   <string-array name="enabled_networks_values">
-    <item>"10"</item>
-    <item>"0"</item>
-    <item>"1"</item>
+    <item>10</item>
+    <item>0</item>
+    <item>1</item>
   </string-array>
   <integer name="enrollment_collect_time">100</integer>
   <integer name="enrollment_help_minimum_time_display">250</integer>

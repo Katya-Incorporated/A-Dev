@@ -16,7 +16,7 @@ android:string/config_defaultAccessibilityNotificationSound = Effect_Tick.ogg
 android:string/face_recalibrate_notification_content = Face unlock may not work until you re-enroll
 android:string/face_recalibrate_notification_name = Face unlock
 android:string/face_recalibrate_notification_title = Please re-enroll your face
-android:string/safety_protection_display_text = <font face="google-sans">Protected by </font><font face="google-sans-medium">Android</font>
+android:string/safety_protection_display_text = "<font face=\"google-sans">Protected by </font><font face="google-sans-medium">Android</font>"
 android:string/vendor_required_attestation_revocation_list_url = https://android.googleapis.com/attestation/status
 com.android.systemui:dimen/biometric_dialog_fingerprint_icon_height = 150dp
 com.android.systemui:dimen/biometric_dialog_fingerprint_icon_width = 150dp
@@ -73,13 +73,13 @@ com.android.settings:bool/default_allow_sensitive_lockscreen_content = false
 com.android.settings:string/charging_sounds_title = Charging sounds
 com.android.settings:string/data_usage_app_summary_title = Wi‑Fi
 com.android.settings:string/edge_to_edge_navigation_summary = To go home, quick-swipe up from the bottom. To access the Taskbar, slow-swipe up from the bottom. To switch apps, swipe up from the bottom, hold, and release. To go back, swipe from the left or right edge.
-com.android.settings:string/help_uri_private_dns = https://support.google.com/googlepixeltablet/?p=private_DNS
-com.android.settings:string/link_locale_picker_footer_learn_more = https://support.google.com/googlepixeltablet/?p=app_language
-com.android.settings:string/location_settings_footer_learn_more_link = https://support.google.com/googlepixeltablet/?p=location_settings
+com.android.settings:string/help_uri_private_dns = "https://support.google.com/googlepixeltablet/?p=private_DNS"
+com.android.settings:string/link_locale_picker_footer_learn_more = "https://support.google.com/googlepixeltablet/?p=app_language"
+com.android.settings:string/location_settings_footer_learn_more_link = "https://support.google.com/googlepixeltablet/?p=location_settings"
 com.android.settings:string/network_dashboard_summary_no_mobile = Wi‑Fi
 com.android.settings:string/non_carrier_data_usage = Wi‑Fi data usage
 com.android.settings:string/non_carrier_data_usage_warning = 
-com.android.settings:string/regional_pref_footer_learn_more_link = https://support.google.com/googlepixeltablet/?p=app_language
+com.android.settings:string/regional_pref_footer_learn_more_link = "https://support.google.com/googlepixeltablet/?p=app_language"
 com.android.settings:string/reset_network_title = Reset Wi-Fi & Bluetooth
 com.android.settings:string/sound_dashboard_summary = Volume, Do Not Disturb
 com.android.settings:string/sound_settings = Sound
@@ -122,28 +122,28 @@ com.android.settings:string/fingerprint_unlock_set_unlock_pattern = Pattern • 
 com.android.settings:string/fingerprint_unlock_set_unlock_pin = PIN • Fingerprint
 com.android.settings:string/fingerprint_unlock_skip_fingerprint = Continue without Fingerprint Unlock
 com.android.settings:string/fingerprint_unlock_title = With Fingerprint Unlock, you can unlock your tablet using your fingerprint. For security, this option requires a backup screen lock.
-com.android.settings:string/fingerprint_v2_delete_message = This deletes the fingerprint model associated with '%1$s' that is stored on your tablet
+com.android.settings:string/fingerprint_v2_delete_message = "This deletes the fingerprint model associated with '%1$s' that is stored on your tablet"
 com.android.settings:string/security_settings_fingerprint_enroll_consent_introduction_title = Allow Fingerprint Unlock
-com.android.settings:string/security_settings_fingerprint_enroll_introduction_message_unlock_disabled = With Pixel Imprint, you can use your fingerprint to authorize purchases or sign in to apps.
+com.android.settings:string/security_settings_fingerprint_enroll_introduction_message_unlock_disabled = "With Pixel Imprint, you can use your fingerprint to authorize purchases or sign in to apps.
 
 Be careful whose fingerprints you add. Any fingerprints added will be able to do these things.
 
-Note: You can’t use your fingerprint to unlock this device. For more information, contact your organization’s admin.
+Note: You can’t use your fingerprint to unlock this device. For more information, contact your organization’s admin."
 com.android.settings:string/security_settings_fingerprint_enroll_introduction_title = Set up Fingerprint Unlock
 com.android.settings:string/security_settings_fingerprint_enroll_introduction_title_unlock_disabled = Pixel Imprint
 com.android.settings:string/security_settings_fingerprint_preference_title = Fingerprint Unlock
-com.android.settings:string/security_settings_sfps_enroll_start_message = Touch the sensor without pressing it. Lift your finger after each touch.
+com.android.settings:string/security_settings_sfps_enroll_start_message = "Touch the sensor without pressing it. Lift your finger after each touch.
 
-Move your finger slightly each time. This helps capture more of your fingerprint.
+Move your finger slightly each time. This helps capture more of your fingerprint."
 com.android.settings:string/suggested_fingerprint_lock_settings_summary = Use Pixel Imprint to unlock your tablet
 com.android.settings:bool/enrollment_message_display_controller_flag = true
 com.android.settings:integer/enrollment_collect_time = 100
 com.android.settings:integer/enrollment_help_minimum_time_display = 250
 com.android.settings:integer/enrollment_progress_minimum_time_display = 250
 com.android.settings:string/help_url_fingerprint = http://g.co/pixeltablet/fingerprintunlock
-com.android.settings:string/security_settings_fingerprint_enroll_find_sensor_message = The fingerprint sensor is on the Power button.
+com.android.settings:string/security_settings_fingerprint_enroll_find_sensor_message = "The fingerprint sensor is on the Power button.
 
-Lightly touch the button without pressing it down.
+Lightly touch the button without pressing it down."
 com.android.settings:string/security_settings_fingerprint_enroll_find_sensor_title = Touch the Power button
 com.android.settings:string/security_settings_fingerprint_enroll_repeat_title = Lift, then touch. Move your finger slightly each time.
 com.android.settings:string/security_settings_fingerprint_enroll_touch_dialog_message = The fingerprint sensor is on the power button.
@@ -308,7 +308,7 @@ android:string/fingerprint_acquired_partial = Make sure your finger covers the s
 android:string/fingerprint_acquired_power_press = To continue setup, lightly touch the sensor
 android:string/fingerprint_acquired_too_fast = Keep your finger on the sensor a little longer
 android:string/fingerprint_error_power_pressed = Verification ended. Try touching lightly next time.
-com.android.networkstack.tethering/TetheringConfig:string-array/config_tether_ncm_regexs = ncm\d
-com.android.networkstack.tethering/TetheringConfig:string-array/config_tether_usb_regexs = rndis\d
-com.android.networkstack.tethering/TetheringConfig:string-array/config_tether_wifi_p2p_regexs = p2p-p2p\d-.*,p2p\d,p2p-wlan\d-.*
+com.android.networkstack.tethering/TetheringConfig:string-array/config_tether_ncm_regexs = "ncm\\d"
+com.android.networkstack.tethering/TetheringConfig:string-array/config_tether_usb_regexs = "rndis\\d"
+com.android.networkstack.tethering/TetheringConfig:string-array/config_tether_wifi_p2p_regexs = "p2p-p2p\\d-.*","p2p\\d","p2p-wlan\\d-.*"
 com.android.networkstack.tethering/TetheringConfig:integer/config_tether_usb_functions = 1
