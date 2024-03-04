@@ -7,4 +7,4 @@ platform:
     - device/google/zuma-sepolicy
 
 device:
-  build_id: UQ1A.240205.004
+  prev_build_id: UQ1A.240205.004
