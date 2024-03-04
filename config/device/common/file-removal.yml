@@ -17,6 +17,7 @@ filters:
       - product/etc/permissions/com.google.android.apps.dreamliner.xml
       - product/etc/permissions/com.google.android.apps.mediashell.xml
       - product/etc/permissions/com.google.android.apps.nest.castauth.xml
+      - product/etc/permissions/com.google.android.apps.setupwizard.searchselector.xml
       - product/etc/permissions/com.google.android.dialer.support.xml
       - product/etc/permissions/com.google.assistant.hubui.xml
       - product/etc/permissions/com.google.SSRestartDetector.xml
@@ -56,12 +57,14 @@ filters:
       - product/etc/sysconfig/preinstalled-packages-product-pixel-2017-and-newer.xml
       - product/etc/sysconfig/preinstalled-packages-product-pixel-2018-and-newer.xml
       - product/etc/sysconfig/preinstalled-packages-product-pixel-2019-and-newer.xml
+      - product/etc/sysconfig/preinstalled-packages-product-pixel-2022-and-newer.xml
       - product/etc/sysconfig/quick_tap.xml
       - product/framework/com.google.android.dialer.support.jar
       - system/etc/permissions/privapp-permissions-google.xml
       - system_ext/etc/default-permissions/default-permissions_wallpapereffect.xml
       - system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
       - system_ext/etc/permissions/com.google.android.apps.nest.dockmanager.app.xml
+      - system_ext/etc/permissions/com.google.android.apps.pixel.dcservice.xml
       - system_ext/etc/permissions/privapp-permissions-google-se.xml
       - system_ext/framework/com.android.hotwordenrollment.common.util.jar
       - vendor/etc/default-permissions/default-permissions_talkback.xml
@@ -262,6 +265,8 @@ filters:
       - product/priv-app/DockManagerPrebuilt/
       # DreamlinerPrebuilt is the Pixel Stand app, DreamlinerUpdater is firmware updater for Pixel Stand
       - product/priv-app/Dreamliner
+      # appeared in 14 QPR2 on Pixel Tablet, com.google.android.apps.pixel.ensemble
+      - product/priv-app/EnsemblePrebuilt-stub/
       - product/priv-app/FilesPrebuilt/
       # "Google Connectivity Services", https://play.google.com/store/apps/details?id=com.google.android.apps.gcs
       - product/priv-app/GCS/
@@ -304,6 +309,7 @@ filters:
       - product/priv-app/SafetyHubPrebuilt/
       # "Live Transcribe & Notification", com.google.audio.hearing.visualization.accessibility.scribe
       - product/priv-app/ScribePrebuilt/
+      - product/priv-app/SearchSelectorPrebuilt/
       # https://play.google.com/store/apps/details?id=com.google.android.apps.security.securityhub
       - product/priv-app/SecurityHubPrebuilt/
       # https://play.google.com/store/apps/details?id=com.google.android.settings.intelligence
@@ -348,6 +354,7 @@ filters:
       - system_ext/priv-app/CarrierSetup/
       # Manages thermal throttling of cellular and Wi-Fi connectivity, com.google.android.connectivitythermalpowermanager
       - system_ext/priv-app/ConnectivityThermalPowerManager/
+      - system_ext/priv-app/DeviceConnectivityServicePrebuilt/
       - system_ext/priv-app/DockManagerPrebuilt/
       - system_ext/priv-app/DockSetup/
       - system_ext/priv-app/FactoryOtaPrebuilt/

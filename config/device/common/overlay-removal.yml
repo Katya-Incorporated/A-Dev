@@ -54,6 +54,7 @@ filters:
       - /config_face_
       - /face_acquired
     match:
+      - android:bool/config_pauseWallpaperRenderWhenStateChangeEnabled
       - android:bool/config_adaptive_sleep_available
       - android:bool/config_assistLongPressHomeEnabledDefault
       - android:bool/config_assistTouchGestureEnabledDefault
@@ -114,6 +115,8 @@ filters:
       - android:string-array/config_priorityOnlyDndExemptPackages
       # first appeared in Pixel Fold 14 QPR1 image
       - android:string-array/default_wallpaper_component_per_device_color
+      # set to Google Camera
+      - android:string-array/pause_wallpaper_render_when_state_change
       - android:string-array/vendor_cross_profile_apps
       - android:string-array/vendor_cross_profile_apps
       - android:string-array/vendor_disallowed_apps_managed_device
