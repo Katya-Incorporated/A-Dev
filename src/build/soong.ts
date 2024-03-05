@@ -266,7 +266,7 @@ export function blobToSoongModule(
     moduleSpecific = {
       _type: TYPE_APK,
       apk: entry.srcPath,
-      ...((entry.isPresigned && { presigned: true }) || { certificate: 'platform' }),
+      ...((entry.isPresigned && { presigned: true, preprocessed: true }) || { certificate: 'platform' }),
       ...(entry.path.startsWith('priv-app/') && { privileged: true }),
       dex_preopt: {
         enabled: false,
