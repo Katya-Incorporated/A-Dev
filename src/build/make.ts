@@ -101,7 +101,7 @@ export function serializeModulesMakefile(mk: ModulesMakefile) {
   blocks.push('LOCAL_PATH := $(call my-dir)', `ifeq ($(TARGET_DEVICE),${mk.device})`)
 
   if (mk.radioFiles != undefined) {
-  blocks.push(`RADIO_FILES := $(wildcard $(LOCAL_PATH)/firmware/*.img)
+    blocks.push(`RADIO_FILES := $(wildcard $(LOCAL_PATH)/firmware/*.img)
 $(foreach f, $(notdir $(RADIO_FILES)),$(call add-radio-file,firmware/$(f)))`)
   }
 
@@ -124,8 +124,7 @@ LOCAL_MODULE_STEM := .device_symlinks
 LOCAL_SRC_FILES := Android.mk
 LOCAL_POST_INSTALL_CMD := \\
     ${Array.from(mkdirCmds).join(CONT_SEPARATOR)} \\
-    ${linkCmds.join(CONT_SEPARATOR)} \\
-    rm -f $(TARGET_OUT_VENDOR_ETC)/.device_symlinks
+    ${linkCmds.join(CONT_SEPARATOR)}
 include $(BUILD_PREBUILT)`)
   }
 
