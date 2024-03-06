@@ -4,6 +4,8 @@
 system_ext/app/PersistentBackgroundCameraServices/PersistentBackgroundCameraServices.apk
 system_ext/bin/hw/vendor.google.edgetpu_app_service@1.0-service
 system_ext/etc/init/vendor.google.edgetpu_app_service@1.0-service.rc
+system_ext/etc/permissions/android.software.freeform_window_management.xml
+system_ext/etc/permissions/com.android.qns.xml
 system_ext/etc/permissions/com.google.android.camera.extensions.xml
 system_ext/etc/permissions/com.google.android.camerax.extensions.xml
 system_ext/etc/permissions/com.google.pixel.camera.connectivity.xml
@@ -20,9 +22,11 @@ system_ext/framework/com.google.pixel.camera.services.cameraidremapper.jar
 system_ext/framework/com.google.pixel.camera.services.lyricconfigprovider.jar
 system_ext/framework/google-ril.jar
 system_ext/lib/libedgetpu_dba.google.so
+system_ext/lib/libedgetpu_tachyon.google.so
 system_ext/lib64/com.google.edgetpu_app_service-V2-ndk.so
 system_ext/lib64/com.google.edgetpu_vendor_service-V2-ndk.so
 system_ext/lib64/libedgetpu_dba.google.so
+system_ext/lib64/libedgetpu_tachyon.google.so
 system_ext/lib64/libhbmsvmanager_jni.so
 system_ext/lib64/libpowerstatshaldataprovider.so
 system_ext/priv-app/EuiccSupportPixel/DKA_RC7_DVT.in
@@ -36,8 +40,10 @@ system_ext/priv-app/EuiccSupportPixel/esim-full-ofl-v1.img
 system_ext/priv-app/EuiccSupportPixel/esim-full-v0.img
 system_ext/priv-app/EuiccSupportPixel/esim-full-v1.img
 system_ext/priv-app/PixelNfc/PixelNfc.apk
+system_ext/priv-app/PixelQualifiedNetworksService/PixelQualifiedNetworksService.apk
 system_ext/priv-app/UwbVendorService/UwbVendorService.apk;PRESIGNED
 product/etc/appcompat/compat_framework_overrides.xml
+product/etc/default-permissions/default-permissions_ensemble.xml
 product/etc/permissions/androidx.camera.extensions.impl.xml
 product/etc/permissions/com.google.android.apps.nest.dockmanager.app.xml
 product/etc/permissions/com.google.pixel.camera.connectivity.impl.xml
@@ -47,7 +53,7 @@ product/etc/sysconfig/component-overrides.xml
 product/etc/sysconfig/google-nest-hiddenapi-package-whitelist.xml
 product/etc/sysconfig/pixel_tablet-initial-package-stopped-states.xml
 product/priv-app/PixelCameraServicesT6PRO/PixelCameraServicesT6PRO.apk;PRESIGNED
-vendor/apex/com.google.android.widevine.apex
+vendor/apex/com.google.android.widevine-wv_341113000.apex
 vendor/apex/com.google.pixel.camera.hal.apex
 vendor/apex/com.google.pixel.wifi.ext.apex
 vendor/bin/aocd
@@ -68,6 +74,7 @@ vendor/bin/hw/android.hardware.weaver-service.citadel
 vendor/bin/hw/citadel_updater
 vendor/bin/hw/citadeld
 vendor/bin/hw/com.google.edgetpu.dba-service
+vendor/bin/hw/com.google.edgetpu.tachyon-service
 vendor/bin/hw/google.hardware.media.c2@1.0-service
 vendor/bin/hw/init_citadel
 vendor/bin/hw/samsung.hardware.media.c2@1.0-service
@@ -141,6 +148,8 @@ vendor/etc/init/aocd.rc
 vendor/etc/init/chre_daemon.rc
 vendor/etc/init/citadeld.rc
 vendor/etc/init/com.google.edgetpu.dba-service.rc
+vendor/etc/init/com.google.edgetpu.tachyon-service.rc
+vendor/etc/init/Exynos_C2.rc
 vendor/etc/init/fingerprint-fpc42.rc
 vendor/etc/init/google.hardware.media.c2@1.0-service.rc
 vendor/etc/init/init_dauntless.rc
@@ -181,7 +190,6 @@ vendor/etc/sensors/registry/append/motion_state.reg
 vendor/etc/sensors/registry/append/power.reg
 vendor/etc/sensors/registry/tangorpro_black.reg
 vendor/etc/sensors/registry/tangorpro_white.reg
-vendor/etc/sysconfig/allowlist_com.google.android.widevine.xml
 vendor/etc/touchflow.pb
 vendor/etc/twoshay_config.json
 vendor/etc/uwb/calib_paths
@@ -195,6 +203,7 @@ vendor/etc/vintf/manifest/android.hardware.oemlock-service.citadel.xml
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service.citadel.xml
 vendor/etc/vintf/manifest/android.hardware.weaver-service.citadel.xml
 vendor/etc/vintf/manifest/com.google.edgetpu.dba-service.xml
+vendor/etc/vintf/manifest/com.google.edgetpu.tachyon-service.xml
 vendor/etc/vintf/manifest/fingerprint-fpc42.xml
 vendor/etc/vintf/manifest/manifest_input.processor-service.xml
 vendor/etc/vintf/manifest/manifest_radioext.xml
@@ -320,6 +329,7 @@ vendor/lib64/android.hardware.identity@1.0-impl.nos.so
 vendor/lib64/android.hardware.keymaster@4.1-impl.nos.so
 vendor/lib64/android.hardware.oemlock-impl.nos.so
 vendor/lib64/android.hardware.security.keymint-impl.nos.so
+vendor/lib64/android.hardware.weaver-bridge.nos.so
 vendor/lib64/android.hardware.weaver-impl.nos.so
 vendor/lib64/android.hardware.weaver2-impl.nos.so
 vendor/lib64/aoc_aud_ext.so
@@ -341,6 +351,8 @@ vendor/lib64/com.fingerprints42.extension@1.0.so
 vendor/lib64/com.google.edgetpu_app_service-V2-ndk.so
 vendor/lib64/com.google.edgetpu_vendor_service-V2-ndk.so
 vendor/lib64/com.google.edgetpu.dba-V1-ndk.so
+vendor/lib64/com.google.edgetpu.tachyon-V1-ndk.so
+vendor/lib64/com.google.hardware.biometrics.parcelable.fingerprint.PressToAuthParcelable-V1-ndk.so
 vendor/lib64/com.google.hardware.biometrics.sidefps.fingerprint-ext-V1-ndk.so
 vendor/lib64/com.google.input-V2-ndk.so
 vendor/lib64/egl/libGLES_mali.so
@@ -416,9 +428,11 @@ vendor/lib64/libspeechenhancer.so
 vendor/lib64/libstpreprocess21.so
 vendor/lib64/libstreset21.so
 vendor/lib64/libsueznanoappclients.so
+vendor/lib64/libtachyon_core.so
 vendor/lib64/libtouchflow.so
 vendor/lib64/libusf.so
 vendor/lib64/sensors.usf.so
+vendor/lib64/sideFpsSuez.so
 vendor/lib64/soundfx/liboffloadeffect.so
 vendor/lib64/soundfx/libspatialaudio.so
 vendor/lib64/vendor_chre_atoms_log.so
@@ -426,6 +440,6 @@ vendor/lib64/vendor_chre_metrics-cpp.so
 vendor/lib64/vendor-pixelatoms-cpp.so
 vendor/lib64/vendor.google.audiometricext@1.0.so
 vendor/lib64/vendor.google.bluetooth_ext-V1-ndk.so
-vendor/lib64/vendor.google.google_battery-V2-ndk.so
+vendor/lib64/vendor.google.google_battery-V3-ndk.so
 vendor/lib64/vendor.google.whitechapel.audio.audioext@4.0.so
 vendor/lib64/vendor.google.wifi_ext-V1-ndk.so

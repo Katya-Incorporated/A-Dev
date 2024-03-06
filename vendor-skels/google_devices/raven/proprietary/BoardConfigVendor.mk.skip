@@ -22,11 +22,17 @@ AB_OTA_PARTITIONS += \
 
 TARGET_BOARD_INFO_FILE := vendor/google_devices/raven/firmware/android-info.txt
 
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    hardware/google/pixel-sepolicy/connectivity_thermal_power_manager
+
+# Missing system_ext SELinux context: /metadata/repair-mode/config(/.*)? u:object_r:repair_mode_metadata_config_file:s0
+# Missing system_ext SELinux context: repair_mode.init_completed. u:object_r:repair_mode_init_prop:s0 prefix bool
+# Missing system_ext SELinux context: user=system seinfo=platform name=com.google.android.repairmode domain=repair_mode_app type=app_data_file levelFrom=user
+# Missing system_ext SELinux context: user=_app seinfo=platform name=com.google.android.turboadapter domain=turbo_adapter type=app_data_file levelFrom=all
+
 BOARD_VENDOR_SEPOLICY_DIRS += \
     hardware/google/pixel-sepolicy/input \
-    device/google/gs101-sepolicy/whitechapel/vendor/google/exo_camera_injection \
-    hardware/google/pixel-sepolicy/connectivity_thermal_power_manager \
-    device/google/gs101-sepolicy/ambient \
     vendor/google_devices/raven/sepolicy
 
 # Missing vendor SELinux context: user=_app isPrivApp=true seinfo=mds name=com.google.mds domain=modem_diagnostic_app type=app_data_file levelFrom=user
+# Missing vendor SELinux context: user=_app isPrivApp=true seinfo=platform name=com.google.mds domain=modem_diagnostic_app type=app_data_file levelFrom=user

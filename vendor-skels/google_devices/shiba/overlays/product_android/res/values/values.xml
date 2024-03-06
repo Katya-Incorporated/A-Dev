@@ -29,6 +29,7 @@
   <bool name="config_hotspotNetworksEnabledForService">false</bool>
   <bool name="config_knownNetworksEnabledForService">false</bool>
   <bool name="config_lockscreenWeatherEnabledByDefault">true</bool>
+  <bool name="config_refreshRateSynchronizationEnabled">true</bool>
   <bool name="config_repairModeSupported">true</bool>
   <bool name="config_safetyProtectionEnabled">true</bool>
   <bool name="config_settingsHelpLinksEnabled">true</bool>
@@ -42,10 +43,19 @@
   <dimen name="config_buttonCornerRadius">4dp</dimen>
   <dimen name="config_dialogCornerRadius">28dp</dimen>
   <dimen name="config_highResTaskSnapshotScale">0.8</dimen>
+  <dimen name="config_keyboardHapticFeedbackFixedAmplitude">0.62</dimen>
   <dimen name="config_progressBarCornerRadius">1000dp</dimen>
   <dimen name="system_app_widget_background_radius">28dp</dimen>
   <dimen name="system_app_widget_inner_radius">20dp</dimen>
+  <integer name="config_externalDisplayPeakHeight">1080</integer>
+  <integer name="config_externalDisplayPeakRefreshRate">61</integer>
+  <integer name="config_externalDisplayPeakWidth">1920</integer>
   <integer name="config_fingerprintMaxTemplatesPerUser">4</integer>
+  <integer name="device_idle_idle_after_inactive_to_ms">15000</integer>
+  <integer name="device_idle_inactive_to_ms">15000</integer>
+  <integer name="device_idle_locating_to_ms">15000</integer>
+  <integer name="device_idle_motion_inactive_to_ms">30000</integer>
+  <integer name="device_idle_sensing_to_ms">15000</integer>
   <string-array name="config_forceSlowJpegModeList">
     <item>com.facebook.orca</item>
     <item>com.skype.raider</item>
@@ -90,12 +100,6 @@
     <item>Smudge detected, clean screen. Try again.</item>
     <item>Failure to read image. Try again.</item>
     <item/>
-    <item/>
-    <item/>
-    <item/>
-    <item/>
-    <item/>
-    <item>Re-enroll required</item>
   </string-array>
   <string-array name="fingerprint_error_vendor">
     <item/>

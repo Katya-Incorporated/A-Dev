@@ -5,6 +5,7 @@
   <string name="biometrics_unlock_set_unlock_password">Password • Fingerprint • Face</string>
   <string name="biometrics_unlock_set_unlock_pattern">Pattern • Fingerprint • Face</string>
   <string name="biometrics_unlock_set_unlock_pin">PIN • Fingerprint • Face</string>
+  <string name="config_limited_warranty_overlay_package_name">com.android.settings.overlay.panther</string>
   <string name="desc_ProfileIcons1">Playful illustration of two dark-green semi-circles on a light green background</string>
   <string name="desc_ProfileIcons10">Playful illustration of an orange butterfly on a yellow background</string>
   <string name="desc_ProfileIcons11">Black nose shape with rounded edges on a dark gray background</string>
@@ -83,7 +84,6 @@ This also deletes the fingerprint images and model stored on your device. You wo
   <bool name="config_adaptive_alert_vibration_enabled">true</bool>
   <bool name="config_clear_calling_enabled">true</bool>
   <bool name="config_hspa_data_distinguishable">true</bool>
-  <bool name="config_limited_warranty_enabled">true</bool>
   <integer name="config_vibration_supported_intensity_levels">3</integer>
   <string-array name="enabled_networks_except_gsm_values">
     <item>10</item>

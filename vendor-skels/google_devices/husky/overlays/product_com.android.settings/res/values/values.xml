@@ -6,7 +6,6 @@
   <bool name="config_advanced_vpn_enabled">true</bool>
   <bool name="config_battery_first_use_date_enabled">false</bool>
   <bool name="config_hspa_data_distinguishable">true</bool>
-  <bool name="config_limited_warranty_enabled">true</bool>
   <string name="config_limited_warranty_overlay_package_name">com.android.settings.overlay.husky</string>
   <string name="desc_ProfileIcons1">Playful illustration of two dark-green semi-circles on a light green background</string>
   <string name="desc_ProfileIcons10">Playful illustration of an orange butterfly on a yellow background</string>

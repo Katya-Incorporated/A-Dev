@@ -1,5 +1,5 @@
 require board=cheetah
 
-require version-bootloader=cloudripper-14.0-11170085
-require version-baseband=g5300q-230927-231102-B-11040898
+require version-bootloader=cloudripper-14.4-11290827
+require version-baseband=g5300q-231218-240202-B-11396366
 require partition-exists=vendor_kernel_boot

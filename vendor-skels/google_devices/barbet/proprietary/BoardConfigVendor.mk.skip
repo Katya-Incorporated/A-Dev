@@ -20,6 +20,18 @@ AB_OTA_PARTITIONS += \
 
 TARGET_BOARD_INFO_FILE := vendor/google_devices/barbet/firmware/android-info.txt
 
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    hardware/google/pixel-sepolicy/connectivity_thermal_power_manager
+
+# Missing system_ext SELinux context: /metadata/repair-mode/config(/.*)? u:object_r:repair_mode_metadata_config_file:s0
+# Missing system_ext SELinux context: repair_mode.init_completed. u:object_r:repair_mode_init_prop:s0 prefix bool
+# Missing system_ext SELinux context: user=system seinfo=platform name=com.google.android.repairmode domain=repair_mode_app type=app_data_file levelFrom=user
+# Missing system_ext SELinux context: user=_app seinfo=platform name=com.google.android.turboadapter domain=turbo_adapter type=app_data_file levelFrom=all
+# Missing system_ext SELinux context: user=_app seinfo=google name=com.google.android.GoogleCamera domain=google_camera_app type=app_data_file levelFrom=all
+# Missing system_ext SELinux context: user=_app seinfo=googlepulse name=com.google.android.apps.googlecamera.fishfood domain=google_camera_app type=app_data_file levelFrom=all
+# Missing system_ext SELinux context: user=_app seinfo=verizon name=com.verizon.obdm domain=obdm_app type=app_data_file levelFrom=all
+# Missing system_ext SELinux context: user=_app seinfo=verizon name=com.verizon.obdm:background domain=obdm_app type=app_data_file levelFrom=all
+
 # Missing product SELinux context: user=_app seinfo=wfcactivation name=com.google.android.wfcactivation domain=wfc_activation_app levelFrom=all
 # Missing product SELinux context: user=_app isPrivApp=true seinfo=platform name=com.google.android.hiddenmenu domain=sprint_hidden_menu type=app_data_file levelFrom=all
 # Missing product SELinux context: user=_app isPrivApp=true seinfo=platform name=com.google.omadm.trigger domain=vzw_omadm_trigger type=app_data_file levelFrom=all
@@ -31,14 +43,7 @@ TARGET_BOARD_INFO_FILE := vendor/google_devices/barbet/firmware/android-info.txt
 BOARD_VENDOR_SEPOLICY_DIRS += \
     hardware/google/pixel-sepolicy/confirmationui_hal \
     hardware/google/pixel-sepolicy/input \
-    hardware/google/pixel-sepolicy/connectivity_thermal_power_manager \
     vendor/google_devices/barbet/sepolicy
 
-# Missing vendor SELinux context: /vendor/bin/hw/vendor\.google\.exo_camera_injection@1\.1-service u:object_r:hal_exo_camera_injection_exec:s0
-# Missing vendor SELinux context: vendor.google.exo_camera_injection::IExoCameraInjection u:object_r:hal_exo_camera_injection_hwservice:s0
-# Missing vendor SELinux context: user=_app seinfo=platform name=com.google.pixel.exo domain=exo_app type=app_data_file levelFrom=all
 # Missing vendor SELinux context: user=_app seinfo=mds name=com.google.mds domain=modem_diagnostic_app type=app_data_file levelFrom=user
-# Missing vendor SELinux context: user=_app seinfo=google name=com.google.android.GoogleCamera domain=google_camera_app type=app_data_file levelFrom=all
-# Missing vendor SELinux context: user=_app seinfo=googlepulse name=com.google.android.apps.googlecamera.fishfood domain=google_camera_app type=app_data_file levelFrom=all
-# Missing vendor SELinux context: user=_app seinfo=verizon name=com.verizon.obdm domain=obdm_app type=app_data_file levelFrom=all
-# Missing vendor SELinux context: user=_app seinfo=verizon name=com.verizon.obdm:background domain=obdm_app type=app_data_file levelFrom=all
+# Missing vendor SELinux context: user=_app seinfo=platform name=com.google.mds domain=modem_diagnostic_app type=app_data_file levelFrom=user

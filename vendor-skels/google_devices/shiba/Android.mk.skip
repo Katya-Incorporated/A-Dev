@@ -18,8 +18,7 @@ LOCAL_MODULE_STEM := .device_symlinks
 LOCAL_SRC_FILES := Android.mk
 LOCAL_POST_INSTALL_CMD := \
     mkdir -p $(PRODUCT_OUT)/system_ext/priv-app/PixelDisplayService/lib/arm64; \
-    ln -sf /system_ext/lib64/libpixeldisplaymanager_jni.so $(PRODUCT_OUT)/system_ext/priv-app/PixelDisplayService/lib/arm64/libpixeldisplaymanager_jni.so; \
-    rm -f $(TARGET_OUT_VENDOR_ETC)/.device_symlinks
+    ln -sf /system_ext/lib64/libpixeldisplaymanager_jni.so $(PRODUCT_OUT)/system_ext/priv-app/PixelDisplayService/lib/arm64/libpixeldisplaymanager_jni.so;
 include $(BUILD_PREBUILT)
 
 endif

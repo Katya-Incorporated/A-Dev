@@ -8,12 +8,14 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.lito.api30 \
     graphics.gpu.profiler.support=true \
     graphics.gpu.profiler.vulkan_layer_apk=com.google.pixel.redbull.gpuprofiling.vulkanlayer \
+    aoj.feature.contract= \
+    aoj.feature.node_logging= \
     ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
     ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
 
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.build.expect.bootloader=b9-0.6-10898944 \
-    ro.build.expect.baseband=g7250-00286-230920-B-10835791 \
+    ro.build.expect.baseband=g7250-00296-231207-B-11190276 \
+    ro.build.expect.bootloader=b9-0.6-11259359 \
     ro.crypto.dm_default_key.options_format.version=2 \
     ro.crypto.volume.metadata.method=dm-default-key \
     drm.service.enabled=true \
@@ -23,7 +25,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.hardware.vulkan=adreno \
     media.mediadrmservice.enable=true
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/barbet/barbet:14/UQ1A.240205.002/11224170:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/barbet/barbet:14/AP1A.240305.019.A1/11445699:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \
@@ -97,6 +99,7 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1-service.citadel__2 \
     android.hardware.keymaster@4.1.vendor:32 \
     android.hardware.media.bufferpool2-V1-ndk.vendor \
+    android.hardware.media.c2-V1-ndk.vendor \
     android.hardware.media.c2@1.0.vendor \
     android.hardware.neuralnetworks@1.0.vendor:64 \
     android.hardware.neuralnetworks@1.1.vendor:64 \
@@ -135,6 +138,7 @@ PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.control@1.0.vendor:64 \
     android.hardware.thermal@1.0.vendor \
     android.hardware.thermal@2.0.vendor \
+    android.hardware.weaver-bridge.nos \
     android.hardware.weaver-impl.nos \
     android.hardware.weaver-service.citadel \
     android.hardware.weaver-service.citadel__2 \
@@ -174,6 +178,7 @@ PRODUCT_PACKAGES += \
     cnss_diag \
     cnss-daemon \
     columbus \
+    com.android.hbmsvmanager.auto_generated_rro_vendor_adevtool__ \
     com.android.networkstack.tethering__TetheringConfig.auto_generated_rro_product_adevtool__ \
     com.android.phone.auto_generated_rro_product_adevtool__ \
     com.android.server.telecom.auto_generated_rro_product_adevtool__ \
@@ -411,6 +416,7 @@ PRODUCT_PACKAGES += \
     libaudiozoom \
     libautohal \
     libavservices_minijail.vendor:64 \
+    libbase.product:64 \
     libbase64 \
     libbatterylistener \
     libbeluga__system_ext \
@@ -454,6 +460,7 @@ PRODUCT_PACKAGES += \
     libcneapiclient \
     libcneoplookup \
     libcneqmiutils \
+    libcodec2_hal_common.vendor \
     libcodec2_hidl_plugin \
     libcodec2_hidl@1.0.vendor \
     libcodec2_vndk.vendor \
@@ -467,6 +474,7 @@ PRODUCT_PACKAGES += \
     libcppcose_rkp.vendor:64 \
     libcppf \
     libcryptfshwcommon \
+    libcutils.product:64 \
     libcvp_common \
     libcvpcpuRev_skel \
     libcvpdsp_skel \
@@ -600,6 +608,7 @@ PRODUCT_PACKAGES += \
     libjnihelper \
     libjnihelpers__system_ext \
     libjson \
+    libjsoncpp.product:64 \
     libkeymaster_messages.vendor:64 \
     libkeymaster_portable.vendor:64 \
     libkeymasterdeviceutils \
@@ -900,7 +909,7 @@ PRODUCT_PACKAGES += \
     libwfduibcsrc_proprietary \
     libwfduibcsrcinterface__system_ext \
     libwfduibcsrcinterface_proprietary \
-    libwifi-hal-ctrl \
+    libwifi-hal-ctrl:64 \
     libwifi-hal-qcom \
     libwms \
     libWNR__system_ext \
@@ -923,6 +932,7 @@ PRODUCT_PACKAGES += \
     netmgrd \
     nos_app_avb:64 \
     nos_app_identity:64 \
+    nos_app_keymaster_ctdl:64 \
     nos_app_keymaster:64 \
     nos_app_weaver:64 \
     org.codeaurora.ims.auto_generated_rro_product_adevtool__ \
@@ -969,6 +979,7 @@ PRODUCT_PACKAGES += \
     ssr_diag \
     ssr_setup \
     subsystem_ramdump \
+    system_ext_mapping_file \
     test_diag \
     tftp_server \
     time_daemon \
@@ -1025,14 +1036,14 @@ PRODUCT_PACKAGES += \
     vendor.display.postproc@1.0__system_ext \
     vendor.google.google_battery-default \
     vendor.google.google_battery-service \
-    vendor.google.google_battery-V2-ndk \
+    vendor.google.google_battery-V3-ndk \
     vendor.google.radioext@1.0 \
     vendor.google.radioext@1.0-service \
     vendor.google.radioext@1.1 \
     vendor.google.radioext@1.2 \
     vendor.google.radioext@1.3 \
     vendor.google.wifi_ext-service-vendor \
-    vendor.google.wifi_ext-V1-ndk \
+    vendor.google.wifi_ext-V3-ndk \
     vendor.google.wifi_ext@1.0 \
     vendor.qti.data.factory-V1.0-java \
     vendor.qti.data.factory-V2.0-java \
@@ -1333,6 +1344,7 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/ais_th.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/ais_th.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/altice_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/altice_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/andorratelecom_ad.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/andorratelecom_ad.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/antel_uy.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/antel_uy.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/apt_tw.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/apt_tw.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/asda_gb.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/asda_gb.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/assurance_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/assurance_us.pb \
@@ -1380,11 +1392,13 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/digi_hu.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/digi_hu.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/digi_my.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/digi_my.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/digi_ro.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/digi_ro.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/digimobil_es.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/digimobil_es.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/dishatt_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/dishatt_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/dito_ph.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/dito_ph.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/dna_fi.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/dna_fi.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/docomo_jp.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/docomo_jp.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/docomomvno_jp.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/docomomvno_jp.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/dtac_th.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/dtac_th.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/du_ae.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/du_ae.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/eastlink_ca.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/eastlink_ca.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/ee_gb.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/ee_gb.pb \
@@ -1394,6 +1408,7 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/elisa2_fi.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/elisa2_fi.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/enreach_nl.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/enreach_nl.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/eplus_de.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/eplus_de.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/erate_no.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/erate_no.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/esn_gb.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/esn_gb.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/etisalat_ae.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/etisalat_ae.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/euskaltel_es.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/euskaltel_es.pb \
@@ -1413,6 +1428,7 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/gamma_gb.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/gamma_gb.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/gci_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/gci_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/gibtel_gi.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/gibtel_gi.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/giffgaff_gb.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/giffgaff_gb.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/giga_sg.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/giga_sg.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/globe_ph.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/globe_ph.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/h3_at.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/h3_at.pb \
@@ -1433,13 +1449,17 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/kena_it.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/kena_it.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/koodo_ca.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/koodo_ca.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/kpn_nl.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/kpn_nl.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/lebara_gb.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/lebara_gb.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/liberty_pr.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/liberty_pr.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/linemo_jp.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/linemo_jp.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/lmt_lv.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/lmt_lv.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/lowi_es.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/lowi_es.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/luckymobile_ca.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/luckymobile_ca.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/lum_ca.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/lum_ca.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/m1_sg.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/m1_sg.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/manxcontract_im.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/manxcontract_im.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/manxprepaid_im.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/manxprepaid_im.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/masmovil_es.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/masmovil_es.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/maxis_my.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/maxis_my.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/meo_pt.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/meo_pt.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/metropcs_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/metropcs_us.pb \
@@ -1447,6 +1467,7 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/movistar_es.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/movistar_es.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/nextech_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/nextech_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/nos_pt.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/nos_pt.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/nova_gr.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/nova_gr.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/o2_cz.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/o2_cz.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/o2_de.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/o2_de.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/o2_sk.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/o2_sk.pb \
@@ -1494,10 +1515,12 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/simba_sg.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/simba_sg.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/siminn_is.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/siminn_is.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/simple_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/simple_us.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/simyo_es.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/simyo_es.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/singtel_sg.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/singtel_sg.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/skinny_nz.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/skinny_nz.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/skt_kr.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/skt_kr.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/sky_gb.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/sky_gb.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/skylo_zz.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/skylo_zz.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/smartone_hk.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/smartone_hk.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/smarty_gb.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/smarty_gb.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/softbank_jp.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/softbank_jp.pb \
@@ -1517,10 +1540,12 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/swisscom_ch.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/swisscom_ch.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/swisscom_li.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/swisscom_li.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/talkmobile_gb.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/talkmobile_gb.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/tango_lu.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/tango_lu.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/tango_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/tango_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/tbaytel_ca.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/tbaytel_ca.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/tchibo_de.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/tchibo_de.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/tdc_dk.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/tdc_dk.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/telcel_mx.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/telcel_mx.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/tele2_ee.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/tele2_ee.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/tele2_lt.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/tele2_lt.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/tele2_lv.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/tele2_lv.pb \
@@ -1563,6 +1588,7 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/twm_tw.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/twm_tw.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/u264a_ca.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/u264a_ca.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/u264a_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/u264a_us.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/u264ab_ca.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/u264ab_ca.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/u264ao_at.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/u264ao_at.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/u264ap_at.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/u264ap_at.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/ultra_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/ultra_us.pb \
@@ -1599,8 +1625,10 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/vodafone_qa.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/vodafone_qa.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/vodafone_ro.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/vodafone_ro.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/vodafone_tr.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/vodafone_tr.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/webbing_hk.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/webbing_hk.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/windtre_it.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/windtre_it.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/xfinity_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/xfinity_us.pb \
+    vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/xfinity2_us.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/xfinity2_us.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/yes_my.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/yes_my.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/yettel_hu.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/yettel_hu.pb \
     vendor/google_devices/barbet/proprietary/product/etc/CarrierSettings/yoigo_es.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/yoigo_es.pb \

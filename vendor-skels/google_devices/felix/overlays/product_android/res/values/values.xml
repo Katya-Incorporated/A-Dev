@@ -13,7 +13,7 @@
   <string name="config_ambientContextPackageNameExtraKey">PACKAGE_NAME</string>
   <string name="config_clockFontFamily">google-sans-clock</string>
   <string name="config_defaultAccessibilityNotificationSound">Effect_Tick.ogg</string>
-  <string name="config_deviceSpecificDeviceStatePolicyProvider">com.google.android.server.policy.TentModeDeviceStatePolicy$Provider</string>
+  <string name="config_deviceSpecificDeviceStatePolicyProvider">com.google.android.server.policy.FelixDeviceStatePolicyProvider</string>
   <string name="config_display_features">fold-[1104,0,1104,1848]</string>
   <string name="config_icon_mask">M50 0C77.6 0 100 22.4 100 50C100 77.6 77.6 100 50 100C22.4 100 0 77.6 0 50C0 22.4 22.4 0 50 0Z</string>
   <string name="config_qualified_networks_service_package">com.android.qns</string>
@@ -53,6 +53,7 @@
   <bool name="config_letterboxIsVerticalReachabilityEnabled">true</bool>
   <bool name="config_localDisplaysMirrorContent">false</bool>
   <bool name="config_lockscreenWeatherEnabledByDefault">true</bool>
+  <bool name="config_matchSecondaryInternalDisplaysOrientationToReverseDefaultDisplay">true</bool>
   <bool name="config_offsetWallpaperToCenterOfLargestDisplay">true</bool>
   <bool name="config_repairModeSupported">true</bool>
   <bool name="config_safetyProtectionEnabled">true</bool>
@@ -71,10 +72,43 @@
   <dimen name="config_dialogCornerRadius">28dp</dimen>
   <dimen name="config_fixedOrientationLetterboxAspectRatio">1.333</dimen>
   <dimen name="config_highResTaskSnapshotScale">0.8</dimen>
+  <dimen name="config_keyboardHapticFeedbackFixedAmplitude">1</dimen>
   <dimen name="config_letterboxVerticalPositionMultiplier">0.5</dimen>
   <dimen name="config_progressBarCornerRadius">1000dp</dimen>
   <dimen name="system_app_widget_background_radius">28dp</dimen>
   <dimen name="system_app_widget_inner_radius">20dp</dimen>
+  <integer-array name="config_concurrentDisplayDeviceStates">
+    <item>4</item>
+  </integer-array>
+  <integer-array name="config_deviceStatesOnWhichToSleep">
+    <item>0</item>
+  </integer-array>
+  <integer-array name="config_deviceStatesOnWhichToWakeUp">
+    <item>1</item>
+    <item>2</item>
+  </integer-array>
+  <integer-array name="config_deviceStatesToReverseDefaultDisplayRotationAroundZAxis">
+    <item>3</item>
+  </integer-array>
+  <integer-array name="config_deviceTabletopRotations">
+    <item>90</item>
+    <item>270</item>
+  </integer-array>
+  <integer-array name="config_foldedDeviceStates">
+    <item>0</item>
+  </integer-array>
+  <integer-array name="config_halfFoldedDeviceStates">
+    <item>1</item>
+  </integer-array>
+  <integer-array name="config_openDeviceStates">
+    <item>2</item>
+  </integer-array>
+  <integer-array name="config_rearDisplayDeviceStates">
+    <item>3</item>
+  </integer-array>
+  <integer-array name="non_removable_euicc_slots">
+    <item>0</item>
+  </integer-array>
   <string-array name="config_device_state_postures">
     <item>0:1</item>
     <item>1:2</item>
@@ -128,34 +162,10 @@
   <integer name="config_pauseRotationWhenUnfolding_displaySwitchTimeout">1000</integer>
   <integer name="config_pauseRotationWhenUnfolding_hingeEventTimeout">400</integer>
   <integer name="config_pauseRotationWhenUnfolding_maxHingeAngle">165</integer>
-  <integer-array name="config_deviceStatesOnWhichToSleep">
-    <item>0</item>
-  </integer-array>
-  <integer-array name="config_deviceStatesOnWhichToWakeUp">
-    <item>1</item>
-    <item>2</item>
-  </integer-array>
-  <integer-array name="config_deviceStatesToReverseDefaultDisplayRotationAroundZAxis">
-    <item>3</item>
-  </integer-array>
-  <integer-array name="config_deviceTabletopRotations">
-    <item>90</item>
-    <item>270</item>
-  </integer-array>
-  <integer-array name="config_foldedDeviceStates">
-    <item>0</item>
-  </integer-array>
-  <integer-array name="config_halfFoldedDeviceStates">
-    <item>1</item>
-  </integer-array>
-  <integer-array name="config_openDeviceStates">
-    <item>2</item>
-  </integer-array>
-  <integer-array name="config_rearDisplayDeviceStates">
-    <item>3</item>
-  </integer-array>
-  <integer-array name="non_removable_euicc_slots">
-    <item>0</item>
-  </integer-array>
+  <integer name="device_idle_idle_after_inactive_to_ms">15000</integer>
+  <integer name="device_idle_inactive_to_ms">15000</integer>
+  <integer name="device_idle_locating_to_ms">15000</integer>
+  <integer name="device_idle_motion_inactive_to_ms">30000</integer>
+  <integer name="device_idle_sensing_to_ms">15000</integer>
   <array name="config_notificationMsgPkgsAllowedAsConvos"/>
 </resources>

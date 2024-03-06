@@ -4122,6 +4122,7 @@ android_app_import {
     owner: "google_devices",
     apk: "system_ext/priv-app/EuiccSupportPixel/EuiccSupportPixel.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
@@ -12522,6 +12523,17 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "android.hardware.weaver-bridge.nos",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/android.hardware.weaver-bridge.nos.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "android.hardware.weaver-impl.nos",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/android.hardware.weaver-impl.nos.so" ] } },
@@ -14258,9 +14270,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.google.google_battery-V2-ndk",
+    name: "vendor.google.google_battery-V3-ndk",
     owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.google_battery-V2-ndk.so" ] } },
+    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.google_battery-V3-ndk.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -14313,9 +14325,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.google.wifi_ext-V1-ndk",
+    name: "vendor.google.wifi_ext-V3-ndk",
     owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.wifi_ext-V1-ndk.so" ] } },
+    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.wifi_ext-V3-ndk.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,

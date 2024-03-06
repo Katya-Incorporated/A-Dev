@@ -1,0 +1,2 @@
+com.android.hbmsvmanager:array/config_compensation_thresholds = 10000,30000
+com.android.hbmsvmanager:integer/config_compensation_filter_horizon = 3500

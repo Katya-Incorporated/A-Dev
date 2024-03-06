@@ -1,4 +1,4 @@
 require board=oriole
 
-require version-bootloader=slider-1.3-11170084
-require version-baseband=g5123b-125137-231014-B-10950115
+require version-bootloader=slider-1.3-11290821
+require version-baseband=g5123b-130914-240205-B-11405587

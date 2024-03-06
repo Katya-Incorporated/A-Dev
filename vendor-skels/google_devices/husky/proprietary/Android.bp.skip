@@ -40,6 +40,7 @@ android_app_import {
     owner: "google_devices",
     apk: "product/priv-app/PixelCameraServicesHK3/PixelCameraServicesHK3.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     product_specific: true,
@@ -195,6 +196,18 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libedgetpu_tachyon.google__system_ext",
+    owner: "google_devices",
+    stem: "libedgetpu_tachyon.google",
+    target: { android_arm64: { srcs: [ "system_ext/lib64/libedgetpu_tachyon.google.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libmediaadaptor__system_ext",
     owner: "google_devices",
     stem: "libmediaadaptor",
@@ -281,6 +294,7 @@ android_app_import {
     owner: "google_devices",
     apk: "system_ext/priv-app/CccDkTimeSyncService/CccDkTimeSyncService.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
@@ -301,6 +315,7 @@ android_app_import {
     owner: "google_devices",
     apk: "system_ext/priv-app/EuiccSupportPixel-P23/EuiccSupportPixel-P23.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
@@ -321,6 +336,7 @@ android_app_import {
     owner: "google_devices",
     apk: "system_ext/priv-app/OemRilService/OemRilService.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
@@ -361,6 +377,7 @@ android_app_import {
     owner: "google_devices",
     apk: "system_ext/priv-app/ril-extension/ril-extension.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
@@ -371,6 +388,7 @@ android_app_import {
     owner: "google_devices",
     apk: "system_ext/priv-app/ShannonIms/ShannonIms.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
@@ -381,15 +399,32 @@ android_app_import {
     owner: "google_devices",
     apk: "system_ext/priv-app/ShannonRcs/ShannonRcs.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
 }
 
 prebuilt_apex {
-    name: "com.google.android.widevine",
+    name: "com.google.android.hardware.biometrics.face.pixel23",
     owner: "google_devices",
-    src: "vendor/apex/com.google.android.widevine.apex",
+    src: "vendor/apex/com.google.android.hardware.biometrics.face.pixel23.apex",
+    prefer: true,
+    soc_specific: true,
+}
+
+prebuilt_apex {
+    name: "com.google.android.hardware.biometrics.fingerprint",
+    owner: "google_devices",
+    src: "vendor/apex/com.google.android.hardware.biometrics.fingerprint.apex",
+    prefer: true,
+    soc_specific: true,
+}
+
+prebuilt_apex {
+    name: "com.google.android.widevine-wv_341113000",
+    owner: "google_devices",
+    src: "vendor/apex/com.google.android.widevine-wv_341113000.apex",
     prefer: true,
     soc_specific: true,
 }
@@ -483,28 +518,6 @@ cc_prebuilt_binary {
     name: "android.hardware.authsecret-service.citadel",
     owner: "google_devices",
     srcs: [ "vendor/bin/hw/android.hardware.authsecret-service.citadel" ],
-    relative_install_path: "hw",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "android.hardware.biometrics.face-service-pixel23",
-    owner: "google_devices",
-    srcs: [ "vendor/bin/hw/android.hardware.biometrics.face-service-pixel23" ],
-    relative_install_path: "hw",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "android.hardware.biometrics.fingerprint-service.goodix",
-    owner: "google_devices",
-    srcs: [ "vendor/bin/hw/android.hardware.biometrics.fingerprint-service.goodix" ],
     relative_install_path: "hw",
     check_elf_files: false,
     prefer: true,
@@ -681,6 +694,17 @@ cc_prebuilt_binary {
     name: "com.google.edgetpu.dba-service",
     owner: "google_devices",
     srcs: [ "vendor/bin/hw/com.google.edgetpu.dba-service" ],
+    relative_install_path: "hw",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "com.google.edgetpu.tachyon-service",
+    owner: "google_devices",
+    srcs: [ "vendor/bin/hw/com.google.edgetpu.tachyon-service" ],
     relative_install_path: "hw",
     check_elf_files: false,
     prefer: true,
@@ -1165,6 +1189,15 @@ prebuilt_etc {
     soc_specific: true,
 }
 
+prebuilt_etc {
+    name: "wallaby",
+    owner: "google_devices",
+    src: "vendor/etc/chre/wallaby.so",
+    filename_from_src: true,
+    sub_dir: "chre",
+    soc_specific: true,
+}
+
 dex_import {
     name: "com.google.android.camera.experimental2023",
     owner: "google_devices",
@@ -1237,6 +1270,17 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: { srcs: [ "vendor/lib64/android.hardware.security.keymint-impl.nos.so" ] }
     },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "android.hardware.weaver-bridge.nos",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/android.hardware.weaver-bridge.nos.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -1355,6 +1399,17 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "audio_compensation_aoc",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/audio_compensation_aoc.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "audio_fortemedia_aoc",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/audio_fortemedia_aoc.so" ] } },
@@ -1421,17 +1476,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "biometricsuez",
-    owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/biometricsuez.so" ] } },
-    compile_multilib: "64",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "com.google.edgetpu_app_service-V2-ndk",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/com.google.edgetpu_app_service-V2-ndk.so" ] } },
@@ -1467,26 +1511,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "com.google.face.debug-V4-ndk",
+    name: "com.google.edgetpu.tachyon-V1-ndk",
     owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/com.google.face.debug-V4-ndk.so" ] } },
-    compile_multilib: "64",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "com.google.hardware.biometrics.fingerprint.fingerprint-ext-V1-ndk",
-    owner: "google_devices",
-    target: {
-        android_arm64: {
-            srcs: [
-                "vendor/lib64/com.google.hardware.biometrics.fingerprint.fingerprint-ext-V1-ndk.so"
-            ]
-        }
-    },
+    target: { android_arm64: { srcs: [ "vendor/lib64/com.google.edgetpu.tachyon-V1-ndk.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -1498,6 +1525,19 @@ cc_prebuilt_library_shared {
     name: "com.google.input-V2-ndk",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/com.google.input-V2-ndk.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.google.pixel.modem.logmasklibrary-V1-ndk",
+    owner: "google_devices",
+    target: {
+        android_arm64: { srcs: [ "vendor/lib64/com.google.pixel.modem.logmasklibrary-V1-ndk.so" ] }
+    },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -1521,17 +1561,6 @@ cc_prebuilt_library_shared {
     name: "fake_gxp_telemetry_reader",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/fake_gxp_telemetry_reader.so" ] } },
-    compile_multilib: "64",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "fp_utils",
-    owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/fp_utils.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -1654,6 +1683,17 @@ cc_prebuilt_library_shared {
     owner: "google_devices",
     relative_install_path: "hw",
     target: { android_arm64: { srcs: [ "vendor/lib64/hw/vulkan.mali.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lassen_dmd_constants",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/lassen_dmd_constants.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -2047,28 +2087,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libface_tuscany_debug_manager",
-    owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/libface_tuscany_debug_manager.so" ] } },
-    compile_multilib: "64",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libface_tuscany_override_blob_manager",
-    owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/libface_tuscany_override_blob_manager.so" ] } },
-    compile_multilib: "64",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libfvsam_prm_parser",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/libfvsam_prm_parser.so" ] } },
@@ -2149,17 +2167,6 @@ cc_prebuilt_library_shared {
     name: "libgc2_bw_utils",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/libgc2_bw_utils.so" ] } },
-    compile_multilib: "64",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libgf_hal",
-    owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/libgf_hal.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -2278,9 +2285,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libmodem_svc_proto",
+    name: "libmodem_svc_proto_legacy",
     owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/libmodem_svc_proto.so" ] } },
+    target: { android_arm64: { srcs: [ "vendor/lib64/libmodem_svc_proto_legacy.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -2336,17 +2343,6 @@ cc_prebuilt_library_shared {
     name: "libOpenCL",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/libOpenCL.so" ] } },
-    compile_multilib: "64",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libproxy_trusty",
-    owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/libproxy_trusty.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -2520,6 +2516,17 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libtachyon_core",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/libtachyon_core.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libtouchflow",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/libtouchflow.so" ] } },
@@ -2534,19 +2541,6 @@ cc_prebuilt_library_shared {
     name: "libusf",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/libusf.so" ] } },
-    compile_multilib: "64",
-    check_elf_files: false,
-    prefer: true,
-    strip: { none: true },
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libvendor.goodix.hardware.biometrics.fingerprint@2.1",
-    owner: "google_devices",
-    target: {
-        android_arm64: { srcs: [ "vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so" ] }
-    },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -2667,9 +2661,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.google.google_battery-V2-ndk",
+    name: "vendor.google.google_battery-V3-ndk",
     owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.google_battery-V2-ndk.so" ] } },
+    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.google_battery-V3-ndk.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -2715,9 +2709,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.google.wireless_charger-V1-ndk",
+    name: "vendor.google.wireless_charger-V2-ndk",
     owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.wireless_charger-V1-ndk.so" ] } },
+    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.wireless_charger-V2-ndk.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -2840,15 +2834,6 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "android.hardware.biometrics.face-service-pixel23__2",
-    owner: "google_devices",
-    src: "vendor/etc/vintf/manifest/android.hardware.biometrics.face-service-pixel23.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
     name: "android.hardware.camera.provider@2.7-service-google-apex",
     owner: "google_devices",
     src: "vendor/etc/vintf/manifest/android.hardware.camera.provider@2.7-service-google-apex.xml",
@@ -2939,18 +2924,18 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "dmd__2",
+    name: "com.google.edgetpu.tachyon-service__2",
     owner: "google_devices",
-    src: "vendor/etc/vintf/manifest/dmd.xml",
+    src: "vendor/etc/vintf/manifest/com.google.edgetpu.tachyon-service.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
 }
 
 prebuilt_etc_xml {
-    name: "fingerprint-goodix",
+    name: "dmd__2",
     owner: "google_devices",
-    src: "vendor/etc/vintf/manifest/fingerprint-goodix.xml",
+    src: "vendor/etc/vintf/manifest/dmd.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,

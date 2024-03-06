@@ -10,6 +10,6 @@ PRODUCT_MODEL := Pixel Tablet
 PRODUCT_BRAND := google
 PRODUCT_MANUFACTURER := Google
 
-ifneq ($(BUILD_ID),UQ1A.240205.002)
-  $(error BUILD_ID: expected UQ1A.240205.002, got $(BUILD_ID))
+ifneq ($(BUILD_ID),AP1A.240305.019.A1)
+  $(error BUILD_ID: expected AP1A.240305.019.A1, got $(BUILD_ID))
 endif

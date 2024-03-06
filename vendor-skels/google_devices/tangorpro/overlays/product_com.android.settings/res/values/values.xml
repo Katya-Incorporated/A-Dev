@@ -4,7 +4,7 @@
 <resources>
   <string name="charging_sounds_title">Charging sounds</string>
   <string name="communal_settings_title">Hub Mode</string>
-  <string name="data_usage_app_summary_title">Wi‑Fi</string>
+  <string name="config_limited_warranty_overlay_package_name">com.android.settings.overlay.tangorpro</string>
   <string name="desc_ProfileIcons1">Playful illustration of two dark-green semi-circles on a light green background</string>
   <string name="desc_ProfileIcons10">Playful illustration of an orange butterfly on a yellow background</string>
   <string name="desc_ProfileIcons11">Black nose shape with rounded edges on a dark gray background</string>
@@ -65,6 +65,7 @@ Note: You can’t use your fingerprint to unlock this device. For more informati
   <string name="security_settings_fingerprint_enroll_introduction_title">Set up Fingerprint Unlock</string>
   <string name="security_settings_fingerprint_enroll_introduction_title_unlock_disabled">Pixel Imprint</string>
   <string name="security_settings_fingerprint_enroll_repeat_title">Lift, then touch. Move your finger slightly each time.</string>
+  <string name="security_settings_fingerprint_enroll_repeat_title_immobile_overlay">Lift, then touch again</string>
   <string name="security_settings_fingerprint_enroll_touch_dialog_message">The fingerprint sensor is on the power button.</string>
   <string name="security_settings_fingerprint_enroll_touch_dialog_title">Touch the sensor instead</string>
   <string name="security_settings_fingerprint_preference_title">Fingerprint Unlock</string>
@@ -75,10 +76,18 @@ Note: You can’t use your fingerprint to unlock this device. For more informati
   <string name="security_settings_fingerprint_v2_enroll_introduction_footer_message_consent_3">When they use Fingerprint Unlock, images are used to update their fingerprint model. Images used to create your child’s fingerprint model are never stored, but the fingerprint model is stored securely on the tablet and never leaves the tablet. All processing occurs securely on the tablet.</string>
   <string name="security_settings_fingerprint_v2_enroll_introduction_footer_message_consent_4">You and your child can delete their fingerprint model, or turn off Fingerprint Unlock at any time in Settings. Fingerprint models are stored on the tablet until they’re deleted.</string>
   <string name="security_settings_fingerprint_v2_enroll_introduction_message_learn_more">"Learn more at &lt;a href='http://g.co/pixeltablet/fingerprintunlock'&gt;g.co/pixeltablet/fingerprintunlock&lt;/a&gt;."</string>
+  <string name="security_settings_sfps_enroll_find_sensor_message">The fingerprint sensor is on the power button. It’s the shorter button on the side of the phone.</string>
+  <string name="security_settings_sfps_enroll_finger_center_title_immobile_overlay">Move your finger slightly each time</string>
+  <string name="security_settings_sfps_enroll_fingertip_title_immobile_overlay">Keep moving to capture other areas of your fingerprint</string>
+  <string name="security_settings_sfps_enroll_left_edge_title_immobile_overlay">Touch the sensor from another angle</string>
+  <string name="security_settings_sfps_enroll_right_edge_title_immobile_overlay">Move your finger to capture other areas of your fingerprint</string>
   <string name="security_settings_sfps_enroll_start_message">"Touch the sensor without pressing it. Lift your finger after each touch.
 
 Move your finger slightly each time. This helps capture more of your fingerprint."</string>
   <string name="security_settings_work_fingerprint_preference_title">Fingerprint Unlock for work</string>
+  <string name="setup_fingerprint_enroll_immobile_help_continue">Continue setup</string>
+  <string name="setup_fingerprint_enroll_immobile_help_subtitle">This helps capture more of your fingerprint for a better unlocking experience</string>
+  <string name="setup_fingerprint_enroll_immobile_help_title">Move your finger</string>
   <string name="sound_dashboard_summary">Volume, Do Not Disturb</string>
   <string name="sound_settings">Sound</string>
   <string name="suggested_fingerprint_lock_settings_summary">Use Pixel Imprint to unlock your tablet</string>
@@ -87,7 +96,6 @@ Move your finger slightly each time. This helps capture more of your fingerprint
   <string name="tethering_footer_info">Use tethering to provide internet to other devices through USB, Ethernet, or Bluetooth.</string>
   <bool name="config_clear_calling_enabled">false</bool>
   <bool name="config_hspa_data_distinguishable">true</bool>
-  <bool name="config_limited_warranty_enabled">true</bool>
   <bool name="config_show_emergency_settings">false</bool>
   <bool name="config_show_premium_sms">false</bool>
   <bool name="config_show_sim_info">false</bool>
@@ -108,6 +116,10 @@ Move your finger slightly each time. This helps capture more of your fingerprint
     <item>1</item>
     <item>4</item>
   </integer-array>
+  <integer name="config_vibration_supported_intensity_levels">3</integer>
+  <integer name="enrollment_collect_time">100</integer>
+  <integer name="enrollment_help_minimum_time_display">250</integer>
+  <integer name="enrollment_progress_minimum_time_display">250</integer>
   <fraction name="display_density_max_scale">133.12378%</fraction>
   <dimen name="dream_item_min_column_width">210dp</dimen>
   <dimen name="dream_preference_card_padding">20dp</dimen>
@@ -120,7 +132,7 @@ Move your finger slightly each time. This helps capture more of your fingerprint
     <item>0</item>
     <item>1</item>
   </string-array>
-  <integer name="enrollment_collect_time">100</integer>
-  <integer name="enrollment_help_minimum_time_display">250</integer>
-  <integer name="enrollment_progress_minimum_time_display">250</integer>
+  <string-array name="fingerprint_acquired_vendor">
+    <item>Reposition finger. You already touched with this area of your fingerprint.</item>
+  </string-array>
 </resources>

@@ -36,6 +36,7 @@ android_app_import {
     owner: "google_devices",
     apk: "product/priv-app/EuiccGoogle/EuiccGoogle.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     product_specific: true,
@@ -46,6 +47,7 @@ android_app_import {
     owner: "google_devices",
     apk: "product/priv-app/PixelCameraServicesRaven/PixelCameraServicesRaven.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     product_specific: true,
@@ -150,6 +152,21 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: { srcs: [ "system_ext/lib/libedgetpu_dba.google.so" ] },
         android_arm64: { srcs: [ "system_ext/lib64/libedgetpu_dba.google.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libedgetpu_tachyon.google__system_ext",
+    owner: "google_devices",
+    stem: "libedgetpu_tachyon.google",
+    target: {
+        android_arm: { srcs: [ "system_ext/lib/libedgetpu_tachyon.google.so" ] },
+        android_arm64: { srcs: [ "system_ext/lib64/libedgetpu_tachyon.google.so" ] }
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -266,6 +283,7 @@ android_app_import {
     owner: "google_devices",
     apk: "system_ext/priv-app/CccDkTimeSyncService/CccDkTimeSyncService.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
@@ -286,6 +304,7 @@ android_app_import {
     owner: "google_devices",
     apk: "system_ext/priv-app/EuiccSupportPixel/EuiccSupportPixel.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
@@ -306,6 +325,7 @@ android_app_import {
     owner: "google_devices",
     apk: "system_ext/priv-app/OemRilService/OemRilService.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
@@ -326,6 +346,7 @@ android_app_import {
     owner: "google_devices",
     apk: "system_ext/priv-app/ShannonIms/ShannonIms.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
@@ -336,6 +357,7 @@ android_app_import {
     owner: "google_devices",
     apk: "system_ext/priv-app/ShannonQualifiedNetworksService/ShannonQualifiedNetworksService.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
@@ -346,6 +368,7 @@ android_app_import {
     owner: "google_devices",
     apk: "system_ext/priv-app/ShannonRcs/ShannonRcs.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
@@ -356,15 +379,16 @@ android_app_import {
     owner: "google_devices",
     apk: "system_ext/priv-app/UwbVendorService/UwbVendorService.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
 }
 
 prebuilt_apex {
-    name: "com.google.android.widevine",
+    name: "com.google.android.widevine-wv_341113000",
     owner: "google_devices",
-    src: "vendor/apex/com.google.android.widevine.apex",
+    src: "vendor/apex/com.google.android.widevine-wv_341113000.apex",
     prefer: true,
     soc_specific: true,
 }
@@ -623,6 +647,17 @@ cc_prebuilt_binary {
     name: "com.google.edgetpu.dba-service",
     owner: "google_devices",
     srcs: [ "vendor/bin/hw/com.google.edgetpu.dba-service" ],
+    relative_install_path: "hw",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "com.google.edgetpu.tachyon-service",
+    owner: "google_devices",
+    srcs: [ "vendor/bin/hw/com.google.edgetpu.tachyon-service" ],
     relative_install_path: "hw",
     check_elf_files: false,
     prefer: true,
@@ -1228,6 +1263,20 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "com.google.pixel.modem.logmasklibrary-V1-ndk",
+    owner: "google_devices",
+    target: {
+        android_arm: { srcs: [ "vendor/lib/com.google.pixel.modem.logmasklibrary-V1-ndk.so" ] },
+        android_arm64: { srcs: [ "vendor/lib64/com.google.pixel.modem.logmasklibrary-V1-ndk.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libGLES_mali",
     owner: "google_devices",
     relative_install_path: "egl",
@@ -1309,6 +1358,20 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: { srcs: [ "vendor/lib/hw/vulkan.mali.so" ] },
         android_arm64: { srcs: [ "vendor/lib64/hw/vulkan.mali.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lassen_dmd_constants",
+    owner: "google_devices",
+    target: {
+        android_arm: { srcs: [ "vendor/lib/lassen_dmd_constants.so" ] },
+        android_arm64: { srcs: [ "vendor/lib64/lassen_dmd_constants.so" ] }
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -2334,6 +2397,17 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "android.hardware.weaver-bridge.nos",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/android.hardware.weaver-bridge.nos.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "android.hardware.weaver-impl.nos",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/android.hardware.weaver-impl.nos.so" ] } },
@@ -2383,6 +2457,17 @@ cc_prebuilt_library_shared {
     name: "com.google.edgetpu.dba-V1-ndk",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/com.google.edgetpu.dba-V1-ndk.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "com.google.edgetpu.tachyon-V1-ndk",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/com.google.edgetpu.tachyon-V1-ndk.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -2600,9 +2685,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libmodem_svc_proto",
+    name: "libmodem_svc_proto_legacy",
     owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/libmodem_svc_proto.so" ] } },
+    target: { android_arm64: { srcs: [ "vendor/lib64/libmodem_svc_proto_legacy.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -2658,6 +2743,17 @@ cc_prebuilt_library_shared {
     name: "libsit_oem",
     owner: "google_devices",
     target: { android_arm64: { srcs: [ "vendor/lib64/libsit_oem.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libtachyon_core",
+    owner: "google_devices",
+    target: { android_arm64: { srcs: [ "vendor/lib64/libtachyon_core.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -2758,9 +2854,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.google.google_battery-V2-ndk",
+    name: "vendor.google.google_battery-V3-ndk",
     owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.google_battery-V2-ndk.so" ] } },
+    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.google_battery-V3-ndk.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -2780,9 +2876,9 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.google.wireless_charger-V1-ndk",
+    name: "vendor.google.wireless_charger-V2-ndk",
     owner: "google_devices",
-    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.wireless_charger-V1-ndk.so" ] } },
+    target: { android_arm64: { srcs: [ "vendor/lib64/vendor.google.wireless_charger-V2-ndk.so" ] } },
     compile_multilib: "64",
     check_elf_files: false,
     prefer: true,
@@ -2893,6 +2989,15 @@ prebuilt_etc_xml {
     name: "com.google.edgetpu.dba-service__2",
     owner: "google_devices",
     src: "vendor/etc/vintf/manifest/com.google.edgetpu.dba-service.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "com.google.edgetpu.tachyon-service__2",
+    owner: "google_devices",
+    src: "vendor/etc/vintf/manifest/com.google.edgetpu.tachyon-service.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,

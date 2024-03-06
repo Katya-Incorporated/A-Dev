@@ -5,7 +5,6 @@
   <bool name="config_adaptive_alert_vibration_enabled">true</bool>
   <bool name="config_clear_calling_enabled">true</bool>
   <bool name="config_hspa_data_distinguishable">true</bool>
-  <bool name="config_limited_warranty_enabled">true</bool>
   <string name="config_limited_warranty_overlay_package_name">com.android.settings.overlay.lynx</string>
   <string name="desc_ProfileIcons1">Playful illustration of two dark-green semi-circles on a light green background</string>
   <string name="desc_ProfileIcons10">Playful illustration of an orange butterfly on a yellow background</string>
