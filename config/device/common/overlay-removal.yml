@@ -1,6 +1,7 @@
 filters:
   overlay_files:
     prefix:
+      - DockSetup_
       # these overlays are for packages that are not shipped
       - Flipendo
       - GoogleDeviceLockControllerOverlay
@@ -80,6 +81,7 @@ filters:
       - android:integer/config_keyChordPowerVolumeUp
       - android:integer/config_longPressOnPowerBehavior
       - android:integer/config_multiuserMaximumUsers
+      - android:integer/config_pinnerWebviewPinBytes
       - android:integer/config_storageManagerDaystoRetainDefault
       - android:string-array/config_accessibility_allowed_install_source
       - android:string-array/config_allowedSecureInstantAppSettings
@@ -156,6 +158,8 @@ filters:
       - android:string/config_defaultNearbyFastPairSettingsDevicesComponent
       - android:string/config_defaultNearbySharingComponent
       - android:string/config_defaultNetworkRecommendationProviderPackage
+      # com.google.android.keep
+      - android:string/config_defaultNotes
       - android:string/config_defaultOnDeviceSpeechRecognitionService
       - android:string/config_defaultProfcollectReportUploaderAction
       - android:string/config_defaultProfcollectReportUploaderApp
@@ -255,6 +259,7 @@ filters:
       - com.android.systemui:bool/config_touch_context_enabled
       - com.android.systemui:bool/config_wlc_support_enabled
       - com.android.systemui:integer/config_keyguardRefreshRate
+      - com.android.systemui:string-array/config_communalWidgetAllowlist
       - com.android.systemui:string-array/config_controlsPreferredPackages
       - com.android.systemui:string-array/config_dock_setup_completed_packages
       # first appeared in Pixel Tablet 14 QPR1 image, set to com.google.android.apps.mediashell
