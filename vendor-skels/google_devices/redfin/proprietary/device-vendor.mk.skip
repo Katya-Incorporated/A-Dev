@@ -37,6 +37,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_OVERRIDE_FINGERPRINT := google/redfin/redfin:14/UP1A.231105.001.B2/11260668:user/release-keys
 
 PRODUCT_PACKAGES += \
+    AccessibilityMenu \
     activity \
     ActivityExt \
     adpl \
@@ -45,9 +46,24 @@ PRODUCT_PACKAGES += \
     ambient \
     ambient_micro \
     android.auto_generated_rro_product_adevtool__ \
+    android.frameworks.cameraservice.common-V1-ndk:64 \
+    android.frameworks.cameraservice.common@2.0:64 \
+    android.frameworks.cameraservice.device-V1-ndk:64 \
+    android.frameworks.cameraservice.device@2.0:64 \
+    android.frameworks.cameraservice.device@2.1:64 \
+    android.frameworks.cameraservice.service-V1-ndk:64 \
+    android.frameworks.cameraservice.service@2.0:64 \
+    android.frameworks.cameraservice.service@2.1:64 \
+    android.frameworks.cameraservice.service@2.2:64 \
+    android.frameworks.displayservice@1.0:64 \
     android.frameworks.sensorservice@1.0.vendor \
     android.frameworks.stats@1.0.vendor:64 \
     android.hardware.audio.common-V1-ndk.vendor \
+    android.hardware.audio.common-V2-ndk \
+    android.hardware.audio.core-V1-ndk \
+    android.hardware.audio.core.sounddose-V1-ndk \
+    android.hardware.audio.effect-V1-ndk \
+    android.hardware.audio.sounddose-V1-ndk \
     android.hardware.authsecret-impl.nos \
     android.hardware.authsecret-service.citadel \
     android.hardware.authsecret-service.citadel__2 \
@@ -57,18 +73,33 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1.vendor \
     android.hardware.biometrics.fingerprint@2.2-service.fpc \
     android.hardware.biometrics.fingerprint@2.2.vendor:64 \
+    android.hardware.bluetooth.audio-V3-ndk.vendor \
     android.hardware.bluetooth@1.0-impl-qti \
     android.hardware.bluetooth@1.0-service-qti \
     android.hardware.bluetooth@1.0.vendor \
     android.hardware.bluetooth@1.1.vendor \
+    android.hardware.camera.common-V1-ndk:64 \
     android.hardware.camera.common@1.0.vendor:64 \
+    android.hardware.camera.device-V2-ndk:64 \
+    android.hardware.camera.device-V2-ndk.vendor:64 \
     android.hardware.camera.device@1.0.vendor:64 \
     android.hardware.camera.device@3.2.vendor:64 \
+    android.hardware.camera.metadata-V2-ndk:64 \
+    android.hardware.camera.provider-V2-ndk:64 \
+    android.hardware.camera.provider-V2-ndk.vendor:64 \
+    android.hardware.camera.provider@2.4:64 \
     android.hardware.camera.provider@2.4.vendor:64 \
+    android.hardware.camera.provider@2.5:64 \
+    android.hardware.camera.provider@2.6:64 \
+    android.hardware.camera.provider@2.7:64 \
+    android.hardware.cas-service.example \
+    android.hardware.cas-service.example-lazy \
+    android.hardware.cas-V1-ndk.vendor:64 \
     android.hardware.confirmationui.secure_input_citadel \
     android.hardware.confirmationui@1.0-service-google \
     android.hardware.confirmationui@1.0-service-google__2 \
     android.hardware.confirmationui@1.0.vendor:64 \
+    android.hardware.contexthub-V2-ndk.vendor:64 \
     android.hardware.drm-service.widevine-v17 \
     android.hardware.gatekeeper@1.0-impl-qti \
     android.hardware.gatekeeper@1.0-service-qti \
@@ -83,14 +114,20 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-service-qti \
     android.hardware.gnss@2.1-service-qti__2 \
     android.hardware.gnss@2.1.vendor \
+    android.hardware.graphics.common-V4-ndk \
     android.hardware.graphics.composer@2.1.vendor:64 \
     android.hardware.graphics.composer@2.2.vendor:64 \
     android.hardware.graphics.composer@2.3.vendor:64 \
     android.hardware.graphics.composer@2.4.vendor:64 \
+    android.hardware.graphics.composer3-V2-ndk \
     android.hardware.graphics.mapper-impl-qti-display \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
+    android.hardware.health-V2-ndk.vendor \
+    android.hardware.health.storage-V1-ndk:64 \
+    android.hardware.health.storage@1.0:64 \
     android.hardware.identity_credential.xml \
+    android.hardware.identity-support-lib:64 \
     android.hardware.identity-support-lib.vendor:64 \
     android.hardware.identity-V5-ndk.vendor:64 \
     android.hardware.identity.strongbox \
@@ -110,6 +147,7 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor:32 \
     android.hardware.media.bufferpool2-V1-ndk.vendor \
     android.hardware.media.c2@1.0.vendor \
+    android.hardware.net.nlinterceptor-V1-ndk:64 \
     android.hardware.neuralnetworks@1.0.vendor:64 \
     android.hardware.neuralnetworks@1.1.vendor:64 \
     android.hardware.neuralnetworks@1.2.vendor:64 \
@@ -123,6 +161,10 @@ PRODUCT_PACKAGES += \
     android.hardware.oemlock@1.0-impl.nos \
     android.hardware.oemlock@1.0.vendor:64 \
     android.hardware.power-V1-ndk.vendor:32 \
+    android.hardware.power-V3-ndk.vendor:64 \
+    android.hardware.power-V4-cpp \
+    android.hardware.power-V4-ndk \
+    android.hardware.power-V4-ndk.vendor:64 \
     android.hardware.power@1.0.vendor \
     android.hardware.power@1.1.vendor \
     android.hardware.power@1.2.vendor \
@@ -136,6 +178,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.5.vendor:64 \
     android.hardware.rebootescrow-service.citadel \
     android.hardware.rebootescrow-V1-ndk.vendor:64 \
+    android.hardware.security.keymint-V1-ndk:64 \
     android.hardware.security.keymint-V3-ndk.vendor:64 \
     android.hardware.security.rkp-V3-ndk.vendor:64 \
     android.hardware.sensors@1.0.vendor \
@@ -145,8 +188,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@2.1.vendor \
     android.hardware.tetheroffload.config@1.0.vendor:64 \
     android.hardware.tetheroffload.control@1.0.vendor:64 \
+    android.hardware.thermal-V1-ndk \
     android.hardware.thermal@1.0.vendor \
     android.hardware.thermal@2.0.vendor \
+    android.hardware.tv.input-V1-ndk \
     android.hardware.weaver-impl.nos \
     android.hardware.weaver-service.citadel \
     android.hardware.weaver-service.citadel__2 \
@@ -156,16 +201,29 @@ PRODUCT_PACKAGES += \
     android.hardware.weaver@1.0-service.citadel__2 \
     android.hardware.weaver@1.0.vendor:64 \
     android.hardware.weaver2-impl.nos \
+    android.hardware.wifi-V1-ndk.vendor:64 \
+    android.hardware.wifi.hostapd-V1-ndk.vendor:64 \
+    android.hardware.wifi.supplicant-V2-ndk.vendor:64 \
     android.hardware.wifi@1.0.vendor:64 \
     android.hidl.memory.block@1.0.vendor \
+    android.media.audio.common.types-V2-cpp \
+    android.media.audio.common.types-V2-ndk \
+    android.media.audio.common.types-V2-ndk.vendor \
+    android.security.legacykeystore-ndk:64 \
+    android.security.maintenance-ndk:64 \
+    android.system.keystore2-V1-ndk:64 \
     android.system.net.netd@1.0.vendor:64 \
     android.system.net.netd@1.1.vendor:64 \
+    android.system.suspend@1.0:64 \
+    android.system.wifi.keystore@1.0:64 \
     atcmdfwd-saidl \
     atfwd \
     audio.primary.lito \
     audiosphere \
+    badblocks \
     blue \
     btaudio_offload_if \
+    btfloader \
     c2_manifest_vendor \
     CACertService \
     camera.lito \
@@ -369,6 +427,7 @@ PRODUCT_PACKAGES += \
     init_citadel \
     init.qti.chg_policy.sh \
     ip_health \
+    ip-up-vpn \
     ipacm \
     irsc_util \
     IWlanService \
@@ -396,6 +455,7 @@ PRODUCT_PACKAGES += \
     lib-siputility \
     lib-uceservice \
     liba2dpoffload \
+    libaaudioservice__system \
     libacdb-fts \
     libacdbloader \
     libacdbrtac \
@@ -420,7 +480,9 @@ PRODUCT_PACKAGES += \
     libaudcal \
     libaudioalsa \
     libaudioconfigstore \
+    libaudioflinger:64 \
     libaudioparsers \
+    libaudiopolicyservice:64 \
     libaudiozoom \
     libautohal \
     libavservices_minijail.vendor:64 \
@@ -440,6 +502,7 @@ PRODUCT_PACKAGES += \
     libcamera_nn_skel \
     libcamera_nn_stub \
     libcamerapostproc \
+    libcameraservice:64 \
     libcamxexternalformatutils \
     libcamxfacialfeatures \
     libcamxfdalgo \
@@ -480,7 +543,9 @@ PRODUCT_PACKAGES += \
     libcppbor_external.vendor:64 \
     libcppcose_rkp.vendor:64 \
     libcppf \
+    libcredstore_aidl__system \
     libcryptfshwcommon \
+    libcutils_sockets \
     libcvp_common \
     libcvpcpuRev_skel \
     libcvpdsp_skel \
@@ -493,10 +558,12 @@ PRODUCT_PACKAGES += \
     libdiag_system__system_ext \
     libdiagjni \
     libDiagService__system_ext \
+    libdiskconfig__system \
     libdisp-aba \
     libdisplayconfig.qti \
     libdisplaydebug \
     libdisplayqos \
+    libdisplayservicehidl__system \
     libdisplayskuutils \
     libdmengine__product \
     libdmjavaplugin__product \
@@ -522,6 +589,7 @@ PRODUCT_PACKAGES += \
     libdsp_streamer_workloop \
     libdspCV_skel \
     libdsutils \
+    libdynamic_depth:64 \
     libdysco_camx_wrapper \
     libdysco_core \
     libEGL_adreno \
@@ -554,6 +622,7 @@ PRODUCT_PACKAGES += \
     libgcs-osal \
     libgdtap \
     libgdx__product \
+    libgfxstats__system \
     libGLESv1_CM_adreno \
     libGLESv2_adreno \
     libgnsspps \
@@ -580,6 +649,9 @@ PRODUCT_PACKAGES += \
     libGPTEE_vendor \
     libgpu_tonemapper \
     libgpudataproducer \
+    libgpumem__system \
+    libgpumemtracer__system \
+    libgpuservice__system \
     libgralloc.qti \
     libgralloccore \
     libgrallocutils \
@@ -607,6 +679,7 @@ PRODUCT_PACKAGES += \
     libhwbinder.vendor \
     libI420colorconvert \
     libidl \
+    libidmap2_policies__system \
     libimscamera_jni__system_ext \
     libimsmedia_jni__system_ext \
     libipanat \
@@ -620,7 +693,9 @@ PRODUCT_PACKAGES += \
     libkeymasterdeviceutils \
     libkeymasterprovision \
     libkeymasterutils \
+    libkeystore-engine__system \
     liblayerext.qti__system_ext \
+    liblayers_proto:64 \
     liblbs_core \
     libLimiter_recpp__system_ext \
     liblistensoundmodel2 \
@@ -638,6 +713,7 @@ PRODUCT_PACKAGES += \
     libmdmdetect \
     libmdsprpc \
     libmedia_ecoservice.vendor \
+    libmedialogservice:64 \
     libmediasp_jni__system_ext \
     libmink-sock-native-api__system_ext \
     libminkdescriptor \
@@ -715,11 +791,14 @@ PRODUCT_PACKAGES += \
     libpdmapper \
     libpdnotifier \
     libperipheral_client \
+    libpin_utils:64 \
     libplatformconfig \
     libpower_anomaly_data \
     libpowercallback \
     libpowercore \
     libpowerstatshaldataprovider__system_ext \
+    libprotobuf-cpp-full-21.7 \
+    libprotobuf-cpp-lite-21.7 \
     libpuresoftkeymasterdevice.vendor:64 \
     libpvr \
     libq3dtools_adreno \
@@ -789,6 +868,7 @@ PRODUCT_PACKAGES += \
     libril-qc-ltedirectdisc \
     libril-qc-radioconfig \
     librilqmiservices \
+    librkp_support:64 \
     librmnetctl \
     librmp \
     librpmb \
@@ -837,6 +917,7 @@ PRODUCT_PACKAGES += \
     libstagefright_aidl_bufferpool2.vendor \
     libstagefright_bufferpool@2.0.1.vendor \
     libstagefrighthw \
+    libstatic_assertions:64 \
     libStDrvInt \
     libstpreprocess20 \
     libstreamparser \
@@ -844,6 +925,7 @@ PRODUCT_PACKAGES += \
     libsubsystem_control \
     libsueznanoappclients \
     libsurround_3mic_proc \
+    libSuspendProperties:64 \
     libswregistrationalgo \
     libswvdec \
     libsynx \
@@ -862,6 +944,8 @@ PRODUCT_PACKAGES += \
     libthermallistener \
     libthreadutils \
     libtime_genoff \
+    libtimestats_proto:64 \
+    libtimestats:64 \
     libtinycompress \
     libtinyxml2_1 \
     libtouchflow \
@@ -874,6 +958,7 @@ PRODUCT_PACKAGES += \
     libupdateprof.qti__system_ext \
     libvideooptfeature \
     libvideoutils \
+    libvkjson__system \
     libVkLayer_q3dtools \
     libvndfwk_detect_jni.qti \
     libvolumelistener \
@@ -929,6 +1014,7 @@ PRODUCT_PACKAGES += \
     libxtwifi_server_protocol_uri_v3 \
     lights.lito \
     loc_launcher \
+    locksettings \
     lowi_client \
     lowi-server \
     manifest_android.hardware.drm-service.widevine-v17 \
@@ -937,6 +1023,8 @@ PRODUCT_PACKAGES += \
     modem_svc \
     motiondetector \
     msm_irqbalance \
+    mtpd \
+    netd_aidl_interface-V13-cpp:64 \
     netmgrd \
     nos_app_avb:64 \
     nos_app_identity:64 \
@@ -951,6 +1039,9 @@ PRODUCT_PACKAGES += \
     pm-proxy \
     pm-service \
     port-bridge \
+    pppd \
+    pppol2tp-android:64 \
+    pppopptp-android:64 \
     qcrild \
     qcrild_librilutils \
     qcrilhook \
@@ -969,6 +1060,7 @@ PRODUCT_PACKAGES += \
     qtimutex \
     QtiTelephonyService \
     qvirtmgr \
+    racoon \
     ramoops \
     rebootescrow-citadel \
     remotesimlockmanagerlibrary \
@@ -980,6 +1072,7 @@ PRODUCT_PACKAGES += \
     sensors.redfin \
     sensors.ssc \
     shsusrd \
+    slicer:64 \
     smartbatching \
     sns_bring_to_ear \
     sound_trigger.primary.lito \
@@ -1340,6 +1433,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.voiceprint-V1.0-java \
     vendor.qti.voiceprint@1.0 \
     vendor.qti.voiceprint@1.0__system_ext \
+    viewcompiler \
     vulkan.adreno \
     xdivert \
     xtra-daemon
@@ -1616,8 +1710,75 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/redfin/proprietary/system_ext/etc/seccomp_policy/tcmd.policy:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/seccomp_policy/tcmd.policy \
     vendor/google_devices/redfin/proprietary/system_ext/priv-app/EuiccSupportPixel/esim-full-v1.img:$(TARGET_COPY_OUT_SYSTEM_EXT)/priv-app/EuiccSupportPixel/esim-full-v1.img \
     vendor/google_devices/redfin/proprietary/system_ext/priv-app/EuiccSupportPixel/P20_Mini-Applet_dsem.apdu:$(TARGET_COPY_OUT_SYSTEM_EXT)/priv-app/EuiccSupportPixel/P20_Mini-Applet_dsem.apdu \
+    vendor/google_devices/redfin/proprietary/system/system/etc/init/bpfloader.rc:$(PRODUCT_OUT)/etc/init/bpfloader.rc \
+    vendor/google_devices/redfin/proprietary/system/system/etc/init/mtpd.rc:$(PRODUCT_OUT)/etc/init/mtpd.rc \
+    vendor/google_devices/redfin/proprietary/system/system/etc/init/racoon.rc:$(PRODUCT_OUT)/etc/init/racoon.rc \
     vendor/google_devices/redfin/proprietary/system/system/etc/motion_predictor_model.fb:$(PRODUCT_OUT)/etc/motion_predictor_model.fb \
     vendor/google_devices/redfin/proprietary/system/system/etc/public.libraries-qti.txt:$(PRODUCT_OUT)/etc/public.libraries-qti.txt \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/00673b5b.0:$(PRODUCT_OUT)/etc/security/cacerts_google/00673b5b.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/02b73561.0:$(PRODUCT_OUT)/etc/security/cacerts_google/02b73561.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/04f60c28.0:$(PRODUCT_OUT)/etc/security/cacerts_google/04f60c28.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/052e396b.0:$(PRODUCT_OUT)/etc/security/cacerts_google/052e396b.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/0d69c7e1.0:$(PRODUCT_OUT)/etc/security/cacerts_google/0d69c7e1.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/111e6273.0:$(PRODUCT_OUT)/etc/security/cacerts_google/111e6273.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/124bbd54.0:$(PRODUCT_OUT)/etc/security/cacerts_google/124bbd54.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/1e8e7201.0:$(PRODUCT_OUT)/etc/security/cacerts_google/1e8e7201.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/219d9499.0:$(PRODUCT_OUT)/etc/security/cacerts_google/219d9499.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/23f4c490.0:$(PRODUCT_OUT)/etc/security/cacerts_google/23f4c490.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/27af790d.0:$(PRODUCT_OUT)/etc/security/cacerts_google/27af790d.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/2add47b6.0:$(PRODUCT_OUT)/etc/security/cacerts_google/2add47b6.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/2afc57aa.0:$(PRODUCT_OUT)/etc/security/cacerts_google/2afc57aa.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/343eb6cb.0:$(PRODUCT_OUT)/etc/security/cacerts_google/343eb6cb.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/35105088.0:$(PRODUCT_OUT)/etc/security/cacerts_google/35105088.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/399e7759.0:$(PRODUCT_OUT)/etc/security/cacerts_google/399e7759.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/3ad48a91.0:$(PRODUCT_OUT)/etc/security/cacerts_google/3ad48a91.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/3c58f906.0:$(PRODUCT_OUT)/etc/security/cacerts_google/3c58f906.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/3e7271e8.0:$(PRODUCT_OUT)/etc/security/cacerts_google/3e7271e8.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/455f1b52.0:$(PRODUCT_OUT)/etc/security/cacerts_google/455f1b52.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/4fbd6bfa.0:$(PRODUCT_OUT)/etc/security/cacerts_google/4fbd6bfa.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/5021a0a2.0:$(PRODUCT_OUT)/etc/security/cacerts_google/5021a0a2.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/524d9b43.0:$(PRODUCT_OUT)/etc/security/cacerts_google/524d9b43.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/57692373.0:$(PRODUCT_OUT)/etc/security/cacerts_google/57692373.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/594f1775.0:$(PRODUCT_OUT)/etc/security/cacerts_google/594f1775.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/5a3f0ff8.0:$(PRODUCT_OUT)/etc/security/cacerts_google/5a3f0ff8.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/5e4e69e7.0:$(PRODUCT_OUT)/etc/security/cacerts_google/5e4e69e7.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/67495436.0:$(PRODUCT_OUT)/etc/security/cacerts_google/67495436.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/69105f4f.0:$(PRODUCT_OUT)/etc/security/cacerts_google/69105f4f.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/75680d2e.0:$(PRODUCT_OUT)/etc/security/cacerts_google/75680d2e.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/7999be0d.0:$(PRODUCT_OUT)/etc/security/cacerts_google/7999be0d.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/7d453d8f.0:$(PRODUCT_OUT)/etc/security/cacerts_google/7d453d8f.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/81b9768f.0:$(PRODUCT_OUT)/etc/security/cacerts_google/81b9768f.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/85cde254.0:$(PRODUCT_OUT)/etc/security/cacerts_google/85cde254.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/86212b19.0:$(PRODUCT_OUT)/etc/security/cacerts_google/86212b19.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/87753b0d.0:$(PRODUCT_OUT)/etc/security/cacerts_google/87753b0d.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/89c02a45.0:$(PRODUCT_OUT)/etc/security/cacerts_google/89c02a45.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/8d6437c3.0:$(PRODUCT_OUT)/etc/security/cacerts_google/8d6437c3.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/9772ca32.0:$(PRODUCT_OUT)/etc/security/cacerts_google/9772ca32.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/a2c66da8.0:$(PRODUCT_OUT)/etc/security/cacerts_google/a2c66da8.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/a2df7ad7.0:$(PRODUCT_OUT)/etc/security/cacerts_google/a2df7ad7.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/a7d2cf64.0:$(PRODUCT_OUT)/etc/security/cacerts_google/a7d2cf64.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/b0f3e76e.0:$(PRODUCT_OUT)/etc/security/cacerts_google/b0f3e76e.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/b3fb433b.0:$(PRODUCT_OUT)/etc/security/cacerts_google/b3fb433b.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/bc3f2570.0:$(PRODUCT_OUT)/etc/security/cacerts_google/bc3f2570.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/bf64f35b.0:$(PRODUCT_OUT)/etc/security/cacerts_google/bf64f35b.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/c491639e.0:$(PRODUCT_OUT)/etc/security/cacerts_google/c491639e.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/c527e4ab.0:$(PRODUCT_OUT)/etc/security/cacerts_google/c527e4ab.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/c7e2a638.0:$(PRODUCT_OUT)/etc/security/cacerts_google/c7e2a638.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/c90bc37d.0:$(PRODUCT_OUT)/etc/security/cacerts_google/c90bc37d.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/ccc52f49.0:$(PRODUCT_OUT)/etc/security/cacerts_google/ccc52f49.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/d4c339cb.0:$(PRODUCT_OUT)/etc/security/cacerts_google/d4c339cb.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/dbc54cab.0:$(PRODUCT_OUT)/etc/security/cacerts_google/dbc54cab.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/e268a4c5.0:$(PRODUCT_OUT)/etc/security/cacerts_google/e268a4c5.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/e48193cf.0:$(PRODUCT_OUT)/etc/security/cacerts_google/e48193cf.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/e775ed2d.0:$(PRODUCT_OUT)/etc/security/cacerts_google/e775ed2d.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/ed39abd0.0:$(PRODUCT_OUT)/etc/security/cacerts_google/ed39abd0.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/facacbc6.0:$(PRODUCT_OUT)/etc/security/cacerts_google/facacbc6.0 \
+    vendor/google_devices/redfin/proprietary/system/system/etc/security/cacerts_google/ff783690.0:$(PRODUCT_OUT)/etc/security/cacerts_google/ff783690.0 \
+    vendor/google_devices/redfin/proprietary/system/system/usr/idc/qwerty.idc:$(PRODUCT_OUT)/usr/idc/qwerty.idc \
+    vendor/google_devices/redfin/proprietary/system/system/usr/idc/qwerty2.idc:$(PRODUCT_OUT)/usr/idc/qwerty2.idc \
+    vendor/google_devices/redfin/proprietary/system/system/usr/keychars/qwerty.kcm:$(PRODUCT_OUT)/usr/keychars/qwerty.kcm \
+    vendor/google_devices/redfin/proprietary/system/system/usr/keychars/qwerty2.kcm:$(PRODUCT_OUT)/usr/keychars/qwerty2.kcm \
+    vendor/google_devices/redfin/proprietary/system/system/usr/keylayout/qwerty.kl:$(PRODUCT_OUT)/usr/keylayout/qwerty.kl \
     vendor/google_devices/redfin/proprietary/vendor/dsp/adsp/activity.napp_header:$(TARGET_COPY_OUT_VENDOR)/dsp/adsp/activity.napp_header \
     vendor/google_devices/redfin/proprietary/vendor/dsp/adsp/AlacDecoderModule.so.1:$(TARGET_COPY_OUT_VENDOR)/dsp/adsp/AlacDecoderModule.so.1 \
     vendor/google_devices/redfin/proprietary/vendor/dsp/adsp/ambient_micro.napp_header:$(TARGET_COPY_OUT_VENDOR)/dsp/adsp/ambient_micro.napp_header \
@@ -1735,6 +1896,7 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/redfin/proprietary/vendor/etc/init/android.hardware.oemlock-service.citadel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.oemlock-service.citadel.rc \
     vendor/google_devices/redfin/proprietary/vendor/etc/init/android.hardware.weaver-service.citadel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.weaver-service.citadel.rc \
     vendor/google_devices/redfin/proprietary/vendor/etc/init/android.hardware.weaver@1.0-service.citadel.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.weaver@1.0-service.citadel.rc \
+    vendor/google_devices/redfin/proprietary/vendor/etc/init/cas-default.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/cas-default.rc \
     vendor/google_devices/redfin/proprietary/vendor/etc/init/citadeld.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/citadeld.rc \
     vendor/google_devices/redfin/proprietary/vendor/etc/init/cnd-generic.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/cnd-generic.rc \
     vendor/google_devices/redfin/proprietary/vendor/etc/init/cnss-daemon.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/cnss-daemon.rc \
