@@ -4150,6 +4150,7 @@ android_app_import {
     owner: "google_devices",
     apk: "system_ext/priv-app/EuiccSupportPixel/EuiccSupportPixel.apk",
     presigned: true,
+    preprocessed: true,
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
@@ -4193,6 +4194,175 @@ android_app_import {
     privileged: true,
     dex_preopt: { enabled: false },
     system_ext_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "btfloader",
+    owner: "google_devices",
+    srcs: [ "system/system/bin/btfloader" ],
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+}
+
+cc_prebuilt_binary {
+    name: "ip-up-vpn",
+    owner: "google_devices",
+    srcs: [ "system/system/bin/ip-up-vpn" ],
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+}
+
+cc_prebuilt_binary {
+    name: "mtpd",
+    owner: "google_devices",
+    srcs: [ "system/system/bin/mtpd" ],
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+}
+
+cc_prebuilt_binary {
+    name: "racoon",
+    owner: "google_devices",
+    srcs: [ "system/system/bin/racoon" ],
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+}
+
+cc_prebuilt_binary {
+    name: "viewcompiler",
+    owner: "google_devices",
+    srcs: [ "system/system/bin/viewcompiler" ],
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+}
+
+cc_prebuilt_library_shared {
+    name: "libidmap2_policies__system",
+    owner: "google_devices",
+    stem: "libidmap2_policies",
+    target: {
+        android_arm: { srcs: [ "system/system/lib/libidmap2_policies.so" ] },
+        android_arm64: { srcs: [ "system/system/lib64/libidmap2_policies.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+}
+
+cc_prebuilt_library_shared {
+    name: "libaaudioservice__system",
+    owner: "google_devices",
+    stem: "libaaudioservice",
+    target: { android_arm64: { srcs: [ "system/system/lib64/libaaudioservice.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+}
+
+cc_prebuilt_library_shared {
+    name: "libcredstore_aidl__system",
+    owner: "google_devices",
+    stem: "libcredstore_aidl",
+    target: { android_arm64: { srcs: [ "system/system/lib64/libcredstore_aidl.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+}
+
+cc_prebuilt_library_shared {
+    name: "libdiskconfig__system",
+    owner: "google_devices",
+    stem: "libdiskconfig",
+    target: { android_arm64: { srcs: [ "system/system/lib64/libdiskconfig.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+}
+
+cc_prebuilt_library_shared {
+    name: "libdisplayservicehidl__system",
+    owner: "google_devices",
+    stem: "libdisplayservicehidl",
+    target: { android_arm64: { srcs: [ "system/system/lib64/libdisplayservicehidl.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+}
+
+cc_prebuilt_library_shared {
+    name: "libgfxstats__system",
+    owner: "google_devices",
+    stem: "libgfxstats",
+    target: { android_arm64: { srcs: [ "system/system/lib64/libgfxstats.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+}
+
+cc_prebuilt_library_shared {
+    name: "libgpumem__system",
+    owner: "google_devices",
+    stem: "libgpumem",
+    target: { android_arm64: { srcs: [ "system/system/lib64/libgpumem.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+}
+
+cc_prebuilt_library_shared {
+    name: "libgpumemtracer__system",
+    owner: "google_devices",
+    stem: "libgpumemtracer",
+    target: { android_arm64: { srcs: [ "system/system/lib64/libgpumemtracer.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+}
+
+cc_prebuilt_library_shared {
+    name: "libgpuservice__system",
+    owner: "google_devices",
+    stem: "libgpuservice",
+    target: { android_arm64: { srcs: [ "system/system/lib64/libgpuservice.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+}
+
+cc_prebuilt_library_shared {
+    name: "libkeystore-engine__system",
+    owner: "google_devices",
+    stem: "libkeystore-engine",
+    target: { android_arm64: { srcs: [ "system/system/lib64/libkeystore-engine.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+}
+
+cc_prebuilt_library_shared {
+    name: "libvkjson__system",
+    owner: "google_devices",
+    stem: "libvkjson",
+    target: { android_arm64: { srcs: [ "system/system/lib64/libvkjson.so" ] } },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
 }
 
 android_app_import {
@@ -4405,6 +4575,17 @@ cc_prebuilt_binary {
     name: "android.hardware.bluetooth@1.0-service-qti",
     owner: "google_devices",
     srcs: [ "vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti" ],
+    relative_install_path: "hw",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "android.hardware.cas-service.example",
+    owner: "google_devices",
+    srcs: [ "vendor/bin/hw/android.hardware.cas-service.example" ],
     relative_install_path: "hw",
     check_elf_files: false,
     prefer: true,
@@ -8996,6 +9177,34 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: { srcs: [ "vendor/lib/libpowercore.so" ] },
         android_arm64: { srcs: [ "vendor/lib64/libpowercore.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libprotobuf-cpp-full-21.7",
+    owner: "google_devices",
+    target: {
+        android_arm: { srcs: [ "vendor/lib/libprotobuf-cpp-full-21.7.so" ] },
+        android_arm64: { srcs: [ "vendor/lib64/libprotobuf-cpp-full-21.7.so" ] }
+    },
+    compile_multilib: "both",
+    check_elf_files: false,
+    prefer: true,
+    strip: { none: true },
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libprotobuf-cpp-lite-21.7",
+    owner: "google_devices",
+    target: {
+        android_arm: { srcs: [ "vendor/lib/libprotobuf-cpp-lite-21.7.so" ] },
+        android_arm64: { srcs: [ "vendor/lib64/libprotobuf-cpp-lite-21.7.so" ] }
     },
     compile_multilib: "both",
     check_elf_files: false,

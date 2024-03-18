@@ -34,9 +34,19 @@ BOARD_VENDOR_SEPOLICY_DIRS += \
     hardware/google/pixel-sepolicy/connectivity_thermal_power_manager \
     vendor/google_devices/redfin/sepolicy
 
+# Missing vendor SELinux context: /(vendor|system/vendor)/bin/hw/android\.hardware\.graphics\.allocator-V1-service u:object_r:hal_graphics_allocator_default_exec:s0
+# Missing vendor SELinux context: /(vendor|system/vendor)/bin/hw/android\.hardware\.camera\.provider(@2\.[0-9]+|-V1)-service u:object_r:hal_camera_default_exec:s0
+# Missing vendor SELinux context: /(vendor|system/vendor)/bin/hw/android\.hardware\.automotive\.remoteaccess@V1-(.*)-service u:object_r:hal_remoteaccess_default_exec:s0
+# Missing vendor SELinux context: /(vendor|system/vendor)/bin/hw/android\.hardware\.camera\.provider(@2\.[0-9]+|-V1)-service_64 u:object_r:hal_camera_default_exec:s0
+# Missing vendor SELinux context: /(vendor|system/vendor)/bin/hw/android\.hardware\.camera\.provider(@2\.[0-9]+|-V1)-service-lazy u:object_r:hal_camera_default_exec:s0
+# Missing vendor SELinux context: /(vendor|system/vendor)/bin/hw/android\.hardware\.camera\.provider(@2\.[0-9]+|-V1)-service-lazy_64 u:object_r:hal_camera_default_exec:s0
+# Missing vendor SELinux context: /(vendor|system/vendor)/bin/hw/android\.hardware\.camera\.provider(@2\.[0-9]+|-V1)-external-service u:object_r:hal_camera_default_exec:s0
+# Missing vendor SELinux context: /(vendor|system/vendor)/bin/hw/android\.hardware\.automotive\.vehicle@V1-(default|emulator)-service u:object_r:hal_vehicle_default_exec:s0
+# Missing vendor SELinux context: /(vendor|system/vendor)/bin/hw/android\.hardware\.camera\.provider(@2\.[0-9]+|-V1)-external-service-lazy u:object_r:hal_camera_default_exec:s0
 # Missing vendor SELinux context: /vendor/bin/hw/vendor\.google\.exo_camera_injection@1\.1-service u:object_r:hal_exo_camera_injection_exec:s0
 # Missing vendor SELinux context: vendor.google.exo_camera_injection::IExoCameraInjection u:object_r:hal_exo_camera_injection_hwservice:s0
 # Missing vendor SELinux context: user=_app seinfo=platform name=com.google.pixel.exo domain=exo_app type=app_data_file levelFrom=all
+# Missing vendor SELinux context: user=_app seinfo=platform name=com.google.android.turboadapter domain=turbo_adapter type=app_data_file levelFrom=all
 # Missing vendor SELinux context: user=_app seinfo=mds name=com.google.mds domain=modem_diagnostic_app type=app_data_file levelFrom=user
 # Missing vendor SELinux context: user=_app seinfo=google name=com.google.android.GoogleCamera domain=google_camera_app type=app_data_file levelFrom=all
 # Missing vendor SELinux context: user=_app seinfo=googlepulse name=com.google.android.apps.googlecamera.fishfood domain=google_camera_app type=app_data_file levelFrom=all
