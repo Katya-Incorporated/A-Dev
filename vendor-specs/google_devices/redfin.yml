@@ -3359,6 +3359,6 @@ proprietary/vendor/rfs/msm/mpss/readonly/vendor/mbn/mcfg_sw/generic/common/Defau
 proprietary/vendor/rfs/msm/mpss/readonly/vendor/mbn/mcfg_sw/generic/common/Default/Default/mcfg_sw.mbn: 79958e473ff16a785c8d06affd88dcdefbb438844a63b00f3b225502b313e86a
 proprietary/vendor/rfs/msm/mpss/readonly/vendor/mbn/mcfg_sw/mbn_sw.dig: 543912ebfa76753a6702d45700b1ffaa20b04038cf2cec92d58bdacf72b507ca
 proprietary/vendor/rfs/msm/mpss/readonly/vendor/mbn/mcfg_sw/mbn_sw.txt: 7a38d00047a739d587965af9e64ea3dfcf0c3b0e1aa8d0e28a73add15851d746
-redfin.mk: c50bb6acc6365e6c4683338c130a8a02d119350167d54a59c4959e5f53d55617
+redfin.mk: e4bbebbf25ffd26abddd4986bc32f78ab10be1c95f509e4f0cc571ad12b1072b
 sepolicy: dir
 vintf: dir
