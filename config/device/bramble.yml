@@ -9,3 +9,18 @@ platform:
 
 includes:
   - common/gen5pixel.yml
+
+filters:
+  sepolicy_dirs:
+    match:
+      - device/google/redbull-sepolicy/system_ext/private
+  files:
+    match:
+      - vendor/bin/gpu_counter_producer
+      - system/etc/vintf/manifest/hwservicemanager.xml
+      - system/etc/init/hwservicemanager.rc
+      - system/etc/vintf/manifest/android.hidl.allocator@1.0-service.xml
+      - system/etc/init/android.hidl.allocator@1.0-service.rc
+      - system/bin/hw/android.hidl.allocator@1.0-service
+      - system/lib64/libclcore_neon.bc
+      - system_ext/priv-app/AccessibilityMenu/AccessibilityMenu.apk
