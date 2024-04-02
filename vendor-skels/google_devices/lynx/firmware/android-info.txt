@@ -1,5 +1,5 @@
 require board=lynx
 
-require version-bootloader=lynx-14.4-11290827
+require version-bootloader=lynx-14.4-11458464
 require version-baseband=g5300q-231218-240202-B-11396366
 require partition-exists=vendor_kernel_boot

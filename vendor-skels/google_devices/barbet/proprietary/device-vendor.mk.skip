@@ -25,7 +25,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.hardware.vulkan=adreno \
     media.mediadrmservice.enable=true
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/barbet/barbet:14/AP1A.240305.019.A1/11445699:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/barbet/barbet:14/AP1A.240405.002/11480754:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \

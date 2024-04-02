@@ -28,7 +28,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.build.expect.baseband=g5300q-231218-240202-B-11396366 \
-    ro.build.expect.bootloader=felix-14.4-11290827 \
+    ro.build.expect.bootloader=felix-14.4-11458464 \
     ro.gfx.angle.supported=true \
     drm.service.enabled=true \
     media.mediadrmservice.enable=true \
@@ -39,7 +39,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.ril.ecc.use.xml=1 \
     ro.vendor.uwb.calibration.calibrationpaths=/vendor/etc/uwb/calib_paths
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/felix/felix:14/AP1A.240305.019.A1/11445699:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/felix/felix:14/AP1A.240405.002.A1/11583385:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \

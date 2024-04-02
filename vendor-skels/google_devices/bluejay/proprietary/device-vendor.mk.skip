@@ -20,7 +20,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.build.expect.baseband=g5123b-130914-240205-B-11405587 \
-    ro.build.expect.bootloader=bluejay-1.3-11290821 \
+    ro.build.expect.bootloader=bluejay-1.3-11403664 \
     ro.gfx.angle.supported=true \
     drm.service.enabled=true \
     media.mediadrmservice.enable=true \
@@ -30,7 +30,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.ril.ecc.use.xml=1 \
     ro.vendor.fingerprint.ta.name=g7.app
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/bluejay/bluejay:14/AP1A.240305.019.A1/11445699:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/bluejay/bluejay:14/AP1A.240405.002/11480754:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \

@@ -1,5 +1,6 @@
 device:
   name: felix
+  build_id: AP1A.240405.002.A1
 
 platform:
   product_makefile: device/google/felix/aosp_felix.mk

@@ -21,7 +21,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.build.expect.baseband=g5300q-231218-240202-B-11396366 \
-    ro.build.expect.bootloader=cloudripper-14.4-11290827 \
+    ro.build.expect.bootloader=cloudripper-14.4-11458464 \
     ro.gfx.angle.supported=true \
     drm.service.enabled=true \
     media.mediadrmservice.enable=true \
@@ -33,7 +33,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.fingerprint.ta.name=g7.app \
     ro.vendor.dolby.dax.version=DAX3_G_3.7.3.0_r1
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/cheetah/cheetah:14/AP1A.240305.019.A1/11445699:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/cheetah/cheetah:14/AP1A.240405.002/11480754:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \
