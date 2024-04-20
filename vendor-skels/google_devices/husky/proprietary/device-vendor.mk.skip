@@ -24,6 +24,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.build.expect.baseband=g5300i-231218-240404-B-11673025 \
     ro.build.expect.bootloader=ripcurrent-14.4-11403750 \
     ro.gfx.angle.supported=true \
+    ro.vendor.build.svn=22 \
     drm.service.enabled=true \
     media.mediadrmservice.enable=true \
     persist.vendor.ril.use_radio_hal=2.1 \

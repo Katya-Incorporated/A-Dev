@@ -21,6 +21,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     drm.service.enabled=true \
     persist.vendor.sensors.odl.adsp=true \
     persist.vendor.sensors.allow_non_default_discovery=true \
+    ro.vendor.build.svn=57 \
     ro.hardware.egl=adreno \
     ro.hardware.vulkan=adreno \
     media.mediadrmservice.enable=true

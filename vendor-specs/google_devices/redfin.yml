@@ -73,7 +73,7 @@ proprietary: dir
 proprietary-files.txt: 4a55196bdfcd796cf7d4e8c0e128d003638f067631ef988eb2abcd6515cc7149
 proprietary/Android.bp: 6206e0a548fb70b798d7f22ec42564c3e48aaf5d84cc239116a72e98d01f6332
 proprietary/BoardConfigVendor.mk: 5feb606deb6a2f1f95de7ad7553f379836362a768e4d955bb03efa3e85da53b4
-proprietary/device-vendor.mk: 6693fdeb79f91abb6e61163e9fa5b64acdd70f1241e47f3668f4f0948ef3d995
+proprietary/device-vendor.mk: 66101b3f0b70642fcacf626148d00ab5ab8df020d2973b58050f57ad0882e6d7
 proprietary/product: dir
 proprietary/product/app: dir
 proprietary/product/app/PixelCameraServicesRedfin: dir

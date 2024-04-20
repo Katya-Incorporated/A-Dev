@@ -23,6 +23,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.build.expect.baseband=g5300q-231218-240404-B-11673025 \
     ro.build.expect.bootloader=cloudripper-14.4-11458464 \
     ro.gfx.angle.supported=true \
+    ro.vendor.build.svn=53 \
     drm.service.enabled=true \
     media.mediadrmservice.enable=true \
     persist.vendor.ril.use_radio_hal=2.0 \

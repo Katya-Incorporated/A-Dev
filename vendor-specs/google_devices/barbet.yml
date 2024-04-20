@@ -81,7 +81,7 @@ proprietary: dir
 proprietary-files.txt: 7e688c22dfd6787acf77df83976ea73564169fe138df46228a277882ce72ce3c
 proprietary/Android.bp: d99351390f747770d9d167788607adbad3db8201eb4e1604e79b01680de75571
 proprietary/BoardConfigVendor.mk: 1d3f5a38d23aeef722a981fbf2173c5132646bde9e7ebfe73b7ff95ff7880673
-proprietary/device-vendor.mk: 1548ed69d6f8e4c0da0b592b60a7d43f5523a1bd74f197f24a663b7a3b1e33a8
+proprietary/device-vendor.mk: fe77609c656ba702d24f8eccf20e097b8cc7ef514c6e369e9efeb3f604272319
 proprietary/product: dir
 proprietary/product/app: dir
 proprietary/product/app/uimremoteclient: dir

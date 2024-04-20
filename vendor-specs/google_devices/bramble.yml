@@ -74,7 +74,7 @@ proprietary: dir
 proprietary-files.txt: 508a5824d80991dbb612fabf8c665120bfec1bbb9c7a3fbe3ce71affb054865a
 proprietary/Android.bp: 93e5eb22dfa1e8e2c71aebd84df52a998e98b105eccc6b08d8f3958a2d0ff527
 proprietary/BoardConfigVendor.mk: 17c960300f1d10a4cc5b7a041f4372e829bd83f6bdc920ec048c67d1663f4e51
-proprietary/device-vendor.mk: 664cc661d0fc5949861ab017e0620c580889b00ea583658b9851976691ac65d2
+proprietary/device-vendor.mk: f3ddbbe78152d2577c79f20ba28370c3d5c163316fe9c249614a17f9c0f1e11e
 proprietary/product: dir
 proprietary/product/app: dir
 proprietary/product/app/PixelCameraServicesBramble: dir
