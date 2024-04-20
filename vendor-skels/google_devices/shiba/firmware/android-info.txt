@@ -1,5 +1,5 @@
 require board=shiba
 
 require version-bootloader=ripcurrent-14.4-11403750
-require version-baseband=g5300i-231218-240202-B-11396366
+require version-baseband=g5300i-231218-240404-B-11673025
 require partition-exists=vendor_kernel_boot
