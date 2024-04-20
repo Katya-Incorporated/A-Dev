@@ -25,6 +25,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.product.name_for_attestation= \
     ro.build.expect.bootloader=b5-0.6-10489838 \
     ro.build.expect.baseband=g7250-00264-230619-B-10346159 \
+    ro.vendor.build.svn=76 \
     ro.crypto.dm_default_key.options_format.version=2 \
     ro.crypto.volume.metadata.method=dm-default-key \
     drm.service.enabled=true \

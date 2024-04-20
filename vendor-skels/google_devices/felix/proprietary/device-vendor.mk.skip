@@ -30,6 +30,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.build.expect.baseband=g5300q-231218-240404-B-11673025 \
     ro.build.expect.bootloader=felix-14.4-11458464 \
     ro.gfx.angle.supported=true \
+    ro.vendor.build.svn=47 \
     drm.service.enabled=true \
     media.mediadrmservice.enable=true \
     ro.vendor.dolby.dax.version=DAX3_G_3.7.3.0_r1 \
