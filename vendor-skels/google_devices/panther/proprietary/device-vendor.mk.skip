@@ -19,7 +19,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
 
 PRODUCT_VENDOR_PROPERTIES += \
-    ro.build.expect.baseband=g5300q-231218-240202-B-11396366 \
+    ro.build.expect.baseband=g5300q-231218-240404-B-11673025 \
     ro.build.expect.bootloader=cloudripper-14.4-11458464 \
     ro.gfx.angle.supported=true \
     drm.service.enabled=true \
@@ -31,7 +31,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.fingerprint.ta.name=g7.app \
     ro.vendor.dolby.dax.version=DAX3_G_3.7.3.0_r1
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/panther/panther:14/AP1A.240405.002/11480754:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/panther/panther:14/AP1A.240405.002.B1/11677284:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \
