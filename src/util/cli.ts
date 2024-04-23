@@ -37,7 +37,7 @@ export function maybePlural<T>(arr: ArrayLike<T>, singleEnding = '', multiEnding
 }
 
 export function gitDiff(path1: string, path2: string) {
-  return spawnAsync('git', ['diff', '--color=always', path1, path2], undefined, [0, 1])
+  return spawnAsync('git', ['diff', '--color=always', path1, path2], undefined, undefined, [0, 1])
 }
 
 export function showGitDiff(repoPath: string, filePath?: string) {
