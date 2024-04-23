@@ -14,7 +14,7 @@ import { exists, listFilesRecursive, TMP_PREFIX } from '../util/fs'
 import assert from 'assert'
 import { createWriteStream, promises as fs } from 'fs'
 import { promises as stream } from 'stream'
-import { run } from '../util/process'
+import { spawnAsyncStdin } from '../util/process'
 import { OS_CHECKOUT_DIR } from '../config/paths'
 
 const PROTO_PATH = `${OS_CHECKOUT_DIR}/packages/apps/CarrierConfig2/src/com/google/carrier`
@@ -127,30 +127,29 @@ export async function downloadAllConfigs(config: Map<string, string>, outDir: st
 }
 
 export async function decodeConfigs(cfgPath: string, outDir: string) {
+  const cmd = 'protoc'
   if (await exists(cfgPath)) {
     for await (let file of listFilesRecursive(cfgPath)) {
       if (path.extname(file) != '.pb') {
         continue
       }
       const filename = path.parse(file).name
-      let decoded
+      const args: string[] = ['--proto_path', PROTO_PATH, '--decode']
       switch (filename) {
         case 'others':
-          decoded = await run(
-            `protoc --decode com.google.carrier.MultiCarrierSettings ${PROTO_PATH}/carrier_settings.proto --proto_path ${PROTO_PATH} < ${file}`,
-          )
+          args.push('com.google.carrier.MultiCarrierSettings')
+          args.push(`${PROTO_PATH}/carrier_settings.proto`)
           break
         case 'carrier_list':
-          decoded = await run(
-            `protoc --decode com.google.carrier.CarrierList ${PROTO_PATH}/carrier_list.proto --proto_path ${PROTO_PATH} < ${file}`,
-          )
+          args.push('com.google.carrier.CarrierList')
+          args.push(`${PROTO_PATH}/carrier_list.proto`)
           break
         default:
-          decoded = await run(
-            `protoc --decode com.google.carrier.CarrierSettings ${PROTO_PATH}/carrier_settings.proto --proto_path ${PROTO_PATH} < ${file}`,
-          )
+          args.push('com.google.carrier.CarrierSettings')
+          args.push(`${PROTO_PATH}/carrier_settings.proto`)
           break
       }
+      const decoded = await spawnAsyncStdin(cmd, args, await fs.readFile(file))
       const outFile = path.join(outDir, filename)
       if (!(await exists(outDir))) await fs.mkdir(outDir, { recursive: true })
       await fs.writeFile(outFile, decoded)
