@@ -6,7 +6,7 @@ import { CARRIER_SETTINGS_DIR } from '../config/paths'
 import { downloadAllConfigs, decodeConfigs, fetchUpdateConfig } from '../blobs/carrier'
 import { forEachDevice } from '../frontend/devices'
 
-export default class DownloadCarrierSettings extends Command {
+export default class UpdateCarrierSettings extends Command {
   static description = 'download updated carrier protobuf configs.'
 
   static flags = {
@@ -15,19 +15,24 @@ export default class DownloadCarrierSettings extends Command {
       description: 'out dir.',
       default: CARRIER_SETTINGS_DIR,
     }),
+    generateDumps: flags.boolean({
+      char: 'g',
+      description: `generate protoc dumps of downlaoded configs`,
+      default: false,
+    }),
     debug: flags.boolean({
       description: 'debug output.',
       default: false,
     }),
-    prevBuildId: flags.boolean({
-      description: 'use build ID of previous image',
-      default: false,
+    buildId: flags.string({
+      description: 'specify build ID',
+      char: 'b',
     }),
     ...DEVICE_CONFIG_FLAGS,
   }
 
   async run() {
-    let { flags } = this.parse(DownloadCarrierSettings)
+    let { flags } = this.parse(UpdateCarrierSettings)
     let devices = await loadDeviceConfigs(flags.devices)
     await forEachDevice(
       devices,
@@ -35,17 +40,17 @@ export default class DownloadCarrierSettings extends Command {
       async config => {
         // skip tangorpro due to lack of mobile connectivity
         if (config.device.name !== 'tangorpro') {
-          const build_id = flags.prevBuildId ? config.device.prev_build_id : config.device.build_id
-          const updateConfig = await fetchUpdateConfig(config.device.name, build_id, flags.debug)
-          if (flags.debug) {
-            console.log(updateConfig)
-          }
+          const buildId = flags.buildId !== undefined ? flags.buildId : config.device.build_id
           const outDir = path.join(flags.out, config.device.name)
+          const updateConfig = await fetchUpdateConfig(config.device.name, buildId, flags.debug)
+          if (flags.debug) console.log(updateConfig)
           await downloadAllConfigs(updateConfig, outDir, flags.debug)
-          await decodeConfigs(outDir, path.join(outDir, 'decoded'))
+          if (flags.generateDumps) await decodeConfigs(outDir, path.join(outDir, 'decoded'))
+        } else {
+          this.log('tangorpro is not supported due to lack of mobile connectivity')
         }
       },
-      config => `${config.device.name} ${flags.prevBuildId ? config.device.prev_build_id : config.device.build_id}`,
+      config => `${config.device.name} ${flags.buildId !== undefined ? flags.buildId : config.device.build_id}`,
     )
   }
 }
