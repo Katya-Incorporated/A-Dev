@@ -4,7 +4,7 @@ import path from 'path'
 
 import { run } from './process'
 
-const TMP_PREFIX = 'adevtool-'
+export const TMP_PREFIX = 'adevtool-'
 
 export interface TempState {
   dir: string

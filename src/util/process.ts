@@ -23,14 +23,31 @@ export async function spawnAsyncNoOut(
   assert(stdout.length === 0, `unexpected stdout for ${command} ${args}: ${stdout}`)
 }
 
+export async function spawnAsyncStdin(
+  command: string,
+  args: ReadonlyArray<string>,
+  stdinData: Buffer,
+  isStderrLineAllowed?: (s: string) => boolean,
+) {
+  let stdout = await spawnAsync(command, args, isStderrLineAllowed, stdinData)
+  return stdout
+}
+
 // Returns stdout. If there's stderr output, all lines of it should pass the isStderrLineAllowed check
 export async function spawnAsync(
   command: string,
   args: ReadonlyArray<string>,
   isStderrLineAllowed?: (s: string) => boolean,
+  stdinData?: Buffer,
   allowedExitCodes: number[] = [0],
 ) {
   let proc = child_process.spawn(command, args)
+
+  if (stdinData !== undefined) {
+    proc.stdin.write(stdinData)
+    proc.stdin.end()
+  }
+
   let promise = new Promise((resolve, reject) => {
     let stdoutBufs: Buffer[] = []
     let stderrBufs: Buffer[] = []
