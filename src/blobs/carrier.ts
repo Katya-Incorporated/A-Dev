@@ -98,7 +98,6 @@ export async function downloadAllConfigs(config: Map<string, string>, outDir: st
   }
   const clBaseUrl = config.has('carrier_list_url') ? (config.get('carrier_list_url') as string) : ''
   const csBaseUrl = config.has('carrier_settings_url') ? (config.get('carrier_settings_url') as string) : ''
-  await fs.rm(outDir, { force: true, recursive: true })
   for (let [carrier, version] of config) {
     if (carrier === 'carrier_list_url' || carrier === 'carrier_settings_url') {
       continue
