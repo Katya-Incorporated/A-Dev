@@ -1,5 +1,6 @@
 device:
   name: tangorpro
+  build_id: AP1A.240505.004
 
 platform:
   product_makefile: device/google/tangorpro/aosp_tangorpro.mk
