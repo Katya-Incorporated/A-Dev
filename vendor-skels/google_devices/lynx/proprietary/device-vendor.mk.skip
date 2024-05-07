@@ -22,7 +22,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.build.expect.baseband=g5300q-231218-240404-B-11673025 \
     ro.build.expect.bootloader=lynx-14.4-11458464 \
     ro.gfx.angle.supported=true \
-    ro.vendor.build.svn=38 \
+    ro.vendor.build.svn=39 \
     drm.service.enabled=true \
     media.mediadrmservice.enable=true \
     persist.vendor.ril.use_radio_hal=2.0 \
@@ -31,7 +31,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.ril.ecc.use.xml=1 \
     ro.vendor.fingerprint.ta.name=g7.app
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/lynx/lynx:14/AP1A.240405.002.B1/11677284:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/lynx/lynx:14/AP1A.240505.005/11677807:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \

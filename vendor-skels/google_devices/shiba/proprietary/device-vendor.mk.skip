@@ -24,7 +24,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.build.expect.baseband=g5300i-231218-240404-B-11673025 \
     ro.build.expect.bootloader=ripcurrent-14.4-11403750 \
     ro.gfx.angle.supported=true \
-    ro.vendor.build.svn=22 \
+    ro.vendor.build.svn=23 \
     drm.service.enabled=true \
     media.mediadrmservice.enable=true \
     ro.vendor.dolby.dax.version=DAX3_G_3.7.3.0_r1 \
@@ -34,7 +34,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.ril.ecc.use.xml=1 \
     ro.vendor.fingerprint.ta.name=g7.app
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/shiba/shiba:14/AP1A.240405.002.B1/11677284:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/shiba/shiba:14/AP1A.240505.005/11677807:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \

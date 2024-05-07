@@ -21,12 +21,12 @@ PRODUCT_VENDOR_PROPERTIES += \
     drm.service.enabled=true \
     persist.vendor.sensors.odl.adsp=true \
     persist.vendor.sensors.allow_non_default_discovery=true \
-    ro.vendor.build.svn=57 \
+    ro.vendor.build.svn=58 \
     ro.hardware.egl=adreno \
     ro.hardware.vulkan=adreno \
     media.mediadrmservice.enable=true
 
-PRODUCT_OVERRIDE_FINGERPRINT := google/barbet/barbet:14/AP1A.240405.002/11480754:user/release-keys
+PRODUCT_OVERRIDE_FINGERPRINT := google/barbet/barbet:14/AP1A.240505.004/11583682:user/release-keys
 
 PRODUCT_PACKAGES += \
     activity \
