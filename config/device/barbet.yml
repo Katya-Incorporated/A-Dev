@@ -1,5 +1,6 @@
 device:
   name: barbet
+  build_id: AP1A.240505.004
 
 platform:
   product_makefile: device/google/barbet/aosp_barbet.mk
