@@ -1,0 +1,10 @@
+device:
+  name: akita
+  build_id: UD2A.240505.001.W1
+
+platform:
+  product_makefile: device/google/akita/aosp_akita.mk
+
+includes:
+  - common/gen8pixel.yml
+  - common/gs-wireless-charger.yml
