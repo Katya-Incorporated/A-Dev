@@ -3,3 +3,4 @@ type: device-list
 devices:
   - husky.yml
   - shiba.yml
+  - akita.yml
