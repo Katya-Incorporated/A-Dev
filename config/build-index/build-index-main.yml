@@ -2565,3 +2565,7 @@ oriole SQ1D.211205.017:
   vendor/google_devices: bd0ab9989c0f479438d2eb2818ba254729d0cdcdb600d74cf82fc3effbb6944f google_devices-oriole-sq1d.211205.017-cad0f668.tgz
 oriole SQ1D.211205.016.A5:
   vendor/google_devices: e9152757c0038bddf13216c7b35cac6845791ba932e69dba3f556c6dcecf62e3 google_devices-oriole-sq1d.211205.016.a5-ca4f278e.tgz
+akita UD2A.240505.001.B1:
+  desc: May 2024, Verizon, gStore, CA, USC
+  factory: f2cae5c7e53662af4455c9f6d2c6f8c0d97c1e79e0308371fd5d32ac75ced54c akita-ud2a.240505.001.b1-factory-f2cae5c7.zip
+  ota: d240045460cc763779e97f5f9ba3e7ee522c331e5c545392a9ed7ed47f201f69 akita-ota-ud2a.240505.001.b1-d2400454.zip
