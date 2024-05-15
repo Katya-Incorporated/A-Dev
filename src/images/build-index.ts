@@ -139,7 +139,12 @@ function parseFactoryOrOtaPage(buildIndex: BuildIndex, pageType: string, dom: JS
 function parseVendorPage(buildIndex: BuildIndex, dom: JSDOM, devices: Set<string>) {
   for (let device of devices) {
     let header = dom.window.document.querySelector(`#${device}`) as HTMLHeadingElement
-    let head = header.nextElementSibling!
+    let head: Element
+    if (header === null && device === 'akita') {
+      head = dom.window.document.querySelector('#akitaud2a\\.231203\\.054') as Element
+    } else {
+      head = header.nextElementSibling!
+    }
 
     while (true) {
       if (!head.id.startsWith(device)) {
