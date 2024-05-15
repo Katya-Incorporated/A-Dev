@@ -1,0 +1,2 @@
+export BUILD_ID_akita="UD2A.240505.001.B1"
+unset PLATFORM_SECURITY_PATCH_akita
