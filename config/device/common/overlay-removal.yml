@@ -249,6 +249,7 @@ filters:
       - com.android.settings:string-array/slice_allowlist_package_names
       # "Google Assistant"
       - com.android.systemui.accessibility.accessibilitymenu:string/assistant_utterance
+      - com.android.systemui:bool/config_pixel_vpn_enabled
       - com.android.systemui:bool/config_touch_context_enabled
       - com.android.systemui:bool/config_wlc_support_enabled
       - com.android.systemui:integer/config_keyguardRefreshRate

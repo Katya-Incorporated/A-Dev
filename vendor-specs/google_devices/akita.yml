@@ -20,7 +20,7 @@ firmware/pbl.img: 3f5096effc40e0f21eabd29ff7ff4d8dd0ba5b8224c129d627ca7f20986ad9
 firmware/radio.img: 272a8c9fb852d9cbb4ed3937e69914aee5c04f3f35187360dffbf2b802dbc710
 firmware/tzsw.img: 1403742db05c38e14f395073b83cd4717234678d1dcb93bf4cb977e819bb795b
 overlays: dir
-overlays/product.txt: 7d1da53eff988778c5357174f77f586f8464222cdaefaa09672f83d534a85b32
+overlays/product.txt: 2dc88e8ded4338373a675dda6c5811694f292be9f6d6fa1a59edf15546ebe948
 overlays/product_android: dir
 overlays/product_android/Android.bp: 3137f7daaf29e961bcc2696bc41758df7f4a13f9515fda5c287723570c563cec
 overlays/product_android/AndroidManifest.xml: 80efab0a2e72b6fa7ddfd376385437e827f16a8058b8cb5f0d07835a0adaa5a6
@@ -62,7 +62,7 @@ overlays/product_com.android.systemui/Android.bp: 2a9224d7a90f57e4ca497f82ad4717
 overlays/product_com.android.systemui/AndroidManifest.xml: 855ccc73311fe5d578005a73eb2a2e1eadd8bef2a2e15d50f1071858bbb5256e
 overlays/product_com.android.systemui/res: dir
 overlays/product_com.android.systemui/res/values: dir
-overlays/product_com.android.systemui/res/values/values.xml: 746771ebcf39f424f608a8c3175f7baca8adec22002bcd3323a52eca00839d19
+overlays/product_com.android.systemui/res/values/values.xml: 949f0e486d481ccc0b5bc96e6b5767d349ab00a9eee3880fc5171eed104e9e7b
 overlays/product_com.android.traceur: dir
 overlays/product_com.android.traceur/Android.bp: 2d4e9af842591a0a96e6fa98ad988c0a0014d4c9b7c026ccaf17ee8b87dc710e
 overlays/product_com.android.traceur/AndroidManifest.xml: 06e45ec04737f96e55f0b350a93106dbfaedc7242d5fc248733a5a4e297ee1b1
@@ -83,10 +83,10 @@ overlays/vendor_android/res: dir
 overlays/vendor_android/res/values: dir
 overlays/vendor_android/res/values/values.xml: 759439ad2351ac6706a88dd7f24484760f1d05df854c2ecf260fe606b551dd07
 proprietary: dir
-proprietary-files.txt: 4a001cd41bc3ce8c916bdc2670b9a6f047b28ae53c921a1bc466a3aaf4979ee0
-proprietary/Android.bp: 49dafa54655907bdbceb3e8c602260e7e90aedcc83b8058e68974e80fff710fe
-proprietary/BoardConfigVendor.mk: 542d3472b89f8910df60ec7d9085e57294fb65b855601e95b4f4bb9c72bf9294
-proprietary/device-vendor.mk: cd57d4cd731ce0cd31f90fe420fc22e8089c6847f463c577e51bcc7d571f8ade
+proprietary-files.txt: 504288411b1d1fe7733a8b21461b8c2e01aeb153c2304eb8a93db9d1c018a34e
+proprietary/Android.bp: 9d79edc4b1d8546e5419c81c10882168a50462fb378a30adcd0ebff3bbd1cd3f
+proprietary/BoardConfigVendor.mk: 57708acbc808407b9ebd12b8cc3e3a2a326e12afe39e0bf5dc48fd5e11b5bde1
+proprietary/device-vendor.mk: cc89f29d93a4abdae5625c470eb14f7014eeb6d1cbf9eb1834fb7dcb7dee0721
 proprietary/linker-config-adevtool.json: 6b3c6b57416c259790eb479ca3bf9575437bc060fd7439a96b2826785f73bcfc
 proprietary/product: dir
 proprietary/product/etc: dir
@@ -389,8 +389,6 @@ proprietary/product/etc/permissions: dir
 proprietary/product/etc/permissions/android.hardware.telephony.euicc.mep.xml: 5f3a2ee052a41e9f42110057cd60a87117a22d7f358571199c44f1929030c412
 proprietary/product/etc/permissions/android.hardware.telephony.euicc.xml: 211bb53d65e73aedfb0a9afb4d65e5891417811ae28d2438324d6b3f3b5bde0d
 proprietary/product/etc/permissions/androidx.camera.extensions.impl.xml: 2f608136ec90b7331625c1cd63965fe4d2227affe2db331f00e3200aa1d81a98
-proprietary/product/etc/permissions/com.google.android.apps.pixel.familyspace.xml: 25f11ae80f2ed61f9b44e83dbff999583107ec45e2df1bd8a7f90da357170944
-proprietary/product/etc/permissions/com.google.android.apps.setupwizard.searchselector.xml: 0019058d97e7ce452a3e726ea7fb91176972ab4f04060a29b02f01d3e8fc9b6c
 proprietary/product/etc/permissions/com.google.pixel.camera.connectivity.impl.xml: 2e4338cd3a461a36a6a72ac8fbafa76ea8f158b160766b4d3bd2d6e982eb6e96
 proprietary/product/etc/permissions/com.google.pixel.camera.services.lyricconfigprovider.impl.xml: b2b96a01cd23f80e5bbebcd8a5907abfc3389be5d081a297481f86bce502d28f
 proprietary/product/etc/permissions/features-verizon.xml: b58610f3121b60663011aeb36f29a55e5068c7c317ffec22772c0d516d47a952
@@ -404,12 +402,8 @@ proprietary/product/lib64/libdmjavaplugin.so: fa0535846225b0013568ca440e869b02fd
 proprietary/product/priv-app: dir
 proprietary/product/priv-app/EuiccGoogle: dir
 proprietary/product/priv-app/EuiccGoogle/EuiccGoogle.apk: 8a75c19d37c0ede1db0b279aedc00ebf066aa0fbd4e2b0daf9f8191417b3f60d
-proprietary/product/priv-app/FamilySpacePrebuilt: dir
-proprietary/product/priv-app/FamilySpacePrebuilt/FamilySpacePrebuilt.apk: 38f15d15e4996527db5bac879a225caa408c5bf1b9c73b540bdb45e2d50b61af
 proprietary/product/priv-app/PixelCameraServicesAK3: dir
 proprietary/product/priv-app/PixelCameraServicesAK3/PixelCameraServicesAK3.apk: 7cb63c7ac320283d07d77747c5f05f7fbeaf8f3fde9e1049dbbacf483b44a6b5
-proprietary/product/priv-app/SearchSelectorPrebuilt: dir
-proprietary/product/priv-app/SearchSelectorPrebuilt/SearchSelectorPrebuilt.apk: 67bb4fe1c91bde1d8b02be7d71ebdfcd9a5aa66fb21dffc782945838ce51e4c2
 proprietary/system_ext: dir
 proprietary/system_ext/app: dir
 proprietary/system_ext/app/OemRilHookService: dir

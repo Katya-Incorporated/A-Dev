@@ -231,7 +231,6 @@ PRODUCT_PACKAGES += \
     EuiccSupportPixel-P23 \
     EuiccSupportPixelPermissions \
     fake_gxp_telemetry_reader \
-    FamilySpacePrebuilt \
     fingerprint-goodix \
     fp_utils \
     gating \
@@ -411,7 +410,6 @@ PRODUCT_PACKAGES += \
     rild_exynos \
     samsung.hardware.media.c2@1.2-service \
     sd \
-    SearchSelectorPrebuilt \
     securedpud.slider \
     sensors.dynamic_sensor_hal \
     sensors.usf \
@@ -1952,8 +1950,6 @@ PRODUCT_COPY_FILES += \
     vendor/google_devices/akita/proprietary/product/etc/permissions/android.hardware.telephony.euicc.mep.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.mep.xml \
     vendor/google_devices/akita/proprietary/product/etc/permissions/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml \
     vendor/google_devices/akita/proprietary/product/etc/permissions/androidx.camera.extensions.impl.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/androidx.camera.extensions.impl.xml \
-    vendor/google_devices/akita/proprietary/product/etc/permissions/com.google.android.apps.pixel.familyspace.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.google.android.apps.pixel.familyspace.xml \
-    vendor/google_devices/akita/proprietary/product/etc/permissions/com.google.android.apps.setupwizard.searchselector.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.google.android.apps.setupwizard.searchselector.xml \
     vendor/google_devices/akita/proprietary/product/etc/permissions/com.google.pixel.camera.connectivity.impl.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.google.pixel.camera.connectivity.impl.xml \
     vendor/google_devices/akita/proprietary/product/etc/permissions/com.google.pixel.camera.services.lyricconfigprovider.impl.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.google.pixel.camera.services.lyricconfigprovider.impl.xml \
     vendor/google_devices/akita/proprietary/product/etc/permissions/features-verizon.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/features-verizon.xml \

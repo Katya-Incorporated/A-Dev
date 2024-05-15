@@ -34,6 +34,7 @@ BOARD_VENDOR_SEPOLICY_DIRS += \
 # Missing vendor SELinux context: com.google.face.debug::IDebugHost u:object_r:hal_face_debug_hwservice:s0
 # Missing vendor SELinux context: vendor.google.exo_camera_injection::IExoCameraInjection u:object_r:hal_exo_camera_injection_hwservice:s0
 # Missing vendor SELinux context: user=_app seinfo=platform name=com.google.pixel.exo domain=exo_app type=app_data_file levelFrom=all
+# Missing vendor SELinux context: user=_app seinfo=platform name=com.google.android.turboadapter domain=turbo_adapter type=app_data_file levelFrom=all
 # Missing vendor SELinux context: user=_app isPrivApp=true seinfo=google name=com.google.android.GoogleCamera domain=google_camera_app type=app_data_file levelFrom=all
 # Missing vendor SELinux context: user=_app seinfo=CameraEng name=com.google.android.GoogleCameraEng domain=debug_camera_app type=app_data_file levelFrom=all
 # Missing vendor SELinux context: user=_app seinfo=CameraFishfood name=com.google.android.apps.googlecamera.fishfood domain=google_camera_app type=app_data_file levelFrom=all

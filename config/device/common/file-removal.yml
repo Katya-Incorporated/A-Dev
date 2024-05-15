@@ -118,6 +118,8 @@ filters:
       - product/etc/permissions/com.android.sdm.plugins.sprintdm.xml
       - product/etc/permissions/com.android.sdm.plugins.usccdm.xml
       - product/etc/permissions/com.customermobile.preload.vzw.xml
+      - product/etc/permissions/com.google.android.apps.pixel.familyspace.xml
+      - product/etc/permissions/com.google.android.apps.setupwizard.searchselector.xml
       - product/etc/permissions/com.google.android.odad.xml
       - product/etc/permissions/com.google.omadm.trigger.xml
       - product/etc/permissions/com.verizon.apn.xml
@@ -262,6 +264,7 @@ filters:
       - product/priv-app/DockManagerPrebuilt/
       # DreamlinerPrebuilt is the Pixel Stand app, DreamlinerUpdater is firmware updater for Pixel Stand
       - product/priv-app/Dreamliner
+      - product/priv-app/FamilySpacePrebuilt/
       - product/priv-app/FilesPrebuilt/
       # "Google Connectivity Services", https://play.google.com/store/apps/details?id=com.google.android.apps.gcs
       - product/priv-app/GCS/
@@ -304,6 +307,7 @@ filters:
       - product/priv-app/SafetyHubPrebuilt/
       # "Live Transcribe & Notification", com.google.audio.hearing.visualization.accessibility.scribe
       - product/priv-app/ScribePrebuilt/
+      - product/priv-app/SearchSelectorPrebuilt/
       # https://play.google.com/store/apps/details?id=com.google.android.apps.security.securityhub
       - product/priv-app/SecurityHubPrebuilt/
       # https://play.google.com/store/apps/details?id=com.google.android.settings.intelligence
