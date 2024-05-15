@@ -36,30 +36,10 @@ android_app_import {
 }
 
 android_app_import {
-    name: "FamilySpacePrebuilt",
-    owner: "google_devices",
-    apk: "product/priv-app/FamilySpacePrebuilt/FamilySpacePrebuilt.apk",
-    certificate: "platform",
-    privileged: true,
-    dex_preopt: { enabled: false },
-    product_specific: true,
-}
-
-android_app_import {
     name: "PixelCameraServicesAK3",
     owner: "google_devices",
     apk: "product/priv-app/PixelCameraServicesAK3/PixelCameraServicesAK3.apk",
     presigned: true,
-    privileged: true,
-    dex_preopt: { enabled: false },
-    product_specific: true,
-}
-
-android_app_import {
-    name: "SearchSelectorPrebuilt",
-    owner: "google_devices",
-    apk: "product/priv-app/SearchSelectorPrebuilt/SearchSelectorPrebuilt.apk",
-    certificate: "platform",
     privileged: true,
     dex_preopt: { enabled: false },
     product_specific: true,

@@ -203,7 +203,6 @@ com.android.settings:string/unlock_disable_frp_warning_content_unknown_fingerpri
 
 This also deletes the fingerprint images and model stored on your device. You won’t be able to use your fingerprint for authentication in apps."
 com.android.settings:bool/config_advanced_vpn_enabled = true
-com.android.systemui:bool/config_pixel_vpn_enabled = true
 android:string-array/config_nightDisplayColorTemperatureCoefficients = 0.0,0.0,1.0,-0.000000014365268757,0.000255092801250106,-0.064156942434907716,-0.000000000910931179,0.000207598323269139,-0.349361641294833436
 android:string-array/config_udfps_enroll_stage_thresholds = 0.065,0.48,0.584,0.792
 android:string-array/fingerprint_acquired_vendor = ,,,,,Move your finger. Try again.,Finger already enrolled use a different finger.,Poor image quality. Try again.,,Poor image quality. Try again.,,,Smudge detected, clean screen. Try again.,Failure to read image. Try again.,
