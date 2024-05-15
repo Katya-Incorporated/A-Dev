@@ -1,6 +1,6 @@
 type: device-list
 
 devices:
+  - akita.yml
   - husky.yml
   - shiba.yml
-  - akita.yml
