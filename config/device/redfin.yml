@@ -30,3 +30,9 @@ filters:
       - system/framework/locksettings.jar
       - system_ext/priv-app/AccessibilityMenu/AccessibilityMenu.apk
       - system/bin/badblocks
+      - product/app/PixelCameraServicesRedfin/PixelCameraServicesRedfin.apk
+
+  props:
+    match:
+      - ro.vendor.camera.extensions.package
+      - ro.vendor.camera.extensions.service

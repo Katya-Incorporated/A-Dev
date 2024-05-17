@@ -24,3 +24,9 @@ filters:
       - system/bin/hw/android.hidl.allocator@1.0-service
       - system/lib64/libclcore_neon.bc
       - system_ext/priv-app/AccessibilityMenu/AccessibilityMenu.apk
+      - product/app/PixelCameraServicesBramble/PixelCameraServicesBramble.apk
+
+  props:
+    match:
+      - ro.vendor.camera.extensions.package
+      - ro.vendor.camera.extensions.service

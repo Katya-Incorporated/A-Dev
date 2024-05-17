@@ -2,15 +2,6 @@
 // For more info, see https://github.com/GrapheneOS/adevtool
 
 android_app_import {
-    name: "PixelCameraServicesRedfin",
-    owner: "google_devices",
-    apk: "product/app/PixelCameraServicesRedfin/PixelCameraServicesRedfin.apk",
-    certificate: "platform",
-    dex_preopt: { enabled: false },
-    product_specific: true,
-}
-
-android_app_import {
     name: "uimremoteclient",
     owner: "google_devices",
     apk: "product/app/uimremoteclient/uimremoteclient.apk",
