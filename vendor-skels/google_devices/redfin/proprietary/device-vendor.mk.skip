@@ -15,9 +15,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.product.name_for_attestation= \
     ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.lito.api30 \
     graphics.gpu.profiler.support=true \
-    graphics.gpu.profiler.vulkan_layer_apk=com.google.pixel.redbull.gpuprofiling.vulkanlayer \
-    ro.vendor.camera.extensions.package=com.google.android.apps.camera.services \
-    ro.vendor.camera.extensions.service=com.google.android.apps.camera.services.extensions.service.PixelExtensions
+    graphics.gpu.profiler.vulkan_layer_apk=com.google.pixel.redbull.gpuprofiling.vulkanlayer
 
 PRODUCT_VENDOR_PROPERTIES += \
     ro.product.model_for_attestation= \
@@ -1029,7 +1027,6 @@ PRODUCT_PACKAGES += \
     org.codeaurora.ims.auto_generated_rro_product_adevtool__ \
     pd-mapper \
     pixel-display-default \
-    PixelCameraServicesRedfin \
     PixelNfc \
     PktRspTest \
     pm-proxy \
